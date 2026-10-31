@@ -51,6 +51,13 @@ class LLMError(RuntimeError):
     pass
 
 
+USAGE = {"prompt_tokens": 0, "completion_tokens": 0, "calls": 0}
+
+
+def usage_summary() -> dict:
+    return dict(USAGE)
+
+
 SYSTEM_PROMPT = """你是一位资深中文科技媒体编辑，为一位中国大学生撰写每周新闻周报。
 你的读者对 AI、汽车、数码、摄影感兴趣，正在学英语。
 你必须只输出一个 JSON 对象，不要输出任何解释、前后缀或 Markdown 代码块。"""
@@ -117,6 +124,10 @@ def call_llm(cfg: dict, system: str, user: str, max_tokens: int | None = None) -
             raise LLMError(f"超时放弃：{last}")
         try:
             body = _post_json(f"{base}/chat/completions", payload, api_key, cfg.get("timeout", 120))
+            usage = body.get("usage") or {}
+            USAGE["prompt_tokens"] += int(usage.get("prompt_tokens", 0))
+            USAGE["completion_tokens"] += int(usage.get("completion_tokens", 0))
+            USAGE["calls"] += 1
             return body["choices"][0]["message"]["content"]
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode("utf-8", "replace")[:200]
@@ -226,6 +237,8 @@ def summarize_section(
                 en = ""  # 中文源不该出现英文原句，模型串了就直接丢掉
             if en and not _quote_is_real(en, art.text or art.excerpt):
                 en = ""  # 模型改写了原句，宁可不显示也不误导
+            elif en:
+                en = tidy_quote(en, art.text or art.excerpt)
             if NOISE_LINE.search(zh) and len(zh) < 40:
                 zh = ""
             if NOISE_LINE.search(en) and len(en) < 40:
@@ -262,6 +275,22 @@ def summarize_section(
     if not digest.intro:
         digest.intro = f"本周 {section.get('cn', section['name'])} 领域共 {len(digest.items)} 条值得注意的进展。"
     return digest
+
+
+TERMINAL = ".!?\"”’"
+
+
+def tidy_quote(quote: str, source: str) -> str:
+    """模型偶尔把句子截在半个从句上，退回到最后一个完整句。"""
+    quote = quote.strip()
+    if not quote or quote[-1] in TERMINAL:
+        return quote
+    idx = max(quote.rfind(c) for c in ".!?")
+    if idx >= 40:
+        trimmed = quote[: idx + 1].strip()
+        if _quote_is_real(trimmed, source):
+            return trimmed
+    return quote
 
 
 def _quote_is_real(quote: str, source: str) -> bool:

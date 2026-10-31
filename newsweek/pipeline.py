@@ -11,7 +11,7 @@ from datetime import datetime
 from . import cluster, rank
 from .extract import fetch_body
 from .fetch import Article, fetch_all
-from .summarize import SectionDigest, find_duplicate_groups, summarize_section, write_opening
+from .summarize import SectionDigest, find_duplicate_groups, summarize_section, usage_summary, write_opening
 from .util import fmt_cn, normalize_for_match, TZ, week_label, week_range
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -203,6 +203,7 @@ def build_issue(cfg: dict, *, no_llm: bool = False, only: list[str] | None = Non
             "sources_total": len(sources),
             "sources_ok": len(ok_sources),
             "elapsed": round(time.time() - started, 1),
+            "usage": usage_summary(),
         },
     }
     log(f"完成，用时 {issue['stats']['elapsed']}s", quiet)

@@ -331,6 +331,11 @@ def _footer_html(issue: dict) -> str:
         for s in issue["sources"][:24]
     )
     mode = {"llm": "大模型双语", "mixed": "部分降级", "rule": "规则摘要"}.get(issue.get("mode"), "规则摘要")
+    usage = (issue.get("stats") or {}).get("usage") or {}
+    usage_row = ""
+    if usage.get("prompt_tokens"):
+        total = usage["prompt_tokens"] + usage["completion_tokens"]
+        usage_row = f'<li><span>模型消耗</span><span>{total / 1000:.0f}k tokens / {usage.get("calls", 0)} 次调用</span></li>'
     return f"""<footer><div class="wrap">
 <div class="grid">
   <div><h6>数据来源 · {issue['stats']['sources_ok']}/{issue['stats']['sources_total']} 正常</h6><ul>{rows}</ul></div>
@@ -340,7 +345,7 @@ def _footer_html(issue: dict) -> str:
       <li><span>生成时间</span><span>{esc(issue.get('generated_date',''))} {esc(issue.get('generated_at','')[11:16])}</span></li>
       <li><span>摘要方式</span><span>{mode}</span></li>
       <li><span>处理文章</span><span>{issue['stats']['articles']} 篇</span></li>
-      <li><span>耗时</span><span>{issue['stats']['elapsed']}s</span></li>
+      <li><span>耗时</span><span>{issue['stats']['elapsed']}s</span></li>{usage_row}
     </ul>
     <h6 style="margin-top:18px">归档</h6>
     <ul><li><a href="__ARCHIVE__">往期周报 →</a></li></ul>
