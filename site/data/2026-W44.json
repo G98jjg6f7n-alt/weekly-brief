@@ -1,7 +1,7 @@
 {
  "week": "2026-W44",
  "range": "10月26日 – 11月1日",
- "generated_at": "2026-10-31T21:39+08:00",
+ "generated_at": "2026-10-31T21:40+08:00",
  "generated_date": "10月31日",
  "opening": "",
  "mode": "rule",
@@ -125,25 +125,6 @@
      "detailed": false
     },
     {
-     "headline": "百度 APP 发布四大 AI 升级，搜索已实现递归自我进化",
-     "points": [
-      {
-       "en": "",
-       "zh": "10 月 30 日，百度 APP 在北京举办产品升级沟通会。 百度搜索实现递归自我进化，并全新升级搜索 AI API，活动期间最低价仅需 4.9 元/千次，低于 DeepSeek 搜索 API。"
-      }
-     ],
-     "why": "",
-     "url": "https://www.qbitai.com/2026/10/506771.html",
-     "source": "量子位",
-     "sources_all": [
-      "量子位",
-      "雷峰网"
-     ],
-     "date": "10/30",
-     "lang": "zh",
-     "detailed": false
-    },
-    {
      "headline": "刚刚，Claude宣布取消5小时限制！首批Ultra用户已「解封」",
      "points": [
       {
@@ -195,6 +176,24 @@
       "爱范儿"
      ],
      "date": "10/31",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "Fable 5.5测试曝光，Claude每次回答后，还会执行一条你看不到的指令",
+     "points": [
+      {
+       "en": "",
+       "zh": "Gemini 4 Carbon 王者归来没几天，这边 Fable 5.5 就被爆出来正在被测试。 有网友在使用 Opus 5.5 时表示会被路由到更新的模型，而且效果看起来要比当前的 Opus 好得多，不由得让人怀疑这是 Fable 5.5 或是下一代 Opus 模型。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.ifanr.com/1686874?utm_source=rss&utm_medium=rss&utm_campaign=",
+     "source": "爱范儿",
+     "sources_all": [
+      "爱范儿"
+     ],
+     "date": "10/30",
      "lang": "zh",
      "detailed": false
     }
@@ -527,24 +526,6 @@
      "detailed": false
     },
     {
-     "headline": "天数智芯天垓300实测对标H200，国产GPU接下来拼什么？",
-     "points": [
-      {
-       "en": "",
-       "zh": "在实测场景中达到H200的性能水平后，国产GPU的竞争，开始进一步转向系统效率、软件适配与实际交付。 本周的天数智芯媒体开放日上，最新一代天垓300与H200的实机对比，是最直观的性能展示。"
-      }
-     ],
-     "why": "",
-     "url": "https://www.leiphone.com/category/chips/748GRHfg9VPRbp7x.html",
-     "source": "雷峰网",
-     "sources_all": [
-      "雷峰网"
-     ],
-     "date": "10/30",
-     "lang": "zh",
-     "detailed": false
-    },
-    {
      "headline": "苹果发触屏笔记本，最高 11 万元；DeepSeek V5 模型代码现身；宇树首发财报，净利增 270%",
      "points": [
       {
@@ -572,6 +553,24 @@
      ],
      "why": "",
      "url": "https://sspai.com/post/117953",
+     "source": "少数派",
+     "sources_all": [
+      "少数派"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "本月玩什么｜影之刃零、战争机器：事变日等",
+     "points": [
+      {
+       "en": "",
+       "zh": "影之刃零 / Phantom Blade Zero\n战争机器：事变日 / Gears of War: E-Day\n空战奇兵 8 希孚之翼 / Ace Combat 8: Wings of Theve\n星球大战：银河赛车手 / Star Wars: Galactic Racer\n最终幻想 共鸣 / FINAL FANTA…"
+      }
+     ],
+     "why": "",
+     "url": "https://sspai.com/post/117960",
      "source": "少数派",
      "sources_all": [
       "少数派"
@@ -939,15 +938,15 @@
   {
    "name": "雷峰网",
    "section": "tech",
-   "ok": true,
-   "count": 20,
-   "error": ""
+   "ok": false,
+   "count": 0,
+   "error": "HTTPError: HTTP Error 502: Bad Gateway"
   }
  ],
  "stats": {
-  "articles": 732,
+  "articles": 712,
   "sources_total": 24,
-  "sources_ok": 24,
-  "elapsed": 19.2
+  "sources_ok": 23,
+  "elapsed": 64.3
  }
 }

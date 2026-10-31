@@ -56,6 +56,8 @@ h1 .num{font-family:var(--mono);font-size:.32em;letter-spacing:.1em;color:var(--
   margin:26px 0 0;padding-left:18px;border-left:2px solid var(--accent)}
 .notice{margin:22px 0 0;padding:10px 14px;border:1px dashed var(--line);border-radius:8px;
   font-size:13px;color:var(--fg-2);background:var(--bg-soft);line-height:1.7}
+.notice.warn{border-color:#e17055;background:color-mix(in srgb,#e17055 8%,transparent)}
+.notice.warn b{color:#e17055}
 .notice b{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-right:8px}
 .mode{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
   text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:3px 9px;color:var(--fg-3)}
@@ -356,7 +358,16 @@ def render_issue(issue: dict, cfg: dict | None = None) -> str:
 
     opening = f'<p class="opening rv">{esc(issue["opening"])}</p>' if issue.get("opening") else ""
     notice = ""
-    if issue.get("mode") != "llm":
+    stats = issue.get("stats", {})
+    total_items = sum(len(s["items"]) for s in issue["sections"])
+    ok_ratio = (stats.get("sources_ok", 0) / stats["sources_total"]) if stats.get("sources_total") else 1
+    if total_items < 12 or ok_ratio < 0.5:
+        notice = (
+            '<p class="notice warn"><b>注意</b>本期抓取不完整'
+            f"（{stats.get('sources_ok', 0)}/{stats.get('sources_total', 0)} 个源成功，共 {total_items} 条）。"
+            '内容可能偏少，可以稍后在本地重跑一次，或先看<a href="__ARCHIVE__">往期</a>。</p>'
+        )
+    elif issue.get("mode") != "llm":
         notice = (
             '<p class="notice"><b>提示</b>本期是规则摘要（没有配置 API Key）：'
             "英文条目只有原文和自动摘录，没有中文翻译。"
@@ -378,10 +389,11 @@ def render_issue(issue: dict, cfg: dict | None = None) -> str:
   {notice}
 </div></header>"""
 
-    sections = "\n".join(_section_html(sec, i + 1) for i, sec in enumerate(issue["sections"]))
+    live = [sec for sec in issue["sections"] if sec.get("items")]
+    sections = "\n".join(_section_html(sec, i + 1) for i, sec in enumerate(live))
     body = (
         hero
-        + _nav_html(issue["sections"])
+        + _nav_html(live)
         + f'<main class="wrap">{sections}</main>'
         + _footer_html(issue)
     )
