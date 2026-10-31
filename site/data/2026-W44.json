@@ -1,9 +1,9 @@
 {
  "week": "2026-W44",
  "range": "10月26日 – 11月1日",
- "generated_at": "2026-10-31T22:05+08:00",
+ "generated_at": "2026-10-31T22:11+08:00",
  "generated_date": "10月31日",
- "opening": "这周最值得盯的主线其实是 AI 开始从“会聊天”往“会干活”走了——DeepSeek 的 Super-agent 能自己提 PR，再加上几家巨头给爬虫退出定规矩，AI 和真实世界的接口正在被重新定义。其他板块也有看头：智己 LS6 首月交付破 8000 台、TCL 华星 295 亿印刷 OLED 设备搬入，硬件这边同样没闲着。",
+ "opening": "这周最值得盯的主线，是 AI 正从「会聊天」往「会干活」跨一步——DeepSeek 的 Super-agent 能自己提 PR，四巨头也开始给爬虫立规矩，工具属性越来越硬。其余像智己 LS6 首月交付破 8000、TCL 华星 295 亿印刷 OLED 产线搬入，也都是「落地」两个字在继续兑现。",
  "mode": "llm",
  "sections": [
   {
@@ -12,7 +12,7 @@
    "cn": "人工智能",
    "blurb": "模型、产品与算力",
    "accent": "#6c5ce7",
-   "intro": "本周 AI 领域最值得关注的是 Agent 架构从单会话走向长期在线、多任务并行，DeepSeek 的 Super-agent 探索给出了具体工程路径。与此同时，OpenAI 融资目标与估值双双下调，头部模型公司开始正面争夺同一批资金，行业从狂热转向挑剔。",
+   "intro": "本周 AI 领域一边是能力边界的推进：DeepSeek 提出让 Agent 长期在线、并行调度任务的 Super-agent 架构，百度搜索则宣称实现递归自我进化。另一边是资本与生态的重新洗牌：OpenAI 融资目标与估值双双下调，多家巨头联合推出让出版商统一退出 AI 抓取的新标准。",
    "note": "",
    "items": [
     {
@@ -20,18 +20,18 @@
      "points": [
       {
        "en": "",
-       "zh": "DeepSeek Harness 团队发表《Super-agent 设计探索》技术文章，提出由 Router 统筹、Worker 执行的双层架构，让 Agent 摆脱单次会话限制，长期在线、跨平台保持上下文并并行推进任务。"
+       "zh": "DeepSeek Harness 团队提出由 Router 与 Worker 组成的双层架构，让 Agent 跨会话连续运行、并行处理多任务并主动响应环境事件。"
       },
       {
        "en": "",
-       "zh": "该团队已用内部 Super-agent 实例参与日常研发：群聊里有人反馈软件问题，即使没人 @ 它，它也能识别缺陷、后台复现、寻找修复方案，甚至直接提交 GitHub Pull Request 等开发者审查。"
+       "zh": "内部实例已用于研发协作：群聊里没人 @ 它，Agent 也能识别缺陷、后台复现问题并直接提交 GitHub Pull Request。"
       },
       {
        "en": "",
-       "zh": "团队观察到一个人通常只能同时跟进 3 到 5 个活跃 Session，因此希望人类负责定目标和验收结果，任务调度与执行交给 AI；目前这仍是架构探索，部分设计已通过开源原型实现，并非正式产品。"
+       "zh": "团队指出人类通常只能同时跟进 3 到 5 个活跃会话，Super-agent 意在把任务调度交给 AI、人只负责定目标和验收。"
       }
      ],
-     "why": "Agent 从工具变成可管理的虚拟团队，人机分工方式可能被重写。",
+     "why": "Agent 从单会话工具转向长期在线的自主团队，协作方式可能被改写。",
      "url": "https://www.ifanr.com/1687026?utm_source=rss&utm_medium=rss&utm_campaign=",
      "source": "爱范儿",
      "sources_all": [
@@ -42,22 +42,22 @@
      "detailed": true
     },
     {
-     "headline": "OpenAI、谷歌等四家巨头采纳新爬虫退出标准",
+     "headline": "OpenAI、谷歌等四巨头采纳统一反爬新标准",
      "points": [
       {
        "en": "OpenAI, Google, Microsoft, and Anthropic say they will adopt a new standard that publishers can use to opt out of being scraped by AI, as reported earlier by Search Engine Roundtable.",
-       "zh": "据 Search Engine Roundtable 早前报道，OpenAI、谷歌、微软和 Anthropic 表示将采纳一项新标准，让内容出版方可以选择不被 AI 抓取。"
+       "zh": "据 Search Engine Roundtable 早前报道，OpenAI、谷歌、微软和 Anthropic 表示将采纳一项新标准，出版商可借此选择不被 AI 抓取内容。"
       },
       {
        "en": "The shared “policy token” signal is proposed by Kevin Kelley, a technical lead for standards at Anthropic, as part of the Internet Engineering Task Force (IETF).",
-       "zh": "这一共享的“策略令牌”信号由 Anthropic 标准技术负责人凯文·凯利提出，属于互联网工程任务组（IETF）工作的一部分。"
+       "zh": "这一共享的“策略令牌”信号由 Anthropic 标准技术负责人凯文·凯利提出，属于互联网工程任务组（IETF）的工作。"
       },
       {
        "en": "Currently, sites have to signal their AI training preferences separately to each AI company.",
        "zh": "目前，网站必须分别向每一家 AI 公司表明自己的 AI 训练偏好。"
       }
      ],
-     "why": "出版方终于能用一次设置对多家 AI 公司表达拒绝，议价筹码增加。",
+     "why": "出版商首次能用一次设置统一拒绝多家 AI 抓取。",
      "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
      "source": "The Verge",
      "sources_all": [
@@ -68,22 +68,22 @@
      "detailed": true
     },
     {
-     "headline": "OpenAI 融资目标从 300 亿下调至约 200 亿美元",
+     "headline": "OpenAI 融资目标从 300 亿降至约 200 亿美元",
      "points": [
       {
        "en": "",
-       "zh": "据《金融时报》援引知情人士报道，OpenAI 将最新一轮融资目标从 300 亿美元下调至约 200 亿美元，拟议估值也从 1.4 万亿美元降至 1.25 万亿美元。"
+       "zh": "据《金融时报》报道，OpenAI 将本轮融资目标从 300 亿美元下调至约 200 亿美元，拟议估值从 1.4 万亿美元降至 1.25 万亿美元。"
       },
       {
        "en": "",
-       "zh": "《华尔街日报》披露 OpenAI 目前获得的投资承诺约 110 亿美元，不到最初目标的一半；公司已告知股东未来几周将继续募资，争取家族办公室和高净值个人入局。"
+       "zh": "《华尔街日报》称目前获得的投资承诺约 110 亿美元，不到最初目标的一半，公司计划未来几周继续募资。"
       },
       {
        "en": "",
-       "zh": "路透社称 OpenAI 急于推进融资，部分原因是要赶在 Anthropic 预计 11 月的 IPO 之前锁定资金；同时纳斯达克 100 指数单日下跌约 3.5%，投资人正变得愈发挑剔。"
+       "zh": "交易条件还包括 OpenAI 获得租用阿联酋新建算力的选择权，而 Anthropic 已公开上市文件，两家正争夺同一批投资者。"
       }
      ],
-     "why": "AI 融资风向转冷，头部公司也要在上市窗口前抢钱。",
+     "why": "AI 融资狂热降温，头部公司估值开始被市场重新定价。",
      "url": "https://www.cnbeta.com.tw/articles/tech/1584516.htm",
      "source": "cnBeta",
      "sources_all": [
@@ -98,10 +98,10 @@
      "points": [
       {
        "en": "",
-       "zh": "苹果宣布国行 Apple 智能首批功能将于 11 月 4 日随 iOS 开发者 Beta 版开放测试，12 月正式推出，首批包括实时翻译、写作工具、照片消除等，用户可选择接入阿里巴巴千问处理 Siri 等部分请求。"
+       "zh": "苹果宣布国行 Apple 智能首批功能 11 月 4 日随开发者 Beta 开放测试、12 月正式上线，用户可选择接入阿里千问处理 Siri 等部分请求。"
       }
      ],
-     "why": "苹果在华 AI 落地方式确定，阿里成为关键模型供应方。",
+     "why": "苹果 AI 入华落地方式确定，国产大模型成关键合作方。",
      "url": "http://www.geekpark.net/news/373220",
      "source": "极客公园",
      "sources_all": [
@@ -116,10 +116,10 @@
      "points": [
       {
        "en": "",
-       "zh": "上汽荣威家越 07 将于 11 月 1 日开启全国交付，限时权益价 11.98 万元起，行业首搭豆包座舱助手，支持拟人化表情、FaceID 账号识别和方言外语，并搭载 Momenta R7 世界模型方案。"
+       "zh": "荣威家越 07 于 11 月 1 日开启全国交付，限时权益价 11.98 万元起，行业首搭豆包座舱助手，并配 Momenta R7 世界模型方案。"
       }
      ],
-     "why": "豆包上车，座舱语音助手进入大模型拟人化竞争阶段。",
+     "why": "大模型座舱助手进入量产车，智能座舱竞争加剧。",
      "url": "https://www.ithome.com/1/020/618.htm",
      "source": "IT之家",
      "sources_all": [
@@ -130,14 +130,14 @@
      "detailed": false
     },
     {
-     "headline": "奥特曼称内存放数据中心比放个人电脑更好",
+     "headline": "Altman：内存放数据中心比放个人电脑更好",
      "points": [
       {
-       "en": "Asked about supply chain shortages, like the ongoing RAM shortage, OpenAI CEO Sam Altman said in an interview that it's \"terrible\" to have RAM in personal PCs instead of data centers.",
-       "zh": "在被问及内存短缺等供应链问题时，OpenAI 首席执行官萨姆·奥特曼在采访中表示，把内存装在个人电脑里而不是数据中心里“很糟糕”。"
+       "en": "But from a global allocation perspective, actually, it’s quite terrible to have everybody have a bunch of the world’s limited supply of DRAM sitting in their own computer and being used five percent of the time.",
+       "zh": "但从全球资源分配的角度看，让每个人把世界上有限的 DRAM 大量囤在自己电脑里、且只有 5% 的时间在用，其实相当糟糕。"
       }
      ],
-     "why": "算力焦虑已蔓延到内存，AI 公司开始争夺上游硬件。",
+     "why": "算力与内存短缺下，本地推理路线面临来自云端的质疑。",
      "url": "https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers",
      "source": "The Verge",
      "sources_all": [
@@ -148,14 +148,14 @@
      "detailed": false
     },
     {
-     "headline": "无界动力机器人 K15 上岗七鲜咖啡，目标千店",
+     "headline": "无界动力联手京东，K15 机器人上岗七鲜咖啡",
      "points": [
       {
        "en": "",
-       "zh": "无界动力与京东签署战略合作，其第二代双臂轮式机器人 K15 已在两家七鲜咖啡门店上岗，与自动化生产线协作实现全流程无人化，双方计划推进 1000+ 门店规模化复制，合作规模达 10 亿元。"
+       "zh": "无界动力与京东签署战略合作，第二代机器人 K15 已在两家七鲜咖啡门店上岗，双方计划复制到 1000+ 门店并做到 10 亿元产品合作规模。"
       }
      ],
-     "why": "具身智能从演示走向零售门店的批量商业化落地。",
+     "why": "具身智能从演示走向零售门店的规模化商业落地。",
      "url": "https://www.ithome.com/1/020/598.htm",
      "source": "IT之家",
      "sources_all": [
@@ -170,10 +170,10 @@
      "points": [
       {
        "en": "",
-       "zh": "OpenAI 产品负责人 Tibo 宣布 Pro 100、Pro 200、Pro 500 及 Business Premium 的 Work 和 Codex 额度翻倍并即日生效，同时撤销 9 月底通知的 Pro 200 降额计划，但 Plus 用户不在福利范围内。"
+       "zh": "OpenAI 宣布 Pro 100、Pro 200、Pro 500 及 Business Premium 的 Work 与 Codex 额度翻倍并立即生效，同时撤销此前针对 Pro 200 的降额计划。"
       }
      ],
-     "why": "用户反弹迫使 OpenAI 收回降额，订阅价值重新校准。",
+     "why": "用户压力迫使 OpenAI 收回降额决定，订阅价值重新校准。",
      "url": "https://www.ifanr.com/1686830?utm_source=rss&utm_medium=rss&utm_campaign=",
      "source": "爱范儿",
      "sources_all": [
@@ -189,10 +189,10 @@
      "points": [
       {
        "en": "",
-       "zh": "理想 AI 眼镜 Livis 推送 10 月 OTA 升级，视觉问答独家接入小红书 Agent，个人 Agent 新增接入 Hermes，并新增 Garmin 运动设备接入与健康报告主动推送。"
+       "zh": "理想 AI 眼镜 Livis 推送 10 月 OTA，视觉问答独家接入小红书 Agent，个人 Agent 新增接入 Hermes，并支持 Garmin 运动设备数据。"
       }
      ],
-     "why": "AI 眼镜靠生态接入补内容短板，场景价值继续外扩。",
+     "why": "AI 眼镜靠生态接入补内容短板，可穿戴竞争转向服务。",
      "url": "https://www.ithome.com/1/020/553.htm",
      "source": "IT之家",
      "sources_all": [
@@ -203,14 +203,14 @@
      "detailed": false
     },
     {
-     "headline": "百度搜索实现递归自我进化，API 低至 4.9 元",
+     "headline": "百度搜索称实现递归自我进化，API 低至 4.9 元",
      "points": [
       {
        "en": "",
-       "zh": "百度 APP 发布四大 AI 升级，搜索从“一次提问一次回答”转向“一项任务一份交付”，可多步查找整理并持续跟踪事项，AI 镜头支持 9 种方言实时对话，搜索 AI API 限时最低 4.9 元每千次查询。"
+       "zh": "百度 APP 宣布搜索实现递归自我进化，升级后的搜索 AI API 限时最低 4.9 元每千次查询，低于 DeepSeek 搜索 API，并同步升级 AI 镜头与 GUI 可视化。"
       }
      ],
-     "why": "搜索形态向任务交付演进，API 价格战进一步压低门槛。",
+     "why": "搜索从给答案转向交付任务，API 价格战进一步升级。",
      "url": "https://www.qbitai.com/2026/10/506771.html",
      "source": "量子位",
      "sources_all": [
@@ -229,26 +229,26 @@
    "cn": "汽车",
    "blurb": "新车、电动化与智能驾驶",
    "accent": "#e17055",
-   "intro": "本周汽车行业呈现两极分化：一边是中国品牌密集交付与智能化下沉，另一边是传统巨头因资金与技术节奏被迫调整电动化步伐。从智己 LS6 首月交付破八千，到大众暂停纯电高尔夫研发，市场正在用销量和财报重新校准预期。",
+   "intro": "本周汽车行业呈现两极分化：中国品牌以高性价比智能电动车快速上量，传统豪华与合资品牌则在电动化投入上更趋审慎。与此同时，商用车智能驾驶与海外车企的软件生态成为新的竞争焦点。",
    "note": "",
    "items": [
     {
-     "headline": "智己 LS6 首月交付超 8000 台，19.79 万起",
+     "headline": "智己LS6首月交付超8000台，19.79万起",
      "points": [
       {
        "en": "",
-       "zh": "全新一代智己 LS6 自 9 月 23 日上市以来累计交付突破 8000 台，叠加权益后 19.79 万元起，三款车型覆盖 650 至 782 公里续航。"
+       "zh": "全新一代智己LS6自9月23日上市以来累计交付突破8000台，叠加权益后19.79万元起，提供650km至750km三种续航版本。"
       },
       {
        "en": "",
-       "zh": "车身尺寸 4937×1988×1671mm、轴距 2960mm，溜背造型配隐藏式门把手与橙色卡钳，主打动感设计。"
+       "zh": "新车轴距2960mm，搭载27.1英寸5K中控双联屏与15.6英寸副驾屏，并配备千问大模型和阿里AI Agent生态。"
       },
       {
        "en": "",
-       "zh": "内饰搭载 27.1 英寸 5K 双联屏与 15.6 英寸副驾屏，接入千问大模型和阿里 AI Agent 生态，全系标配 800V 三电架构。"
+       "zh": "全系标配全域800V NEO三电架构与飓风电机，Ultra版零百加速仅3.48秒。"
       }
      ],
-     "why": "20 万级纯电 SUV 竞争白热化，首月交付量是检验产品力的第一道门槛。",
+     "why": "20万级纯电SUV竞争白热化，智己以高配低价争夺市场份额。",
      "url": "https://www.ithome.com/1/020/589.htm",
      "source": "IT之家",
      "sources_all": [
@@ -259,22 +259,22 @@
      "detailed": true
     },
     {
-     "headline": "宾利纯电 SUV 托卡尔测试里程超百万公里",
+     "headline": "宾利纯电SUV托卡尔测试里程超百万公里",
      "points": [
       {
        "en": "",
-       "zh": "宾利首款纯电 SUV 托卡尔累计测试超 100 万公里，经历瑞典零下 38℃ 严寒、沙漠 40℃ 以上高温和派克峰高海拔路段。"
+       "zh": "宾利首款纯电SUV托卡尔累计测试里程超过100万公里，覆盖零下38℃严寒、40℃以上高温及海拔4267米高海拔路段。"
       },
       {
        "en": "",
-       "zh": "首发版最大功率 888 马力、峰值扭矩 1350N·m，研发由电子电气架构、软件集成和测试三个团队同步推进。"
+       "zh": "首发版最大功率888马力、峰值扭矩1350N·m，搭载113.3kWh的800V电池组，支持最高400kW快充，10%至80%仅需16分钟。"
       },
       {
        "en": "",
-       "zh": "电池组重约 625kg、能量密度超 180Wh/kg，采用 800V 架构与 113.3kWh 总容量，支持 400kW 快充，10% 至 80% 仅需 16 分钟。"
+       "zh": "研发期间软件每六周更新一次，电池需通过钢制弹丸以超159km/h射击外壳的抗冲击测试。"
       }
      ],
-     "why": "超豪华品牌用百万公里测试为纯电可靠性背书，软件迭代节奏向消费电子看齐。",
+     "why": "超豪华品牌电动化验证标准严苛，展示传统车企的工程底蕴。",
      "url": "https://www.ithome.com/1/020/522.htm",
      "source": "IT之家",
      "sources_all": [
@@ -285,22 +285,14 @@
      "detailed": true
     },
     {
-     "headline": "丰田发布五款 Woodland 越野概念车含 bZ",
+     "headline": "丰田发布五款Woodland越野概念车含bZ",
      "points": [
       {
        "en": "Toyota introduced a new family of lifted, “adventure-ready” Woodland concepts based on the RAV4, Grand Highlander, Sienna, Crown Signia, and bZ electric SUV.",
-       "zh": "丰田推出全新 Woodland 概念车家族，基于 RAV4、大汉兰达、赛那、皇冠 Signia 和 bZ 纯电 SUV 打造，底盘升高、主打冒险风格。"
-      },
-      {
-       "en": "Each vehicle features Horizon Blue exterior paint, inspired by Toyota’s 1960s models, including the Stout, Crown, and Corona.",
-       "zh": "每款车均采用 Horizon Blue 外观涂装，灵感来自丰田 1960 年代的 Stout、皇冠和 Corona 等车型。"
-      },
-      {
-       "en": "All new concepts also include an exclusive Woodland badge, plus a lift kit, large over-fenders, satin-black wheels, All-Terrain tires, two-tone paint on the roof and hood, a roof rack, and cross bars to top it off.",
-       "zh": "所有新概念车都带有专属 Woodland 徽标，并配备升高套件、大尺寸轮眉、缎黑色轮毂、全地形轮胎、车顶与引擎盖双色涂装、车顶行李架及横杆。"
+       "zh": "丰田推出了一系列升高底盘、主打“冒险”的Woodland概念车，涵盖RAV4、大汉兰达、赛那、皇冠Signia以及bZ纯电SUV。"
       }
      ],
-     "why": "丰田把越野子品牌扩展到纯电车型，显示美国越野细分市场的利润吸引力。",
+     "why": "丰田借越野套件扩展产品线，迎合美国高利润越野市场。",
      "url": "https://electrek.co/2026/10/30/toyota-reveals-five-new-lifted-woodland-concepts-including-an-ev/",
      "source": "Electrek",
      "sources_all": [
@@ -311,14 +303,14 @@
      "detailed": true
     },
     {
-     "headline": "大众暂停 ID.Golf 研发，称需审慎安排资金",
+     "headline": "大众暂停ID.Golf研发，称需审慎安排资金",
      "points": [
       {
        "en": "",
-       "zh": "大众因削减开支暂停纯电高尔夫 ID.Golf 的研发，CFO 鲍威尔斯称将暂缓至确保必要资金投入，恢复时间未定。"
+       "zh": "大众因削减开支暂停纯电高尔夫ID.Golf的研发，CFO称需确保必要资金投入后再继续，新车原计划2020年代末上市。"
       }
      ],
-     "why": "传统巨头电动化受制于 SSP 平台延迟与财务压力，转型节奏被迫放缓。",
+     "why": "电动化转型受制于资金与技术，传统巨头节奏明显放缓。",
      "url": "https://www.ithome.com/1/020/511.htm",
      "source": "IT之家",
      "sources_all": [
@@ -329,14 +321,14 @@
      "detailed": false
     },
     {
-     "headline": "比亚迪仰望新旗舰预告对开门与宝石格栅",
+     "headline": "比亚迪仰望新车曝光对开门与宝石格栅",
      "points": [
       {
        "en": "BYD is moving upmarket with its new flagship EV, featuring suicide doors, a gemstone grille, and possibly solid-state batteries.",
-       "zh": "比亚迪正借新旗舰纯电车型向上突破，该车配备对开门、宝石格栅，并可能搭载固态电池。"
+       "zh": "比亚迪正以全新旗舰电动车向上突破，该车配备对开门、宝石格栅，并可能搭载固态电池。"
       }
      ],
-     "why": "仰望品牌持续上探超豪华市场，新技术首发平台值得关注。",
+     "why": "仰望品牌持续冲击超豪华市场，技术配置值得关注。",
      "url": "https://electrek.co/2026/10/30/byd-reveals-flashy-new-feature-upcoming-luxury-ev/",
      "source": "Electrek",
      "sources_all": [
@@ -347,14 +339,14 @@
      "detailed": false
     },
     {
-     "headline": "现代新款 IONIQ 6 英国开售，续航 422 英里",
+     "headline": "现代新款IONIQ 6英国上市，续航422英里",
      "points": [
       {
        "en": "The new Hyundai IONIQ 6 is now on sale in the UK with an impressive range of up to 422 miles, starting at about $45,000.",
-       "zh": "现代新款 IONIQ 6 已在英国开售，最高续航达 422 英里，起售价约 4.5 万美元。"
+       "zh": "现代新款IONIQ 6已在英国开售，最高续航达422英里，起售价约4.5万美元。"
       }
      ],
-     "why": "续航与价格双优，显示现代在主流纯电轿车市场的竞争力。",
+     "why": "续航与价格兼具竞争力，展现韩系电动车产品力。",
      "url": "https://electrek.co/2026/10/30/hyundai-launches-new-ioniq-6-uk-with-422-miles-range/",
      "source": "Electrek",
      "sources_all": [
@@ -365,14 +357,14 @@
      "detailed": false
     },
     {
-     "headline": "卓驭发布重卡智驾方案磐行，年省油费 2-3 万",
+     "headline": "卓驭发布重卡智驾方案磐行，年省2-3万油钱",
      "points": [
       {
        "en": "",
-       "zh": "卓驭科技发布商用车智能辅助驾驶方案「磐行」，用 AI 强化学习节油算法，实测节油率 4.5%—7.5%，单车一年可省约 2 至 3 万元油钱。"
+       "zh": "卓驭科技发布商用车智能辅助驾驶方案“磐行”，其AI强化学习节油算法实测节油率4.5%—7.5%，单车一年可省约2万至3万元。"
       }
      ],
-     "why": "智驾技术从乘用车下沉到商用车，节油回本逻辑直击物流成本痛点。",
+     "why": "智驾技术向商用车延伸，节油回本直击物流成本痛点。",
      "url": "https://www.ifanr.com/1686855?utm_source=rss&utm_medium=rss&utm_campaign=",
      "source": "爱范儿",
      "sources_all": [
@@ -383,14 +375,14 @@
      "detailed": false
     },
     {
-     "headline": "斯柯达柯迪亚克长测：能装冰箱的多面手",
+     "headline": "斯柯达柯迪亚克长测：能装冰箱的SUV",
      "points": [
       {
-       "en": "Potent and capacious seven-seater is turning out to be several different types of car in one",
-       "zh": "这款动力充沛、空间宽裕的七座车，正展现出集多种车型功能于一身的特点。"
+       "en": "Happily, however, the Skoda Kodiaq is, and given I had to spend some time in a Vauxhall Mokka and then a Corsa anyway, it was nice for the Kodiaq to prove useful – and for me to get a second opinion on it from another staffer.",
+       "zh": "不过令人高兴的是，斯柯达柯迪亚克确实装得下，而且既然我反正得花些时间开沃克斯豪尔Mokka和Corsa，柯迪亚克能派上用场是件好事，也让我从另一位同事那里得到了对它的第二意见。"
       }
      ],
-     "why": "长期测试揭示 SUV 在实用场景中的多面性，对购车决策有参考价值。",
+     "why": "长测以生活场景检验空间实用性，体现家用SUV真实价值。",
      "url": "https://www.autocar.co.uk/car-news/features/pick-hot-hatch-estate-our-skoda-kodiaq-isnt-just-suv",
      "source": "Autocar",
      "sources_all": [
@@ -401,15 +393,15 @@
      "detailed": false
     },
     {
-     "headline": "Rivian 充电网络一年增长 39%，超 1100 桩",
+     "headline": "Rivian明年推AI助手，可代客买咖啡与预约服务",
      "points": [
       {
-       "en": "Rivian’s Adventure Network of DC fast chargers has expanded nearly 40% in the last 12 months, surpassing 1,100 individual chargers and 150 locations across the United States.",
-       "zh": "Rivian 的 Adventure Network 直流快充网络过去 12 个月扩张近 40%，在美国已拥有超过 1100 个充电桩和 150 个站点。"
+       "en": "When Rivian launched its in-house AI assistant in May, the company promised that the tech would soon do far more than answer ChatGPT-style questions, switch on the A/C, or text your friends.",
+       "zh": "当Rivian在5月推出自研AI助手时，公司承诺这项技术很快将远不止于回答ChatGPT式问题、打开空调或给朋友发短信。"
       }
      ],
-     "why": "自建补能网络是新兴车企留住用户的关键基建投入。",
-     "url": "https://insideevs.com/news/813896/rivian-adventure-networks-dc-fast-chargers-growth-q3-2026/",
+     "why": "车载AI从语音控制走向生活服务，软件定义汽车加速。",
+     "url": "https://insideevs.com/features/813951/rivian-chief-software-officer-wassym-bensaid-interview-ai-assistant/",
      "source": "InsideEVs",
      "sources_all": [
       "InsideEVs"
@@ -419,15 +411,15 @@
      "detailed": false
     },
     {
-     "headline": "Rivian 明年将推 AI 代买咖啡与上门服务",
+     "headline": "美国电动车补贴取消一年，销量下滑后缓慢回升",
      "points": [
       {
-       "en": "When Rivian launched its in-house AI assistant in May, the company promised that the tech would soon do far more than answer ChatGPT-style questions, switch on the A/C, or text your friends.",
-       "zh": "Rivian 今年 5 月推出自研 AI 助手时承诺，这项技术很快将远不止于回答 ChatGPT 式问题、开空调或给朋友发短信。"
+       "en": "It’s been a year and change since the biggest shock America’s electric car market has ever seen.",
+       "zh": "距离美国电动车市场遭遇史上最大冲击已经过去一年多。"
       }
      ],
-     "why": "车载 AI 助手从语音控制走向生活服务集成，重新定义车与人的关系。",
-     "url": "https://insideevs.com/features/813951/rivian-chief-software-officer-wassym-bensaid-interview-ai-assistant/",
+     "why": "政策退坡后市场真实需求显现，影响全球电动化预期。",
+     "url": "https://insideevs.com/features/813947/after-a-year-without-tax-credits-evs-are-down-not-out/",
      "source": "InsideEVs",
      "sources_all": [
       "InsideEVs"
@@ -444,7 +436,7 @@
    "cn": "数码",
    "blurb": "手机、电脑与硬件",
    "accent": "#0984e3",
-   "intro": "本周数码领域显示技术与终端形态继续突破边界，印刷OLED产线进入设备安装、透明掌机众筹成功；同时苹果新品爆料与AI收购动作不断，游戏模拟器生态也在快速演进。",
+   "intro": "本周数码领域既有显示产线的关键节点，也有掌机与手机的新爆料，硬件创新和产品迭代仍在加速。与此同时，破解与模拟器生态的推进，以及苹果的收购动作，也折射出行业竞争与合规的新动向。",
    "note": "",
    "items": [
     {
@@ -452,18 +444,18 @@
      "points": [
       {
        "en": "",
-       "zh": "TCL华星t8项目主生产设备于10月31日进场安装，全球首条印刷OLED G8.6代产线从厂房建设期转入设备安装与调试期。"
+       "zh": "TCL华星t8项目主生产设备于10月31日进场安装，全球首条印刷OLED G8.6代产线由厂房建设转入设备安装调试阶段。"
       },
       {
        "en": "",
-       "zh": "项目总投资约295亿元，设计月加工玻璃基板约2.25万片，产品覆盖平板、笔记本、显示器，并可延伸至柔性折叠屏。"
+       "zh": "项目总投资约295亿元，设计月加工玻璃基板约2.25万片，产品覆盖平板、笔记本和显示器，并可延伸至柔性折叠屏。"
       },
       {
        "en": "",
-       "zh": "印刷OLED采用喷墨打印按需沉积有机发光材料，相比真空蒸镀材料利用率更高、更绿色高效，项目计划2027年第四季度量产。"
+       "zh": "印刷OLED采用喷墨打印按需沉积有机发光材料，材料利用率更高、生产更绿色高效，项目计划2027年第四季度量产。"
       }
      ],
-     "why": "印刷OLED首次走向G8.6代量产，或改变显示面板成本结构。",
+     "why": "印刷OLED首次走向G8.6代量产，可能改变显示面板成本结构。",
      "url": "https://www.ithome.com/1/020/592.htm",
      "source": "IT之家",
      "sources_all": [
@@ -474,22 +466,22 @@
      "detailed": true
     },
     {
-     "headline": "全球首款全透明掌机Arduview众筹达标，重50克",
+     "headline": "全透明掌机Arduview众筹达标，屏幕也透明",
      "points": [
       {
        "en": "",
-       "zh": "号称全球首款全透明游戏机的Arduview已在Kickstarter上成功达成众筹目标，距结束还有38天。"
+       "zh": "号称全球首款全透明掌机的Arduview已在Kickstarter上达成众筹目标，距离结束还有38天。"
       },
       {
        "en": "",
-       "zh": "该掌机只有信用卡大小，连OLED屏幕都是透明的，关机时像普通玻璃，开机后发光像素呈青色，背面也能看到画面。"
+       "zh": "该机只有信用卡大小，采用透明外壳、透明电路板和透明OLED屏，开机后发光像素呈青色，无显示区域保持透明。"
       },
       {
        "en": "",
        "zh": "整机重约50克，基于开源Arduboy平台和ATmega32u4微控制器，预装400款8位游戏，早鸟价约487元起。"
       }
      ],
-     "why": "透明屏幕与开源硬件结合，展示了掌机设计的另类可能。",
+     "why": "透明屏幕与开源设计结合，展示了掌机形态的一种新可能。",
      "url": "https://www.ithome.com/1/020/620.htm",
      "source": "IT之家",
      "sources_all": [
@@ -500,19 +492,19 @@
      "detailed": true
     },
     {
-     "headline": "iPhone Air 2爆料：双4800万像素镜头配2nm A20",
+     "headline": "iPhone Air 2爆料：双4800万像素+2nm A20",
      "points": [
       {
        "en": "",
-       "zh": "爆料称iPhone Air 2将搭载台积电2nm工艺的A20系列芯片，性能提升的同时降低功耗，对超薄机身尤为重要。"
+       "zh": "爆料称iPhone Air 2将搭载台积电2nm工艺的A20系列芯片，预计2027年春季与iPhone 18系列一同发布。"
       },
       {
        "en": "",
-       "zh": "影像方面预计新增一颗4800万像素超广角摄像头，与主摄组成双摄，弥补第一代仅单摄的短板。"
+       "zh": "新机后置摄像头将由单颗4800万像素升级为4800万主摄加4800万超广角双摄，弥补第一代影像短板。"
       },
       {
        "en": "",
-       "zh": "电池容量可能达到3500mAh或更高，机身厚度或进一步缩减至约5.2毫米，预计2027年春季发布。"
+       "zh": "电池容量可能提升至3500mAh或更高，机身厚度或进一步缩减至约5.2毫米，并可能采用N2无线芯片和C2基带。"
       }
      ],
      "why": "超薄机型补强影像与续航，反映苹果产品线策略调整。",
@@ -530,10 +522,10 @@
      "points": [
       {
        "en": "",
-       "zh": "乐元素虚幻引擎5大世界动作RPG《白银之城》将于12月14日开启全球公测，登陆PC、PS5、安卓和iOS，全球预约量已突破1500万。"
+       "zh": "乐元素虚幻引擎5大世界动作RPG《白银之城》将于12月14日开启全球公测，登陆PC、PS5、安卓和iOS，预约量已突破1500万。"
       }
      ],
-     "why": "预约量破1500万，二游大世界赛道再添重量级选手。",
+     "why": "二次元大世界赛道再添新品，预约量显示市场关注度。",
      "url": "https://www.ithome.com/1/020/582.htm",
      "source": "IT之家",
      "sources_all": [
@@ -544,14 +536,14 @@
      "detailed": false
     },
     {
-     "headline": "爱好者破解PS5运行《宝可梦：Pokopia》，画面出错",
+     "headline": "破解PS5运行《宝可梦：Pokopia》画面出错",
      "points": [
       {
        "en": "",
-       "zh": "主机改装爱好者已在破解的PS5上运行《宝可梦：Pokopia》，需先载入Ubuntu 24.04再通过第三方环境启动，画面因缺少着色器和纹理出现严重错误。"
+       "zh": "爱好者通过Ubuntu 24.04和第三方环境在破解PS5上运行《宝可梦：Pokopia》，角色移动和对话可用，但因缺少着色器和纹理，画面物体多显示为黑色轮廓。"
       }
      ],
-     "why": "展示破解主机的可玩边界，也提示图形管线仍是难点。",
+     "why": "展示破解主机的可玩边界，也提示模拟生态的脆弱性。",
      "url": "https://www.cnbeta.com.tw/articles/game/1584514.htm",
      "source": "cnBeta",
      "sources_all": [
@@ -562,14 +554,14 @@
      "detailed": false
     },
     {
-     "headline": "《利刃出鞘》导演推出iPhone相机应用Chromagraph",
+     "headline": "《利刃出鞘》导演推出iPhone相机应用",
      "points": [
       {
        "en": "This week, Hollywood director Rian Johnson introduced Chromagraph Camera, an iPhone app he commissioned from cinematographer Steve Yedlin that promises to bring the same image processing used in the ‘Knives Out‘ films to the iPhone.",
        "zh": "本周，好莱坞导演莱恩·约翰逊推出了Chromagraph Camera，这款iPhone应用由他委托摄影师史蒂夫·耶德林开发，号称能把《利刃出鞘》系列电影所用的图像处理效果带到iPhone上。"
       }
      ],
-     "why": "名导下场做相机应用，为手机摄影提供电影级调色思路。",
+     "why": "电影级调色下放手机，为摄影爱好者提供新玩法。",
      "url": "https://9to5mac.com/2026/10/30/knives-out-director-launches-iphone-camera-app-that-shoots-like-his-movies/",
      "source": "9to5Mac",
      "sources_all": [
@@ -580,11 +572,11 @@
      "detailed": false
     },
     {
-     "headline": "Switch 2模拟器进展神速，《马车世界》PC全速运行",
+     "headline": "Switch 2模拟器进展神速，《马车世界》PC可跑",
      "points": [
       {
        "en": "",
-       "zh": "Switch 2被破解仅一周多后，基于Eden实验性代码的开源项目Eglantine已能在PC上运行《马里奥赛车世界》，部分开发者称可依硬件配置实现全速运行。"
+       "zh": "Switch 2被破解仅一周多后，基于Eden实验性支持的Eglantine开源模拟器项目已能在PC上运行《马里奥赛车世界》，部分开发者称可根据硬件配置实现全速运行。"
       }
      ],
      "why": "破解到可运行商业游戏仅数日，模拟生态成型速度惊人。",
@@ -598,14 +590,14 @@
      "detailed": false
     },
     {
-     "headline": "WhatsApp群聊新增四项功能，含提及与回复筛选",
+     "headline": "WhatsApp群聊新增四项管理功能",
      "points": [
       {
        "en": "In a blog post this week, WhatsApp confirmed that it is rolling out four new features designed to make it easier to manage group chats and keep track of what’s going on in each one.",
-       "zh": "本周，WhatsApp在一篇博客文章中确认，正在推出四项新功能，旨在让群聊管理更轻松，也更容易掌握每个群里的动态。"
+       "zh": "在本周的一篇博客文章中，WhatsApp确认正在推出四项新功能，旨在让群聊管理更轻松，并帮助用户掌握每个群聊里的动态。"
       }
      ],
-     "why": "群聊管理工具升级，提升高频社交场景的使用效率。",
+     "why": "群聊功能细化，提升高频社交场景的使用效率。",
      "url": "https://9to5mac.com/2026/10/30/whatsapp-announces-four-new-features-to-make-group-chats-easier-to-manage/",
      "source": "9to5Mac",
      "sources_all": [
@@ -616,14 +608,14 @@
      "detailed": false
     },
     {
-     "headline": "iPhone Pro价格对比：2019年999美元起，2026年上涨",
+     "headline": "iPhone Pro价格对比：2019年999美元起",
      "points": [
       {
        "en": "The iPhone 11 Pro launched in 2019 at a starting price of $999 for its 64 GB variant.",
        "zh": "iPhone 11 Pro于2019年发布，64GB版本起售价为999美元。"
       }
      ],
-     "why": "七年价格变迁折射内存涨价与旗舰机成本压力。",
+     "why": "七年价格变迁，折射内存涨价与旗舰机成本压力。",
      "url": "https://www.engadget.com/2300201/how-much-iphone-pro-cost-2021-vs-2026/",
      "source": "Engadget",
      "sources_all": [
@@ -638,10 +630,10 @@
      "points": [
       {
        "en": "Apple recently struck a deal to acquire Ascend.io, a company focused on agentic data engineering technology.",
-       "zh": "苹果近期达成协议收购Ascend.io，这家公司专注于智能体式数据工程技术。"
+       "zh": "苹果近日达成协议收购Ascend.io，这家公司专注于智能体数据工程技术。"
       }
      ],
-     "why": "收购补强AI数据工程能力，透露苹果智能体布局方向。",
+     "why": "苹果补强AI数据工程能力，收购策略值得关注。",
      "url": "https://9to5mac.com/2026/10/30/apple-acquires-ascend%e2%80%a4io-an-agentic-ai-engineering-startup/",
      "source": "9to5Mac",
      "sources_all": [
@@ -659,26 +651,26 @@
    "cn": "摄影",
    "blurb": "器材、技术与影像",
    "accent": "#00b894",
-   "intro": "本周摄影圈的关键词是成本与版权：原材料涨价开始传导到相机定价，而一张经典新闻照片的版权判决提醒每位按快门的人，相机归谁可能决定照片归谁。器材端则热闹依旧，尼康发布带内置增距镜的恒定 f/2.8 长焦变焦，副厂与配件新品也不断。",
+   "intro": "本周摄影圈的关键词是「成本」与「稀缺」：AI 数据中心抢走存储芯片产能，佳能已承认零部件短缺可能推高相机售价；另一边，尼康用内置增距镜的 120-300mm f/2.8 抢下「世界首款」，小众饼干镜头与哈苏东京旗舰店则说明差异化仍在继续。版权与影像叙事也值得留意——一张登上《新闻周刊》封面的照片，版权被判给了雇主。",
    "note": "",
    "items": [
     {
-     "headline": "佳能暗示存储涨价或推高相机售价",
+     "headline": "佳能承认零部件短缺，相机或涨价",
      "points": [
       {
+       "en": "Canon responded that Printing and Imaging are both facing “component shortages.”",
+       "zh": "佳能回应称，打印业务与影像业务都面临「零部件短缺」。"
+      },
+      {
+       "en": "These supply shortages typically raise costs, as seen across the flash memory space amid increased demand from AI data centers.",
+       "zh": "这类供应短缺通常会推高成本，闪存领域就是如此——AI 数据中心的需求增长正在挤压供应。"
+      },
+      {
        "en": "Sure enough, Canon mentioned it during a Q&A on its FY2026 Q3 financial results, and the company will not be the only one to cite rising costs over the next few weeks.",
-       "zh": "果不其然，佳能在 2026 财年第三季度财报问答环节提到了这一点，而且在接下来几周里，引用成本上涨的厂商不会只有它一家。"
-      },
-      {
-       "en": "In August, Fujifilm mentioned the impact of rising raw materials prices in its routine financial reporting, and PetaPixel speculated that Fujifilm would be far from the only camera maker affected.",
-       "zh": "今年 8 月，富士在例行财报中提到了原材料价格上涨的影响，PetaPixel 当时就推测，受影响的相机厂商远不止富士一家。"
-      },
-      {
-       "en": "It was the first domino to fall.",
-       "zh": "这是倒下的第一张多米诺骨牌。"
+       "zh": "果不其然，佳能在 2026 财年第三季度财报问答环节提到了这一点，而未来几周内 citing 成本上涨的厂商不会只有它一家。"
       }
      ],
-     "why": "存储涨价正从手机蔓延到相机，换机预算要提前打算。",
+     "why": "存储涨价正从手机蔓延到相机，换机成本可能上升。",
      "url": "https://petapixel.com/2026/10/30/canon-may-raise-camera-prices-due-to-increased-memory-costs/",
      "source": "PetaPixel",
      "sources_all": [
@@ -689,22 +681,22 @@
      "detailed": true
     },
     {
-     "headline": "DJ-Optical 推出超薄 M 卡口饼干镜头",
+     "headline": "DJ-Optical 推 15mm 厚 M 口饼干头",
      "points": [
       {
-       "en": "DJ-Optical, which sells its lenses on eBay, has a new ultra-slim manual-focus pancake lens that looks quite stylish.",
-       "zh": "在 eBay 上卖镜头的 DJ-Optical 推出了一款新的超薄手动对焦饼干镜头，外观相当有型。"
+       "en": "It is just 15 millimeters (0.59 inches) long, not counting the mount itself.",
+       "zh": "不算卡口部分，它只有 15 毫米（0.59 英寸）长。"
       },
       {
-       "en": "",
-       "zh": "市面上又多了一支新的 M 卡口饼干镜头。"
+       "en": "In this case, a 35mm f/3.5 lens suits a wide range of photographic applications.",
+       "zh": "就这款镜头而言，35mm f/3.5 的规格能覆盖相当广泛的拍摄场景。"
       },
       {
-       "en": "DJ-Optical, which sells its lenses on eBay, has a new ultra-slim manual-focus pancake lens that looks quite stylish.",
-       "zh": "DJ-Optical 的新品主打极致轻薄与手动对焦，走的是复古便携路线。"
+       "en": "It also doesn’t add much weight to a kit, since the lens is just 140 grams (4.9 ounces).",
+       "zh": "它也不会给装备增加多少重量，整支镜头仅重 140 克（4.9 盎司）。"
       }
      ],
-     "why": "小众副厂为 M 卡口补上轻薄挂机选择，扫街党可留意。",
+     "why": "「机身盖式」镜头让旁轴相机随身携带更无负担。",
      "url": "https://petapixel.com/2026/10/31/theres-a-new-m-mount-pancake-lens-in-town/",
      "source": "PetaPixel",
      "sources_all": [
@@ -715,11 +707,11 @@
      "detailed": true
     },
     {
-     "headline": "摄影师拍下经典封面却输了版权官司",
+     "headline": "他拍下经典封面照，版权却归雇主",
      "points": [
       {
        "en": "Lester LaRue shot 44 frames on the morning of April 19, 1995, with his employer's camera, his employer's film, and his employer's car to get him there.",
-       "zh": "1995 年 4 月 19 日早上，莱斯特·拉鲁用雇主的相机、雇主的胶卷，开着雇主的车赶到现场，拍下了 44 张照片。"
+       "zh": "1995 年 4 月 19 日早晨，莱斯特·拉鲁用雇主的相机、雇主的胶卷，坐着雇主的车赶到现场，拍下了 44 张照片。"
       },
       {
        "en": "One of those frames ran on the cover of Newsweek's May 1 issue.",
@@ -730,7 +722,7 @@
        "zh": "联邦法院后来裁定，这些照片的版权从来就不属于他。"
       }
      ],
-     "why": "职务作品版权归属的判例，给所有接活拍照的人提了醒。",
+     "why": "职务作品版权归属的判例，直接关系到摄影师的器材与合同。",
      "url": "https://fstoppers.com/legal/he-shot-iconic-photo-and-lost-copyright-904413?utm_source=fstoppers&utm_medium=RSS&utm_campaign=rss_feed_articles",
      "source": "Fstoppers",
      "sources_all": [
@@ -741,14 +733,14 @@
      "detailed": true
     },
     {
-     "headline": "两张尾鳍照证实座头鲸横跨 13046 公里",
+     "headline": "两张偶然照片证实座头鲸跨洋 13046 公里",
      "points": [
       {
        "en": "The two frames belong to the same animal, and the two sighting points sit 13,046 kilometers apart.",
-       "zh": "这两张照片拍的是同一头鲸，而两个拍摄地点相距 13046 公里。"
+       "zh": "这两张照片拍的是同一头鲸，而两个目击点相距 13046 公里。"
       }
      ],
-     "why": "公民科学式的照片比对，让一张普通尾鳍照有了科研价值。",
+     "why": "尾鳍识别让公民摄影成为鲸类迁徙研究的关键证据。",
      "url": "https://fstoppers.com/animal/how-two-fluke-photos-revealed-humpback-had-crossed-world-904392?utm_source=fstoppers&utm_medium=RSS&utm_campaign=rss_feed_articles",
      "source": "Fstoppers",
      "sources_all": [
@@ -759,14 +751,14 @@
      "detailed": false
     },
     {
-     "headline": "乐摄宝 Fastpack IV 双肩包评测出炉",
+     "headline": "Lowepro Fastpack IV 全能摄影包评测",
      "points": [
       {
        "en": "But Lowepro's Fastpack backpack line has always offered bags that can be used for almost anything without compromising the experience.",
-       "zh": "但乐摄宝的 Fastpack 背包系列一直主打一包多用，且不牺牲使用体验。"
+       "zh": "但乐摄宝 Fastpack 背包系列一直提供几乎什么场合都能用、又不牺牲使用体验的包款。"
       }
      ],
-     "why": "一包通吃的耐用型摄影包，适合通勤与短途出行兼顾。",
+     "why": "一包多用的设计思路，对预算有限的学生尤其实用。",
      "url": "https://fstoppers.com/gear/all-around-durable-bag-carries-everything-need-lowepro-fastpack-iv-review-904953?utm_source=fstoppers&utm_medium=RSS&utm_campaign=rss_feed_articles",
      "source": "Fstoppers",
      "sources_all": [
@@ -777,14 +769,14 @@
      "detailed": false
     },
     {
-     "headline": "摄影师用“锚点”理论解释小主体构图",
+     "headline": "小主体也能撑起整张照片",
      "points": [
       {
        "en": "When a landscape looks unreal, Popsys looks for something ordinary to include so the scene reads as real.",
-       "zh": "当风景看起来不真实时，波普西斯会找一个普通物件放进画面，让场景显得可信。"
+       "zh": "当风景显得不真实时，波普西斯会找一个普通物件放进画面，让场景看起来可信。"
       }
      ],
-     "why": "给构图失衡一个可操作的解释，拍风景时能直接用上。",
+     "why": "「锚定」思路能解释为何小主体反而稳住画面。",
      "url": "https://fstoppers.com/education/why-tiny-subject-can-still-carry-whole-photo-905300?utm_source=fstoppers&utm_medium=RSS&utm_campaign=rss_feed_articles",
      "source": "Fstoppers",
      "sources_all": [
@@ -795,14 +787,14 @@
      "detailed": false
     },
     {
-     "headline": "一组 20 世纪中期万圣节儿童照曝光",
+     "headline": "Robert E. Jackson 收藏的万圣节老照片",
      "points": [
       {
-       "en": "These unsettling mid-20th century photos of kids in Halloween costumes are bound to bring a few memories -- or nightmares -- for viewers.",
-       "zh": "这些 20 世纪中期穿着万圣节装扮的孩子照片令人不安，想必会让观者勾起一些回忆——或者噩梦。"
+       "en": "I like photos which are detached from their original narrative.",
+       "zh": "我喜欢那些脱离了原始叙事的照片。"
       }
      ],
-     "why": "老照片的诡异质感，正好是节日氛围与摄影史的交汇。",
+     "why": "收藏者看重情绪而非背景，提示照片意义可被重新赋予。",
      "url": "https://petapixel.com/2026/10/29/these-creepy-halloween-photos-date-back-to-the-mid-20th-century/",
      "source": "PetaPixel",
      "sources_all": [
@@ -813,14 +805,14 @@
      "detailed": false
     },
     {
-     "headline": "大疆与哈苏将在东京开日本首家旗舰店",
+     "headline": "日本首家 DJI×哈苏旗舰店落地东京",
      "points": [
       {
-       "en": "DJI and its Japanese domestic distributor, Sekido Co., Ltd., are opening Japan's first DJI and Hasselblad Dual-Concept Flagship Store this weekend in Tokyo.",
-       "zh": "大疆与其日本国内经销商 Sekido 株式会社将于本周末在东京开设日本首家 DJI 与哈苏双概念旗舰店。"
+       "en": "The two-story retail location will let customers get hands-on with and buy DJI products, including drones and cameras, as well as Hasselblad cameras and lenses.",
+       "zh": "这家两层门店让顾客可以上手体验并购买大疆的无人机和相机，以及哈苏的相机与镜头。"
       }
      ],
-     "why": "无人机与中画幅品牌同店，反映大疆对高端影像的整合。",
+     "why": "哈苏借 X2D II 热销在日本补上渠道短板。",
      "url": "https://petapixel.com/2026/10/29/japan-is-getting-its-first-dji-x-hasselblad-retail-store/",
      "source": "PetaPixel",
      "sources_all": [
@@ -831,14 +823,14 @@
      "detailed": false
     },
     {
-     "headline": "尼康发布 120-300mm f/2.8 内置增距镜镜头",
+     "headline": "尼康 120-300mm f/2.8 内置 1.4 倍增距镜",
      "points": [
       {
-       "en": "Nikon has officially announced the NIKKOR Z 120-300mm f/2.8 TC VR S which takes aim at the Canon RF 100-300mm f/2.8L IS USM, but ups the game with a built-in 1.4x teleconverter.",
-       "zh": "尼康正式发布 NIKKOR Z 120-300mm f/2.8 TC VR S，对标佳能 RF 100-300mm f/2.8L IS USM，并以内置 1.4 倍增距镜更胜一筹。"
+       "en": "Nikon would like to let everyone know that the NIKKOR Z 120-300mm f/2.8 TC VR S is the first f/2.8 zoom with a built-in teleconverter.",
+       "zh": "尼康想让大家知道，NIKKOR Z 120-300mm f/2.8 TC VR S 是首款内置增距镜的 f/2.8 变焦镜头。"
       }
      ],
-     "why": "恒定 f/2.8 加内置增距镜，体育与野生动物拍摄多一个选择。",
+     "why": "长焦变焦加内置增距镜，直接对标佳能 100-300mm。",
      "url": "https://www.canonrumors.com/nikon-nikkor-z-120-300mm-f-2-8-tc-vr-s-vs-canon-rf-100-300mm-f-2-8l-is-comparison-specs/",
      "source": "Canon Rumors",
      "sources_all": [
@@ -849,14 +841,14 @@
      "detailed": false
     },
     {
-     "headline": "2026 年野生动物便携相机选购指南",
+     "headline": "2026 年拍野生动物怎么选便携相机",
      "points": [
       {
        "en": "A compact camera is an appealing option because it combines a camera body and lens in one package.",
        "zh": "便携相机之所以有吸引力，是因为它把机身和镜头合为一体。"
       }
      ],
-     "why": "给不想背长焦大炮的入门拍鸟者一份务实清单。",
+     "why": "轻装出行与长焦画质之间的取舍有了具体参考。",
      "url": "https://www.canonrumors.com/how-to-choose-a-compact-camera-for-wildlife-photography-in-2026/",
      "source": "Canon Rumors",
      "sources_all": [
@@ -1043,10 +1035,10 @@
   "articles": 729,
   "sources_total": 24,
   "sources_ok": 24,
-  "elapsed": 81.5,
+  "elapsed": 47.6,
   "usage": {
-   "prompt_tokens": 20196,
-   "completion_tokens": 6359,
+   "prompt_tokens": 21164,
+   "completion_tokens": 5823,
    "calls": 6
   }
  }
