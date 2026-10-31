@@ -8,3 +8,4 @@ _shots/
 .env
 site/preview/
 logs/
+.deploy_key/
