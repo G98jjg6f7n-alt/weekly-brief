@@ -1,0 +1,27 @@
+name: selftest
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 不依赖密钥跑一遍完整流程
+        run: python3 run.py --no-llm --no-open
+      - name: 检查产物
+        run: |
+          test -s site/index.html
+          test -s site/archive.html
+          test -s "site/issues/$(ls site/issues | tail -1)"
+          echo "产物正常：$(wc -c < site/index.html) 字节"

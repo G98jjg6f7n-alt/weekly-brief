@@ -1,0 +1,953 @@
+{
+ "week": "2026-W44",
+ "range": "10月26日 – 11月1日",
+ "generated_at": "2026-10-31T21:39+08:00",
+ "generated_date": "10月31日",
+ "opening": "",
+ "mode": "rule",
+ "sections": [
+  {
+   "key": "ai",
+   "name": "AI",
+   "cn": "人工智能",
+   "blurb": "模型、产品与算力",
+   "accent": "#6c5ce7",
+   "intro": "本周人工智能领域共 10 条更新。",
+   "note": "",
+   "items": [
+    {
+     "headline": "全球首富马斯克预言：2029 年太空 AI 算力将远超地面算力",
+     "points": [
+      {
+       "en": "",
+       "zh": "IT之家 10 月 31 日消息，全球首富埃隆 · 马斯克（Elon Musk）今天（10 月 31 日）在 X 平台发布推文，预言 2029 年部署到近地轨道的 AI 与云计算处理能力，将远远超过地面算力。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.ithome.com/1/020/499.htm",
+     "source": "IT之家",
+     "sources_all": [
+      "IT之家"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "OpenAI已将最新一轮融资目标从300亿美元下调至约200亿美元",
+     "points": [
+      {
+       "en": "",
+       "zh": "10月31日消息，据英国《金融时报》援引多名知情人士报道，ChatGPT开发商OpenAI已将最新一轮融资目标从300亿美元下调至约200亿美元，拟议估值也从此前的1.4万亿美元降至1.25万亿美元。 《华尔街日报》随后披露，OpenAI目前获得的投资承诺约为110亿美元，还不到最初目标的一半。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.cnbeta.com.tw/articles/tech/1584516.htm",
+     "source": "cnBeta",
+     "sources_all": [
+      "cnBeta"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "苹果官宣 Apple 智能接入阿里千问；DeepSeek 完成第二轮 1055 亿元融资，估值达 6155 亿元；英特尔股价开盘跌超 30%｜极客早知道",
+     "points": [
+      {
+       "en": "",
+       "zh": "国行 Apple 智能确定上线时间：11 月开放测试，千问接入 Siri\nOpenAI 撤回 Pro 200 降额计划，同时提高 Work 和 Codex 用量\n英特尔股价开盘跌超 30%，或将创下有记录以来最大单日跌幅\niPhone Air 2 被曝将增加超广角镜头，电池容量也有望提升\nDeepSeek 完成第二轮…"
+      }
+     ],
+     "why": "",
+     "url": "http://www.geekpark.net/news/373220",
+     "source": "极客公园",
+     "sources_all": [
+      "极客公园"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "无界动力与京东达成战略合作，机器人 K15 上岗七鲜咖啡",
+     "points": [
+      {
+       "en": "",
+       "zh": "IT之家 10 月 31 日消息，10 月 31 日，无界动力宣布与京东正式签署战略合作协议，围绕零售场景应用、商业化平台与生态渠道、产业资源协同等多个维度开展立体化合作。 此次合作已迎来首批成果：10 月，双方首个零售合作项目落地，无界动力机器人 K15 已于七鲜咖啡（西宸里店）和七鲜咖啡（长楹天街店）正式上岗；"
+      }
+     ],
+     "why": "",
+     "url": "https://www.ithome.com/1/020/598.htm",
+     "source": "IT之家",
+     "sources_all": [
+      "IT之家"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "刚刚，ChatGPT Pro 额度官宣翻倍，但免费重置可能要没了",
+     "points": [
+      {
+       "en": "",
+       "zh": "OpenAI 突然宣布额度翻倍，但 200 美元用户有点特殊\n从准备削减额度，到宣布维持原状，OpenAI 被用户骂回去了？ 被用户吐槽了一个月，OpenAI 终于决定不再折腾大家的使用额度了。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.ifanr.com/1686830?utm_source=rss&utm_medium=rss&utm_campaign=",
+     "source": "爱范儿",
+     "sources_all": [
+      "cnBeta",
+      "爱范儿"
+     ],
+     "date": "10/30",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "理想 AI 眼镜 Livis 10 月 OTA 升级，个人 Agent 新增接入 Hermes",
+     "points": [
+      {
+       "en": "",
+       "zh": "IT之家 10 月 31 日消息，理想汽车今日宣布理想 AI 眼镜 Livis 10 月 OTA 重磅升级，运动健康分析报告进一步提升； 视觉问答独家接入小红书 Agent；"
+      }
+     ],
+     "why": "",
+     "url": "https://www.ithome.com/1/020/553.htm",
+     "source": "IT之家",
+     "sources_all": [
+      "IT之家"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "百度 APP 发布四大 AI 升级，搜索已实现递归自我进化",
+     "points": [
+      {
+       "en": "",
+       "zh": "10 月 30 日，百度 APP 在北京举办产品升级沟通会。 百度搜索实现递归自我进化，并全新升级搜索 AI API，活动期间最低价仅需 4.9 元/千次，低于 DeepSeek 搜索 API。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.qbitai.com/2026/10/506771.html",
+     "source": "量子位",
+     "sources_all": [
+      "量子位",
+      "雷峰网"
+     ],
+     "date": "10/30",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "刚刚，Claude宣布取消5小时限制！首批Ultra用户已「解封」",
+     "points": [
+      {
+       "en": "",
+       "zh": "Claude200美元的订阅用户，终于可以和烦人的5小时限制说再见了！ ！"
+      }
+     ],
+     "why": "",
+     "url": "https://www.qbitai.com/2026/10/506855.html",
+     "source": "量子位",
+     "sources_all": [
+      "cnBeta",
+      "量子位"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "“超能模式”重磅登场！联想天禧AI 4.5全端升级，三大场景打造“职场超能搭档”",
+     "points": [
+      {
+       "en": "",
+       "zh": "超全能办公：连接器与技能全打通，一句话搞定复杂任务\n超省心差旅：全双工动嘴即办，远程调起AIPC替你干活\n硬核算力加持，联想AI主机升级天禧4.5，实现Token自由\n10月30日，联想天禧AI 4.5迎来AIPC端正式发布。 10月30日，联想天禧AI 4.5迎来AIPC端正式发布。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.qbitai.com/2026/10/506779.html",
+     "source": "量子位",
+     "sources_all": [
+      "量子位"
+     ],
+     "date": "10/30",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "刚刚，国行 Apple 智能官宣，但满血 SiriAI 还得等",
+     "points": [
+      {
+       "en": "",
+       "zh": "就在刚刚，苹果正式宣布将面向中国大陆用户推出 Apple 智能（Apple Intelligence）！ 据悉，首批功能将随 iOS 27.3 开发者测试版（Developer Beta）于 11 月 4 日起率先开启测试。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.ifanr.com/1687012?utm_source=rss&utm_medium=rss&utm_campaign=",
+     "source": "爱范儿",
+     "sources_all": [
+      "爱范儿"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": false
+    }
+   ]
+  },
+  {
+   "key": "auto",
+   "name": "AUTO",
+   "cn": "汽车",
+   "blurb": "新车、电动化与智能驾驶",
+   "accent": "#e17055",
+   "intro": "本周汽车领域共 10 条更新。",
+   "note": "",
+   "items": [
+    {
+     "headline": "全新一代智己 LS6 首月交付突破 8000 台，19.79 万元起",
+     "points": [
+      {
+       "en": "",
+       "zh": "IT之家 10 月 31 日消息，智己汽车今日宣布，全新一代智己 LS6 自 9 月上市以来，累计交付突破 8000 台。 全新一代智己 LS6 于 9 月 23 日宣布上市，共推出三款车型，官方指导价 20.29 万元起，叠加上市权益后 19.79 万元起。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.ithome.com/1/020/589.htm",
+     "source": "IT之家",
+     "sources_all": [
+      "IT之家"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "揭秘宾利首款纯电 SUV 托卡尔：累计测试里程超百万公里，遍历高寒、高温、高海拔",
+     "points": [
+      {
+       "en": "",
+       "zh": "IT之家 10 月 31 日消息，当地时间 30 日，据外媒 motor1 报道，宾利披露的最新信息称，为了在交付前尽可能找出车辆存在的问题，工程师花了数年时间，对品牌首款纯电动 SUV 托卡尔进行极限测试，累计测试里程超过 100 万公里，足迹遍及全球多个气候严酷的地区。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.ithome.com/1/020/522.htm",
+     "source": "IT之家",
+     "sources_all": [
+      "IT之家"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "Waymo携手丰田打造新一代自动驾驶出租车 以纯电动bZ4X为基础",
+     "points": [
+      {
+       "en": "",
+       "zh": "Google母公司Alphabet旗下自动驾驶公司Waymo宣布，将与丰田汽车进一步深化合作，推出以丰田纯电动SUV bZ4X为基础的新一代自动驾驶出租车。 这款车型将专门针对Waymo的自动驾驶系统进行设计和改造，计划于2027年首先在日本开展测试，随后逐步进入英国及其他国际市场。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.cnbeta.com.tw/articles/tech/1584478.htm",
+     "source": "cnBeta",
+     "sources_all": [
+      "cnBeta"
+     ],
+     "date": "10/30",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "商业头条NO.149 | 在欧洲，再造一个比亚迪",
+     "points": [
+      {
+       "en": "",
+       "zh": "只用了五年，比亚迪几乎从零开始成为欧洲乘用车市场的热门品牌，以往这个过程需要以十年为单位计，它是如何做到的？ 王臻WZ周姝祺·2026/10/31 19:03来源：界面新闻\n7月中旬的一个工作日下午，市中心伦巴赫广场的一座百年建筑里，三名比亚迪销售人员都没闲着。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.jiemian.com/article/15277742.html",
+     "source": "界面新闻",
+     "sources_all": [
+      "界面新闻"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "马斯克再撕比尔盖茨：一边资助攻击我的人，一边做空特斯拉",
+     "points": [
+      {
+       "en": "",
+       "zh": "10 月 31 日消息，当地时间 10 月 30 日，特斯拉 CEO 马斯克在社交平台 X 上发文称，比尔 · 盖茨在 \" 资助攻击我的人 \"，同时仍持有针对特斯拉的 \" 大规模空头仓位 \"。 据悉，马斯克此番言论是在回复播客主持人凯蒂 · 米勒的帖子。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.ithome.com/1/020/590.htm",
+     "source": "IT之家",
+     "sources_all": [
+      "IT之家"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "卓驭发布商用车智能辅助驾驶解决方案「磐行」，一年可以让重卡省下 2-3 万元油钱",
+     "points": [
+      {
+       "en": "",
+       "zh": "在不少短视频平台上，公众对于卡车司机这个职业群体有着复杂的情感，一方面这是一个辛苦危险的工作，另一方面因为重型卡车的巨大体量，卡车司机身上又肩负着巨大的安全责任。 站在卡车司机视角，从哪里接货、走哪条路、在哪里加油、什么时候休息，甚至下坡时早一点松开油门，都会影响一趟运输最后能剩下多少钱。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.ifanr.com/1686855?utm_source=rss&utm_medium=rss&utm_campaign=",
+     "source": "爱范儿",
+     "sources_all": [
+      "爱范儿"
+     ],
+     "date": "10/30",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "13.98 万元起！小鹏 MONA L05 正式上市，大五座 SUV 市场的卷王来了",
+     "points": [
+      {
+       "en": "",
+       "zh": "三个月前，小鹏 MONA L03 上市。 作为 MONA 系列的第一台 SUV，L03 为小鹏带来了开门红，但也给小鹏带来了了很大的交付压力。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.ifanr.com/1686761?utm_source=rss&utm_medium=rss&utm_campaign=",
+     "source": "爱范儿",
+     "sources_all": [
+      "爱范儿"
+     ],
+     "date": "10/29",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "大众把三年在中国攒的家底，打包成了一颗「星」",
+     "points": [
+      {
+       "en": "",
+       "zh": "外资车企里，大众第一个在中国攒齐了平台、架构、智驾整套自研技术。 10 月 28 日，合肥，大众汽车集团（中国）办了自己的第一次技术日。"
+      }
+     ],
+     "why": "",
+     "url": "http://www.geekpark.net/news/373086",
+     "source": "极客公园",
+     "sources_all": [
+      "极客公园"
+     ],
+     "date": "10/29",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "蔚来的“三个聚焦”：为规模幻觉买单之后",
+     "points": [
+      {
+       "en": "",
+       "zh": "进入2026年第四季度，蔚来的战略退守已经毫无遮掩。 在此前内部全员讲话中，蔚来创始人李斌提出了一个核心基调：未来三年，蔚来不搞大扩张，核心任务是“聚焦主业，聚焦高端，聚焦核心市场”。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.tmtpost.com/8187393.html",
+     "source": "钛媒体",
+     "sources_all": [
+      "钛媒体"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "Toyota reveals five new lifted Woodland concepts, including the bZ electric SUV",
+     "points": [
+      {
+       "en": "Toyota expands the Woodland badge to new models\nToyota introduced a new family of lifted, “adventure-ready” Woodland concepts based on the RAV4, Grand Highlande…",
+       "zh": ""
+      }
+     ],
+     "why": "",
+     "url": "https://electrek.co/2026/10/30/toyota-reveals-five-new-lifted-woodland-concepts-including-an-ev/",
+     "source": "Electrek",
+     "sources_all": [
+      "Electrek"
+     ],
+     "date": "10/31",
+     "lang": "en",
+     "detailed": false
+    }
+   ]
+  },
+  {
+   "key": "tech",
+   "name": "TECH",
+   "cn": "数码",
+   "blurb": "手机、电脑与硬件",
+   "accent": "#0984e3",
+   "intro": "本周数码领域共 10 条更新。",
+   "note": "",
+   "items": [
+    {
+     "headline": "总投资约 295 亿，全球首条印刷 OLED G8.6 代产线 TCL 华星 t8 项目设备正式搬入",
+     "points": [
+      {
+       "en": "",
+       "zh": "IT之家 10 月 31 日消息，据 TCL 华星消息，10 月 31 日，TCL 华星 t8 项目设备搬入仪式在广州举行，随着主生产设备进场安装，全球首条印刷 OLED G8.6 代产线建设正式从“厂房建设期”切入“设备安装与调试期”。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.ithome.com/1/020/592.htm",
+     "source": "IT之家",
+     "sources_all": [
+      "IT之家"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "曝折叠屏手机明后年分化为大折、阔折两大主流形态，部分厂商双线同步迭代",
+     "points": [
+      {
+       "en": "",
+       "zh": "IT之家 10 月 31 日消息，长期关注国内手机市场份额的数码博主 @RD观测 今天（31 日）晚间在微博发文判断，2027-2028 年，折叠屏手机会分化为两大主流形态：比例为 1:1 的方正大折叠和 4:3 的阔折叠，而部分厂商会双线同步迭代。 1:1 方正大折叠：内部空间充足，电池、散热、影像等更有机会堆料；"
+      }
+     ],
+     "why": "",
+     "url": "https://www.ithome.com/1/020/600.htm",
+     "source": "IT之家",
+     "sources_all": [
+      "IT之家"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "iPhone Air 2最新爆料：升级双4800万像素摄像头2nm A20芯片 电池容量明显提升",
+     "points": [
+      {
+       "en": "",
+       "zh": "苹果下一代超薄手机iPhone Air 2的配置细节再次浮出水面。 根据知名爆料人士Digital Chat Station最新披露的信息，苹果正在为这款新机准备多项硬件升级，包括采用新一代2nm制程处理器、增加一颗后置摄像头、提升电池容量，并继续维持超薄机身设计。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.cnbeta.com.tw/articles/tech/1584422.htm",
+     "source": "cnBeta",
+     "sources_all": [
+      "cnBeta"
+     ],
+     "date": "10/30",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "小米米家台式净饮机 3 已开售：提供 2100W 功率可实现“3 秒即热”，首发 1499 元",
+     "points": [
+      {
+       "en": "",
+       "zh": "IT之家 10 月 31 日消息，小米米家台式净饮机 3 已于昨晚正式开售，官方定价为 1699 元，首发 1499 元。 该产品提供 2100W 功率，可实现“3 秒即热”。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.ithome.com/1/020/502.htm",
+     "source": "IT之家",
+     "sources_all": [
+      "IT之家"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "爱好者在破解PS5运行《宝可梦：Pokopia》 画面仍有严重错误",
+     "points": [
+      {
+       "en": "",
+       "zh": "主机改装爱好者已在破解PlayStation 5上运行《宝可梦：Pokopia》。 这次实验需要先将Ubuntu 24.04载入主机内存，再通过第三方环境启动游戏，并非使用PS5原生系统直接运行。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.cnbeta.com.tw/articles/game/1584514.htm",
+     "source": "cnBeta",
+     "sources_all": [
+      "cnBeta"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "Switch 2模拟器开发进展神速 《马里奥赛车世界》已可在PC上全速运行",
+     "points": [
+      {
+       "en": "",
+       "zh": "在任天堂Switch 2成功被破解仅一周多后，围绕新主机的模拟器开发工作已经取得惊人进展。 最新消息显示，基于Switch 2模拟支持的实验性模拟器项目已经能够在PC上运行《马里奥赛车世界》，部分开发者甚至宣称游戏可根据硬件配置实现“全速运行”。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.cnbeta.com.tw/articles/game/1584550.htm",
+     "source": "cnBeta",
+     "sources_all": [
+      "cnBeta"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "红魔 12 Pro+ 体验：水冷加上 RGB 灯，游戏性能全面升级",
+     "points": [
+      {
+       "en": "",
+       "zh": "最近，红魔发布了新一代旗舰级电竞手机红魔 12 Pro+，定价为 6999 元起。 外观上，红魔 12 Pro+ 延续了方正的背面纯平设计，背面有光滑的大玻璃覆盖，填平后置摄像头凸起的位置。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.ifanr.com/1686916?utm_source=rss&utm_medium=rss&utm_campaign=",
+     "source": "爱范儿",
+     "sources_all": [
+      "爱范儿"
+     ],
+     "date": "10/30",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "天数智芯天垓300实测对标H200，国产GPU接下来拼什么？",
+     "points": [
+      {
+       "en": "",
+       "zh": "在实测场景中达到H200的性能水平后，国产GPU的竞争，开始进一步转向系统效率、软件适配与实际交付。 本周的天数智芯媒体开放日上，最新一代天垓300与H200的实机对比，是最直观的性能展示。"
+      }
+     ],
+     "why": "",
+     "url": "https://www.leiphone.com/category/chips/748GRHfg9VPRbp7x.html",
+     "source": "雷峰网",
+     "sources_all": [
+      "雷峰网"
+     ],
+     "date": "10/30",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "苹果发触屏笔记本，最高 11 万元；DeepSeek V5 模型代码现身；宇树首发财报，净利增 270%",
+     "points": [
+      {
+       "en": "",
+       "zh": "苹果发布首款触屏 MacBook Pro，顶配超 11 万元\n特斯拉拟用人形机器人给 Robotaxi 插拔充电枪\n腾讯视频 2027 大剧片单公布：《三体：黑暗森林》、《流浪地球短篇集》在列\n豆包工作功能上新：支持将「录制电脑操作」保存为技能\nWorkBuddy 手机远程控制电脑功能上线，实时显示屏幕内容\n2026…"
+      }
+     ],
+     "why": "",
+     "url": "http://www.geekpark.net/news/373085",
+     "source": "极客公园",
+     "sources_all": [
+      "极客公园"
+     ],
+     "date": "10/29",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "一图流 | 一张图看懂中国版 Apple 智能",
+     "points": [
+      {
+       "en": "",
+       "zh": "中国版 Apple 智能即将登陆 iPhone，一起看看还有这些细节。 查看全文"
+      }
+     ],
+     "why": "",
+     "url": "https://sspai.com/post/117953",
+     "source": "少数派",
+     "sources_all": [
+      "少数派"
+     ],
+     "date": "10/31",
+     "lang": "zh",
+     "detailed": false
+    }
+   ]
+  },
+  {
+   "key": "photo",
+   "name": "PHOTO",
+   "cn": "摄影",
+   "blurb": "器材、技术与影像",
+   "accent": "#00b894",
+   "intro": "本周摄影领域共 10 条更新。",
+   "note": "",
+   "items": [
+    {
+     "headline": "Canon May Raise Camera Prices Due To Increased Memory Costs",
+     "points": [
+      {
+       "en": "In August, Fujifilm mentioned the impact of rising raw materials prices in its routine financial reporting, and PetaPixel speculated that Fujifilm would be far…",
+       "zh": ""
+      }
+     ],
+     "why": "",
+     "url": "https://petapixel.com/2026/10/30/canon-may-raise-camera-prices-due-to-increased-memory-costs/",
+     "source": "PetaPixel",
+     "sources_all": [
+      "PetaPixel"
+     ],
+     "date": "10/31",
+     "lang": "en",
+     "detailed": true
+    },
+    {
+     "headline": "There’s a New M-Mount Pancake Lens in Town",
+     "points": [
+      {
+       "en": "DJ-Optical, which sells its lenses on eBay, has a new ultra-slim manual-focus pancake lens that looks quite stylish.",
+       "zh": ""
+      }
+     ],
+     "why": "",
+     "url": "https://petapixel.com/2026/10/31/theres-a-new-m-mount-pancake-lens-in-town/",
+     "source": "PetaPixel",
+     "sources_all": [
+      "PetaPixel"
+     ],
+     "date": "10/31",
+     "lang": "en",
+     "detailed": true
+    },
+    {
+     "headline": "He Shot an Iconic Photo—and Lost the Copyright",
+     "points": [
+      {
+       "en": "Two Cameras, Three Feet Apart\nWhat \"Within the Scope of Employment\" Actually Covers\nThe Ultimatum and the $34,623.50\nWhy the Baby and the Firefighter Lost\nThe O…",
+       "zh": ""
+      }
+     ],
+     "why": "",
+     "url": "https://fstoppers.com/legal/he-shot-iconic-photo-and-lost-copyright-904413?utm_source=fstoppers&utm_medium=RSS&utm_campaign=rss_feed_articles",
+     "source": "Fstoppers",
+     "sources_all": [
+      "Fstoppers"
+     ],
+     "date": "10/31",
+     "lang": "en",
+     "detailed": true
+    },
+    {
+     "headline": "How Two Fluke Photos Revealed a Humpback Had Crossed the World",
+     "points": [
+      {
+       "en": "The Three Frames That Made the Record\nWhat the Matcher Actually Looks At\nWhy a Mediocre Frame Can Beat a Beautiful One\nHow to Shoot a Fluke That Counts\nWhat the…",
+       "zh": ""
+      }
+     ],
+     "why": "",
+     "url": "https://fstoppers.com/animal/how-two-fluke-photos-revealed-humpback-had-crossed-world-904392?utm_source=fstoppers&utm_medium=RSS&utm_campaign=rss_feed_articles",
+     "source": "Fstoppers",
+     "sources_all": [
+      "Fstoppers"
+     ],
+     "date": "10/30",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "An All-Around Durable Bag That Carries Everything You Need: The Lowepro Fastpack IV Review",
+     "points": [
+      {
+       "en": "User Experience and Application\nThe Bag That Adapts: A Review of the Think Tank Photo FocusPoint 30L\nSleek, Durable, and Unassuming: We Review the Wandrd Prvke…",
+       "zh": ""
+      }
+     ],
+     "why": "",
+     "url": "https://fstoppers.com/gear/all-around-durable-bag-carries-everything-need-lowepro-fastpack-iv-review-904953?utm_source=fstoppers&utm_medium=RSS&utm_campaign=rss_feed_articles",
+     "source": "Fstoppers",
+     "sources_all": [
+      "Fstoppers"
+     ],
+     "date": "10/31",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "Why a Tiny Subject Can Still Carry a Whole Photo",
+     "points": [
+      {
+       "en": "Can You Build a Photo Book Without Golden Hour Light? How to Tell a Finished Photograph From an Unfinished One\nHow Many Photos Should You Take in a Day?",
+       "zh": ""
+      }
+     ],
+     "why": "",
+     "url": "https://fstoppers.com/education/why-tiny-subject-can-still-carry-whole-photo-905300?utm_source=fstoppers&utm_medium=RSS&utm_campaign=rss_feed_articles",
+     "source": "Fstoppers",
+     "sources_all": [
+      "Fstoppers"
+     ],
+     "date": "10/30",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "These Creepy Halloween Photos Date Back to the Mid-20th Century",
+     "points": [
+      {
+       "en": "These unsettling mid-20th century photos of kids in Halloween costumes are bound to bring a few memories -- or nightmares -- for viewers.",
+       "zh": ""
+      }
+     ],
+     "why": "",
+     "url": "https://petapixel.com/2026/10/29/these-creepy-halloween-photos-date-back-to-the-mid-20th-century/",
+     "source": "PetaPixel",
+     "sources_all": [
+      "PetaPixel"
+     ],
+     "date": "10/30",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "Japan Is Getting Its First DJI x Hasselblad Retail Store",
+     "points": [
+      {
+       "en": "DJI and its Japanese domestic distributor, Sekido Co., Ltd., are opening Japan's first DJI and Hasselblad Dual-Concept Flagship Store this weekend in Tokyo.",
+       "zh": ""
+      }
+     ],
+     "why": "",
+     "url": "https://petapixel.com/2026/10/29/japan-is-getting-its-first-dji-x-hasselblad-retail-store/",
+     "source": "PetaPixel",
+     "sources_all": [
+      "PetaPixel"
+     ],
+     "date": "10/30",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "The New Nikon NIKKOR Z 120-300mm f/2.8 TC VR S vs. Canon RF 100-300mm f/2.8L IS: Comparison & Specs",
+     "points": [
+      {
+       "en": "NIKKOR Z 120-300mm f/2.8 TC VR S\nCanon RF 100-300mm f/2.8L IS USM Performance\nNIKKOR Z 120-300mm f/2.8 TC VR S Performance\nCanon RF 100-300mm f/2.8L vs Nikon Z…",
+       "zh": ""
+      }
+     ],
+     "why": "",
+     "url": "https://www.canonrumors.com/nikon-nikkor-z-120-300mm-f-2-8-tc-vr-s-vs-canon-rf-100-300mm-f-2-8l-is-comparison-specs/",
+     "source": "Canon Rumors",
+     "sources_all": [
+      "Canon Rumors"
+     ],
+     "date": "10/29",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "How to Choose a Compact Camera for Wildlife Photography in 2026",
+     "points": [
+      {
+       "en": "Quick Picks: Compact Cameras for Wildlife Photography\nSony RX100 VII: Best for Wildlife Photography on the Go\nNikon COOLPIX P1100: Best Superzoom\nSony RX10 V: B…",
+       "zh": ""
+      }
+     ],
+     "why": "",
+     "url": "https://www.canonrumors.com/how-to-choose-a-compact-camera-for-wildlife-photography-in-2026/",
+     "source": "Canon Rumors",
+     "sources_all": [
+      "Canon Rumors"
+     ],
+     "date": "10/30",
+     "lang": "en",
+     "detailed": false
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "name": "InfoQ",
+   "section": "ai",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "MIT Tech Review",
+   "section": "ai",
+   "ok": true,
+   "count": 10,
+   "error": ""
+  },
+  {
+   "name": "The Verge",
+   "section": "ai",
+   "ok": true,
+   "count": 10,
+   "error": ""
+  },
+  {
+   "name": "极客公园",
+   "section": "ai",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "量子位",
+   "section": "ai",
+   "ok": true,
+   "count": 10,
+   "error": ""
+  },
+  {
+   "name": "Autocar",
+   "section": "auto",
+   "ok": true,
+   "count": 35,
+   "error": ""
+  },
+  {
+   "name": "Car and Driver",
+   "section": "auto",
+   "ok": true,
+   "count": 50,
+   "error": ""
+  },
+  {
+   "name": "Electrek",
+   "section": "auto",
+   "ok": true,
+   "count": 150,
+   "error": ""
+  },
+  {
+   "name": "InsideEVs",
+   "section": "auto",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "Motor1",
+   "section": "auto",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "The Drive",
+   "section": "auto",
+   "ok": true,
+   "count": 18,
+   "error": ""
+  },
+  {
+   "name": "界面新闻",
+   "section": "auto",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "钛媒体",
+   "section": "auto",
+   "ok": true,
+   "count": 18,
+   "error": ""
+  },
+  {
+   "name": "Canon Rumors",
+   "section": "photo",
+   "ok": true,
+   "count": 10,
+   "error": ""
+  },
+  {
+   "name": "Fstoppers",
+   "section": "photo",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "PetaPixel",
+   "section": "photo",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "9to5Mac",
+   "section": "tech",
+   "ok": true,
+   "count": 100,
+   "error": ""
+  },
+  {
+   "name": "Engadget",
+   "section": "tech",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "IT之家",
+   "section": "tech",
+   "ok": true,
+   "count": 60,
+   "error": ""
+  },
+  {
+   "name": "The Verge",
+   "section": "tech",
+   "ok": true,
+   "count": 10,
+   "error": ""
+  },
+  {
+   "name": "cnBeta",
+   "section": "tech",
+   "ok": true,
+   "count": 150,
+   "error": ""
+  },
+  {
+   "name": "少数派",
+   "section": "tech",
+   "ok": true,
+   "count": 10,
+   "error": ""
+  },
+  {
+   "name": "爱范儿",
+   "section": "tech",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "雷峰网",
+   "section": "tech",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  }
+ ],
+ "stats": {
+  "articles": 732,
+  "sources_total": 24,
+  "sources_ok": 24,
+  "elapsed": 19.2
+ }
+}

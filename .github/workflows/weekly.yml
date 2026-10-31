@@ -1,0 +1,61 @@
+name: weekly-brief
+
+on:
+  schedule:
+    # 每周五 13:00 UTC = 北京时间 21:00（错峰时段，模型价格减半）
+    - cron: "0 13 * * 5"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: weekly-brief
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 生成周报
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          BARK_URL: ${{ secrets.BARK_URL }}
+          PAGE_URL: ${{ vars.PAGE_URL }}
+        run: python3 run.py --no-open
+
+      - name: 归档本期到仓库（保留历史）
+        run: |
+          git config user.name "weekly-brief-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add site
+          if git diff --staged --quiet; then
+            echo "没有变化，跳过提交"
+          else
+            git commit -m "chore: 周报 $(date -u +%G-W%V)"
+            # 定时任务下 HEAD 可能是游离状态，显式推到 main；失败则先 rebase 再试一次
+            git push origin HEAD:main || (git pull --rebase origin main && git push origin HEAD:main)
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

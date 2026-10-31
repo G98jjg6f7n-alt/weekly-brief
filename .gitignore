@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.chrome-prof/
+_probe/
+_shots/
+*.log
+.DS_Store
+.env
+site/preview/
+logs/

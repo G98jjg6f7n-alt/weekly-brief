@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>WEEKLY BRIEF · 2026-W44 周报</title>
+<meta name="description" content="10月26日 – 11月1日">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f7f7f4">
+<meta property="og:title" content="WEEKLY BRIEF · 2026-W44 周报">
+<meta property="og:description" content="10月26日 – 11月1日">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230e0f11'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23ffffff' font-family='monospace'>W</text></svg>">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#f8f8f6; --bg-soft:#efefea; --card:#ffffff; --fg:#17181a; --fg-2:#4a4d52;
+  --fg-3:#8b8f96; --line:#e2e2dc; --accent:#6c5ce7; --shadow:0 1px 2px rgba(20,20,25,.04),0 12px 32px -20px rgba(20,20,25,.28);
+  --serif:"Songti SC","Noto Serif SC",ui-serif,Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro SC","PingFang SC","Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  --maxw:720px;
+}
+html[data-theme="dark"]{
+  --bg:#0e0f11; --bg-soft:#16181b; --card:#15171a; --fg:#f2f2ef; --fg-2:#b9bcc2;
+  --fg-3:#7d828a; --line:#26292e; --shadow:0 1px 2px rgba(0,0,0,.5),0 18px 40px -24px rgba(0,0,0,.8);
+}
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+body{
+  margin:0; background:var(--bg); color:var(--fg); font-family:var(--sans);
+  font-size:16px; line-height:1.75; letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+::selection{background:var(--accent);color:#fff}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.wide{max-width:900px;margin:0 auto;padding:0 22px}
+
+/* ---------- 进度条 ---------- */
+#prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:99;transition:width .1s linear}
+
+/* ---------- 顶部 ---------- */
+.hero{padding:64px 0 34px;position:relative}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(760px 340px at 12% -12%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 72%);}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--fg-3);
+  display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.kicker .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);display:inline-block}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(40px,10vw,68px);line-height:1.02;
+  letter-spacing:-.02em;margin:18px 0 6px}
+h1 .num{font-family:var(--mono);font-size:.32em;letter-spacing:.1em;color:var(--fg-3);vertical-align:super;margin-left:6px;font-weight:400}
+.meta-line{display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--fg-3);font-size:13px;margin-top:14px}
+.meta-line span{white-space:nowrap}
+.sep{width:3px;height:3px;border-radius:50%;background:var(--fg-3);opacity:.6}
+.opening{font-family:var(--serif);font-size:clamp(17px,2.4vw,19px);line-height:1.9;color:var(--fg-2);
+  margin:26px 0 0;padding-left:18px;border-left:2px solid var(--accent)}
+.notice{margin:22px 0 0;padding:10px 14px;border:1px dashed var(--line);border-radius:8px;
+  font-size:13px;color:var(--fg-2);background:var(--bg-soft);line-height:1.7}
+.notice b{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-right:8px}
+.mode{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:3px 9px;color:var(--fg-3)}
+
+/* ---------- 导航 ---------- */
+nav.toc{position:sticky;top:0;z-index:40;backdrop-filter:saturate(160%) blur(14px);
+  -webkit-backdrop-filter:saturate(160%) blur(14px);background:color-mix(in srgb,var(--bg) 82%,transparent);
+  border-bottom:1px solid var(--line)}
+nav.toc .inner{display:flex;gap:6px;overflow-x:auto;padding:10px 22px;max-width:var(--maxw);margin:0 auto;
+  scrollbar-width:none}
+nav.toc .inner::-webkit-scrollbar{display:none}
+nav.toc a{flex:0 0 auto;font-size:13px;color:var(--fg-2);padding:6px 12px;border-radius:99px;
+  border:1px solid transparent;transition:.18s;display:flex;gap:7px;align-items:center}
+nav.toc a b{font-family:var(--mono);font-size:10px;color:var(--fg-3);font-weight:400}
+nav.toc a:hover{border-color:var(--line);background:var(--card)}
+nav.toc a.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+nav.toc a.on b{color:color-mix(in srgb,var(--bg) 60%,transparent)}
+
+/* ---------- 板块 ---------- */
+section.sec{padding:56px 0 10px;border-top:1px solid var(--line);margin-top:34px}
+.sec-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px}
+.sec-idx{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.1em;padding-top:14px;min-width:26px}
+.sec-title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.sec-title h2{font-family:var(--serif);font-size:clamp(28px,6vw,38px);margin:0;font-weight:600;letter-spacing:-.01em}
+.sec-title em{font-style:normal;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--fg-3);font-family:var(--mono)}
+.sec-blurb{color:var(--fg-3);font-size:13px;margin:2px 0 0}
+.sec-intro{font-size:15px;color:var(--fg-2);margin:16px 0 30px;line-height:1.85}
+.sec-bar{height:2px;background:linear-gradient(90deg,var(--accent),transparent);margin:18px 0 0;border-radius:2px;opacity:.5}
+
+/* ---------- 详读 ---------- */
+article.deep{margin:0 0 30px;padding:0 0 0 0;position:relative}
+.deep .no{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.15em;display:block;margin-bottom:6px}
+.deep h3{font-size:clamp(19px,3.6vw,22px);line-height:1.45;margin:0 0 8px;font-weight:650;letter-spacing:-.01em}
+.src{font-family:var(--mono);font-size:11px;color:var(--fg-3);letter-spacing:.06em;display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.src .pill{border:1px solid var(--line);border-radius:4px;padding:1px 6px}
+.pts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.pt{display:flex;flex-direction:column;gap:2px}
+.pt .en{font-family:var(--serif);font-size:14.5px;line-height:1.65;color:var(--fg-3);margin:0;font-style:italic}
+.pt .en::before{content:"“";opacity:.45}
+.pt .en::after{content:"”";opacity:.45}
+.pt .zh{margin:0;font-size:16.5px;line-height:1.85;color:var(--fg)}
+.why{margin:14px 0 0;font-size:13.5px;color:var(--fg-2);padding:8px 12px;border-radius:6px;
+  background:color-mix(in srgb,var(--accent) 7%,transparent);border-left:2px solid var(--accent)}
+.why b{color:var(--accent);font-weight:600;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;margin-right:8px;display:inline-block}
+.read{font-size:12px;color:var(--fg-3);border-bottom:1px solid var(--line);padding-bottom:1px;margin-left:auto}
+.read:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ---------- 速览 ---------- */
+.briefs{margin-top:36px;border-top:1px dashed var(--line);padding-top:26px}
+.briefs h4{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--fg-3);
+  margin:0 0 18px;font-weight:500}
+ul.blist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0}
+ul.blist li{border-bottom:1px solid var(--line);padding:14px 0}
+ul.blist li:last-child{border-bottom:none}
+.bl{display:flex;gap:10px;align-items:baseline}
+.bl .bul{color:var(--accent);font-family:var(--mono);font-size:11px;flex:0 0 auto;padding-top:2px}
+.bl h5{margin:0;font-size:15.5px;font-weight:600;line-height:1.6;flex:1}
+.bl h5 a:hover{color:var(--accent)}
+.blzh{margin:4px 0 0 21px;font-size:14px;color:var(--fg-2);line-height:1.7}
+.blen{margin:2px 0 0 21px;font-family:var(--serif);font-size:13px;color:var(--fg-3);font-style:italic;line-height:1.6}
+.blsrc{margin:3px 0 0 21px;font-family:var(--mono);font-size:10px;color:var(--fg-3);letter-spacing:.08em}
+
+/* ---------- 页脚 ---------- */
+footer{margin-top:70px;border-top:1px solid var(--line);padding:30px 0 60px;color:var(--fg-3);font-size:12px}
+footer .grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+footer h6{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;margin:0 0 10px;color:var(--fg-3)}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+footer li{display:flex;justify-content:space-between;gap:10px}
+footer .bad{color:#d63031}
+footer .ok{color:#00b894}
+.tools{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:8px;z-index:50}
+.tools button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);
+  color:var(--fg-2);cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow);font-size:15px}
+.tools button:hover{color:var(--accent)}
+
+/* ---------- 动效 ---------- */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.2,.7,.3,1),transform .6s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){ .rv{opacity:1;transform:none} }
+@media (max-width:560px){
+  .hero{padding:44px 0 24px}
+  section.sec{padding:42px 0 6px}
+  article.deep{margin-bottom:26px}
+  footer .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<header class="hero"><div class="wrap">
+  <div class="kicker"><span class="dot"></span>WEEKLY BRIEF<span class="sep"></span>2026-W44</div>
+  <h1>WEEKLY BRIEF<span class="num">No.W44</span></h1>
+  <div class="meta-line">
+    <span>10月26日 – 11月1日</span><span class="sep"></span>
+    <span>40 条</span><span class="sep"></span>
+    <span>约 14 分钟</span><span class="sep"></span><span class="mode">规则摘要</span>
+  </div>
+  
+  <p class="notice"><b>提示</b>本期是规则摘要（没有配置 API Key）：英文条目只有原文和自动摘录，没有中文翻译。在 <code>.env</code> 里填入 <code>DEEPSEEK_API_KEY</code> 后，下次生成会自动变成逐句中英对照。</p>
+</div></header><nav class="toc"><div class="inner"><a href="#ai"><b>01</b>人工智能</a><a href="#auto"><b>02</b>汽车</a><a href="#tech"><b>03</b>数码</a><a href="#photo"><b>04</b>摄影</a></div></nav><main class="wrap"><section class="sec" id="ai" style="--accent:#6c5ce7">
+<div class="sec-head rv">
+  <span class="sec-idx">01</span>
+  <div>
+    <div class="sec-title"><h2>人工智能</h2><em>AI</em></div>
+    <p class="sec-blurb">模型、产品与算力</p>
+  </div>
+</div>
+<div class="sec-bar"></div>
+<p class="sec-intro rv">本周人工智能领域共 10 条更新。</p>
+<article class="deep rv">
+  <span class="no">01</span>
+  <h3>全球首富马斯克预言：2029 年太空 AI 算力将远超地面算力</h3>
+  <div class="src"><span>IT之家</span><span class="sep"></span><span>10/31</span><a class="read" href="https://www.ithome.com/1/020/499.htm" target="_blank" rel="noopener">原文 ↗</a></div>
+  <ul class="pts"><li class="pt"><p class="zh">IT之家 10 月 31 日消息，全球首富埃隆 · 马斯克（Elon Musk）今天（10 月 31 日）在 X 平台发布推文，预言 2029 年部署到近地轨道的 AI 与云计算处理能力，将远远超过地面算力。</p></li></ul>
+  
+</article>
+<article class="deep rv">
+  <span class="no">02</span>
+  <h3>OpenAI已将最新一轮融资目标从300亿美元下调至约200亿美元</h3>
+  <div class="src"><span>cnBeta</span><span class="sep"></span><span>10/31</span><a class="read" href="https://www.cnbeta.com.tw/articles/tech/1584516.htm" target="_blank" rel="noopener">原文 ↗</a></div>
+  <ul class="pts"><li class="pt"><p class="zh">10月31日消息，据英国《金融时报》援引多名知情人士报道，ChatGPT开发商OpenAI已将最新一轮融资目标从300亿美元下调至约200亿美元，拟议估值也从此前的1.4万亿美元降至1.25万亿美元。 《华尔街日报》随后披露，OpenAI目前获得的投资承诺约为110亿美元，还不到最初目标的一半。</p></li></ul>
+  
+</article>
+<article class="deep rv">
+  <span class="no">03</span>
+  <h3>苹果官宣 Apple 智能接入阿里千问；DeepSeek 完成第二轮 1055 亿元融资，估值达 6155 亿元；英特尔股价开盘跌超 30%｜极客早知道</h3>
+  <div class="src"><span>极客公园</span><span class="sep"></span><span>10/31</span><a class="read" href="http://www.geekpark.net/news/373220" target="_blank" rel="noopener">原文 ↗</a></div>
+  <ul class="pts"><li class="pt"><p class="zh">国行 Apple 智能确定上线时间：11 月开放测试，千问接入 Siri
+OpenAI 撤回 Pro 200 降额计划，同时提高 Work 和 Codex 用量
+英特尔股价开盘跌超 30%，或将创下有记录以来最大单日跌幅
+iPhone Air 2 被曝将增加超广角镜头，电池容量也有望提升
+DeepSeek 完成第二轮…</p></li></ul>
+  
+</article>
+<div class="briefs rv"><h4>其余值得一扫</h4><ul class="blist"><li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.ithome.com/1/020/598.htm" target="_blank" rel="noopener">无界动力与京东达成战略合作，机器人 K15 上岗七鲜咖啡</a></h5></div>
+  <p class="blzh">IT之家 10 月 31 日消息，10 月 31 日，无界动力宣布与京东正式签署战略合作协议，围绕零售场景应用、商业化平台与生态渠道、产业资源协同等多个维度开展立体化合作。 此次合作已迎来首批成果：10 月，双方首个零售合作项目落地，无界动力机器人 K15 已于七鲜咖啡（西宸里店）和七鲜咖啡（长楹天街店）正式上岗；</p>
+  <p class="blsrc">IT之家 · 10/31</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.ifanr.com/1686830?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=" target="_blank" rel="noopener">刚刚，ChatGPT Pro 额度官宣翻倍，但免费重置可能要没了</a></h5></div>
+  <p class="blzh">OpenAI 突然宣布额度翻倍，但 200 美元用户有点特殊
+从准备削减额度，到宣布维持原状，OpenAI 被用户骂回去了？ 被用户吐槽了一个月，OpenAI 终于决定不再折腾大家的使用额度了。</p>
+  <p class="blsrc">爱范儿 · 10/30</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.ithome.com/1/020/553.htm" target="_blank" rel="noopener">理想 AI 眼镜 Livis 10 月 OTA 升级，个人 Agent 新增接入 Hermes</a></h5></div>
+  <p class="blzh">IT之家 10 月 31 日消息，理想汽车今日宣布理想 AI 眼镜 Livis 10 月 OTA 重磅升级，运动健康分析报告进一步提升； 视觉问答独家接入小红书 Agent；</p>
+  <p class="blsrc">IT之家 · 10/31</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.qbitai.com/2026/10/506771.html" target="_blank" rel="noopener">百度 APP 发布四大 AI 升级，搜索已实现递归自我进化</a></h5></div>
+  <p class="blzh">10 月 30 日，百度 APP 在北京举办产品升级沟通会。 百度搜索实现递归自我进化，并全新升级搜索 AI API，活动期间最低价仅需 4.9 元/千次，低于 DeepSeek 搜索 API。</p>
+  <p class="blsrc">量子位 · 10/30</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.qbitai.com/2026/10/506855.html" target="_blank" rel="noopener">刚刚，Claude宣布取消5小时限制！首批Ultra用户已「解封」</a></h5></div>
+  <p class="blzh">Claude200美元的订阅用户，终于可以和烦人的5小时限制说再见了！ ！</p>
+  <p class="blsrc">量子位 · 10/31</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.qbitai.com/2026/10/506779.html" target="_blank" rel="noopener">“超能模式”重磅登场！联想天禧AI 4.5全端升级，三大场景打造“职场超能搭档”</a></h5></div>
+  <p class="blzh">超全能办公：连接器与技能全打通，一句话搞定复杂任务
+超省心差旅：全双工动嘴即办，远程调起AIPC替你干活
+硬核算力加持，联想AI主机升级天禧4.5，实现Token自由
+10月30日，联想天禧AI 4.5迎来AIPC端正式发布。 10月30日，联想天禧AI 4.5迎来AIPC端正式发布。</p>
+  <p class="blsrc">量子位 · 10/30</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.ifanr.com/1687012?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=" target="_blank" rel="noopener">刚刚，国行 Apple 智能官宣，但满血 SiriAI 还得等</a></h5></div>
+  <p class="blzh">就在刚刚，苹果正式宣布将面向中国大陆用户推出 Apple 智能（Apple Intelligence）！ 据悉，首批功能将随 iOS 27.3 开发者测试版（Developer Beta）于 11 月 4 日起率先开启测试。</p>
+  <p class="blsrc">爱范儿 · 10/31</p>
+</li></ul></div>
+</section>
+<section class="sec" id="auto" style="--accent:#e17055">
+<div class="sec-head rv">
+  <span class="sec-idx">02</span>
+  <div>
+    <div class="sec-title"><h2>汽车</h2><em>AUTO</em></div>
+    <p class="sec-blurb">新车、电动化与智能驾驶</p>
+  </div>
+</div>
+<div class="sec-bar"></div>
+<p class="sec-intro rv">本周汽车领域共 10 条更新。</p>
+<article class="deep rv">
+  <span class="no">01</span>
+  <h3>全新一代智己 LS6 首月交付突破 8000 台，19.79 万元起</h3>
+  <div class="src"><span>IT之家</span><span class="sep"></span><span>10/31</span><a class="read" href="https://www.ithome.com/1/020/589.htm" target="_blank" rel="noopener">原文 ↗</a></div>
+  <ul class="pts"><li class="pt"><p class="zh">IT之家 10 月 31 日消息，智己汽车今日宣布，全新一代智己 LS6 自 9 月上市以来，累计交付突破 8000 台。 全新一代智己 LS6 于 9 月 23 日宣布上市，共推出三款车型，官方指导价 20.29 万元起，叠加上市权益后 19.79 万元起。</p></li></ul>
+  
+</article>
+<article class="deep rv">
+  <span class="no">02</span>
+  <h3>揭秘宾利首款纯电 SUV 托卡尔：累计测试里程超百万公里，遍历高寒、高温、高海拔</h3>
+  <div class="src"><span>IT之家</span><span class="sep"></span><span>10/31</span><a class="read" href="https://www.ithome.com/1/020/522.htm" target="_blank" rel="noopener">原文 ↗</a></div>
+  <ul class="pts"><li class="pt"><p class="zh">IT之家 10 月 31 日消息，当地时间 30 日，据外媒 motor1 报道，宾利披露的最新信息称，为了在交付前尽可能找出车辆存在的问题，工程师花了数年时间，对品牌首款纯电动 SUV 托卡尔进行极限测试，累计测试里程超过 100 万公里，足迹遍及全球多个气候严酷的地区。</p></li></ul>
+  
+</article>
+<article class="deep rv">
+  <span class="no">03</span>
+  <h3>Waymo携手丰田打造新一代自动驾驶出租车 以纯电动bZ4X为基础</h3>
+  <div class="src"><span>cnBeta</span><span class="sep"></span><span>10/30</span><a class="read" href="https://www.cnbeta.com.tw/articles/tech/1584478.htm" target="_blank" rel="noopener">原文 ↗</a></div>
+  <ul class="pts"><li class="pt"><p class="zh">Google母公司Alphabet旗下自动驾驶公司Waymo宣布，将与丰田汽车进一步深化合作，推出以丰田纯电动SUV bZ4X为基础的新一代自动驾驶出租车。 这款车型将专门针对Waymo的自动驾驶系统进行设计和改造，计划于2027年首先在日本开展测试，随后逐步进入英国及其他国际市场。</p></li></ul>
+  
+</article>
+<div class="briefs rv"><h4>其余值得一扫</h4><ul class="blist"><li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.jiemian.com/article/15277742.html" target="_blank" rel="noopener">商业头条NO.149 | 在欧洲，再造一个比亚迪</a></h5></div>
+  <p class="blzh">只用了五年，比亚迪几乎从零开始成为欧洲乘用车市场的热门品牌，以往这个过程需要以十年为单位计，它是如何做到的？ 王臻WZ周姝祺·2026/10/31 19:03来源：界面新闻
+7月中旬的一个工作日下午，市中心伦巴赫广场的一座百年建筑里，三名比亚迪销售人员都没闲着。</p>
+  <p class="blsrc">界面新闻 · 10/31</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.ithome.com/1/020/590.htm" target="_blank" rel="noopener">马斯克再撕比尔盖茨：一边资助攻击我的人，一边做空特斯拉</a></h5></div>
+  <p class="blzh">10 月 31 日消息，当地时间 10 月 30 日，特斯拉 CEO 马斯克在社交平台 X 上发文称，比尔 · 盖茨在 &quot; 资助攻击我的人 &quot;，同时仍持有针对特斯拉的 &quot; 大规模空头仓位 &quot;。 据悉，马斯克此番言论是在回复播客主持人凯蒂 · 米勒的帖子。</p>
+  <p class="blsrc">IT之家 · 10/31</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.ifanr.com/1686855?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=" target="_blank" rel="noopener">卓驭发布商用车智能辅助驾驶解决方案「磐行」，一年可以让重卡省下 2-3 万元油钱</a></h5></div>
+  <p class="blzh">在不少短视频平台上，公众对于卡车司机这个职业群体有着复杂的情感，一方面这是一个辛苦危险的工作，另一方面因为重型卡车的巨大体量，卡车司机身上又肩负着巨大的安全责任。 站在卡车司机视角，从哪里接货、走哪条路、在哪里加油、什么时候休息，甚至下坡时早一点松开油门，都会影响一趟运输最后能剩下多少钱。</p>
+  <p class="blsrc">爱范儿 · 10/30</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.ifanr.com/1686761?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=" target="_blank" rel="noopener">13.98 万元起！小鹏 MONA L05 正式上市，大五座 SUV 市场的卷王来了</a></h5></div>
+  <p class="blzh">三个月前，小鹏 MONA L03 上市。 作为 MONA 系列的第一台 SUV，L03 为小鹏带来了开门红，但也给小鹏带来了了很大的交付压力。</p>
+  <p class="blsrc">爱范儿 · 10/29</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="http://www.geekpark.net/news/373086" target="_blank" rel="noopener">大众把三年在中国攒的家底，打包成了一颗「星」</a></h5></div>
+  <p class="blzh">外资车企里，大众第一个在中国攒齐了平台、架构、智驾整套自研技术。 10 月 28 日，合肥，大众汽车集团（中国）办了自己的第一次技术日。</p>
+  <p class="blsrc">极客公园 · 10/29</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.tmtpost.com/8187393.html" target="_blank" rel="noopener">蔚来的“三个聚焦”：为规模幻觉买单之后</a></h5></div>
+  <p class="blzh">进入2026年第四季度，蔚来的战略退守已经毫无遮掩。 在此前内部全员讲话中，蔚来创始人李斌提出了一个核心基调：未来三年，蔚来不搞大扩张，核心任务是“聚焦主业，聚焦高端，聚焦核心市场”。</p>
+  <p class="blsrc">钛媒体 · 10/31</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://electrek.co/2026/10/30/toyota-reveals-five-new-lifted-woodland-concepts-including-an-ev/" target="_blank" rel="noopener">Toyota reveals five new lifted Woodland concepts, including the bZ electric SUV</a></h5></div>
+  <p class="blen">Toyota expands the Woodland badge to new models
+Toyota introduced a new family of lifted, “adventure-ready” Woodland concepts based on the RAV4, Grand Highlande…</p>
+  <p class="blsrc">Electrek · 10/31</p>
+</li></ul></div>
+</section>
+<section class="sec" id="tech" style="--accent:#0984e3">
+<div class="sec-head rv">
+  <span class="sec-idx">03</span>
+  <div>
+    <div class="sec-title"><h2>数码</h2><em>TECH</em></div>
+    <p class="sec-blurb">手机、电脑与硬件</p>
+  </div>
+</div>
+<div class="sec-bar"></div>
+<p class="sec-intro rv">本周数码领域共 10 条更新。</p>
+<article class="deep rv">
+  <span class="no">01</span>
+  <h3>总投资约 295 亿，全球首条印刷 OLED G8.6 代产线 TCL 华星 t8 项目设备正式搬入</h3>
+  <div class="src"><span>IT之家</span><span class="sep"></span><span>10/31</span><a class="read" href="https://www.ithome.com/1/020/592.htm" target="_blank" rel="noopener">原文 ↗</a></div>
+  <ul class="pts"><li class="pt"><p class="zh">IT之家 10 月 31 日消息，据 TCL 华星消息，10 月 31 日，TCL 华星 t8 项目设备搬入仪式在广州举行，随着主生产设备进场安装，全球首条印刷 OLED G8.6 代产线建设正式从“厂房建设期”切入“设备安装与调试期”。</p></li></ul>
+  
+</article>
+<article class="deep rv">
+  <span class="no">02</span>
+  <h3>曝折叠屏手机明后年分化为大折、阔折两大主流形态，部分厂商双线同步迭代</h3>
+  <div class="src"><span>IT之家</span><span class="sep"></span><span>10/31</span><a class="read" href="https://www.ithome.com/1/020/600.htm" target="_blank" rel="noopener">原文 ↗</a></div>
+  <ul class="pts"><li class="pt"><p class="zh">IT之家 10 月 31 日消息，长期关注国内手机市场份额的数码博主 @RD观测 今天（31 日）晚间在微博发文判断，2027-2028 年，折叠屏手机会分化为两大主流形态：比例为 1:1 的方正大折叠和 4:3 的阔折叠，而部分厂商会双线同步迭代。 1:1 方正大折叠：内部空间充足，电池、散热、影像等更有机会堆料；</p></li></ul>
+  
+</article>
+<article class="deep rv">
+  <span class="no">03</span>
+  <h3>iPhone Air 2最新爆料：升级双4800万像素摄像头2nm A20芯片 电池容量明显提升</h3>
+  <div class="src"><span>cnBeta</span><span class="sep"></span><span>10/30</span><a class="read" href="https://www.cnbeta.com.tw/articles/tech/1584422.htm" target="_blank" rel="noopener">原文 ↗</a></div>
+  <ul class="pts"><li class="pt"><p class="zh">苹果下一代超薄手机iPhone Air 2的配置细节再次浮出水面。 根据知名爆料人士Digital Chat Station最新披露的信息，苹果正在为这款新机准备多项硬件升级，包括采用新一代2nm制程处理器、增加一颗后置摄像头、提升电池容量，并继续维持超薄机身设计。</p></li></ul>
+  
+</article>
+<div class="briefs rv"><h4>其余值得一扫</h4><ul class="blist"><li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.ithome.com/1/020/502.htm" target="_blank" rel="noopener">小米米家台式净饮机 3 已开售：提供 2100W 功率可实现“3 秒即热”，首发 1499 元</a></h5></div>
+  <p class="blzh">IT之家 10 月 31 日消息，小米米家台式净饮机 3 已于昨晚正式开售，官方定价为 1699 元，首发 1499 元。 该产品提供 2100W 功率，可实现“3 秒即热”。</p>
+  <p class="blsrc">IT之家 · 10/31</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.cnbeta.com.tw/articles/game/1584514.htm" target="_blank" rel="noopener">爱好者在破解PS5运行《宝可梦：Pokopia》 画面仍有严重错误</a></h5></div>
+  <p class="blzh">主机改装爱好者已在破解PlayStation 5上运行《宝可梦：Pokopia》。 这次实验需要先将Ubuntu 24.04载入主机内存，再通过第三方环境启动游戏，并非使用PS5原生系统直接运行。</p>
+  <p class="blsrc">cnBeta · 10/31</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.cnbeta.com.tw/articles/game/1584550.htm" target="_blank" rel="noopener">Switch 2模拟器开发进展神速 《马里奥赛车世界》已可在PC上全速运行</a></h5></div>
+  <p class="blzh">在任天堂Switch 2成功被破解仅一周多后，围绕新主机的模拟器开发工作已经取得惊人进展。 最新消息显示，基于Switch 2模拟支持的实验性模拟器项目已经能够在PC上运行《马里奥赛车世界》，部分开发者甚至宣称游戏可根据硬件配置实现“全速运行”。</p>
+  <p class="blsrc">cnBeta · 10/31</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.ifanr.com/1686916?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=" target="_blank" rel="noopener">红魔 12 Pro+ 体验：水冷加上 RGB 灯，游戏性能全面升级</a></h5></div>
+  <p class="blzh">最近，红魔发布了新一代旗舰级电竞手机红魔 12 Pro+，定价为 6999 元起。 外观上，红魔 12 Pro+ 延续了方正的背面纯平设计，背面有光滑的大玻璃覆盖，填平后置摄像头凸起的位置。</p>
+  <p class="blsrc">爱范儿 · 10/30</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.leiphone.com/category/chips/748GRHfg9VPRbp7x.html" target="_blank" rel="noopener">天数智芯天垓300实测对标H200，国产GPU接下来拼什么？</a></h5></div>
+  <p class="blzh">在实测场景中达到H200的性能水平后，国产GPU的竞争，开始进一步转向系统效率、软件适配与实际交付。 本周的天数智芯媒体开放日上，最新一代天垓300与H200的实机对比，是最直观的性能展示。</p>
+  <p class="blsrc">雷峰网 · 10/30</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="http://www.geekpark.net/news/373085" target="_blank" rel="noopener">苹果发触屏笔记本，最高 11 万元；DeepSeek V5 模型代码现身；宇树首发财报，净利增 270%</a></h5></div>
+  <p class="blzh">苹果发布首款触屏 MacBook Pro，顶配超 11 万元
+特斯拉拟用人形机器人给 Robotaxi 插拔充电枪
+腾讯视频 2027 大剧片单公布：《三体：黑暗森林》、《流浪地球短篇集》在列
+豆包工作功能上新：支持将「录制电脑操作」保存为技能
+WorkBuddy 手机远程控制电脑功能上线，实时显示屏幕内容
+2026…</p>
+  <p class="blsrc">极客公园 · 10/29</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://sspai.com/post/117953" target="_blank" rel="noopener">一图流 | 一张图看懂中国版 Apple 智能</a></h5></div>
+  <p class="blzh">中国版 Apple 智能即将登陆 iPhone，一起看看还有这些细节。 查看全文</p>
+  <p class="blsrc">少数派 · 10/31</p>
+</li></ul></div>
+</section>
+<section class="sec" id="photo" style="--accent:#00b894">
+<div class="sec-head rv">
+  <span class="sec-idx">04</span>
+  <div>
+    <div class="sec-title"><h2>摄影</h2><em>PHOTO</em></div>
+    <p class="sec-blurb">器材、技术与影像</p>
+  </div>
+</div>
+<div class="sec-bar"></div>
+<p class="sec-intro rv">本周摄影领域共 10 条更新。</p>
+<article class="deep rv">
+  <span class="no">01</span>
+  <h3>Canon May Raise Camera Prices Due To Increased Memory Costs</h3>
+  <div class="src"><span>PetaPixel</span><span class="sep"></span><span>10/31</span><a class="read" href="https://petapixel.com/2026/10/30/canon-may-raise-camera-prices-due-to-increased-memory-costs/" target="_blank" rel="noopener">原文 ↗</a></div>
+  <ul class="pts"><li class="pt"><p class="en">In August, Fujifilm mentioned the impact of rising raw materials prices in its routine financial reporting, and PetaPixel speculated that Fujifilm would be far…</p><p class="zh"></p></li></ul>
+  
+</article>
+<article class="deep rv">
+  <span class="no">02</span>
+  <h3>There’s a New M-Mount Pancake Lens in Town</h3>
+  <div class="src"><span>PetaPixel</span><span class="sep"></span><span>10/31</span><a class="read" href="https://petapixel.com/2026/10/31/theres-a-new-m-mount-pancake-lens-in-town/" target="_blank" rel="noopener">原文 ↗</a></div>
+  <ul class="pts"><li class="pt"><p class="en">DJ-Optical, which sells its lenses on eBay, has a new ultra-slim manual-focus pancake lens that looks quite stylish.</p><p class="zh"></p></li></ul>
+  
+</article>
+<article class="deep rv">
+  <span class="no">03</span>
+  <h3>He Shot an Iconic Photo—and Lost the Copyright</h3>
+  <div class="src"><span>Fstoppers</span><span class="sep"></span><span>10/31</span><a class="read" href="https://fstoppers.com/legal/he-shot-iconic-photo-and-lost-copyright-904413?utm_source=fstoppers&amp;utm_medium=RSS&amp;utm_campaign=rss_feed_articles" target="_blank" rel="noopener">原文 ↗</a></div>
+  <ul class="pts"><li class="pt"><p class="en">Two Cameras, Three Feet Apart
+What &quot;Within the Scope of Employment&quot; Actually Covers
+The Ultimatum and the $34,623.50
+Why the Baby and the Firefighter Lost
+The O…</p><p class="zh"></p></li></ul>
+  
+</article>
+<div class="briefs rv"><h4>其余值得一扫</h4><ul class="blist"><li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://fstoppers.com/animal/how-two-fluke-photos-revealed-humpback-had-crossed-world-904392?utm_source=fstoppers&amp;utm_medium=RSS&amp;utm_campaign=rss_feed_articles" target="_blank" rel="noopener">How Two Fluke Photos Revealed a Humpback Had Crossed the World</a></h5></div>
+  <p class="blen">The Three Frames That Made the Record
+What the Matcher Actually Looks At
+Why a Mediocre Frame Can Beat a Beautiful One
+How to Shoot a Fluke That Counts
+What the…</p>
+  <p class="blsrc">Fstoppers · 10/30</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://fstoppers.com/gear/all-around-durable-bag-carries-everything-need-lowepro-fastpack-iv-review-904953?utm_source=fstoppers&amp;utm_medium=RSS&amp;utm_campaign=rss_feed_articles" target="_blank" rel="noopener">An All-Around Durable Bag That Carries Everything You Need: The Lowepro Fastpack IV Review</a></h5></div>
+  <p class="blen">User Experience and Application
+The Bag That Adapts: A Review of the Think Tank Photo FocusPoint 30L
+Sleek, Durable, and Unassuming: We Review the Wandrd Prvke…</p>
+  <p class="blsrc">Fstoppers · 10/31</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://fstoppers.com/education/why-tiny-subject-can-still-carry-whole-photo-905300?utm_source=fstoppers&amp;utm_medium=RSS&amp;utm_campaign=rss_feed_articles" target="_blank" rel="noopener">Why a Tiny Subject Can Still Carry a Whole Photo</a></h5></div>
+  <p class="blen">Can You Build a Photo Book Without Golden Hour Light? How to Tell a Finished Photograph From an Unfinished One
+How Many Photos Should You Take in a Day?</p>
+  <p class="blsrc">Fstoppers · 10/30</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://petapixel.com/2026/10/29/these-creepy-halloween-photos-date-back-to-the-mid-20th-century/" target="_blank" rel="noopener">These Creepy Halloween Photos Date Back to the Mid-20th Century</a></h5></div>
+  <p class="blen">These unsettling mid-20th century photos of kids in Halloween costumes are bound to bring a few memories -- or nightmares -- for viewers.</p>
+  <p class="blsrc">PetaPixel · 10/30</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://petapixel.com/2026/10/29/japan-is-getting-its-first-dji-x-hasselblad-retail-store/" target="_blank" rel="noopener">Japan Is Getting Its First DJI x Hasselblad Retail Store</a></h5></div>
+  <p class="blen">DJI and its Japanese domestic distributor, Sekido Co., Ltd., are opening Japan&#x27;s first DJI and Hasselblad Dual-Concept Flagship Store this weekend in Tokyo.</p>
+  <p class="blsrc">PetaPixel · 10/30</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.canonrumors.com/nikon-nikkor-z-120-300mm-f-2-8-tc-vr-s-vs-canon-rf-100-300mm-f-2-8l-is-comparison-specs/" target="_blank" rel="noopener">The New Nikon NIKKOR Z 120-300mm f/2.8 TC VR S vs. Canon RF 100-300mm f/2.8L IS: Comparison &amp; Specs</a></h5></div>
+  <p class="blen">NIKKOR Z 120-300mm f/2.8 TC VR S
+Canon RF 100-300mm f/2.8L IS USM Performance
+NIKKOR Z 120-300mm f/2.8 TC VR S Performance
+Canon RF 100-300mm f/2.8L vs Nikon Z…</p>
+  <p class="blsrc">Canon Rumors · 10/29</p>
+</li>
+<li>
+  <div class="bl"><span class="bul">◆</span><h5><a href="https://www.canonrumors.com/how-to-choose-a-compact-camera-for-wildlife-photography-in-2026/" target="_blank" rel="noopener">How to Choose a Compact Camera for Wildlife Photography in 2026</a></h5></div>
+  <p class="blen">Quick Picks: Compact Cameras for Wildlife Photography
+Sony RX100 VII: Best for Wildlife Photography on the Go
+Nikon COOLPIX P1100: Best Superzoom
+Sony RX10 V: B…</p>
+  <p class="blsrc">Canon Rumors · 10/30</p>
+</li></ul></div>
+</section></main><footer><div class="wrap">
+<div class="grid">
+  <div><h6>数据来源 · 24/24 正常</h6><ul><li><span>InfoQ</span><span class="ok">✓ 20</span></li><li><span>MIT Tech Review</span><span class="ok">✓ 10</span></li><li><span>The Verge</span><span class="ok">✓ 10</span></li><li><span>极客公园</span><span class="ok">✓ 30</span></li><li><span>量子位</span><span class="ok">✓ 10</span></li><li><span>Autocar</span><span class="ok">✓ 35</span></li><li><span>Car and Driver</span><span class="ok">✓ 50</span></li><li><span>Electrek</span><span class="ok">✓ 150</span></li><li><span>InsideEVs</span><span class="ok">✓ 20</span></li><li><span>Motor1</span><span class="ok">✓ 20</span></li><li><span>The Drive</span><span class="ok">✓ 18</span></li><li><span>界面新闻</span><span class="ok">✓ 30</span></li><li><span>钛媒体</span><span class="ok">✓ 18</span></li><li><span>Canon Rumors</span><span class="ok">✓ 10</span></li><li><span>Fstoppers</span><span class="ok">✓ 30</span></li><li><span>PetaPixel</span><span class="ok">✓ 20</span></li><li><span>9to5Mac</span><span class="ok">✓ 100</span></li><li><span>Engadget</span><span class="ok">✓ 20</span></li><li><span>IT之家</span><span class="ok">✓ 60</span></li><li><span>The Verge</span><span class="ok">✓ 10</span></li><li><span>cnBeta</span><span class="ok">✓ 150</span></li><li><span>少数派</span><span class="ok">✓ 10</span></li><li><span>爱范儿</span><span class="ok">✓ 20</span></li><li><span>雷峰网</span><span class="ok">✓ 20</span></li></ul></div>
+  <div>
+    <h6>关于本期</h6>
+    <ul>
+      <li><span>生成时间</span><span>10月31日 21:39</span></li>
+      <li><span>摘要方式</span><span>规则摘要</span></li>
+      <li><span>处理文章</span><span>732 篇</span></li>
+      <li><span>耗时</span><span>19.2s</span></li>
+    </ul>
+    <h6 style="margin-top:18px">归档</h6>
+    <ul><li><a href="../archive.html">往期周报 →</a></li></ul>
+  </div>
+</div>
+</div></footer>
+<div class="tools"><button id="theme" aria-label="切换主题">☾</button><button id="top" aria-label="回到顶部">↑</button></div>
+<script>
+(function(){
+  var root=document.documentElement;
+  var saved=localStorage.getItem('wb-theme');
+  if(saved){root.dataset.theme=saved}
+  else{root.dataset.theme=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+
+  var btn=document.getElementById('theme');
+  if(btn){btn.addEventListener('click',function(){
+    var next=root.dataset.theme==='dark'?'light':'dark';
+    root.dataset.theme=next;localStorage.setItem('wb-theme',next);
+    btn.textContent=next==='dark'?'☀':'☾';
+  });
+  btn.textContent=root.dataset.theme==='dark'?'☀':'☾';}
+
+  var prog=document.getElementById('prog');
+  function onScroll(){
+    var h=document.documentElement;
+    var pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+    if(prog)prog.style.width=pct+'%';
+  }
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var links=[].slice.call(document.querySelectorAll('nav.toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        var i=secs.indexOf(e.target);
+        links.forEach(function(l,j){l.classList.toggle('on',j===i)});
+      }
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(function(s){if(s)io.observe(s)});
+
+  var rv=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window){
+    var io2=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target)}});
+    },{rootMargin:'0px 0px -8% 0px',threshold:.05});
+    rv.forEach(function(n){io2.observe(n)});
+  }else{rv.forEach(function(n){n.classList.add('in')})}
+
+  var top=document.getElementById('top');
+  if(top)top.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
+</body>
+</html>
