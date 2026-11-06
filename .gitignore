@@ -9,3 +9,8 @@ _shots/
 site/preview/
 logs/
 .deploy_key/
+
+# 工作区里可能存在的其它项目，别误提交
+work/
+*.pptx
+*.docx

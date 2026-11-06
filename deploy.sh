@@ -43,7 +43,9 @@ say "2/4 初始化仓库"
 if [ ! -d .git ]; then
   run git init -b main
 fi
-run git add -A
+# 只提交本项目文件：工作区里可能还有别的项目，绝不能 git add -A
+run git add .env.example .github .gitignore README.md config.json deploy.sh \
+  docs install_schedule.sh newsweek run.command run.py site
 run git commit -m "feat: 每周新闻周报（AI/汽车/数码/摄影）" || echo "  （没有新改动，跳过提交）"
 
 say "3/4 关联远程仓库"

@@ -1,0 +1,1044 @@
+{
+ "week": "2026-W45",
+ "range": "11月2日 – 11月8日",
+ "generated_at": "2026-11-06T21:43+08:00",
+ "generated_date": "11月6日",
+ "opening": "这周最值得盯的主线其实是 AI 从云端往真实场景里扎：菜鸟把训练集群建到全球仓网上，Perplexity 干脆给你配了个常驻 AI 同事，连华为和 QQ 的鸿蒙更新都在往拍摄和修图上加 AI。说白了，AI 不再只是聊天框里的玩具，而是开始接管仓库、工位和相册了。",
+ "mode": "llm",
+ "sections": [
+  {
+   "key": "ai",
+   "name": "AI",
+   "cn": "人工智能",
+   "blurb": "模型、产品与算力",
+   "accent": "#6c5ce7",
+   "intro": "本周 AI 领域一边加速向实体产业渗透，一边迎来监管与资本市场的剧烈震荡。从物流实景训练到个人金融助手，AI 正在进入更具体、更敏感的场景。",
+   "note": "",
+   "items": [
+    {
+     "headline": "菜鸟开放全球仓网建AI训练集群",
+     "points": [
+      {
+       "en": "",
+       "zh": "菜鸟在香港宣布向产业伙伴开放全球仓网，打造全球最大的AI及具身智能物流实景训练集群，并推出“科技出海三日达”服务。"
+      },
+      {
+       "en": "",
+       "zh": "菜鸟已开放数十个行业、上百种实景PoC验证场景，覆盖仓储拣选、智能导航配送、高空巡检等核心作业领域。"
+      },
+      {
+       "en": "",
+       "zh": "菜鸟国际总裁熊伟表示，具身智能技术未来10年有望逐步成熟，效率提升可能达到10至50倍。"
+      }
+     ],
+     "why": "真实物流场景或成具身智能训练的关键基础设施。",
+     "url": "https://www.leiphone.com/category/industrynews/DUZcuKBxESiGrXWu.html",
+     "source": "雷峰网",
+     "sources_all": [
+      "雷峰网"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "Perplexity推出常驻AI同事Teammates",
+     "points": [
+      {
+       "en": "Perplexity is taking on OpenAI and Anthropic with its own work-focused AI agents.",
+       "zh": "Perplexity 正凭借自家面向工作的 AI 智能体，向 OpenAI 和 Anthropic 发起挑战。"
+      },
+      {
+       "en": "You can assign each Teammate different jobs that they can perform simultaneously — much like OpenAI’s Dots and Claude Duet.",
+       "zh": "你可以给每个 Teammate 分配不同的任务，让它们同时执行——很像 OpenAI 的 Dots 和 Claude Duet。"
+      },
+      {
+       "en": "Perplexity’s take on the feature is much more expensive, however, as it requires a subscription to its $200 / month Max plan.",
+       "zh": "不过 Perplexity 这项功能的门槛高得多，需要订阅每月 200 美元的 Max 套餐。"
+      }
+     ],
+     "why": "AI智能体办公赛道再添玩家，定价策略引发关注。",
+     "url": "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work",
+     "source": "The Verge",
+     "sources_all": [
+      "The Verge"
+     ],
+     "date": "11/06",
+     "lang": "en",
+     "detailed": true
+    },
+    {
+     "headline": "阶跃STEPX Neo智能体手机亮相进博会",
+     "points": [
+      {
+       "en": "",
+       "zh": "阶跃终端旗下STEPX Neo智能体手机在高通展台首次亮相，展示支付宝神券、剪映、携程等生态合作体验。"
+      },
+      {
+       "en": "",
+       "zh": "该机以模型、软件、硬件一体化协同，支持用户通过个人智能体阶跃Amoo查询优惠、生成旅行视频、规划行程。"
+      },
+      {
+       "en": "",
+       "zh": "阶跃终端同时带来智能体终端原生开发工具Step Studio及开发者共创成果演示。"
+      }
+     ],
+     "why": "端侧智能体手机把大模型能力落到日常消费场景。",
+     "url": "https://www.qbitai.com/2026/11/508170.html",
+     "source": "量子位",
+     "sources_all": [
+      "量子位"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "阿里发布AI向善报告，数据中心成亮点",
+     "points": [
+      {
+       "en": "",
+       "zh": "阿里巴巴发布《2026 AI向善行动报告》，阿里云计划到2032年全球数据中心规模超过20吉瓦，并把绿电占比提升73.6%、PUE降至1.187。"
+      }
+     ],
+     "why": "AI基建的能耗与可持续性正成为公共议题。",
+     "url": "https://www.qbitai.com/2026/11/508165.html",
+     "source": "量子位",
+     "sources_all": [
+      "量子位"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "Claude接入银行账户管理个人财务",
+     "points": [
+      {
+       "en": "Anthropic has a new pitch for managing your personal finances: let Claude do it instead, with a new Personal Finance feature that connects it to your bank and card accounts via the Plaid bank bridging platform.",
+       "zh": "Anthropic 为个人财务管理提出了新方案：让 Claude 代劳。新推出的 Personal Finance 功能通过 Plaid 银行连接平台，把 Claude 接入你的银行和信用卡账户。"
+      }
+     ],
+     "why": "AI助手触及金融数据，隐私与边界问题凸显。",
+     "url": "https://www.theverge.com/ai-artificial-intelligence/1027652/anthropic-claude-plaid-personal-finance",
+     "source": "The Verge",
+     "sources_all": [
+      "The Verge"
+     ],
+     "date": "11/06",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "抗议者闯入微软阿姆斯特丹数据中心工地",
+     "points": [
+      {
+       "en": "Protesters have broken into a construction site of a new Microsoft data center in Amsterdam this morning.",
+       "zh": "今天上午，抗议者闯入了阿姆斯特丹一处微软新数据中心的施工现场。"
+      }
+     ],
+     "why": "数据中心扩张遭遇社区抵制，矛盾日益公开化。",
+     "url": "https://www.theverge.com/news/1028549/protesters-microsoft-data-center-site-amsterdam",
+     "source": "The Verge",
+     "sources_all": [
+      "The Verge"
+     ],
+     "date": "11/06",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "美芯片股暴跌，民主党推禁超级智能法案",
+     "points": [
+      {
+       "en": "",
+       "zh": "美国中期选举后科技股遭抛售，纳指单日暴跌5.52%，费城半导体指数跌约12.3%；民主党同时宣布推动《禁止人工超级智能法案》。"
+      }
+     ],
+     "why": "监管预期突变，直接冲击AI产业链估值。",
+     "url": "http://www.geekpark.net/news/373554",
+     "source": "极客公园",
+     "sources_all": [
+      "极客公园"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "豆包工作个人版取消5小时额度限制",
+     "points": [
+      {
+       "en": "",
+       "zh": "11月6日起，豆包工作个人版取消5小时短周期额度限制，用户可在周额度范围内灵活安排使用时间。"
+      }
+     ],
+     "why": "额度规则松绑，反映大模型产品竞争加剧。",
+     "url": "https://www.leiphone.com/category/industrynews/Ii6W43GghzJA7V1u.html",
+     "source": "雷峰网",
+     "sources_all": [
+      "IT之家",
+      "雷峰网"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "Thinking Machines发新模型估值400亿美元",
+     "points": [
+      {
+       "en": "",
+       "zh": "Mira Murati创立的Thinking Machines Lab发布第二代模型Inkling 2 Small，总参数594B，同时据报正以400亿美元投前估值融资50亿美元。"
+      }
+     ],
+     "why": "非中国开源模型追赶，训练数据来源引热议。",
+     "url": "http://www.geekpark.net/news/373637",
+     "source": "极客公园",
+     "sources_all": [
+      "极客公园"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "Claude Code产品负责人Cat Wu跳槽OpenAI",
+     "points": [
+      {
+       "en": "",
+       "zh": "前Claude Code产品负责人Cat Wu宣布加入OpenAI出任核心产品组产品负责人，这是十天内该团队离开的第三位核心成员。"
+      }
+     ],
+     "why": "关键人才流动或影响Anthropic上市前的产品节奏。",
+     "url": "https://www.leiphone.com/category/yanxishe/iIUJoulGndesZear.html",
+     "source": "雷峰网",
+     "sources_all": [
+      "雷峰网"
+     ],
+     "date": "11/05",
+     "lang": "zh",
+     "detailed": false
+    }
+   ]
+  },
+  {
+   "key": "auto",
+   "name": "AUTO",
+   "cn": "汽车",
+   "blurb": "新车、电动化与智能驾驶",
+   "accent": "#e17055",
+   "intro": "本周汽车行业既有中国品牌在销量与极速纪录上的双重突破，也有跨国车企在电动化产品、召回与定价策略上的密集动作。与此同时，自研电池与芯片正成为新势力车型改款的核心卖点。",
+   "note": "",
+   "items": [
+    {
+     "headline": "吉利星愿10月全球销量破7万辆，百万辆达成全球最快",
+     "points": [
+      {
+       "en": "",
+       "zh": "吉利星愿10月全球销量突破7万辆，官方称其为全球最快达成百万销量的新能源车型。"
+      },
+      {
+       "en": "",
+       "zh": "第100万辆星愿于10月20日下线，从2024年10月上市到达成百万辆用时约两年。"
+      },
+      {
+       "en": "",
+       "zh": "爬坡节奏持续加快：2026年8月为80万辆，10月即突破100万辆，最后20万辆仅用约两个月。"
+      }
+     ],
+     "why": "两年破百万辆，验证了低价纯电车型的规模爆发力。",
+     "url": "https://www.ithome.com/1/023/534.htm",
+     "source": "IT之家",
+     "sources_all": [
+      "IT之家"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "吉利星愿STAR限定系列上市，限时权益价8.88万元",
+     "points": [
+      {
+       "en": "",
+       "zh": "星愿STAR限定系列Ace和Chill上市，限时权益价8.88万元，新增电动前备箱与EVA机器人。"
+      },
+      {
+       "en": "",
+       "zh": "STAR Ace提供无忧绿、百事橙、流光银三色并配运动外观套件，STAR Chill采用奶盐米车色与沐光米内饰。"
+      },
+      {
+       "en": "",
+       "zh": "两车轴距均为2650mm，配备70L双气动撑杆前备箱，全系采用宁德时代电芯与神盾电池安全系统。"
+      }
+     ],
+     "why": "用限定版拉高配置与话题度，巩固爆款车型热度。",
+     "url": "https://www.ithome.com/1/023/526.htm",
+     "source": "IT之家",
+     "sources_all": [
+      "IT之家"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "仰望U9X跑出503.17km/h，刷新量产车极速纪录",
+     "points": [
+      {
+       "en": "",
+       "zh": "仰望U9X在阿布扎比封闭高速路段跑出503.17km/h最高时速，获FIA与吉尼斯认证。"
+      },
+      {
+       "en": "",
+       "zh": "这是继2025年9月德国ATP测试场496.22km/h之后，该车再次刷新全球量产车极速纪录。"
+      },
+      {
+       "en": "",
+       "zh": "U9X搭载四台30000rpm电机、综合马力超3000Ps，采用1200V高压平台与30C赛道级刀片电池。"
+      }
+     ],
+     "why": "中国纯电超跑首次突破500km/h，标志工程能力进阶。",
+     "url": "https://www.tmtpost.com/8196742.html",
+     "source": "钛媒体",
+     "sources_all": [
+      "钛媒体"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "奔驰在华召回18.03万辆，涉高压短路与门锁故障",
+     "points": [
+      {
+       "en": "",
+       "zh": "北京奔驰与奔驰中国备案召回18.03万辆国产及进口车，涉及高压系统短路与车门锁微动开关受潮故障两类隐患。"
+      }
+     ],
+     "why": "豪华品牌大规模召回，提醒关注高压与门锁安全。",
+     "url": "https://www.ithome.com/1/023/482.htm",
+     "source": "IT之家",
+     "sources_all": [
+      "IT之家"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "比亚迪警示伪造召回通知诈骗，官方召回不索要验证码",
+     "points": [
+      {
+       "en": "",
+       "zh": "比亚迪声明官方召回不会索要银行卡号、密码或验证码，也不会以“限时办理”“逾期取消质保”施压，提醒车主通过官方渠道核实。"
+      }
+     ],
+     "why": "召回诈骗盯上车主，信息安全意识需同步提升。",
+     "url": "https://www.jiemian.com/article/15305397.html",
+     "source": "界面新闻",
+     "sources_all": [
+      "界面新闻"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "本田首款全球电动SUV定名Alpha，12月印度首发",
+     "points": [
+      {
+       "en": "Honda just put a name on the electric SUV it is building for its next chapter, and the name is Honda Alpha.",
+       "zh": "本田为其下一阶段打造的电动SUV正式定名，叫做Honda Alpha。"
+      }
+     ],
+     "why": "印度将成本田全球电动车生产基地，值得留意。",
+     "url": "https://www.motor1.com/news/814604/honda-alpha-confirmed-india-built/",
+     "source": "Motor1",
+     "sources_all": [
+      "Motor1"
+     ],
+     "date": "11/06",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "通用获专利：摄像头读起跑灯自动弹射起步",
+     "points": [
+      {
+       "en": "General Motors just won a patent for a launch control system that watches the Christmas Tree at a drag strip and launches the car for you.",
+       "zh": "通用汽车刚获得一项弹射起步控制系统的专利，该系统能识别直线竞速赛的起跑灯树，并自动为驾驶者完成起步。"
+      }
+     ],
+     "why": "把赛道起步自动化，展示辅助驾驶的另类玩法。",
+     "url": "https://www.motor1.com/news/814671/gm-patents-camera-controlled-drag/",
+     "source": "Motor1",
+     "sources_all": [
+      "Motor1"
+     ],
+     "date": "11/06",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "丰田2027款RAV4涨价，Woodland版升级悬架",
+     "points": [
+      {
+       "en": "Toyota is making America's best-selling crossover a little tougher and a little more expensive at the same time.",
+       "zh": "丰田让这款美国最畅销的跨界车变得更硬派了一些，同时也更贵了一些。"
+      }
+     ],
+     "why": "销冠车型涨价并强化越野版，反映成本与定位调整。",
+     "url": "https://www.motor1.com/news/814660/2027-toyota-rav4-woodland-pricing/",
+     "source": "Motor1",
+     "sources_all": [
+      "Motor1"
+     ],
+     "date": "11/06",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "Lucid发布Cosmos预告视频，售价低于5万美元",
+     "points": [
+      {
+       "en": "Lucid has released a new teaser video of what looks like the Cosmos, its upcoming sub-$50,000 midsize electric SUV and the car that’s supposed to turn Lucid into a volume automaker.",
+       "zh": "Lucid发布了一段新预告视频，片中车型疑似其即将推出的5万美元以下中型纯电SUV Cosmos，这款车被寄望让Lucid成为规模化车企。"
+      }
+     ],
+     "why": "低价走量车型决定Lucid能否摆脱小众困境。",
+     "url": "https://electrek.co/2026/11/06/lucid-cosmos-teaser-cheaper-ev-new-images/",
+     "source": "Electrek",
+     "sources_all": [
+      "Electrek"
+     ],
+     "date": "11/06",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "2026款理想i6上市，标配自研5C电池与M100芯片",
+     "points": [
+      {
+       "en": "",
+       "zh": "2026款理想i6售价24.98万元，首销权益价23.98万元，标配96千瓦时连山5C电池与马赫M100辅助驾驶芯片，后驱版CLTC续航增至780公里。"
+      }
+     ],
+     "why": "自研电池与芯片上车走量车型，进入规模验证期。",
+     "url": "https://www.leiphone.com/category/transportation/rQrb2B1pDwOfnMlg.html",
+     "source": "雷峰网",
+     "sources_all": [
+      "雷峰网"
+     ],
+     "date": "11/05",
+     "lang": "zh",
+     "detailed": false
+    }
+   ]
+  },
+  {
+   "key": "tech",
+   "name": "TECH",
+   "cn": "数码",
+   "blurb": "手机、电脑与硬件",
+   "accent": "#0984e3",
+   "intro": "本周数码领域软硬件同步推进：华为鸿蒙生态在手机与 PC 两端持续扩张，苹果则用 OLED iPad mini 和 M6 芯片刷新多条产品线。与此同时，Windows 与折叠屏的下一步演进方向也逐渐清晰。",
+   "note": "",
+   "items": [
+    {
+     "headline": "华为 Mate 90 推送鸿蒙更新，优化睿影 Z10 拍摄",
+     "points": [
+      {
+       "en": "",
+       "zh": "华为向 Mate 90 系列推送 HarmonyOS 7.0.0.111 SP15 升级，系统包约 727.57MB，重点优化搭配睿影 Z10 模块相机时的拍摄效果与整机稳定性。"
+      },
+      {
+       "en": "",
+       "zh": "睿影 Z10 模块相机代号“金刚”，集成红枫等多种传感器，可与手机 SoC 协同，通过软硬芯 AI 协同和智能融合对焦实现快速、准确、稳定的对焦。"
+      },
+      {
+       "en": "",
+       "zh": "该模块还拥有独立光学防抖模块，与麒麟芯片协同，可带来旗舰级防抖体验。"
+      }
+     ],
+     "why": "手机厂商正用外接模块相机拓展影像边界，软硬协同成为新卖点。",
+     "url": "https://www.ithome.com/1/023/405.htm",
+     "source": "IT之家",
+     "sources_all": [
+      "IT之家"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "QQ 鸿蒙版 9.2.80 正式版上线，空间相册支持 AI 修复",
+     "points": [
+      {
+       "en": "",
+       "zh": "QQ 鸿蒙版在华为应用市场发布 9.2.80（3592）正式版，目前已获 5.1 万个评分，评分为 2.4。"
+      },
+      {
+       "en": "",
+       "zh": "该版本新增空间相册 AI 修复、简洁模式，并支持群禁言定时与单独成员禁言、号码识别、群文件体验优化等功能。"
+      },
+      {
+       "en": "",
+       "zh": "QQ 鸿蒙版此前已支持单聊、群聊、多人语音或视频通话、抢红包、刷空间动态、短视频、频道、扫一扫及手机与平板双端登录。"
+      }
+     ],
+     "why": "鸿蒙原生应用进入功能补齐期，QQ 的评分也反映用户期待仍高。",
+     "url": "https://www.ithome.com/1/023/411.htm",
+     "source": "IT之家",
+     "sources_all": [
+      "IT之家"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "苹果开售 OLED iPad mini、M6 iMac 与新 MacBook P",
+     "points": [
+      {
+       "en": "",
+       "zh": "苹果 11 月 6 日正式开售多款新品，包括配备 OLED 屏的全新 iPad mini、搭载 M6 芯片的 iMac 以及新一代 MacBook Pro 系列。"
+      },
+      {
+       "en": "",
+       "zh": "第八代 iPad mini 首次为苹果最小尺寸平板引入 OLED 技术，配备 8.5 英寸 Super Retina XDR 屏，峰值亮度最高 1200 尼特，机身厚 5.4 毫米、重约 255 克，是迄今最轻薄的 iPad，也是首款具备 IP67 防护的 iPad。"
+      },
+      {
+       "en": "",
+       "zh": "新款 iPad mini 采用 A20 Pro 处理器与 N1 无线芯片，支持 Wi‑Fi 7 和蓝牙 6，但刷新率仍为 60Hz，未支持 ProMotion，成为早期评测常见争议点。"
+      }
+     ],
+     "why": "iPad mini 换 OLED 却仍守 60Hz，苹果产品线分层策略再受审视。",
+     "url": "https://www.cnbeta.com.tw/articles/tech/1585294.htm",
+     "source": "cnBeta",
+     "sources_all": [
+      "cnBeta"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "异能者推 U126 双系统二合一，5499 元起",
+     "points": [
+      {
+       "en": "",
+       "zh": "异能者 U126 采用平板形态并附磁吸背光键盘，支持 Windows 11 与 Android 16 双系统，基于酷睿 Ultra 5 115U，配 12.6 英寸 2560×1600 OLED 屏，8GB+512GB 到手价 5499 元。"
+      }
+     ],
+     "why": "双系统二合一在平板与 PC 之间找新定位，价格已接近轻薄本。",
+     "url": "https://www.ithome.com/1/023/407.htm",
+     "source": "IT之家",
+     "sources_all": [
+      "IT之家"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "鸿蒙电脑累计发货破 100 万台，开放侧载",
+     "points": [
+      {
+       "en": "",
+       "zh": "截至 2026 年 10 月，鸿蒙电脑累计发货量突破 100 万台，华为称 2026 年单年发货量有望突破 100 万台，并宣布全面向开发者开放侧载能力。"
+      }
+     ],
+     "why": "百万发货量是桌面新系统跨过规模门槛的关键信号。",
+     "url": "https://www.leiphone.com/category/industrynews/6igykQlGwvA6vyCV.html",
+     "source": "雷峰网",
+     "sources_all": [
+      "雷峰网"
+     ],
+     "date": "11/05",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "微软或 2027 年推 Win11 27H2，性能大升级",
+     "points": [
+      {
+       "en": "",
+       "zh": "报道称 Windows 11 27H2 将接近一次完整操作系统升级，微软计划替换或大幅更新核心组件，而非像 25H2、26H2 那样靠启用包激活预置功能。"
+      }
+     ],
+     "why": "若属实，这将是 24H2 以来最大规模底层改动，影响所有 PC 用户。",
+     "url": "https://www.cnbeta.com.tw/articles/tech/1585298.htm",
+     "source": "cnBeta",
+     "sources_all": [
+      "cnBeta"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "《塞尔达：时之笛 重制版》午夜首发多地排队",
+     "points": [
+      {
+       "en": "",
+       "zh": "《塞尔达：时之笛 重制版》举行午夜发售，纽约、多伦多、贝尔维尤、伦敦等地门店外出现排队，伦敦一家门店外约有 110 人等候。"
+      }
+     ],
+     "why": "数字发行时代，实体首发排队正变成稀缺的社群仪式。",
+     "url": "https://www.cnbeta.com.tw/articles/game/1585210.htm",
+     "source": "cnBeta",
+     "sources_all": [
+      "cnBeta"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "VELOTRIC 完成 2 亿元 C 轮，押注外骨骼与球车",
+     "points": [
+      {
+       "en": "",
+       "zh": "E-bike 品牌 VELOTRIC 完成约 2 亿元 C 轮融资，投资方为国寿股权，琥珀资本跟投；品牌在北美有超 1600 家线下经销商，累计出货超 25 万台，并已立项低速社区车与外骨骼两条新产品线。"
+      }
+     ],
+     "why": "出海品牌不换市场换品类，围绕同一人群深挖需求值得参考。",
+     "url": "https://www.leiphone.com/category/weiwu/ozMqvnoWJ6l3FAhl.html",
+     "source": "雷峰网",
+     "sources_all": [
+      "雷峰网"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "Instagram Edits 登陆 Mac，支持 4K 导出",
+     "points": [
+      {
+       "en": "Instagram users can now download a Mac version of Edits, the company’s free video editing app, with multi-track editing, advanced color grading tools, direct publishing to Instagram, and 4K exports.",
+       "zh": "Instagram 用户现在可以下载 Mac 版 Edits，这是该公司免费的视频剪辑应用，支持多轨剪辑、高级调色工具、直接发布到 Instagram 以及 4K 导出。"
+      }
+     ],
+     "why": "手机剪辑工具向桌面迁移，创作者工作流正在被重新定义。",
+     "url": "https://9to5mac.com/2026/11/05/instagram-launches-edits-for-mac-with-multi-track-video-editing-and-4k-exports/",
+     "source": "9to5Mac",
+     "sources_all": [
+      "9to5Mac"
+     ],
+     "date": "11/05",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "iPhone Duo 折叠屏对比安卓：硬件不输，iOS 拖后腿",
+     "points": [
+      {
+       "en": "I’ve reviewed almost every Android foldable that was released this year, from Samsung and Google to Honor and Oppo, and I’ve been surprised to realize that the Duo holds its own against them all on hardware, but is let down by iOS itself.",
+       "zh": "我几乎评测了今年发布的每一款安卓折叠屏，从三星、谷歌到荣耀和 OPPO，令我意外的是，Duo 在硬件上完全不输它们，却被 iOS 本身拖了后腿。"
+      }
+     ],
+     "why": "苹果首款折叠屏的短板不在硬件而在系统适配，值得持续观察。",
+     "url": "https://www.theverge.com/tech/1026410/iphone-duo-foldable-android-samsung-google-xiaomi-oppo-honor",
+     "source": "The Verge",
+     "sources_all": [
+      "The Verge"
+     ],
+     "date": "11/06",
+     "lang": "en",
+     "detailed": false
+    }
+   ]
+  },
+  {
+   "key": "photo",
+   "name": "PHOTO",
+   "cn": "摄影",
+   "blurb": "器材、技术与影像",
+   "accent": "#00b894",
+   "intro": "本周摄影领域既有面向创作者的公共展示与政策利好，也有围绕器材与创作方法的实用讨论。从 VSCO 的全美广告牌展览到加拿大拟议的艺术家税收支持，摄影正在公共空间与制度层面获得更多可见度。",
+   "note": "",
+   "items": [
+    {
+     "headline": "VSCO公布The Fifty计划后25位摄影师",
+     "points": [
+      {
+       "en": "VSCO has announced the second half of its The Fifty campaign, a nationwide billboard-based exhibition that is celebrating one photographer in every U.S. state via large-format public displays in their home markets.",
+       "zh": "VSCO公布了The Fifty campaign的后半部分，这是一场全国性的广告牌展览，通过在各摄影师所在市场的大幅公共展示，表彰美国每个州的一位摄影师。"
+      },
+      {
+       "en": "",
+       "zh": "The Fifty campaign旨在表彰美国每个州的一位摄影师。"
+      },
+      {
+       "en": "",
+       "zh": "该展览在摄影师所在市场使用大幅公共展示。"
+      }
+     ],
+     "why": "摄影作品进入公共广告牌，拓展了创作者曝光渠道。",
+     "url": "https://petapixel.com/2026/11/05/the-fifty-vsco-reveals-the-final-25-photographers-in-its-nationwide-billboard-exhibition/",
+     "source": "PetaPixel",
+     "sources_all": [
+      "PetaPixel"
+     ],
+     "date": "11/06",
+     "lang": "en",
+     "detailed": true
+    },
+    {
+     "headline": "加拿大2026预算拟为摄影师提供税收支持",
+     "points": [
+      {
+       "en": "The Canadian Liberal government's new Budget 2026 will carve out protections and support for Canadian artists, including photographers.",
+       "zh": "加拿大自由党政府的新2026年预算将为加拿大艺术家（包括摄影师）划拨保护与支持措施。"
+      },
+      {
+       "en": "Budget 2026 will carve out protections and support for Canadian artists.",
+       "zh": "2026年预算将为加拿大艺术家划拨保护与支持。"
+      },
+      {
+       "en": "",
+       "zh": "支持范围包括摄影师。"
+      }
+     ],
+     "why": "税收政策直接影响摄影师的职业生存环境。",
+     "url": "https://petapixel.com/2026/11/06/canadian-photographers-get-huge-tax-break-in-proposed-federal-budget/",
+     "source": "PetaPixel",
+     "sources_all": [
+      "PetaPixel"
+     ],
+     "date": "11/06",
+     "lang": "en",
+     "detailed": true
+    },
+    {
+     "headline": "妙动科技融资目标估值12亿美元",
+     "points": [
+      {
+       "en": "",
+       "zh": "妙动科技正在推进新一轮融资，目标估值已来到12亿美元，此前曾获红杉、龙珠投资并完成460万美元众筹。"
+      }
+     ],
+     "why": "大疆系创业公司动向反映影像硬件资本热度。",
+     "url": "https://www.leiphone.com/category/weiwu/UDrzYpgEJMY4zajC.html",
+     "source": "雷峰网",
+     "sources_all": [
+      "雷峰网"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": true
+    },
+    {
+     "headline": "长期项目让摄影摆脱重复感",
+     "points": [
+      {
+       "en": "Landscape photography can settle into a loop: scout a spot, wait for light, take the frame, go home, and do it again next weekend.",
+       "zh": "风光摄影容易陷入循环：踩点、等光、按快门、回家，下周末再来一遍。"
+      }
+     ],
+     "why": "为陷入重复拍摄的爱好者提供创作方法参考。",
+     "url": "https://fstoppers.com/education/why-long-term-project-makes-photography-feel-less-repetitive-905438?utm_source=fstoppers&utm_medium=RSS&utm_campaign=rss_feed_articles",
+     "source": "Fstoppers",
+     "sources_all": [
+      "Fstoppers"
+     ],
+     "date": "11/06",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "Glyph推出新款读卡器扩展创作者支持",
+     "points": [
+      {
+       "en": "It is continuing that trend with the announcement of memory card readers.",
+       "zh": "它延续这一趋势，宣布推出存储卡读卡器。"
+      }
+     ],
+     "why": "存储配件完善，方便摄影师工作流。",
+     "url": "https://petapixel.com/2026/11/05/glyph-continues-its-expansion-into-creator-support-with-new-card-readers/",
+     "source": "PetaPixel",
+     "sources_all": [
+      "PetaPixel"
+     ],
+     "date": "11/06",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "柯达胶片感光度曾依赖牛与芥末",
+     "points": [
+      {
+       "en": "Added to a gelatin stripped of its natural sensitizer, that trace could raise the emulsion's sensitivity by a factor of ten or twenty.",
+       "zh": "加入已去除天然增感剂的明胶中，这一微量成分可将乳剂感光度提高十到二十倍。"
+      }
+     ],
+     "why": "一段胶片工艺史，帮助理解感光材料原理。",
+     "url": "https://fstoppers.com/historical/why-kodak-film-sensitivity-depended-cows-and-mustard-904447?utm_source=fstoppers&utm_medium=RSS&utm_campaign=rss_feed_articles",
+     "source": "Fstoppers",
+     "sources_all": [
+      "Fstoppers"
+     ],
+     "date": "11/06",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "按团队思路选相机比一机通吃更有效",
+     "points": [
+      {
+       "en": "That there is no such thing as one perfect camera that’s right for every job.",
+       "zh": "不存在一台适合所有工作的完美相机。"
+      }
+     ],
+     "why": "为器材选择提供务实思路，避免盲目追新。",
+     "url": "https://fstoppers.com/gear/how-using-team-approach-camera-purchases-can-be-more-effective-one-size-fits-all-905026?utm_source=fstoppers&utm_medium=RSS&utm_campaign=rss_feed_articles",
+     "source": "Fstoppers",
+     "sources_all": [
+      "Fstoppers"
+     ],
+     "date": "11/06",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "佳能发布DM-E10D麦克风与TC-N3遥控器",
+     "points": [
+      {
+       "en": "It weighs about 59g and is just 53.7mm long, which Canon says makes it its smallest hotshoe mic.",
+       "zh": "它重约59克、长仅53.7毫米，佳能称这是其最小的热靴麦克风。"
+      }
+     ],
+     "why": "轻量热靴麦克风方便视频与直播创作者。",
+     "url": "https://www.canonrumors.com/canon-announces-dm-e10d-digital-microphone-and-tc-n3-timer-remote-controller/",
+     "source": "Canon Rumors",
+     "sources_all": [
+      "Canon Rumors"
+     ],
+     "date": "11/04",
+     "lang": "en",
+     "detailed": false
+    },
+    {
+     "headline": "大疆老兵创业一年推出两款运动硬件",
+     "points": [
+      {
+       "en": "",
+       "zh": "一位前大疆技术骨干创业做运动硬件，一年内已推出两款产品，文章复盘其研发节奏与产品思路。"
+      }
+     ],
+     "why": "运动影像硬件新玩家，值得关注产品走向。",
+     "url": "https://www.leiphone.com/category/weiwu/NsNahCY0EA1kICK3.html",
+     "source": "雷峰网",
+     "sources_all": [
+      "雷峰网"
+     ],
+     "date": "11/06",
+     "lang": "zh",
+     "detailed": false
+    },
+    {
+     "headline": "2026年野生动物摄影便携相机选购指南",
+     "points": [
+      {
+       "en": "A compact camera is an appealing option because it combines a camera body and lens in one package.",
+       "zh": "便携相机颇具吸引力，因为它将机身与镜头合为一体。"
+      }
+     ],
+     "why": "为远距离拍摄动物提供轻便器材选择参考。",
+     "url": "https://www.canonrumors.com/how-to-choose-a-compact-camera-for-wildlife-photography-in-2026/",
+     "source": "Canon Rumors",
+     "sources_all": [
+      "Canon Rumors"
+     ],
+     "date": "10/30",
+     "lang": "en",
+     "detailed": false
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "name": "InfoQ",
+   "section": "ai",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "MIT Tech Review",
+   "section": "ai",
+   "ok": true,
+   "count": 10,
+   "error": ""
+  },
+  {
+   "name": "The Verge",
+   "section": "ai",
+   "ok": true,
+   "count": 10,
+   "error": ""
+  },
+  {
+   "name": "极客公园",
+   "section": "ai",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "量子位",
+   "section": "ai",
+   "ok": true,
+   "count": 10,
+   "error": ""
+  },
+  {
+   "name": "Autocar",
+   "section": "auto",
+   "ok": true,
+   "count": 40,
+   "error": ""
+  },
+  {
+   "name": "Car and Driver",
+   "section": "auto",
+   "ok": true,
+   "count": 50,
+   "error": ""
+  },
+  {
+   "name": "Electrek",
+   "section": "auto",
+   "ok": true,
+   "count": 150,
+   "error": ""
+  },
+  {
+   "name": "InsideEVs",
+   "section": "auto",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "Motor1",
+   "section": "auto",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "The Drive",
+   "section": "auto",
+   "ok": true,
+   "count": 12,
+   "error": ""
+  },
+  {
+   "name": "界面新闻",
+   "section": "auto",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "钛媒体",
+   "section": "auto",
+   "ok": true,
+   "count": 15,
+   "error": ""
+  },
+  {
+   "name": "Canon Rumors",
+   "section": "photo",
+   "ok": true,
+   "count": 10,
+   "error": ""
+  },
+  {
+   "name": "Fstoppers",
+   "section": "photo",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "PetaPixel",
+   "section": "photo",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "9to5Mac",
+   "section": "tech",
+   "ok": true,
+   "count": 100,
+   "error": ""
+  },
+  {
+   "name": "Engadget",
+   "section": "tech",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "IT之家",
+   "section": "tech",
+   "ok": true,
+   "count": 60,
+   "error": ""
+  },
+  {
+   "name": "The Verge",
+   "section": "tech",
+   "ok": true,
+   "count": 10,
+   "error": ""
+  },
+  {
+   "name": "cnBeta",
+   "section": "tech",
+   "ok": true,
+   "count": 150,
+   "error": ""
+  },
+  {
+   "name": "少数派",
+   "section": "tech",
+   "ok": true,
+   "count": 10,
+   "error": ""
+  },
+  {
+   "name": "爱范儿",
+   "section": "tech",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "雷峰网",
+   "section": "tech",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  }
+ ],
+ "stats": {
+  "articles": 746,
+  "sources_total": 24,
+  "sources_ok": 24,
+  "elapsed": 50.0,
+  "usage": {
+   "prompt_tokens": 20608,
+   "completion_tokens": 5469,
+   "calls": 6
+  }
+ }
+}

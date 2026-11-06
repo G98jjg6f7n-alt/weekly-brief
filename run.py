@@ -92,8 +92,11 @@ def main(argv: list[str]) -> int:
     cfg = load_config()
     no_llm = "--no-llm" in argv
 
-    # 本周已经生成过就直接打开，别重复抓一遍（CI 里永远重新生成）
     week = time.strftime("%G-W%V")
+    data_file = os.path.join(ROOT, cfg.get("output", {}).get("dir", "site"), "data", f"{week}.json")
+    if "--skip-if-done" in argv and os.path.isfile(data_file):
+        print(f"本周（{week}）已生成过，跳过抓取，直接部署现有内容")
+        return 0
     existing = os.path.join(ROOT, cfg.get("output", {}).get("dir", "site"), "issues", f"{week}.html")
     interactive = "--no-open" not in argv and not os.environ.get("CI")
     if (

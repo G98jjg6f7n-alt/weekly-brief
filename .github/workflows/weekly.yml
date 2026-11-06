@@ -2,8 +2,14 @@ name: weekly-brief
 
 on:
   schedule:
-    # 每周五 13:00 UTC = 北京时间 21:00（错峰时段，模型价格减半）
-    - cron: "0 13 * * 5"
+    # GitHub 的定时器不准时（整点最容易堵），所以错开整点、多排几次补跑。
+    # 生成脚本带 --skip-if-done：同一周只生成一次，多触发几次不会重复花钱。
+    - cron: "17 13 * * 5" # 周五 21:17 北京时间
+    - cron: "43 14 * * 5" # 周五 22:43 补跑
+    - cron: "17 2 * * 6" # 周六 10:17 再补一次
+  push:
+    paths:
+      - "site/**"
   workflow_dispatch: {}
 
 permissions:
@@ -31,7 +37,7 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           BARK_URL: ${{ secrets.BARK_URL }}
           PAGE_URL: ${{ vars.PAGE_URL }}
-        run: python3 run.py --no-open
+        run: python3 run.py --no-open --skip-if-done
 
       - name: 归档本期到仓库（保留历史）
         run: |
