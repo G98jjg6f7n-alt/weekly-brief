@@ -31,8 +31,7 @@ cat > "$PLIST" <<EOF
   <key>ProgramArguments</key>
   <array>
     <string>$PY</string>
-    <string>$DIR/run.py</string>
-    <string>--no-open</string>
+    <string>$DIR/publish.sh</string>
   </array>
   <key>WorkingDirectory</key><string>$DIR</string>
   <key>StartCalendarInterval</key>
@@ -51,5 +50,5 @@ EOF
 plutil -lint "$PLIST" >/dev/null
 launchctl unload "$PLIST" 2>/dev/null || true
 launchctl load "$PLIST" 2>/dev/null || echo "（plist 已生成，但 launchctl 未能加载，请手动执行：launchctl load $PLIST）"
-echo "已安装：每周五 21:00 自动生成（Mac 睡眠错过后会在唤醒时补跑）"
-echo "日志：$DIR/logs/launchd.log"
+echo "已安装：每周五 21:00 自动生成并发布（Mac 睡眠错过后会在唤醒时补跑）"
+echo "日志：$DIR/logs/publish.log"
