@@ -593,7 +593,7 @@ def render_issue(issue: dict, cfg: dict) -> str:
         .replace("__JS__", JS)
         .replace("__BODY__", main)
         .replace("__WEEK__", issue["week"])
-        .replace("__TITLE__", f"{cfg.get('title','WEEKLY BRIEF')} · {issue['week']}｜{issue.get('note','') or issue['range']}")
+        .replace("__TITLE__", f"{cfg.get('title','WEEKLY BRIEF')} · {issue['week']} 周报")
         .replace("__DESC__", esc((issue.get("opening") or issue["range"])[:120]))
     )
 
