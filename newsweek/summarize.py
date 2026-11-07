@@ -5,12 +5,27 @@ from .fetch import Article
 from .llm import LLMError, call_llm, parse_json_loose
 from .util import split_sentences
 
-SYSTEM = (
-    "你是《WEEKLY BRIEF》的主编，读者是一名中国高中生：聪明、有求知欲，但不想读论文。"
-    "你做的是「新闻 + 解释」，不是资讯搬运。"
+BASE_SYSTEM = (
+    "你是《WEEKLY BRIEF》的主编。你做的是「新闻 + 解释」，不是资讯搬运。"
     "你的文字克制、具体、有信息密度，从不用「震惊」「重磅」「炸裂」这类词，也不写空洞的套话。"
     "你必须只输出一个 JSON 对象，不要任何解释或 Markdown 代码块。"
 )
+
+
+def system_prompt(cfg: dict) -> str:
+    """把读者的长期画像注入系统提示词。"""
+    prof = cfg.get("profile") or {}
+    if not prof:
+        return BASE_SYSTEM
+    qs = "；".join(prof.get("questions") or [])
+    return (
+        BASE_SYSTEM
+        + f"\n\n读者画像：{prof.get('who','')}"
+        + (f"\n他长期想弄明白的问题：{qs}。" if qs else "")
+        + f"\n阅读偏好：{prof.get('taste','')}"
+        + (f"\n不要给他：{'、'.join(prof.get('avoid') or [])}。" if prof.get("avoid") else "")
+        + f"\n{prof.get('diversity','')}"
+    )
 
 
 def _clip(text: str, n: int) -> str:
@@ -66,7 +81,7 @@ def curate(sections: list[dict], pool: dict[str, list[Article]], cfg: dict) -> t
         + "\n".join(lines)
     )
     try:
-        data = parse_json_loose(call_llm(cfg, SYSTEM, user, max_tokens=3000))
+        data = parse_json_loose(call_llm(cfg, system_prompt(cfg), user, max_tokens=3000))
     except Exception:  # noqa: BLE001
         return [], ""
     picks: list[dict] = []
@@ -121,7 +136,7 @@ def write_items(section: dict, arts: list[Article], cfg: dict) -> dict[str, dict
         + WRITE_RULES
     )
     try:
-        data = parse_json_loose(call_llm(cfg, SYSTEM, user, max_tokens=4000))
+        data = parse_json_loose(call_llm(cfg, system_prompt(cfg), user, max_tokens=4000))
     except Exception:  # noqa: BLE001
         return {}
     out: dict[str, dict] = {}
@@ -163,7 +178,7 @@ def write_commentaries(arts: list[Article], summaries: dict[str, str], cfg: dict
         )
     user = "\n".join(blocks) + "\n" + DEEP_RULES
     try:
-        data = parse_json_loose(call_llm(cfg, SYSTEM, user, max_tokens=8000))
+        data = parse_json_loose(call_llm(cfg, system_prompt(cfg), user, max_tokens=8000))
     except Exception:  # noqa: BLE001
         return {}
     out: dict[str, dict] = {}
@@ -189,7 +204,7 @@ OPENING_RULES = """根据下面各栏目的标题，写 2 句话作为整期周�
 def write_opening(digest_lines: list[str], cfg: dict) -> dict:
     user = "\n".join(digest_lines) + "\n\n" + OPENING_RULES
     try:
-        data = parse_json_loose(call_llm(cfg, SYSTEM, user, max_tokens=400))
+        data = parse_json_loose(call_llm(cfg, system_prompt(cfg), user, max_tokens=400))
         return {"opening": str(data.get("opening", "")).strip(), "note": str(data.get("note", "")).strip()}
     except Exception:  # noqa: BLE001
         return {"opening": "", "note": ""}
@@ -214,7 +229,7 @@ def write_deep_dive(items: list[dict], cfg: dict) -> dict:
     lines = [f"- {it['headline']}：{it['summary'][:80]}" for it in items[:12]]
     user = "本周新闻：\n" + "\n".join(lines) + "\n\n" + DEEP_DIVE_RULES
     try:
-        data = parse_json_loose(call_llm(cfg, SYSTEM, user, max_tokens=4000))
+        data = parse_json_loose(call_llm(cfg, system_prompt(cfg), user, max_tokens=4000))
         return {
             "deep_dive": data.get("deep_dive") or {},
             "questions3": data.get("questions3") or [],

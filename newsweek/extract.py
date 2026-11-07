@@ -179,14 +179,18 @@ def _collect(node: Node) -> str:
     return "\n".join(out)
 
 
-def fetch_body(url: str, timeout: int = 15) -> str:
-    """抓取文章页并提取正文；失败返回空串，由调用方回退到 RSS 摘要。"""
+def fetch_article(url: str, timeout: int = 15) -> tuple[str, str]:
+    """返回 (正文, 原始 HTML)。失败返回 ("", "")。"""
     try:
         raw = http_get(url, timeout=timeout, retries=0)
         html_text = raw.decode("utf-8", "replace")
         head = html_text[:3000].lower()
         if "charset=gb" in head or "charset=\"gb" in head:
             html_text = raw.decode("gb18030", "replace")
-        return extract_text(html_text)
+        return extract_text(html_text), html_text
     except Exception:  # noqa: BLE001
-        return ""
+        return "", ""
+
+
+def fetch_body(url: str, timeout: int = 15) -> str:
+    return fetch_article(url, timeout)[0]

@@ -2,7 +2,7 @@
   "title": "WEEKLY BRIEF",
   "tagline": "每周七件事，帮你看懂世界怎么运转",
   "edition": 2,
-  "window_days": 8,
+  "window_days": 7,
   "target_items": 16,
   "min_items": 12,
   "max_items": 18,
@@ -14,14 +14,75 @@
       "en": "WORLD",
       "blurb": "国际政治、外交、地缘冲突与全球治理",
       "accent": "#3d5a80",
-      "keywords": ["中美", "中欧", "俄乌", "俄罗斯", "乌克兰", "中东", "以色列", "伊朗", "加沙", "联合国", "G20", "北约", "欧盟", "外交", "制裁", "关税", "贸易战", "峰会", "条约", "选举", "白宫", "国务院", "地缘", "国际秩序", "安理会", "停火", "谈判"],
+      "keywords": [
+        "中美",
+        "中欧",
+        "俄乌",
+        "俄罗斯",
+        "乌克兰",
+        "中东",
+        "以色列",
+        "伊朗",
+        "加沙",
+        "联合国",
+        "G20",
+        "北约",
+        "欧盟",
+        "外交",
+        "制裁",
+        "关税",
+        "贸易战",
+        "峰会",
+        "条约",
+        "选举",
+        "白宫",
+        "国务院",
+        "地缘",
+        "国际秩序",
+        "安理会",
+        "停火",
+        "谈判"
+      ],
       "sources": [
-        { "name": "人民网·国际", "url": "http://www.people.com.cn/rss/world.xml", "lang": "zh", "weight": 1.0 },
-        { "name": "中新网·国际", "url": "https://www.chinanews.com.cn/rss/world.xml", "lang": "zh", "weight": 1.0 },
-        { "name": "联合国新闻", "url": "https://news.un.org/feed/subscribe/zh/news/all/rss.xml", "lang": "zh", "weight": 1.1 },
-        { "name": "BBC 中文", "url": "https://feeds.bbci.co.uk/zhongwen/simp/rss.xml", "lang": "zh", "weight": 1.15, "region": "intl" },
-        { "name": "The Guardian", "url": "https://www.theguardian.com/world/rss", "lang": "en", "weight": 1.1, "region": "intl" },
-        { "name": "Al Jazeera", "url": "https://www.aljazeera.com/xml/rss/all.xml", "lang": "en", "weight": 1.0, "region": "intl" }
+        {
+          "name": "人民网·国际",
+          "url": "http://www.people.com.cn/rss/world.xml",
+          "lang": "zh",
+          "weight": 1.0
+        },
+        {
+          "name": "中新网·国际",
+          "url": "https://www.chinanews.com.cn/rss/world.xml",
+          "lang": "zh",
+          "weight": 1.0
+        },
+        {
+          "name": "联合国新闻",
+          "url": "https://news.un.org/feed/subscribe/zh/news/all/rss.xml",
+          "lang": "zh",
+          "weight": 1.1
+        },
+        {
+          "name": "BBC 中文",
+          "url": "https://feeds.bbci.co.uk/zhongwen/simp/rss.xml",
+          "lang": "zh",
+          "weight": 1.15,
+          "region": "intl"
+        },
+        {
+          "name": "The Guardian",
+          "url": "https://www.theguardian.com/world/rss",
+          "lang": "en",
+          "weight": 1.1,
+          "region": "intl"
+        },
+        {
+          "name": "Al Jazeera",
+          "url": "https://www.aljazeera.com/xml/rss/all.xml",
+          "lang": "en",
+          "weight": 1.0,
+          "region": "intl"
+        }
       ]
     },
     {
@@ -31,13 +92,72 @@
       "en": "CHINA",
       "blurb": "公共政策、社会结构、人口与民生",
       "accent": "#9c6644",
-      "keywords": ["政策", "国务院", "教育部", "卫健委", "人社部", "民政部", "人口", "老龄化", "出生率", "就业", "失业", "教育", "高考", "医疗", "医保", "养老", "社保", "房价", "房地产", "城乡", "户籍", "收入", "贫富", "基层", "治理", "改革", "试点", "立法", "监管", "民生", "农民工", "青年"],
+      "keywords": [
+        "政策",
+        "国务院",
+        "教育部",
+        "卫健委",
+        "人社部",
+        "民政部",
+        "人口",
+        "老龄化",
+        "出生率",
+        "就业",
+        "失业",
+        "教育",
+        "高考",
+        "医疗",
+        "医保",
+        "养老",
+        "社保",
+        "房价",
+        "房地产",
+        "城乡",
+        "户籍",
+        "收入",
+        "贫富",
+        "基层",
+        "治理",
+        "改革",
+        "试点",
+        "立法",
+        "监管",
+        "民生",
+        "农民工",
+        "青年"
+      ],
       "sources": [
-        { "name": "人民网·社会", "url": "http://www.people.com.cn/rss/society.xml", "lang": "zh", "weight": 1.0 },
-        { "name": "中新网·社会", "url": "https://www.chinanews.com.cn/rss/society.xml", "lang": "zh", "weight": 1.0 },
-        { "name": "人民网·时政", "url": "http://www.people.com.cn/rss/politics.xml", "lang": "zh", "weight": 1.05 },
-        { "name": "中新网·教育", "url": "https://www.chinanews.com.cn/rss/edu.xml", "lang": "zh", "weight": 0.9 },
-        { "name": "界面新闻", "url": "https://a.jiemian.com/index.php?m=article&a=rss", "lang": "zh", "weight": 1.05, "route": true }
+        {
+          "name": "人民网·社会",
+          "url": "http://www.people.com.cn/rss/society.xml",
+          "lang": "zh",
+          "weight": 1.0
+        },
+        {
+          "name": "中新网·社会",
+          "url": "https://www.chinanews.com.cn/rss/society.xml",
+          "lang": "zh",
+          "weight": 1.0
+        },
+        {
+          "name": "人民网·时政",
+          "url": "http://www.people.com.cn/rss/politics.xml",
+          "lang": "zh",
+          "weight": 1.05
+        },
+        {
+          "name": "中新网·教育",
+          "url": "https://www.chinanews.com.cn/rss/edu.xml",
+          "lang": "zh",
+          "weight": 0.9
+        },
+        {
+          "name": "界面新闻",
+          "url": "https://a.jiemian.com/index.php?m=article&a=rss",
+          "lang": "zh",
+          "weight": 1.05,
+          "route": true
+        }
       ]
     },
     {
@@ -47,13 +167,73 @@
       "en": "ECONOMY",
       "blurb": "宏观、金融、产业链与企业竞争",
       "accent": "#2a9d8f",
-      "keywords": ["GDP", "CPI", "PPI", "PMI", "央行", "美联储", "降息", "加息", "汇率", "人民币", "国债", "股市", "楼市", "通胀", "通缩", "财政", "税收", "出口", "进口", "产业链", "供应链", "制造业", "产能", "并购", "融资", "IPO", "财报", "营收", "利润", "裁员", "半导体", "芯片"],
+      "keywords": [
+        "GDP",
+        "CPI",
+        "PPI",
+        "PMI",
+        "央行",
+        "美联储",
+        "降息",
+        "加息",
+        "汇率",
+        "人民币",
+        "国债",
+        "股市",
+        "楼市",
+        "通胀",
+        "通缩",
+        "财政",
+        "税收",
+        "出口",
+        "进口",
+        "产业链",
+        "供应链",
+        "制造业",
+        "产能",
+        "并购",
+        "融资",
+        "IPO",
+        "财报",
+        "营收",
+        "利润",
+        "裁员",
+        "半导体",
+        "芯片"
+      ],
       "sources": [
-        { "name": "人民网·财经", "url": "http://www.people.com.cn/rss/finance.xml", "lang": "zh", "weight": 1.0 },
-        { "name": "中新网·财经", "url": "https://www.chinanews.com.cn/rss/finance.xml", "lang": "zh", "weight": 1.0 },
-        { "name": "经济观察网", "url": "http://www.eeo.com.cn/rss.xml", "lang": "zh", "weight": 1.1 },
-        { "name": "界面新闻", "url": "https://a.jiemian.com/index.php?m=article&a=rss", "lang": "zh", "weight": 1.05, "route": true },
-        { "name": "FT 中文网", "url": "http://www.ftchinese.com/rss/news", "lang": "zh", "weight": 1.15, "region": "intl" }
+        {
+          "name": "人民网·财经",
+          "url": "http://www.people.com.cn/rss/finance.xml",
+          "lang": "zh",
+          "weight": 1.0
+        },
+        {
+          "name": "中新网·财经",
+          "url": "https://www.chinanews.com.cn/rss/finance.xml",
+          "lang": "zh",
+          "weight": 1.0
+        },
+        {
+          "name": "经济观察网",
+          "url": "http://www.eeo.com.cn/rss.xml",
+          "lang": "zh",
+          "weight": 1.1
+        },
+        {
+          "name": "界面新闻",
+          "url": "https://a.jiemian.com/index.php?m=article&a=rss",
+          "lang": "zh",
+          "weight": 1.05,
+          "route": true
+        },
+        {
+          "name": "FT 中文网",
+          "url": "http://www.ftchinese.com/rss/news",
+          "lang": "zh",
+          "weight": 1.15,
+          "region": "intl"
+        }
       ]
     },
     {
@@ -63,14 +243,73 @@
       "en": "TECH",
       "blurb": "AI、半导体、航天与前沿科学",
       "accent": "#5f0f40",
-      "keywords": ["人工智能", "大模型", "模型", "算法", "芯片", "半导体", "算力", "GPU", "英伟达", "OpenAI", "Anthropic", "DeepSeek", "量子", "航天", "卫星", "火箭", "核聚变", "材料", "生物", "基因", "论文", "研究", "突破", "Nature", "Science", "诺贝尔", "超导", "光刻"],
+      "keywords": [
+        "人工智能",
+        "大模型",
+        "模型",
+        "算法",
+        "芯片",
+        "半导体",
+        "算力",
+        "GPU",
+        "英伟达",
+        "OpenAI",
+        "Anthropic",
+        "DeepSeek",
+        "量子",
+        "航天",
+        "卫星",
+        "火箭",
+        "核聚变",
+        "材料",
+        "生物",
+        "基因",
+        "论文",
+        "研究",
+        "突破",
+        "Nature",
+        "Science",
+        "诺贝尔",
+        "超导",
+        "光刻"
+      ],
       "sources": [
-        { "name": "量子位", "url": "https://www.qbitai.com/feed", "lang": "zh", "weight": 1.15 },
-        { "name": "人民网·科技", "url": "http://www.people.com.cn/rss/scitech.xml", "lang": "zh", "weight": 1.0 },
-        { "name": "InfoQ", "url": "https://www.infoq.cn/feed", "lang": "zh", "weight": 0.9 },
-        { "name": "MIT Tech Review", "url": "https://www.technologyreview.com/feed/", "lang": "en", "weight": 1.15 },
-        { "name": "Ars Technica", "url": "https://feeds.arstechnica.com/arstechnica/index", "lang": "en", "weight": 1.0 },
-        { "name": "IEEE Spectrum", "url": "https://spectrum.ieee.org/feeds/feed.rss", "lang": "en", "weight": 1.05 }
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/feed",
+          "lang": "zh",
+          "weight": 1.15
+        },
+        {
+          "name": "人民网·科技",
+          "url": "http://www.people.com.cn/rss/scitech.xml",
+          "lang": "zh",
+          "weight": 1.0
+        },
+        {
+          "name": "InfoQ",
+          "url": "https://www.infoq.cn/feed",
+          "lang": "zh",
+          "weight": 0.9
+        },
+        {
+          "name": "MIT Tech Review",
+          "url": "https://www.technologyreview.com/feed/",
+          "lang": "en",
+          "weight": 1.15
+        },
+        {
+          "name": "Ars Technica",
+          "url": "https://feeds.arstechnica.com/arstechnica/index",
+          "lang": "en",
+          "weight": 1.0
+        },
+        {
+          "name": "IEEE Spectrum",
+          "url": "https://spectrum.ieee.org/feeds/feed.rss",
+          "lang": "en",
+          "weight": 1.05
+        }
       ]
     },
     {
@@ -80,14 +319,77 @@
       "en": "INDUSTRY",
       "blurb": "汽车、制造、工程与工业设计",
       "accent": "#bc6c25",
-      "keywords": ["汽车", "车型", "新能源", "电动车", "电池", "智驾", "自动驾驶", "比亚迪", "特斯拉", "保时捷", "丰田", "大众", "宝马", "奔驰", "吉利", "理想", "蔚来", "小鹏", "F1", "赛车", "发动机", "底盘", "工厂", "制造", "产能", "机器人", "工业设计", "设计", "材料", "航空", "造船"],
+      "keywords": [
+        "汽车",
+        "车型",
+        "新能源",
+        "电动车",
+        "电池",
+        "智驾",
+        "自动驾驶",
+        "比亚迪",
+        "特斯拉",
+        "保时捷",
+        "丰田",
+        "大众",
+        "宝马",
+        "奔驰",
+        "吉利",
+        "理想",
+        "蔚来",
+        "小鹏",
+        "F1",
+        "赛车",
+        "发动机",
+        "底盘",
+        "工厂",
+        "制造",
+        "产能",
+        "机器人",
+        "工业设计",
+        "设计",
+        "材料",
+        "航空",
+        "造船"
+      ],
       "sources": [
-        { "name": "Electrek", "url": "https://electrek.co/feed/", "lang": "en", "weight": 1.05 },
-        { "name": "Motor1", "url": "https://www.motor1.com/rss/news/all/", "lang": "en", "weight": 0.95 },
-        { "name": "The Drive", "url": "https://www.thedrive.com/feed", "lang": "en", "weight": 0.95 },
-        { "name": "Dezeen", "url": "https://www.dezeen.com/feed/", "lang": "en", "weight": 0.9 },
-        { "name": "F1", "url": "https://www.formula1.com/en/latest/all.xml", "lang": "en", "weight": 0.85 },
-        { "name": "中新网·滚动", "url": "https://www.chinanews.com.cn/rss/scroll-news.xml", "lang": "zh", "weight": 0.95, "route": true }
+        {
+          "name": "Electrek",
+          "url": "https://electrek.co/feed/",
+          "lang": "en",
+          "weight": 1.05
+        },
+        {
+          "name": "Motor1",
+          "url": "https://www.motor1.com/rss/news/all/",
+          "lang": "en",
+          "weight": 0.95
+        },
+        {
+          "name": "The Drive",
+          "url": "https://www.thedrive.com/feed",
+          "lang": "en",
+          "weight": 0.95
+        },
+        {
+          "name": "Dezeen",
+          "url": "https://www.dezeen.com/feed/",
+          "lang": "en",
+          "weight": 0.9
+        },
+        {
+          "name": "F1",
+          "url": "https://www.formula1.com/en/latest/all.xml",
+          "lang": "en",
+          "weight": 0.85
+        },
+        {
+          "name": "中新网·滚动",
+          "url": "https://www.chinanews.com.cn/rss/scroll-news.xml",
+          "lang": "zh",
+          "weight": 0.95,
+          "route": true
+        }
       ]
     },
     {
@@ -97,12 +399,58 @@
       "en": "THOUGHT",
       "blurb": "哲学、历史、文化与观念之争",
       "accent": "#4a4e69",
-      "keywords": ["思想", "哲学", "历史", "文化", "观念", "理论", "社会思潮", "现代性", "自由主义", "保守主义", "平等", "正义", "理性", "文明", "传统", "文学", "艺术", "知识", "知识分子", "舆论", "媒介", "传播", "认知", "伦理", "道德"],
+      "keywords": [
+        "思想",
+        "哲学",
+        "历史",
+        "文化",
+        "观念",
+        "理论",
+        "社会思潮",
+        "现代性",
+        "自由主义",
+        "保守主义",
+        "平等",
+        "正义",
+        "理性",
+        "文明",
+        "传统",
+        "文学",
+        "艺术",
+        "知识",
+        "知识分子",
+        "舆论",
+        "媒介",
+        "传播",
+        "认知",
+        "伦理",
+        "道德"
+      ],
       "sources": [
-        { "name": "人民网·理论", "url": "http://www.people.com.cn/rss/theory.xml", "lang": "zh", "weight": 1.0 },
-        { "name": "人民网·观点", "url": "http://www.people.com.cn/rss/opinion.xml", "lang": "zh", "weight": 1.0 },
-        { "name": "中新网·文化", "url": "https://www.chinanews.com.cn/rss/culture.xml", "lang": "zh", "weight": 0.95 },
-        { "name": "Aeon", "url": "https://aeon.co/feed.rss", "lang": "en", "weight": 1.2 }
+        {
+          "name": "人民网·理论",
+          "url": "http://www.people.com.cn/rss/theory.xml",
+          "lang": "zh",
+          "weight": 1.0
+        },
+        {
+          "name": "人民网·观点",
+          "url": "http://www.people.com.cn/rss/opinion.xml",
+          "lang": "zh",
+          "weight": 1.0
+        },
+        {
+          "name": "中新网·文化",
+          "url": "https://www.chinanews.com.cn/rss/culture.xml",
+          "lang": "zh",
+          "weight": 0.95
+        },
+        {
+          "name": "Aeon",
+          "url": "https://aeon.co/feed.rss",
+          "lang": "en",
+          "weight": 1.2
+        }
       ]
     },
     {
@@ -112,17 +460,72 @@
       "en": "NATURE",
       "blurb": "气候、生态、医学与重大文化事件",
       "accent": "#386641",
-      "keywords": ["气候", "碳", "排放", "环境", "生态", "污染", "物种", "生物多样性", "医学", "疾病", "疫苗", "药物", "健康", "病毒", "地震", "洪水", "台风", "极端天气", "灾害", "奥运", "世界杯", "体育", "诺贝尔", "考古", "发现"],
+      "keywords": [
+        "气候",
+        "碳",
+        "排放",
+        "环境",
+        "生态",
+        "污染",
+        "物种",
+        "生物多样性",
+        "医学",
+        "疾病",
+        "疫苗",
+        "药物",
+        "健康",
+        "病毒",
+        "地震",
+        "洪水",
+        "台风",
+        "极端天气",
+        "灾害",
+        "奥运",
+        "世界杯",
+        "体育",
+        "诺贝尔",
+        "考古",
+        "发现"
+      ],
       "sources": [
-        { "name": "中新网·健康", "url": "https://www.chinanews.com.cn/rss/health.xml", "lang": "zh", "weight": 1.0 },
-        { "name": "中新网·体育", "url": "https://www.chinanews.com.cn/rss/sports.xml", "lang": "zh", "weight": 0.85 },
-        { "name": "NASA", "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss", "lang": "en", "weight": 1.0 },
-        { "name": "The Guardian·环境", "url": "https://www.theguardian.com/environment/rss", "lang": "en", "weight": 1.05, "region": "intl" }
+        {
+          "name": "中新网·健康",
+          "url": "https://www.chinanews.com.cn/rss/health.xml",
+          "lang": "zh",
+          "weight": 1.0
+        },
+        {
+          "name": "中新网·体育",
+          "url": "https://www.chinanews.com.cn/rss/sports.xml",
+          "lang": "zh",
+          "weight": 0.85
+        },
+        {
+          "name": "NASA",
+          "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+          "lang": "en",
+          "weight": 1.0
+        },
+        {
+          "name": "The Guardian·环境",
+          "url": "https://www.theguardian.com/environment/rss",
+          "lang": "en",
+          "weight": 1.05,
+          "region": "intl"
+        }
       ]
     }
   ],
   "selection": {
-    "quota": { "world": 3, "china": 3, "economy": 2, "tech": 3, "industry": 2, "thought": 1, "nature": 1 },
+    "quota": {
+      "world": 3,
+      "china": 3,
+      "economy": 2,
+      "tech": 3,
+      "industry": 2,
+      "thought": 1,
+      "nature": 1
+    },
     "novelty": 1,
     "max_per_source": 3,
     "min_importance": 1
@@ -136,8 +539,47 @@
     "deadline_seconds": 900,
     "temperature": 0.3,
     "max_tokens": 6000,
-    "extra_body": { "thinking": { "type": "disabled" } }
+    "extra_body": {
+      "thinking": {
+        "type": "disabled"
+      }
+    }
   },
-  "output": { "dir": "site" },
-  "notify": { "bark_url": "", "webhook": "" }
+  "output": {
+    "dir": "site"
+  },
+  "notify": {
+    "bark_url": "",
+    "webhook": ""
+  },
+  "profile": {
+    "who": "中国高中生，知识体系和世界观正在形成。理工科兴趣强，但同时持续关注社会学、哲学、经济学、国际政治、历史与文化。",
+    "questions": [
+      "技术进步如何改变社会？",
+      "生产力发展如何影响人的需求和生活？",
+      "经济增长与财富分配之间是什么关系？",
+      "国家、制度和社会结构如何影响个人？",
+      "人类应该如何理解现代文明？",
+      "人工智能将如何改变未来？",
+      "科学技术的发展是否必然带来社会进步？"
+    ],
+    "taste": "要事实、逻辑和机制解释；不要空洞观点和新闻复述；接受复杂性，但专业概念必须解释；要看到不同立场；不要迎合，发现认知偏差要主动给反例；不要为了深刻而编造因果。",
+    "avoid": [
+      "明星八卦",
+      "普通娱乐热搜",
+      "企业宣传稿",
+      "没有技术突破的产品发布",
+      "重复报道",
+      "无实质内容的社会小新闻"
+    ],
+    "diversity": "不要把范围限制在他的兴趣内，每周保留 1-2 条他不熟悉但有知识价值的内容。"
+  },
+  "images": {
+    "enabled": true,
+    "max_items": 14,
+    "per_item": 1,
+    "min_width": 600,
+    "min_height": 240,
+    "max_ratio": 3.4
+  }
 }

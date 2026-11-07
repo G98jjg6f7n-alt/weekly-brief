@@ -38,7 +38,7 @@ cat > "$PLIST" <<EOF
   <dict>
     <key>Weekday</key><integer>5</integer>
     <key>Hour</key><integer>21</integer>
-    <key>Minute</key><integer>0</integer>
+    <key>Minute</key><integer>30</integer>
   </dict>
   <key>StandardOutPath</key><string>$DIR/logs/launchd.log</string>
   <key>StandardErrorPath</key><string>$DIR/logs/launchd.err.log</string>
@@ -50,5 +50,5 @@ EOF
 plutil -lint "$PLIST" >/dev/null
 launchctl unload "$PLIST" 2>/dev/null || true
 launchctl load "$PLIST" 2>/dev/null || echo "（plist 已生成，但 launchctl 未能加载，请手动执行：launchctl load $PLIST）"
-echo "已安装：每周五 21:00 自动生成并发布（Mac 睡眠错过后会在唤醒时补跑）"
+echo "已安装：每周五 21:30 自动生成并发布（Mac 睡眠错过后会在唤醒时补跑）"
 echo "日志：$DIR/logs/publish.log"

@@ -62,6 +62,8 @@ class Article:
     published: datetime | None = None
     excerpt: str = ""
     body: str = ""
+    html: str = ""
+    image: dict | None = None
     weight: float = 1.0
     duplicates: list[str] = field(default_factory=list)
 

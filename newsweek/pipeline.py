@@ -9,7 +9,8 @@ import time
 from datetime import datetime
 
 from . import cluster, rank, summarize
-from .extract import fetch_body
+from . import media
+from .extract import fetch_article
 from .fetch import Article, detect_proxy, fetch_all, set_proxy
 from .llm import usage_summary
 from .util import TZ, fmt_cn, week_label, week_range
@@ -87,16 +88,88 @@ def fallback_picks(config: dict, pool: dict[str, list[Article]]) -> list[dict]:
     return picks
 
 
+def ensure_coverage(picks: list[dict], cfg: dict, pool: dict[str, list[Article]]) -> list[dict]:
+    """保证七个栏目都有内容，再按重要性裁到上限。"""
+    have = {p["section"] for p in picks}
+    used = {p["article"].url for p in picks}
+    for sec in cfg["sections"]:
+        if sec["key"] in have:
+            continue
+        cand = [a for a in pool.get(sec["key"], []) if a.url not in used]
+        if cand:
+            picks.append({"article": cand[0], "section": sec["key"], "importance": 2})
+            used.add(cand[0].url)
+    cap = int(cfg.get("max_items", 18))
+    if len(picks) <= cap:
+        return picks
+    # 先按重要性升序尝试剔除，但每个栏目至少留一条
+    order = {s["key"]: i for i, s in enumerate(cfg["sections"])}
+    picks.sort(key=lambda p: (int(p["importance"]), -order.get(p["section"], 9)))
+    keep: list[dict] = []
+    seen: set[str] = set()
+    for p in picks:
+        if p["section"] in seen:
+            continue
+        keep.append(p)
+        seen.add(p["section"])
+    rest = [p for p in picks if p not in keep]
+    rest.sort(key=lambda p: -int(p["importance"]))
+    for p in rest:
+        if len(keep) >= cap:
+            break
+        keep.append(p)
+    keep.sort(key=lambda p: (-int(p["importance"]), order.get(p["section"], 9)))
+    return keep
+
+
 def fetch_bodies(arts: list[Article], quiet: bool = False) -> None:
     def work(a: Article) -> None:
         if a.url:
-            a.body = fetch_body(a.url)
+            a.body, a.html = fetch_article(a.url)
 
     log(f"抓正文 {len(arts)} 篇…", quiet)
     with cf.ThreadPoolExecutor(max_workers=8) as pool:
         list(pool.map(work, arts))
     ok = sum(1 for a in arts if len(a.body) > 200)
     log(f"正文成功 {ok}/{len(arts)}", quiet)
+
+
+def attach_images(items: list[dict], art_map: dict, cfg: dict, quiet: bool = False) -> None:
+    """为重要条目配一张报道方原图；找不到就不配，绝不用占位图。"""
+    conf = cfg.get("images") or {}
+    if not conf.get("enabled", True):
+        return
+    limit = int(conf.get("max_items", 14))
+    todo = [it for it in items[:limit] if it.get("url") in art_map and art_map[it["url"]].html]
+    log(f"配图 {len(todo)} 条…", quiet)
+
+    def work(it: dict):
+        art = art_map[it["url"]]
+        try:
+            pics = media.pick(art.html, art.url, limit=1)
+        except Exception:  # noqa: BLE001
+            return it, None
+        return it, (pics[0] if pics else None)
+
+    results = []
+    with cf.ThreadPoolExecutor(max_workers=6) as pool:
+        results = list(pool.map(work, todo))
+
+    # 串行分配并去重：并发里判断 used 会漏掉同一张图
+    used: set[str] = set()
+    for it, pic in results:
+        if not pic or pic.url in used:
+            continue
+        used.add(pic.url)
+        it["image"] = {
+            "url": pic.url,
+            "w": pic.width,
+            "h": pic.height,
+            "alt": pic.alt,
+            "credit": f"图片来源：{art_map[it['url']].source}",
+        }
+    with_img = sum(1 for it in items if it.get("image"))
+    log(f"  成功配图 {with_img} 条", quiet)
 
 
 def build_issue(cfg: dict, *, no_llm: bool = False, quiet: bool = False) -> dict:
@@ -122,8 +195,7 @@ def build_issue(cfg: dict, *, no_llm: bool = False, quiet: bool = False) -> dict
         picks = fallback_picks(cfg, pool)
         log(f"  本地兜底选中 {len(picks)} 条", quiet)
 
-    # 控制总量
-    picks = picks[: int(cfg.get("max_items", 18))]
+    picks = ensure_coverage(picks, cfg, pool)
     arts = [p["article"] for p in picks]
     fetch_bodies(arts, quiet)
 
@@ -209,6 +281,8 @@ def build_issue(cfg: dict, *, no_llm: bool = False, quiet: bool = False) -> dict
                 "items": group,
             }
         )
+
+    attach_images(items, {a.url: a for a in arts}, cfg, quiet)
 
     if use_llm:
         log("写开场白与深度观察…", quiet)
