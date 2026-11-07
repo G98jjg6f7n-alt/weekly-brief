@@ -581,7 +581,7 @@ def render_issue(issue: dict, cfg: dict) -> str:
         + standfirst
         + '<main class="wrap">'
         + "".join(_section_html(s, cover_lead_id) for s in sections)
-        + _deep_html(issue.get("deep_dive") or {}, deep_img)
+        + _deep_html(issue.get("deep_dive") or {}, None)
         + '<div class="noresult" id="noresult">没有匹配的新闻，换个关键词。</div></main>'
         + _footer_html(issue)
     )
