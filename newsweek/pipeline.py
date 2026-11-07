@@ -1,25 +1,29 @@
-"""主流程：抓取 → 路由 → 去重聚类 → 排序 → 抓正文 → 摘要 → 渲染 → 归档。"""
+"""主流程 v2：抓取 → 预筛 → 模型精选 → 正文 → 卡片与评论 → 深度观察 → 渲染。"""
 from __future__ import annotations
 
 import concurrent.futures as cf
 import json
 import os
-import sys
+import re
 import time
 from datetime import datetime
 
-from . import cluster, rank
+from . import cluster, rank, summarize
 from .extract import fetch_body
-from .fetch import Article, fetch_all
-from .summarize import SectionDigest, find_duplicate_groups, summarize_section, usage_summary, write_opening
-from .util import fmt_cn, normalize_for_match, TZ, week_label, week_range
+from .fetch import Article, detect_proxy, fetch_all, set_proxy
+from .llm import usage_summary
+from .util import TZ, fmt_cn, week_label, week_range
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+JUNK = re.compile(
+    r"(明星|绯闻|八卦|恋情|官宣恋情|结婚|离婚|婚纱|写真|整容|网红|带货|彩票|中奖|双色球|"
+    r"开奖|运势|星座|风水|算命|灵异|猎奇|视频欣赏|组图|图集)"
+)
+
 
 def load_config(path: str | None = None) -> dict:
-    path = path or os.path.join(ROOT, "config.json")
-    with open(path, encoding="utf-8") as fh:
+    with open(path or os.path.join(ROOT, "config.json"), encoding="utf-8") as fh:
         return json.load(fh)
 
 
@@ -28,217 +32,237 @@ def log(msg: str, quiet: bool = False) -> None:
         print(msg, flush=True)
 
 
-def route_articles(articles: list[Article], sections: list[dict]) -> list[Article]:
-    """把综合源（IT之家、爱范儿等）里的汽车/摄影文章分流到对应板块。
-
-    打分规则：标题命中算 2 分、摘要命中算 1 分，总分 >= 2 才搬走；
-    标题里出现该板块的排除词（比如摄影板块的「电影」「游戏」）直接不搬。
-    综合源文章量大，这一步宁严勿滥，否则《沙丘 3》预告会跑进摄影板块。
-    """
-    kw = {
-        s["key"]: [k for k in (s.get("route_keywords") or s.get("keywords", [])) if k]
-        for s in sections
-    }
-    exclude = {s["key"]: (s.get("route_exclude") or []) for s in sections}
-    # route 是写在「源」上的：这些综合源的文章按关键词重新归到更合适的板块
-    routable = {
-        src["name"]
-        for sec in sections
-        for src in sec.get("sources", [])
-        if src.get("route")
-    }
-    for art in articles:
-        if art.source not in routable:
-            continue
-        title = normalize_for_match(art.title)
-        body = normalize_for_match(art.excerpt[:400])
-        if not title and not body:
-            continue
-        scores: dict[str, int] = {}
-        for key, words in kw.items():
-            score = 0
-            for w in words:
-                nw = normalize_for_match(w)
-                if not nw:
-                    continue
-                if nw in title:
-                    score += 2
-                elif nw in body:
-                    score += 1
-            if score:
-                scores[key] = score
-        if not scores:
-            continue
-        best = max(scores, key=scores.get)
-        if best == art.section or scores[best] < 2:
-            continue
-        if scores[best] <= scores.get(art.section, 0):
-            continue
-        if any(ex in art.title for ex in exclude.get(best, [])):
-            continue
-        art.section = best
-    return articles
+def load_profile(cfg: dict) -> dict:
+    """读取可选的个性化档案：栏目加权、关键词加权、长期观察清单。"""
+    out = os.path.join(ROOT, cfg.get("output", {}).get("dir", "site"), "data", "profile.json")
+    if not os.path.isfile(out):
+        return {}
+    try:
+        with open(out, encoding="utf-8") as fh:
+            return json.load(fh)
+    except Exception:  # noqa: BLE001
+        return {}
 
 
-def fetch_bodies(articles: list[Article], workers: int = 8, quiet: bool = False) -> None:
-    def work(art: Article) -> None:
-        if art.url:
-            art.body = fetch_body(art.url)
-
-    todo = [a for a in articles if a.url]
-    log(f"  抓正文 {len(todo)} 篇…", quiet)
-    with cf.ThreadPoolExecutor(max_workers=workers) as pool:
-        list(pool.map(work, todo))
-    ok = sum(1 for a in todo if len(a.body) > 200)
-    log(f"  正文成功 {ok}/{len(todo)}", quiet)
+def is_junk(title: str) -> bool:
+    return bool(JUNK.search(title or ""))
 
 
-def build_issue(cfg: dict, *, no_llm: bool = False, only: list[str] | None = None, quiet: bool = False) -> dict:
+def prepare_pool(config: dict, quiet: bool = False) -> tuple[dict[str, list[Article]], list, bool]:
+    proxy = detect_proxy()
+    set_proxy(proxy)
+    # 云端 runner 本身就在墙外，没有代理也能抓国际源
+    allow_intl = proxy is not None or bool(os.environ.get("CI"))
+    log(f"网络：{'经代理 ' + proxy if proxy else '直连（跳过需要代理的国际源）'}", quiet)
+
+    articles, sources = fetch_all(config, allow_intl)
+    ok = sum(1 for s in sources if s.ok)
+    log(f"抓取：{ok}/{len(sources)} 源正常，{len(articles)} 篇", quiet)
+
+    profile = load_profile(config)
+    sec_weight = profile.get("section_weight") or {}
+    kw_boost = [str(k) for k in (profile.get("keyword_boost") or []) if k]
+
+    articles = [a for a in articles if not is_junk(a.title)]
+    articles = cluster.dedupe_by_url(articles)
+    by_section: dict[str, list[Article]] = {}
+    for sec in config["sections"]:
+        pool = cluster.cluster([a for a in articles if a.section == sec["key"]])
+        factor = float(sec_weight.get(sec["key"], 1.0))
+        for a in pool:
+            a.weight *= factor
+            if any(k in (a.title + a.excerpt) for k in kw_boost):
+                a.weight *= 1.25
+        by_section[sec["key"]] = rank.rank(pool, sec.get("keywords", []))
+    return by_section, sources, allow_intl
+
+
+def fallback_picks(config: dict, pool: dict[str, list[Article]]) -> list[dict]:
+    quota = config.get("selection", {}).get("quota", {})
+    picks = []
+    for sec in config["sections"]:
+        n = int(quota.get(sec["key"], 2))
+        for art in pool.get(sec["key"], [])[:n]:
+            picks.append({"article": art, "section": sec["key"], "importance": 2 if n <= 2 else 1})
+    return picks
+
+
+def fetch_bodies(arts: list[Article], quiet: bool = False) -> None:
+    def work(a: Article) -> None:
+        if a.url:
+            a.body = fetch_body(a.url)
+
+    log(f"抓正文 {len(arts)} 篇…", quiet)
+    with cf.ThreadPoolExecutor(max_workers=8) as pool:
+        list(pool.map(work, arts))
+    ok = sum(1 for a in arts if len(a.body) > 200)
+    log(f"正文成功 {ok}/{len(arts)}", quiet)
+
+
+def build_issue(cfg: dict, *, no_llm: bool = False, quiet: bool = False) -> dict:
     started = time.time()
     now = datetime.now(TZ)
-    log(f"周报生成 · {week_label(now)} · {week_range(now)}", quiet)
+    log(f"周报 v2 · {week_label(now)} · {week_range(now)}", quiet)
 
-    log("1/6 抓取订阅源…", quiet)
-    articles, sources = fetch_all(cfg)
-    ok_sources = [s for s in sources if s.ok]
-    log(f"  {len(ok_sources)}/{len(sources)} 个源正常，{len(articles)} 篇文章", quiet)
-
-    log("2/6 分流与去重…", quiet)
-    articles = route_articles(articles, cfg["sections"])
-    articles = cluster.dedupe_by_url(articles)
-
-    per = cfg.get("per_section", {"detailed": 3, "brief": 7})
+    pool, sources, allow_intl = prepare_pool(cfg, quiet)
     llm_cfg = cfg.get("llm", {})
     use_llm = bool(llm_cfg.get("enabled", True)) and not no_llm and bool(
         os.environ.get(llm_cfg.get("api_key_env", "DEEPSEEK_API_KEY"), "").strip()
     )
-    # 大模型不可用时没有翻译，优先把能直接读的中文内容排上来
-    zh_boost = 0.0 if use_llm else float(cfg.get("rule_mode_zh_boost", 0.5))
-    ranked: dict[str, list[Article]] = {}
+    if not use_llm:
+        log("未启用模型：走规则版", quiet)
+
+    picks: list[dict] = []
+    opening, note = "", ""
+    if use_llm:
+        log("模型精选…", quiet)
+        picks, note = summarize.curate(cfg["sections"], pool, llm_cfg)
+        log(f"  选中 {len(picks)} 条", quiet)
+    if not picks:
+        picks = fallback_picks(cfg, pool)
+        log(f"  本地兜底选中 {len(picks)} 条", quiet)
+
+    # 控制总量
+    picks = picks[: int(cfg.get("max_items", 18))]
+    arts = [p["article"] for p in picks]
+    fetch_bodies(arts, quiet)
+
+    by_sec: dict[str, list[Article]] = {}
+    for p in picks:
+        by_sec.setdefault(p["section"], []).append(p["article"])
+
+    contents: dict[str, dict] = {}
+    if use_llm:
+        log("写摘要…", quiet)
+        for sec in cfg["sections"]:
+            group = by_sec.get(sec["key"]) or []
+            if not group:
+                continue
+            got = summarize.write_items(sec, group, llm_cfg)
+            contents.update(got)
+            log(f"  {sec['name']}：{len(got)}/{len(group)}", quiet)
+
+    # 排序：重要性优先，其次栏目权重
+    order = {s["key"]: i for i, s in enumerate(cfg["sections"])}
+    picks.sort(key=lambda p: (-int(p["importance"]), order.get(p["section"], 9)))
+
+    items: list[dict] = []
+    for p in picks:
+        art: Article = p["article"]
+        content = contents.get(art.url) or (summarize.rule_content(art) if not use_llm else summarize.rule_content(art))
+        item = {
+            "id": art.id,
+            "section": p["section"],
+            "importance": int(p["importance"]),
+            "headline": str(content.get("headline") or art.title)[:40],
+            "summary": (
+                ("（英文原文，未翻译）" if art.lang == "en" and not use_llm else "")
+                + str(content.get("summary") or "")
+            )[:230],
+            "why": str(content.get("why") or "")[:80],
+            "keywords": [str(k)[:12] for k in (content.get("keywords") or [])][:5],
+            "event_date": str(content.get("event_date") or "")[:12],
+            "take": {"mode": "short", "text": str(content.get("take") or "")[:200]},
+            "url": art.url,
+            "source": art.source,
+            "sources_all": sorted({art.source, *art.duplicates}),
+            "date_pub": art.published.strftime("%m/%d") if art.published else "",
+            "lang": art.lang,
+        }
+        items.append(item)
+
+    # 深度评论：前 4 条重要新闻
+    if use_llm and items:
+        top = [it for it in items if it["importance"] >= 2][:4]
+        if top:
+            art_map = {a.url: a for a in arts}
+            log(f"写深度评论 {len(top)} 条…", quiet)
+            deep = summarize.write_commentaries(
+                [art_map[it["url"]] for it in top if it["url"] in art_map],
+                {it["url"]: it["summary"] for it in top},
+                llm_cfg,
+            )
+            for it in top:
+                d = deep.get(it["url"])
+                if d and d.get("background"):
+                    it["take"] = {
+                        "mode": "full",
+                        "background": str(d.get("background", "")),
+                        "impact": str(d.get("impact", "")),
+                        "perspectives": str(d.get("perspectives", "")),
+                        "questions": [str(q) for q in (d.get("questions") or [])][:2],
+                    }
+
+    sections_out = []
     for sec in cfg["sections"]:
-        if only and sec["key"] not in only:
+        group = [it for it in items if it["section"] == sec["key"]]
+        if not group:
             continue
-        pool = [a for a in articles if a.section == sec["key"]]
-        clustered = cluster.cluster(pool)
-        ranked[sec["key"]] = rank.rank(clustered, sec.get("keywords", []), zh_boost=zh_boost)
-        log(f"  {sec['cn']:<4} 候选 {len(pool):>3d} → 聚类 {len(clustered):>3d}", quiet)
+        sections_out.append(
+            {
+                "key": sec["key"],
+                "idx": sec.get("idx", ""),
+                "name": sec["name"],
+                "en": sec.get("en", ""),
+                "blurb": sec["blurb"],
+                "accent": sec["accent"],
+                "items": group,
+            }
+        )
 
     if use_llm:
-        log("  跨板块查重（同一事件只留一条）…", quiet)
-        listing = [
-            {"section": sec["cn"], "title": art.title}
-            for sec in cfg["sections"] if sec["key"] in ranked
-            for art in ranked[sec["key"]][:24]
-        ]
-        groups = find_duplicate_groups(listing, llm_cfg)
-        drop: set[str] = set()
-        for group in groups:
-            for idx in group[1:]:
-                drop.add(listing[idx - 1]["title"])
-        if drop:
-            for key in ranked:
-                ranked[key] = [a for a in ranked[key] if a.title not in drop]
-            log(f"  合并 {sum(len(g) - 1 for g in groups)} 条重复报道（{len(groups)} 组）", quiet)
+        log("写开场白与深度观察…", quiet)
+        lines = [f"- {s['name']}：{s['items'][0]['headline']}" for s in sections_out]
+        meta = summarize.write_opening(lines, llm_cfg)
+        opening = meta.get("opening", "") or opening
+        note = note or meta.get("note", "")
+        dd = summarize.write_deep_dive(items, llm_cfg)
+    else:
+        dd = {"deep_dive": {}, "questions3": []}
 
-    picked: dict[str, tuple[list[Article], list[Article]]] = {}
-    for sec in cfg["sections"]:
-        if sec["key"] not in ranked:
-            continue
-        detailed, brief = rank.pick_ranked(ranked[sec["key"]], int(per["detailed"]), int(per["brief"]))
-        picked[sec["key"]] = (detailed, brief)
-        log(f"  {sec['cn']:<4} 详读 {len(detailed)} + 速览 {len(brief)}", quiet)
+    watch = [str(w) for w in (load_profile(cfg).get("watch") or [])]
+    if watch:
+        for it in items:
+            text = it["headline"] + it["summary"] + " ".join(it["keywords"])
+            hits = [w for w in watch if w and w[:8] in text]
+            if hits:
+                it["watch"] = hits[:2]
 
-    log("3/6 抓取正文…", quiet)
-    selected = [a for pair in picked.values() for group in pair for a in group]
-    fetch_bodies(selected, quiet=quiet)
-
-    log("4/6 生成摘要…", quiet)
-    if no_llm:
-        log("  --no-llm：强制使用规则摘要", quiet)
-    elif not use_llm:
-        log("  未检测到 API Key：使用规则摘要（配置 Key 后可自动升级为双语摘要）", quiet)
-
-    digests: list[SectionDigest] = []
-    for sec in cfg["sections"]:
-        if sec["key"] not in picked:
-            continue
-        detailed, brief = picked[sec["key"]]
-        if use_llm:
-            digest = summarize_section(sec, detailed, brief, llm_cfg)
-        else:
-            digest = SectionDigest(
-                key=sec["key"], name=sec["name"], cn=sec.get("cn", ""),
-                blurb=sec.get("blurb", ""), accent=sec.get("accent", "#333"),
-            )
-            from .summarize import _rule_fill
-
-            _rule_fill(digest, detailed, brief)
-            digest.intro = f"本周{sec.get('cn', sec['name'])}领域共 {len(digest.items)} 条更新。"
-        digests.append(digest)
-        log(f"  {sec['cn']:<4} 摘要 {len(digest.items)} 条{'（规则）' if digest.note else ''}", quiet)
-
-    failed = [d for d in digests if d.note]
-    opening = ""
-    if use_llm and digests and len(failed) < len(digests):
-        log("5/6 生成开场白…", quiet)
-        opening = write_opening(digests, llm_cfg)
-    if failed:
-        log(f"  注意：{len(failed)} 个板块降级为规则摘要", quiet)
-    mode = "rule" if not use_llm or len(failed) == len(digests) else ("mixed" if failed else "llm")
-
+    top_ids = [it["id"] for it in items[:5]]
     issue = {
+        "edition": 2,
         "week": week_label(now),
         "range": week_range(now),
         "generated_at": now.isoformat(timespec="minutes"),
         "generated_date": fmt_cn(now),
         "opening": opening,
-        "mode": mode,
-        "sections": [_digest_to_dict(d) for d in digests],
+        "note": note,
+        "mode": "llm" if use_llm else "rule",
+        "top_ids": top_ids,
+        "sections": sections_out,
+        "deep_dive": dd.get("deep_dive") or {},
+        "questions3": dd.get("questions3") or [],
         "sources": [
             {"name": s.name, "section": s.section, "ok": s.ok, "count": s.count, "error": s.error}
             for s in sources
         ],
         "stats": {
-            "articles": len(articles),
+            "articles": sum(len(v) for v in pool.values()),
             "sources_total": len(sources),
-            "sources_ok": len(ok_sources),
+            "sources_ok": sum(1 for s in sources if s.ok),
+            "items": len(items),
             "elapsed": round(time.time() - started, 1),
             "usage": usage_summary(),
+            "intl": allow_intl,
         },
     }
-    log(f"完成，用时 {issue['stats']['elapsed']}s", quiet)
+    log(f"完成：{len(items)} 条，{issue['stats']['elapsed']}s", quiet)
     return issue
 
 
-def _digest_to_dict(d: SectionDigest) -> dict:
-    return {
-        "key": d.key,
-        "name": d.name,
-        "cn": d.cn,
-        "blurb": d.blurb,
-        "accent": d.accent,
-        "intro": d.intro,
-        "note": d.note,
-        "items": [
-            {
-                "headline": it.headline,
-                "points": [{"en": p.en, "zh": p.zh} for p in it.points],
-                "why": it.why,
-                "url": it.url,
-                "source": it.source,
-                "sources_all": it.sources_all,
-                "date": it.published.strftime("%m/%d") if it.published else "",
-                "lang": it.lang,
-                "detailed": it.detailed,
-            }
-            for it in (d.detailed + d.brief)
-        ],
-    }
-
-
-def save_issue(issue: dict, cfg: dict, preview: bool = False) -> str:
+def save_issue(issue: dict, cfg: dict) -> str:
     out_dir = os.path.join(ROOT, cfg.get("output", {}).get("dir", "site"))
-    data_dir = os.path.join(out_dir, "preview" if preview else "data")
+    data_dir = os.path.join(out_dir, "data")
     os.makedirs(data_dir, exist_ok=True)
     path = os.path.join(data_dir, f"{issue['week']}.json")
     with open(path, "w", encoding="utf-8") as fh:
@@ -246,24 +270,47 @@ def save_issue(issue: dict, cfg: dict, preview: bool = False) -> str:
     return path
 
 
-def main(argv: list[str] | None = None) -> int:
-    argv = argv if argv is not None else sys.argv[1:]
-    no_llm = "--no-llm" in argv
-    only = None
-    for i, arg in enumerate(argv):
-        if arg == "--only" and i + 1 < len(argv):
-            only = argv[i + 1].split(",")
-    cfg = load_config()
-    issue = build_issue(cfg, no_llm=no_llm, only=only)
-
-    from .render import render_issue, write_site
-
-    html = render_issue(issue, cfg)
-    path = write_site(issue, html, cfg)
-    save_issue(issue, cfg)
-    print(f"已生成：{path}")
-    return 0
+def build_search_index(cfg: dict) -> str:
+    """汇总所有期数的条目，供历史检索页使用。"""
+    out_dir = os.path.join(ROOT, cfg.get("output", {}).get("dir", "site"))
+    data_dir = os.path.join(out_dir, "data")
+    records = []
+    issues = []
+    if os.path.isdir(data_dir):
+        for name in sorted(os.listdir(data_dir), reverse=True):
+            if not name.endswith(".json") or name in ("index.json", "profile.json"):
+                continue
+            try:
+                with open(os.path.join(data_dir, name), encoding="utf-8") as fh:
+                    d = json.load(fh)
+            except Exception:  # noqa: BLE001
+                continue
+            issues.append(
+                {
+                    "week": d.get("week", name[:-5]),
+                    "range": d.get("range", ""),
+                    "note": d.get("note", ""),
+                    "items": sum(len(s["items"]) for s in d.get("sections", [])),
+                }
+            )
+            for sec in d.get("sections", []):
+                for it in sec["items"]:
+                    records.append(
+                        {
+                            "w": d.get("week", ""),
+                            "s": sec.get("name", ""),
+                            "h": it.get("headline", ""),
+                            "d": (it.get("summary") or "")[:120],
+                            "u": it.get("url", ""),
+                            "k": " ".join(it.get("keywords") or []),
+                            "i": it.get("id", ""),
+                        }
+                    )
+    path = os.path.join(data_dir, "index.json")
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump({"issues": issues, "items": records}, fh, ensure_ascii=False)
+    return path
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit("请用 run.py 运行")

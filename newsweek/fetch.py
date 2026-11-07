@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import concurrent.futures as cf
 import gzip
+import os
+import socket
 import hashlib
 import io
 import re
@@ -19,6 +21,32 @@ UA = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/125.0 Safari/537.36"
 )
+_OPENER: urllib.request.OpenerDirector | None = None
+
+
+def detect_proxy() -> str | None:
+    """优先用环境变量；否则探测本机常见代理端口（Clash 7890 等）。"""
+    for key in ("HTTPS_PROXY", "https_proxy", "HTTP_PROXY", "http_proxy"):
+        if os.environ.get(key):
+            return os.environ[key]
+    for port in (7890, 7891, 1087, 6152, 8888):
+        try:
+            with socket.create_connection(("127.0.0.1", port), timeout=0.25):
+                return f"http://127.0.0.1:{port}"
+        except OSError:
+            continue
+    return None
+
+
+def set_proxy(url: str | None) -> None:
+    global _OPENER
+    if not url:
+        _OPENER = None
+        return
+    handler = urllib.request.ProxyHandler({"http": url, "https": url})
+    _OPENER = urllib.request.build_opener(handler)
+
+
 ATOM = "{http://www.w3.org/2005/Atom}"
 DC = "{http://purl.org/dc/elements/1.1/}"
 CONTENT = "{http://purl.org/rss/1.0/modules/content/}"
@@ -81,7 +109,8 @@ def http_get(url: str, timeout: int = 20, retries: int = 2, referer: str = "") -
             if referer:
                 headers["Referer"] = referer
             req = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
+            opener = _OPENER or urllib.request.build_opener()
+            with opener.open(req, timeout=timeout) as resp:
                 data = resp.read()
                 if resp.headers.get("Content-Encoding") == "gzip":
                     data = gzip.decompress(data)
@@ -246,13 +275,15 @@ def fetch_source(source: dict, section: str, window_days: int = 8) -> tuple[list
         result.elapsed = round(time.time() - started, 1)
 
 
-def fetch_all(config: dict) -> tuple[list[Article], list[SourceResult]]:
+def fetch_all(config: dict, allow_intl: bool = True) -> tuple[list[Article], list[SourceResult]]:
     """并发抓取所有源，返回文章和每个源的健康状况。"""
     window = int(config.get("window_days", 8))
     jobs = []
     for section in config["sections"]:
         for source in section["sources"]:
             if source.get("disabled"):
+                continue
+            if not allow_intl and source.get("region") == "intl":
                 continue
             jobs.append((source, section["key"]))
 

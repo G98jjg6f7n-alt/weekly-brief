@@ -1,396 +1,239 @@
-"""摘要引擎：大模型优先，规则兜底。任何时候都要产出内容。"""
+"""精选、摘要与「观察者视角」：全部由大模型生成，失败逐级降级。"""
 from __future__ import annotations
 
-import json
-import os
-import re
-import time
-import urllib.error
-import urllib.request
-from dataclasses import dataclass, field
-from datetime import datetime
-
 from .fetch import Article
-from .util import normalize_for_match, split_sentences, truncate
+from .llm import LLMError, call_llm, parse_json_loose
+from .util import split_sentences
 
-
-@dataclass
-class Point:
-    en: str = ""
-    zh: str = ""
-
-
-@dataclass
-class Item:
-    headline: str
-    points: list[Point] = field(default_factory=list)
-    why: str = ""
-    url: str = ""
-    source: str = ""
-    published: datetime | None = None
-    lang: str = "zh"
-    detailed: bool = False
-    sources_all: list[str] = field(default_factory=list)
-
-
-@dataclass
-class SectionDigest:
-    key: str
-    name: str
-    cn: str
-    blurb: str
-    accent: str
-    intro: str = ""
-    items: list[Item] = field(default_factory=list)
-    detailed: list[Item] = field(default_factory=list)
-    brief: list[Item] = field(default_factory=list)
-    note: str = ""
-
-
-class LLMError(RuntimeError):
-    pass
-
-
-USAGE = {"prompt_tokens": 0, "completion_tokens": 0, "calls": 0}
-
-
-def usage_summary() -> dict:
-    return dict(USAGE)
-
-
-SYSTEM_PROMPT = """你是一位资深中文科技媒体编辑，为一位中国大学生撰写每周新闻周报。
-你的读者对 AI、汽车、数码、摄影感兴趣，正在学英语。
-你必须只输出一个 JSON 对象，不要输出任何解释、前后缀或 Markdown 代码块。"""
-
-SCHEMA_HINT = """输出 JSON 结构：
-{
-  "intro": "本板块 2 句话导语，概括本周这一领域的整体动向，不要罗列条目",
-  "items": [
-    {
-      "n": 原始编号(整数),
-      "headline_zh": "不超过 22 字的中文小标题，要有信息量，不要写成标题党",
-      "points": [{"en": "英文原句", "zh": "中文翻译"}],
-      "why": "一句话说明为什么值得关注，不超过 30 字"
-    }
-  ]
-}"""
-
-
-def _post_json(url: str, payload: dict, api_key: str, timeout: int) -> dict:
-    data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-    req = urllib.request.Request(
-        url,
-        data=data,
-        headers={
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {api_key}",
-            "Accept": "application/json",
-        },
-        method="POST",
-    )
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return json.loads(resp.read().decode("utf-8"))
-
-
-def call_llm(cfg: dict, system: str, user: str, max_tokens: int | None = None) -> str:
-    api_key = os.environ.get(cfg.get("api_key_env", "DEEPSEEK_API_KEY"), "").strip()
-    if not api_key:
-        raise LLMError("no api key")
-    base = (
-        os.environ.get("DEEPSEEK_BASE_URL") or cfg.get("base_url", "https://api.deepseek.com")
-    ).rstrip("/")
-    payload = {
-        "model": os.environ.get("DEEPSEEK_MODEL") or cfg.get("model", "deepseek-flash"),
-        "messages": [
-            {"role": "system", "content": system},
-            {"role": "user", "content": user},
-        ],
-        "temperature": cfg.get("temperature", 0.3),
-        "max_tokens": max_tokens or cfg.get("max_tokens", 4000),
-        "response_format": {"type": "json_object"},
-        "stream": False,
-    }
-    # DeepSeek 的思考模式默认开启，会拖慢速度、抬高价格，而且思维链会混进 JSON；
-    # 这里显式关掉。换用不认识该字段的兼容接口时，下面会自动去掉它重试一次。
-    extra = dict(cfg.get("extra_body") or {})
-    payload.update(extra)
-    last: Exception | None = None
-    deadline = time.time() + float(cfg.get("deadline_seconds", 600))
-    max_attempts = 3
-    attempt = 0
-    while attempt < max_attempts:
-        attempt += 1
-        if time.time() > deadline:
-            raise LLMError(f"超时放弃：{last}")
-        try:
-            body = _post_json(f"{base}/chat/completions", payload, api_key, cfg.get("timeout", 120))
-            usage = body.get("usage") or {}
-            USAGE["prompt_tokens"] += int(usage.get("prompt_tokens", 0))
-            USAGE["completion_tokens"] += int(usage.get("completion_tokens", 0))
-            USAGE["calls"] += 1
-            return body["choices"][0]["message"]["content"]
-        except urllib.error.HTTPError as exc:
-            detail = exc.read().decode("utf-8", "replace")[:200]
-            last = LLMError(f"HTTP {exc.code}: {detail}")
-            if exc.code == 400 and any(k in payload for k in extra):
-                for key in extra:
-                    payload.pop(key, None)
-                max_attempts = max(max_attempts, attempt + 1)
-                continue
-            if exc.code in (400, 401, 402, 403):
-                break
-        except Exception as exc:  # noqa: BLE001
-            last = exc
-            # 连不上（DNS/TCP）就别等三次，网络抖动两次足够
-            if isinstance(exc, (urllib.error.URLError, OSError)):
-                max_attempts = min(max_attempts, 2)
-        if attempt < max_attempts and time.time() + 3 < deadline:
-            time.sleep(2)
-    raise LLMError(str(last)[:300])
-
-
-def parse_json_loose(text: str) -> dict:
-    text = (text or "").strip()
-    text = re.sub(r"^```(?:json)?|```$", "", text, flags=re.M).strip()
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        pass
-    start, end = text.find("{"), text.rfind("}")
-    if start >= 0 and end > start:
-        chunk = text[start : end + 1]
-        try:
-            return json.loads(chunk)
-        except json.JSONDecodeError:
-            chunk = re.sub(r",\s*([}\]])", r"\1", chunk)
-            return json.loads(chunk)
-    raise LLMError("模型返回的不是 JSON")
-
-
-def _article_block(idx: int, art: Article, detailed: bool, max_chars: int) -> str:
-    body = truncate(art.text or art.excerpt, max_chars)
-    date = art.published.strftime("%m月%d日") if art.published else ""
-    return (
-        f"[{idx}] 标题：{art.title}\n"
-        f"来源：{art.source}｜语言：{'中文' if art.lang == 'zh' else '英文'}｜日期：{date}"
-        f"｜{'详读' if detailed else '速览'}\n"
-        f"正文节选：{body}\n"
-    )
-
-
-def summarize_section(
-    section: dict,
-    detailed: list[Article],
-    brief: list[Article],
-    cfg: dict,
-) -> SectionDigest:
-    digest = SectionDigest(
-        key=section["key"],
-        name=section["name"],
-        cn=section.get("cn", section["name"]),
-        blurb=section.get("blurb", ""),
-        accent=section.get("accent", "#333333"),
-    )
-    all_arts = detailed + brief
-    max_chars = int(cfg.get("max_chars_per_article", 1200))
-    blocks = [
-        _article_block(i + 1, art, i < len(detailed), max_chars)
-        for i, art in enumerate(all_arts)
-    ]
-    user = (
-        f"板块：{section['name']}（{section.get('cn', '')}）\n"
-        f"本板块文章已按重要性排序，共 {len(all_arts)} 篇：前 {len(detailed)} 篇标为「详读」，其余为「速览」。\n\n"
-        + "\n".join(blocks)
-        + "\n写作要求：\n"
-        f"1. 输出全部 {len(all_arts)} 条，按原编号顺序，不要增删。\n"
-        "2. 「详读」条目写 3 组句子对；「速览」条目写 1 组句子对。\n"
-        "3. 英文源：en 必须是正文里逐字出现的英文原句（可截取一句，不改写、不拼接）；zh 是这一句准确通顺的中文翻译，不是逐字硬译。\n"
-        "4. 中文源：en 留空字符串，zh 写一句实质性概括或摘录，不要复述标题。\n"
-        "5. headline_zh 是中文小标题，不超过 22 字，必须包含具体信息（谁、做了什么、数字）。\n"
-        "6. why 用一句话说清这件事为什么值得关注，不超过 30 字。\n"
-        "7. 不要编造正文里没有的事实、数字和引语。\n\n"
-        + SCHEMA_HINT
-    )
-    try:
-        raw = call_llm(cfg, SYSTEM_PROMPT, user)
-        data = parse_json_loose(raw)
-    except Exception as exc:  # noqa: BLE001 - 失败即降级
-        digest.note = f"规则摘要（{str(exc)[:60]}）"
-        return _rule_fill(digest, detailed, brief)
-
-    by_index = {i + 1: art for i, art in enumerate(all_arts)}
-    for entry in data.get("items", []):
-        try:
-            n = int(entry.get("n"))
-        except (TypeError, ValueError):
-            continue
-        art = by_index.get(n)
-        if not art:
-            continue
-        points: list[Point] = []
-        for p in entry.get("points", [])[:4]:
-            if not isinstance(p, dict):
-                continue
-            en = str(p.get("en", "")).strip()
-            zh = str(p.get("zh", "")).strip()
-            if art.lang == "zh":
-                en = ""  # 中文源不该出现英文原句，模型串了就直接丢掉
-            if en and not _quote_is_real(en, art.text or art.excerpt):
-                en = ""  # 模型改写了原句，宁可不显示也不误导
-            elif en:
-                en = tidy_quote(en, art.text or art.excerpt)
-            if NOISE_LINE.search(zh) and len(zh) < 40:
-                zh = ""
-            if NOISE_LINE.search(en) and len(en) < 40:
-                en = ""
-            if en or zh:
-                points.append(Point(en=en, zh=zh))
-        item = Item(
-            headline=str(entry.get("headline_zh") or art.title).strip()[:40],
-            points=points,
-            why=str(entry.get("why", "")).strip()[:60],
-            url=art.url,
-            source=art.source,
-            published=art.published,
-            lang=art.lang,
-            detailed=n <= len(detailed),
-            sources_all=sorted({art.source, *art.duplicates}),
-        )
-        digest.items.append(item)
-        (digest.detailed if item.detailed else digest.brief).append(item)
-    digest.intro = str(data.get("intro", "")).strip()
-
-    # 模型漏掉的条目用规则补上，保证数量
-    covered = {it.url for it in digest.items}
-    missing_detailed = [a for a in detailed if a.url not in covered]
-    missing_brief = [a for a in brief if a.url not in covered]
-    if missing_detailed or missing_brief:
-        filler = SectionDigest(
-            key=digest.key, name=digest.name, cn=digest.cn, blurb=digest.blurb, accent=digest.accent
-        )
-        _rule_fill(filler, missing_detailed, missing_brief)
-        digest.detailed.extend(filler.detailed)
-        digest.brief.extend(filler.brief)
-        digest.items.extend(filler.items)
-    if not digest.intro:
-        digest.intro = f"本周 {section.get('cn', section['name'])} 领域共 {len(digest.items)} 条值得注意的进展。"
-    return digest
-
-
-TERMINAL = ".!?\"”’"
-
-
-def tidy_quote(quote: str, source: str) -> str:
-    """模型偶尔把句子截在半个从句上，退回到最后一个完整句。"""
-    quote = quote.strip()
-    if not quote or quote[-1] in TERMINAL:
-        return quote
-    idx = max(quote.rfind(c) for c in ".!?")
-    if idx >= 40:
-        trimmed = quote[: idx + 1].strip()
-        if _quote_is_real(trimmed, source):
-            return trimmed
-    return quote
-
-
-def _quote_is_real(quote: str, source: str) -> bool:
-    if not quote or not source:
-        return False
-    q = normalize_for_match(quote)
-    s = normalize_for_match(source)
-    return bool(q) and q in s
-
-
-NOISE_LINE = re.compile(
-    r"(点击查看原文|阅读原文|点击阅读|点此查看|查看原文|原文链接|扫码关注|关注我们的|"
-    r"read more|click here|continue reading)",
-    re.I,
+SYSTEM = (
+    "你是《WEEKLY BRIEF》的主编，读者是一名中国高中生：聪明、有求知欲，但不想读论文。"
+    "你做的是「新闻 + 解释」，不是资讯搬运。"
+    "你的文字克制、具体、有信息密度，从不用「震惊」「重磅」「炸裂」这类词，也不写空洞的套话。"
+    "你必须只输出一个 JSON 对象，不要任何解释或 Markdown 代码块。"
 )
 
 
-def _clean(text: str) -> str:
-    lines = [ln for ln in (text or "").splitlines() if ln.strip() and not NOISE_LINE.search(ln)]
-    return "\n".join(lines).strip()
+def _clip(text: str, n: int) -> str:
+    text = (text or "").strip().replace("\n", " ")
+    return text[:n]
 
 
-def _rule_point(art: Article) -> list[Point]:
-    sentences = split_sentences(_clean(art.text or art.excerpt))
-    body = " ".join(sentences[:2]) if sentences else (art.excerpt or art.title)
-    body = truncate(body, 160)
-    if art.lang == "zh":
-        return [Point(en="", zh=body)]
-    return [Point(en=body, zh="")]
+# ---------------------------------------------------------------- 精选
 
 
-def _rule_fill(digest: SectionDigest, detailed: list[Article], brief: list[Article]) -> SectionDigest:
-    for group, is_detailed in ((detailed, True), (brief, False)):
-        for art in group:
-            item = Item(
-                headline=art.title,
-                points=_rule_point(art),
-                url=art.url,
-                source=art.source,
-                published=art.published,
-                lang=art.lang,
-                detailed=is_detailed,
-                sources_all=sorted({art.source, *art.duplicates}),
-            )
-            digest.items.append(item)
-            (digest.detailed if is_detailed else digest.brief).append(item)
-    if not digest.items:
-        digest.intro = "本周没有抓取到内容。"
-    return digest
+CURATE_RULES = """你是周报主编，要从本周几百条候选新闻里挑出 12-18 条真正值得读的。
+判断标准，按权重从高到低：
+1. 事件本身有多重要（影响范围、涉及多少人、是否改变规则）；
+2. 对理解社会、经济、科技运行机制的帮助有多大；
+3. 是否有长期影响，而不只是当天的热闹；
+4. 信息是否可靠（官方文件、一手数据、专业媒体优先）。
+
+坚决排除：
+- 明星八卦、娱乐热搜、体育赛果（除非有超出比赛本身的意义）；
+- 常规产品发布、价格促销、企业公关稿；
+- 没有技术突破的「AI 新品」通稿；
+- 同一事件的多篇重复报道（只留信息最全的一条）；
+- 无实质内容的日常社会小新闻。
+
+七个栏目是：world(世界与秩序)、china(中国与社会)、economy(经济与产业)、
+tech(科技与未来)、industry(工业与设计)、thought(思想与文明)、nature(自然与人类)。
+
+要求：
+- 每个栏目至少 1 条，但不要为了填满而凑数；总数为 12-18 条。
+- 保留 1-2 条读者兴趣之外、但确实有价值的「陌生领域」内容。
+- importance：3 = 值得写深度评论；2 = 重要；1 = 值得一扫。
+输出 JSON：{"picks":[{"id":编号,"section":"栏目key","importance":2}],"note":"一句话说明本期主线"}"""
 
 
-def write_opening(sections: list[SectionDigest], cfg: dict) -> str:
-    """整期开场白：用各板块标题喂给模型，失败就用模板句。"""
-    lines = []
+def curate(sections: list[dict], pool: dict[str, list[Article]], cfg: dict) -> tuple[list[dict], str]:
+    """让模型从候选池里挑条目。失败返回空，由调用方退回本地排序。"""
+    lines: list[str] = []
+    index: dict[int, tuple[str, Article]] = {}
+    n = 1
     for sec in sections:
-        tops = "；".join(it.headline for it in (sec.detailed or sec.brief)[:2])
-        lines.append(f"{sec.cn}：{tops}")
+        arts = pool.get(sec["key"], [])[:22]
+        for art in arts:
+            index[n] = (sec["key"], art)
+            lines.append(
+                f"#{n} [{sec['key']}] {_clip(art.title, 60)} | {art.source} | {_clip(art.excerpt, 90)}"
+            )
+            n += 1
+    if not lines:
+        return [], ""
     user = (
-        "下面是本周四个板块的条目摘要。请写 2 句话作为整期周报的开场白，"
-        "要像一个懂行的朋友在跟你聊天，指出本周最值得注意的一条主线，不要罗列板块。\n\n"
+        CURATE_RULES
+        + "\n\n候选列表（编号 | 栏目 | 标题 | 来源 | 摘要）：\n"
         + "\n".join(lines)
-        + '\n\n输出 JSON：{"opening": "..."}'
     )
     try:
-        data = parse_json_loose(call_llm(cfg, SYSTEM_PROMPT, user, max_tokens=300))
-        text = str(data.get("opening", "")).strip()
-        if text:
-            return text
+        data = parse_json_loose(call_llm(cfg, SYSTEM, user, max_tokens=3000))
     except Exception:  # noqa: BLE001
-        pass
-    return ""
-
-
-DEDUPE_PROMPT = """下面是同一周内几个板块的候选新闻标题（编号、板块、标题）。
-其中有些是同一件事被不同媒体、不同语言报道，措辞完全不同。
-请找出重复的组。每组用编号列表表示，把信息量最大、最适合保留的那条放在第一位。
-判定标准：报道的是同一个具体事件（同一款产品、同一笔交易、同一个发布），
-而不仅仅是同一个话题。宁可漏判，也不要误杀。
-只输出 JSON：{"groups": [[3, 17], [22, 41, 55]]}
-没有重复就输出 {"groups": []}。最多 20 组。"""
-
-
-def find_duplicate_groups(listing: list[dict], cfg: dict) -> list[list[int]]:
-    """让模型找出跨板块的同一事件，返回编号分组（1-based）。"""
-    if len(listing) < 2:
-        return []
-    lines = "\n".join(
-        f"#{i + 1} [{it['section']}] {it['title']}" for i, it in enumerate(listing)
-    )
-    try:
-        data = parse_json_loose(call_llm(cfg, SYSTEM_PROMPT, DEDUPE_PROMPT + "\n\n" + lines, max_tokens=800))
-    except Exception:  # noqa: BLE001
-        return []
-    groups: list[list[int]] = []
-    for group in data.get("groups", []):
+        return [], ""
+    picks: list[dict] = []
+    seen: set[str] = set()
+    for p in data.get("picks", []):
         try:
-            idx = sorted({int(x) for x in group})
+            idx = int(p.get("id"))
         except (TypeError, ValueError):
             continue
-        idx = [i for i in idx if 1 <= i <= len(listing)]
-        if len(idx) >= 2:
-            groups.append(idx)
-    return groups
+        if idx not in index:
+            continue
+        sec_key, art = index[idx]
+        if art.url in seen:
+            continue
+        seen.add(art.url)
+        picks.append(
+            {
+                "article": art,
+                "section": p.get("section") if p.get("section") in {s["key"] for s in sections} else sec_key,
+                "importance": max(1, min(3, int(p.get("importance", 2)))),
+            }
+        )
+    return picks, str(data.get("note", "")).strip()
+
+
+# ---------------------------------------------------------------- 单条写作
+
+
+WRITE_RULES = """为下列每条新闻写中文卡片，事实与判断必须分开：
+- headline：不超过 24 字，具体（主体 + 动作 + 关键信息），不要标题党，不要用问号；
+- summary：100-180 字，只陈述事实——发生了什么、关键数字、必要背景。
+  不要写「这意味着」「反映出」这类评论，评论放到 why 和 take 里；
+- why：一句话，不超过 40 字，说清「为什么值得一个高中生花时间看」；
+- keywords：3-5 个中文关键词，用于检索；
+- take：2 句话的短评，指出这件事的关键机制或最值得注意的一点（不要复述摘要）。
+如果原文是英文，headline/summary 仍然用中文；专有名词保留英文原词。
+输出 JSON：{"items":[{"id":编号,"headline":"","summary":"","why":"","keywords":[],"take":""}]}"""
+
+
+def write_items(section: dict, arts: list[Article], cfg: dict) -> dict[str, dict]:
+    """一个栏目一次调用。返回 {url: content}。"""
+    blocks = []
+    for i, art in enumerate(arts, 1):
+        body = _clip(art.text or art.excerpt, 1400)
+        blocks.append(
+            f"[{i}] 标题：{art.title}\n来源：{art.source}｜语言：{'中文' if art.lang == 'zh' else '英文'}\n正文：{body}\n"
+        )
+    user = (
+        f"栏目：{section['name']}（{section['blurb']}）\n\n"
+        + "\n".join(blocks)
+        + "\n"
+        + WRITE_RULES
+    )
+    try:
+        data = parse_json_loose(call_llm(cfg, SYSTEM, user, max_tokens=4000))
+    except Exception:  # noqa: BLE001
+        return {}
+    out: dict[str, dict] = {}
+    for entry in data.get("items", []):
+        try:
+            idx = int(entry.get("id")) - 1
+        except (TypeError, ValueError):
+            continue
+        if 0 <= idx < len(arts):
+            out[arts[idx].url] = entry
+    return out
+
+
+DEEP_RULES = """为下列每条新闻写「观察者视角」深度评论，四个部分：
+1. background「事件背后」：解释这件事为什么会发生，背后的政治、经济、技术或社会机制。
+2. impact「深层影响」：分别说明短期和长期影响，涉及国家、产业、社会和普通人。
+3. perspectives「不同视角」：找出不同立场的合理解释——支持者、反对者、不同国家或群体、学界的争论。
+   如果证据明显偏向一方，就直说，不要为了平衡强行五五开。
+4. questions「值得思考」：1-2 个开放问题，能引导读者继续查资料、继续想。
+
+写作纪律：
+- 区分事实、推论、预测和价值判断；不确定的地方明确写「目前尚不确定」「这是推测」。
+- 不要制造因果，不要用「必然」「注定」。
+- 不要迎合读者的既有立场；如果常见看法有反例，把反例说出来。
+- 不要使用「这标志着」「具有里程碑意义」这类空话。
+- 语言清晰，高中生能读懂；专业概念首次出现时用一句话解释。
+每部分 150-280 字。输出 JSON：{"items":[{"id":编号,"background":"","impact":"","perspectives":"","questions":["",""]}]}"""
+
+
+def write_commentaries(arts: list[Article], summaries: dict[str, str], cfg: dict) -> dict[str, dict]:
+    if not arts:
+        return {}
+    blocks = []
+    for i, art in enumerate(arts, 1):
+        blocks.append(
+            f"[{i}] 标题：{art.title}\n来源：{art.source}\n"
+            f"摘要：{(summaries.get(art.url) or _clip(art.text or art.excerpt, 400))}\n"
+            f"正文节选：{_clip(art.text or art.excerpt, 900)}\n"
+        )
+    user = "\n".join(blocks) + "\n" + DEEP_RULES
+    try:
+        data = parse_json_loose(call_llm(cfg, SYSTEM, user, max_tokens=8000))
+    except Exception:  # noqa: BLE001
+        return {}
+    out: dict[str, dict] = {}
+    for entry in data.get("items", []):
+        try:
+            idx = int(entry.get("id")) - 1
+        except (TypeError, ValueError):
+            continue
+        if 0 <= idx < len(arts):
+            out[arts[idx].url] = entry
+    return out
+
+
+# ---------------------------------------------------------------- 整体
+
+
+OPENING_RULES = """根据下面各栏目的标题，写 2 句话作为整期周报的开场白。
+要求：指出本周最值得注意的一条主线，并把不同栏目的事件联系起来；
+像懂行的朋友在跟你说话，不要罗列栏目，不要用「本周」「综上所述」开头。
+输出 JSON：{"opening":"...","note":"不超过 12 字的主题词"}"""
+
+
+def write_opening(digest_lines: list[str], cfg: dict) -> dict:
+    user = "\n".join(digest_lines) + "\n\n" + OPENING_RULES
+    try:
+        data = parse_json_loose(call_llm(cfg, SYSTEM, user, max_tokens=400))
+        return {"opening": str(data.get("opening", "")).strip(), "note": str(data.get("note", "")).strip()}
+    except Exception:  # noqa: BLE001
+        return {"opening": "", "note": ""}
+
+
+DEEP_DIVE_RULES = """从本周新闻里选一个值得深挖的问题，写成「本周深度观察」。它不应该是新闻复述，
+而是一条理解世界的线索。要求：
+- question：一个问题，不超过 30 字，具体、有张力，不要大而空；
+- lead：150 字，说明为什么这个问题现在值得想；
+- background：250-350 字，交代来龙去脉和关键概念（概念要解释，别默认读者懂）；
+- timeline：4-6 个节点，每个 {"when":"年份或时间","what":"发生了什么，不超过 40 字"}；
+- tensions：3-4 条核心矛盾，每条不超过 45 字，要具体（谁和谁、争什么）；
+- views：3-4 个立场，{"stance":"立场名","claim":"这个立场怎么论证，80 字以内"}，
+  必须包含相互对立的观点，不要伪造中间派；
+- reading：3 条延伸阅读，{"title":"书名或文章名","author":"作者","why":"为什么读它，30 字以内"}，
+  必须是真实存在的经典著作或公开报道，不确定就不要写；
+- questions3：本周另外三个值得长期思考的问题，每个不超过 30 字。
+输出 JSON：{"deep_dive":{...},"questions3":["","",""]}"""
+
+
+def write_deep_dive(items: list[dict], cfg: dict) -> dict:
+    lines = [f"- {it['headline']}：{it['summary'][:80]}" for it in items[:12]]
+    user = "本周新闻：\n" + "\n".join(lines) + "\n\n" + DEEP_DIVE_RULES
+    try:
+        data = parse_json_loose(call_llm(cfg, SYSTEM, user, max_tokens=4000))
+        return {
+            "deep_dive": data.get("deep_dive") or {},
+            "questions3": data.get("questions3") or [],
+        }
+    except Exception:  # noqa: BLE001
+        return {"deep_dive": {}, "questions3": []}
+
+
+# ---------------------------------------------------------------- 降级
+
+
+def rule_content(art: Article) -> dict:
+    """没有模型时的兜底：标题 + 摘录，明确标注未润色。"""
+    sentences = split_sentences(art.text or art.excerpt)
+    summary = " ".join(sentences[:4])[:220] if sentences else (art.excerpt or art.title)[:220]
+    return {
+        "headline": art.title[:28],
+        "summary": summary,
+        "why": "",
+        "keywords": [],
+        "take": "",
+    }

@@ -14,3 +14,5 @@ logs/
 work/
 *.pptx
 *.docx
+.cp/
+_shots/

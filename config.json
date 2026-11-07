@@ -1,235 +1,143 @@
 {
   "title": "WEEKLY BRIEF",
-  "tagline": "每周五晚，四件事值得你知道",
+  "tagline": "每周七件事，帮你看懂世界怎么运转",
+  "edition": 2,
   "window_days": 8,
-  "per_section": {
-    "detailed": 3,
-    "brief": 7
-  },
+  "target_items": 16,
+  "min_items": 12,
+  "max_items": 18,
   "sections": [
     {
-      "key": "ai",
-      "name": "AI",
-      "cn": "人工智能",
-      "blurb": "模型、产品与算力",
-      "accent": "#6c5ce7",
-      "keywords": ["keywords", "keywords", "keywords", "keywords", "keywords", "keywords", "AI", "人工智能", "大模型", "智能体", "Agent", "OpenAI", "Anthropic", "Claude", "ChatGPT", "GPT", "Gemini", "DeepSeek", "通义", "文心", "豆包", "Kimi", "算力", "GPU", "英伟达", "NVIDIA", "推理", "训练", "多模态", "具身智能", "机器人", "Sora", "Llama", "开源模型", "AGI"],
+      "key": "world",
+      "idx": "01",
+      "name": "世界与秩序",
+      "en": "WORLD",
+      "blurb": "国际政治、外交、地缘冲突与全球治理",
+      "accent": "#3d5a80",
+      "keywords": ["中美", "中欧", "俄乌", "俄罗斯", "乌克兰", "中东", "以色列", "伊朗", "加沙", "联合国", "G20", "北约", "欧盟", "外交", "制裁", "关税", "贸易战", "峰会", "条约", "选举", "白宫", "国务院", "地缘", "国际秩序", "安理会", "停火", "谈判"],
       "sources": [
-        {
-          "name": "量子位",
-          "url": "https://www.qbitai.com/feed",
-          "lang": "zh",
-          "weight": 1.3
-        },
-        {
-          "name": "极客公园",
-          "url": "https://www.geekpark.net/rss",
-          "lang": "zh",
-          "weight": 1.15,
-          "route": true
-        },
-        {
-          "name": "InfoQ",
-          "url": "https://www.infoq.cn/feed",
-          "lang": "zh",
-          "weight": 0.95,
-          "route": true
-        },
-        {
-          "name": "The Verge",
-          "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
-          "lang": "en",
-          "weight": 1.1
-        },
-        {
-          "name": "MIT Tech Review",
-          "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",
-          "lang": "en",
-          "weight": 1.05
-        }
-      ],
-      "route_keywords": ["route_keywords", "route_keywords", "route_keywords", "route_keywords", "大模型", "人工智能", "AI", "智能体", "OpenAI", "Anthropic", "Claude", "ChatGPT", "DeepSeek", "英伟达", "算力", "机器人", "具身智能", "Gemini", "通义", "千问", "豆包", "Kimi", "多模态", "AGI"],
-      "route_exclude": []
+        { "name": "人民网·国际", "url": "http://www.people.com.cn/rss/world.xml", "lang": "zh", "weight": 1.0 },
+        { "name": "中新网·国际", "url": "https://www.chinanews.com.cn/rss/world.xml", "lang": "zh", "weight": 1.0 },
+        { "name": "联合国新闻", "url": "https://news.un.org/feed/subscribe/zh/news/all/rss.xml", "lang": "zh", "weight": 1.1 },
+        { "name": "BBC 中文", "url": "https://feeds.bbci.co.uk/zhongwen/simp/rss.xml", "lang": "zh", "weight": 1.15, "region": "intl" },
+        { "name": "The Guardian", "url": "https://www.theguardian.com/world/rss", "lang": "en", "weight": 1.1, "region": "intl" },
+        { "name": "Al Jazeera", "url": "https://www.aljazeera.com/xml/rss/all.xml", "lang": "en", "weight": 1.0, "region": "intl" }
+      ]
     },
     {
-      "key": "auto",
-      "name": "AUTO",
-      "cn": "汽车",
-      "blurb": "新车、电动化与智能驾驶",
-      "accent": "#e17055",
-      "keywords": ["keywords", "keywords", "keywords", "keywords", "keywords", "keywords", "汽车", "车企", "新车", "车型", "电动车", "电车", "新能源车", "智驾", "辅助驾驶", "自动驾驶", "续航", "充电桩", "电池", "比亚迪", "特斯拉", "小米汽车", "理想汽车", "蔚来", "小鹏", "问界", "零跑", "吉利", "长城汽车", "宝马", "奔驰", "奥迪", "丰田", "本田", "大众汽车", "保时捷", "法拉利", "SUV", "MPV", "混动", "增程", "换电", "激光雷达", "智舱", "座舱"],
+      "key": "china",
+      "idx": "02",
+      "name": "中国与社会",
+      "en": "CHINA",
+      "blurb": "公共政策、社会结构、人口与民生",
+      "accent": "#9c6644",
+      "keywords": ["政策", "国务院", "教育部", "卫健委", "人社部", "民政部", "人口", "老龄化", "出生率", "就业", "失业", "教育", "高考", "医疗", "医保", "养老", "社保", "房价", "房地产", "城乡", "户籍", "收入", "贫富", "基层", "治理", "改革", "试点", "立法", "监管", "民生", "农民工", "青年"],
       "sources": [
-        {
-          "name": "Electrek",
-          "url": "https://electrek.co/feed/",
-          "lang": "en",
-          "weight": 1.1
-        },
-        {
-          "name": "InsideEVs",
-          "url": "https://insideevs.com/rss/articles/all/",
-          "lang": "en",
-          "weight": 1.0
-        },
-        {
-          "name": "Motor1",
-          "url": "https://www.motor1.com/rss/news/all/",
-          "lang": "en",
-          "weight": 0.95
-        },
-        {
-          "name": "Autocar",
-          "url": "https://www.autocar.co.uk/rss",
-          "lang": "en",
-          "weight": 1.0
-        },
-        {
-          "name": "Car and Driver",
-          "url": "https://www.caranddriver.com/rss/all.xml/",
-          "lang": "en",
-          "weight": 0.9
-        },
-        {
-          "name": "The Drive",
-          "url": "https://www.thedrive.com/feed",
-          "lang": "en",
-          "weight": 0.9
-        },
-        {
-          "name": "界面新闻",
-          "url": "https://a.jiemian.com/index.php?m=article&a=rss",
-          "lang": "zh",
-          "weight": 1.0,
-          "keywords": ["keywords", "keywords", "keywords", "keywords", "keywords", "keywords", "汽车", "车企", "电车", "新能源", "智驾", "自动驾驶", "续航", "充电", "比亚迪", "特斯拉", "小米汽车", "理想", "蔚来", "小鹏", "问界", "零跑", "吉利", "长城", "宝马", "奔驰", "奥迪"]
-        },
-        {
-          "name": "钛媒体",
-          "url": "https://www.tmtpost.com/rss.xml",
-          "lang": "zh",
-          "weight": 0.95,
-          "keywords": ["keywords", "keywords", "keywords", "keywords", "keywords", "keywords", "汽车", "车企", "电车", "新能源", "智驾", "自动驾驶", "续航", "比亚迪", "特斯拉", "小米汽车", "理想", "蔚来", "小鹏", "问界"]
-        }
-      ],
-      "route_keywords": ["route_keywords", "route_keywords", "route_keywords", "route_keywords", "汽车", "车型", "新车", "续航", "智驾", "辅助驾驶", "自动驾驶", "充电桩", "比亚迪", "特斯拉", "小米汽车", "理想汽车", "蔚来", "小鹏", "问界", "零跑", "吉利", "长城汽车", "宝马", "奔驰", "奥迪", "丰田", "本田", "大众汽车", "保时捷", "法拉利", "SUV", "MPV", "混动", "增程", "换电", "激光雷达", "车展"],
-      "route_exclude": ["route_exclude", "route_exclude", "route_exclude", "游戏", "电影", "票房", "剧集"]
+        { "name": "人民网·社会", "url": "http://www.people.com.cn/rss/society.xml", "lang": "zh", "weight": 1.0 },
+        { "name": "中新网·社会", "url": "https://www.chinanews.com.cn/rss/society.xml", "lang": "zh", "weight": 1.0 },
+        { "name": "人民网·时政", "url": "http://www.people.com.cn/rss/politics.xml", "lang": "zh", "weight": 1.05 },
+        { "name": "中新网·教育", "url": "https://www.chinanews.com.cn/rss/edu.xml", "lang": "zh", "weight": 0.9 },
+        { "name": "界面新闻", "url": "https://a.jiemian.com/index.php?m=article&a=rss", "lang": "zh", "weight": 1.05, "route": true }
+      ]
+    },
+    {
+      "key": "economy",
+      "idx": "03",
+      "name": "经济与产业",
+      "en": "ECONOMY",
+      "blurb": "宏观、金融、产业链与企业竞争",
+      "accent": "#2a9d8f",
+      "keywords": ["GDP", "CPI", "PPI", "PMI", "央行", "美联储", "降息", "加息", "汇率", "人民币", "国债", "股市", "楼市", "通胀", "通缩", "财政", "税收", "出口", "进口", "产业链", "供应链", "制造业", "产能", "并购", "融资", "IPO", "财报", "营收", "利润", "裁员", "半导体", "芯片"],
+      "sources": [
+        { "name": "人民网·财经", "url": "http://www.people.com.cn/rss/finance.xml", "lang": "zh", "weight": 1.0 },
+        { "name": "中新网·财经", "url": "https://www.chinanews.com.cn/rss/finance.xml", "lang": "zh", "weight": 1.0 },
+        { "name": "经济观察网", "url": "http://www.eeo.com.cn/rss.xml", "lang": "zh", "weight": 1.1 },
+        { "name": "界面新闻", "url": "https://a.jiemian.com/index.php?m=article&a=rss", "lang": "zh", "weight": 1.05, "route": true },
+        { "name": "FT 中文网", "url": "http://www.ftchinese.com/rss/news", "lang": "zh", "weight": 1.15, "region": "intl" }
+      ]
     },
     {
       "key": "tech",
-      "name": "TECH",
-      "cn": "数码",
-      "blurb": "手机、电脑与硬件",
-      "accent": "#0984e3",
-      "keywords": ["keywords", "keywords", "keywords", "keywords", "keywords", "keywords", "手机", "笔记本", "平板", "显卡", "处理器", "芯片", "耳机", "手表", "显示器", "键盘", "鼠标", "主机", "Mac", "iPhone", "iPad", "安卓", "鸿蒙", "HarmonyOS", "系统", "软件", "硬件", "发布会", "开箱", "评测", "固态硬盘", "内存", "投影", "路由器", "充电器", "游戏机", "PS5", "Switch"],
+      "idx": "04",
+      "name": "科技与未来",
+      "en": "TECH",
+      "blurb": "AI、半导体、航天与前沿科学",
+      "accent": "#5f0f40",
+      "keywords": ["人工智能", "大模型", "模型", "算法", "芯片", "半导体", "算力", "GPU", "英伟达", "OpenAI", "Anthropic", "DeepSeek", "量子", "航天", "卫星", "火箭", "核聚变", "材料", "生物", "基因", "论文", "研究", "突破", "Nature", "Science", "诺贝尔", "超导", "光刻"],
       "sources": [
-        {
-          "name": "IT之家",
-          "url": "https://www.ithome.com/rss/",
-          "lang": "zh",
-          "weight": 0.95,
-          "route": true
-        },
-        {
-          "name": "爱范儿",
-          "url": "https://www.ifanr.com/feed",
-          "lang": "zh",
-          "weight": 1.05,
-          "route": true
-        },
-        {
-          "name": "雷峰网",
-          "url": "https://www.leiphone.com/feed",
-          "lang": "zh",
-          "weight": 1.0,
-          "route": true
-        },
-        {
-          "name": "少数派",
-          "url": "https://sspai.com/feed",
-          "lang": "zh",
-          "weight": 0.95,
-          "route": true
-        },
-        {
-          "name": "cnBeta",
-          "url": "https://www.cnbeta.com.tw/backend.php",
-          "lang": "zh",
-          "weight": 0.85,
-          "route": true
-        },
-        {
-          "name": "9to5Mac",
-          "url": "https://9to5mac.com/feed/",
-          "lang": "en",
-          "weight": 1.05
-        },
-        {
-          "name": "The Verge",
-          "url": "https://www.theverge.com/rss/index.xml",
-          "lang": "en",
-          "weight": 1.0
-        },
-        {
-          "name": "Engadget",
-          "url": "https://www.engadget.com/rss.xml",
-          "lang": "en",
-          "weight": 0.95
-        }
-      ],
-      "route_keywords": ["route_keywords", "route_keywords", "route_keywords", "route_keywords", "手机", "笔记本", "平板", "显卡", "处理器", "耳机", "手表", "显示器", "键盘", "鼠标", "主机", "iPhone", "iPad", "安卓", "鸿蒙", "游戏机", "PS5", "Switch", "路由器", "固态硬盘", "内存"],
-      "route_exclude": []
+        { "name": "量子位", "url": "https://www.qbitai.com/feed", "lang": "zh", "weight": 1.15 },
+        { "name": "人民网·科技", "url": "http://www.people.com.cn/rss/scitech.xml", "lang": "zh", "weight": 1.0 },
+        { "name": "InfoQ", "url": "https://www.infoq.cn/feed", "lang": "zh", "weight": 0.9 },
+        { "name": "MIT Tech Review", "url": "https://www.technologyreview.com/feed/", "lang": "en", "weight": 1.15 },
+        { "name": "Ars Technica", "url": "https://feeds.arstechnica.com/arstechnica/index", "lang": "en", "weight": 1.0 },
+        { "name": "IEEE Spectrum", "url": "https://spectrum.ieee.org/feeds/feed.rss", "lang": "en", "weight": 1.05 }
+      ]
     },
     {
-      "key": "photo",
-      "name": "PHOTO",
-      "cn": "摄影",
-      "blurb": "器材、技术与影像",
-      "accent": "#00b894",
-      "keywords": ["keywords", "keywords", "keywords", "keywords", "keywords", "keywords", "相机", "镜头", "摄影", "拍照", "光圈", "快门", "传感器", "全画幅", "中画幅", "微单", "单反", "胶片", "后期", "Lightroom", "构图", "人像", "风光", "索尼", "佳能", "尼康", "富士", "徕卡", "松下", "适马", "腾龙", "大疆", "无人机", "GoPro", "vlog", "RAW", "影像"],
+      "key": "industry",
+      "idx": "05",
+      "name": "工业与设计",
+      "en": "INDUSTRY",
+      "blurb": "汽车、制造、工程与工业设计",
+      "accent": "#bc6c25",
+      "keywords": ["汽车", "车型", "新能源", "电动车", "电池", "智驾", "自动驾驶", "比亚迪", "特斯拉", "保时捷", "丰田", "大众", "宝马", "奔驰", "吉利", "理想", "蔚来", "小鹏", "F1", "赛车", "发动机", "底盘", "工厂", "制造", "产能", "机器人", "工业设计", "设计", "材料", "航空", "造船"],
       "sources": [
-        {
-          "name": "PetaPixel",
-          "url": "https://petapixel.com/feed/",
-          "lang": "en",
-          "weight": 1.15
-        },
-        {
-          "name": "Fstoppers",
-          "url": "https://fstoppers.com/feed",
-          "lang": "en",
-          "weight": 1.0
-        },
-        {
-          "name": "Canon Rumors",
-          "url": "https://www.canonrumors.com/feed/",
-          "lang": "en",
-          "weight": 0.95
-        }
-      ],
-      "route_keywords": ["route_keywords", "route_keywords", "route_keywords", "route_keywords", "相机", "镜头", "摄影", "微单", "单反", "全画幅", "中画幅", "胶片", "佳能", "尼康", "富士", "徕卡", "适马", "腾龙", "大疆", "无人机", "GoPro", "vlog", "Lightroom"],
-      "route_exclude": ["route_exclude", "route_exclude", "route_exclude", "电影", "预告", "票房", "剧集", "动画", "游戏", "电视剧", "综艺", "短片", "显微", "遥感", "卫星", "磁带", "存储", "数据中心", "硬盘"]
+        { "name": "Electrek", "url": "https://electrek.co/feed/", "lang": "en", "weight": 1.05 },
+        { "name": "Motor1", "url": "https://www.motor1.com/rss/news/all/", "lang": "en", "weight": 0.95 },
+        { "name": "The Drive", "url": "https://www.thedrive.com/feed", "lang": "en", "weight": 0.95 },
+        { "name": "Dezeen", "url": "https://www.dezeen.com/feed/", "lang": "en", "weight": 0.9 },
+        { "name": "F1", "url": "https://www.formula1.com/en/latest/all.xml", "lang": "en", "weight": 0.85 },
+        { "name": "中新网·滚动", "url": "https://www.chinanews.com.cn/rss/scroll-news.xml", "lang": "zh", "weight": 0.95, "route": true }
+      ]
+    },
+    {
+      "key": "thought",
+      "idx": "06",
+      "name": "思想与文明",
+      "en": "THOUGHT",
+      "blurb": "哲学、历史、文化与观念之争",
+      "accent": "#4a4e69",
+      "keywords": ["思想", "哲学", "历史", "文化", "观念", "理论", "社会思潮", "现代性", "自由主义", "保守主义", "平等", "正义", "理性", "文明", "传统", "文学", "艺术", "知识", "知识分子", "舆论", "媒介", "传播", "认知", "伦理", "道德"],
+      "sources": [
+        { "name": "人民网·理论", "url": "http://www.people.com.cn/rss/theory.xml", "lang": "zh", "weight": 1.0 },
+        { "name": "人民网·观点", "url": "http://www.people.com.cn/rss/opinion.xml", "lang": "zh", "weight": 1.0 },
+        { "name": "中新网·文化", "url": "https://www.chinanews.com.cn/rss/culture.xml", "lang": "zh", "weight": 0.95 },
+        { "name": "Aeon", "url": "https://aeon.co/feed.rss", "lang": "en", "weight": 1.2 }
+      ]
+    },
+    {
+      "key": "nature",
+      "idx": "07",
+      "name": "自然与人类",
+      "en": "NATURE",
+      "blurb": "气候、生态、医学与重大文化事件",
+      "accent": "#386641",
+      "keywords": ["气候", "碳", "排放", "环境", "生态", "污染", "物种", "生物多样性", "医学", "疾病", "疫苗", "药物", "健康", "病毒", "地震", "洪水", "台风", "极端天气", "灾害", "奥运", "世界杯", "体育", "诺贝尔", "考古", "发现"],
+      "sources": [
+        { "name": "中新网·健康", "url": "https://www.chinanews.com.cn/rss/health.xml", "lang": "zh", "weight": 1.0 },
+        { "name": "中新网·体育", "url": "https://www.chinanews.com.cn/rss/sports.xml", "lang": "zh", "weight": 0.85 },
+        { "name": "NASA", "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss", "lang": "en", "weight": 1.0 },
+        { "name": "The Guardian·环境", "url": "https://www.theguardian.com/environment/rss", "lang": "en", "weight": 1.05, "region": "intl" }
+      ]
     }
   ],
+  "selection": {
+    "quota": { "world": 3, "china": 3, "economy": 2, "tech": 3, "industry": 2, "thought": 1, "nature": 1 },
+    "novelty": 1,
+    "max_per_source": 3,
+    "min_importance": 1
+  },
   "llm": {
     "enabled": true,
     "base_url": "https://api.deepseek.com",
     "model": "deepseek-flash",
     "api_key_env": "DEEPSEEK_API_KEY",
-    "max_chars_per_article": 1200,
-    "timeout": 120,
-    "temperature": 0.25,
-    "max_tokens": 4000,
-    "deadline_seconds": 600,
-    "extra_body": {
-      "thinking": {
-        "type": "disabled"
-      }
-    }
+    "timeout": 180,
+    "deadline_seconds": 900,
+    "temperature": 0.3,
+    "max_tokens": 6000,
+    "extra_body": { "thinking": { "type": "disabled" } }
   },
-  "output": {
-    "dir": "site"
-  },
-  "notify": {
-    "bark_url": "",
-    "webhook": ""
-  }
+  "output": { "dir": "site" },
+  "notify": { "bark_url": "", "webhook": "" }
 }

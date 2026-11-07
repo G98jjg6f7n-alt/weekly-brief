@@ -30,7 +30,7 @@ cat > "$PLIST" <<EOF
   <key>Label</key><string>$LABEL</string>
   <key>ProgramArguments</key>
   <array>
-    <string>$PY</string>
+    <string>/bin/bash</string>
     <string>$DIR/publish.sh</string>
   </array>
   <key>WorkingDirectory</key><string>$DIR</string>
