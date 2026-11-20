@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>WEEKLY BRIEF · 2026-W47</title>
+<meta name="description" content="深圳APEC期间中美俄元首首次三方会谈，把世界秩序的重心摆上了桌面；同一周，全球电子协会的供应链警报让PCB概念股涨停，Anthropic以813亿美元融资登陆纳斯达克，华为云则把具身世界模型推到台前——大国协调与产业重组正在同一条时间线上">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fcfbf8">
+<meta property="og:title" content="WEEKLY BRIEF · 2026-W47">
+<meta property="og:description" content="深圳APEC期间中美俄元首首次三方会谈，把世界秩序的重心摆上了桌面；同一周，全球电子协会的供应链警报让PCB概念股涨停，Anthropic以813亿美元融资登陆纳斯达克，华为云则把具身世界模型推到台前——大国协调与产业重组正在同一条时间线上">
+<meta property="og:image" content="https://ichef.bbci.co.uk/news/1200/branded_zhongwen/7429/live/f1f7e890-e43d-11f1-99a1-253766e7ad8b.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23121417'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23fff' font-family='serif'>W</text></svg>">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#fcfbf8; --paper:#fff; --ink:#121417; --ink2:#454a52; --ink3:#8b9099;
+  --rule:#e3dfd5; --rule2:#cfcabc; --accent:#8c2f1f;
+  --serif:"Songti SC","Noto Serif SC",ui-serif,Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro SC","PingFang SC","Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  --w:760px;
+}
+html[data-theme="dark"]{
+  --bg:#0f1012; --paper:#15171a; --ink:#f2f1ec; --ink2:#b5b9c0; --ink3:#7b8089;
+  --rule:#26282d; --rule2:#33373d; --accent:#d98b76;
+}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75;
+  letter-spacing:.01em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;font-size:inherit;cursor:pointer;background:none;border:none;color:inherit}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 20px}
+#prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:99}
+
+/* ---------- 刊头 ---------- */
+.masthead{border-bottom:2px solid var(--ink);margin-top:0;padding:22px 0 10px}
+.masthead .inner{max-width:var(--w);margin:0 auto;padding:0 20px;display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{font-family:var(--serif);font-size:clamp(26px,6vw,38px);font-weight:600;letter-spacing:-.01em;line-height:1}
+.mast-right{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--ink3);text-align:right;line-height:1.7}
+
+/* ---------- 封面 ---------- */
+.cover{padding:26px 0 0}
+.cover .kicker{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+.cover h2{font-family:var(--serif);font-size:clamp(29px,7vw,46px);line-height:1.22;letter-spacing:-.015em;margin:0 0 12px;font-weight:600}
+.cover .dek{font-family:var(--serif);font-size:clamp(16px,2.4vw,18px);line-height:1.8;color:var(--ink2);margin:0 0 18px;max-width:34em}
+.coverlist{list-style:none;margin:16px 0 0;padding:12px 0 0;border-top:1px solid var(--rule)}
+.coverlist li{border-bottom:1px solid var(--rule)}
+.coverlist li:last-child{border-bottom:none}
+.coverlist a{display:grid;grid-template-columns:30px 1fr;gap:8px;padding:8px 0;align-items:baseline}
+.coverlist .n{font-family:var(--mono);font-size:10px;color:var(--ink3)}
+.coverlist .t{font-size:14.5px;line-height:1.6}
+.coverlist a:hover .t{color:var(--accent)}
+.cover .theme{font-size:13px;color:var(--ink3);border-top:1px solid var(--rule);padding-top:10px;margin-top:2px}
+
+/* ---------- 图 ---------- */
+figure.fig{margin:0 0 16px}
+figure.fig img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;background:var(--rule)}
+figure.fig figcaption{display:flex;gap:10px;justify-content:space-between;font-size:11.5px;color:var(--ink3);
+  line-height:1.5;padding-top:6px;border-bottom:1px solid var(--rule);padding-bottom:6px}
+figure.fig .cap{flex:1}
+figure.fig .cred{white-space:nowrap;font-family:var(--mono);font-size:10px;letter-spacing:.04em}
+figure.fig.wide img{max-height:460px}
+
+/* ---------- 目录条 ---------- */
+.tocbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.tocbar .inner{max-width:var(--w);margin:0 auto;padding:8px 20px;display:flex;gap:6px;align-items:center}
+.toc{display:flex;gap:2px;overflow-x:auto;flex:1;scrollbar-width:none}
+.toc::-webkit-scrollbar{display:none}
+.toc a{flex:0 0 auto;font-size:12px;color:var(--ink2);padding:5px 9px;white-space:nowrap;border-bottom:2px solid transparent}
+.toc a:hover{color:var(--accent)}
+.toc a.on{color:var(--ink);border-color:var(--accent)}
+.tool{width:30px;height:30px;display:grid;place-items:center;color:var(--ink3);border:1px solid var(--rule)}
+.tool:hover{color:var(--accent);border-color:var(--accent)}
+.tool.act{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.searchwrap{display:none;max-width:var(--w);margin:0 auto;padding:0 20px 10px}
+.searchwrap.on{display:block}
+.search{width:100%;padding:9px 12px;border:1px solid var(--rule2);background:var(--paper);color:var(--ink);
+  font-size:14px;outline:none;border-radius:0}
+.search:focus{border-color:var(--ink)}
+
+/* ---------- 导语 ---------- */
+.standfirst{padding:26px 0 8px;border-bottom:1px solid var(--rule)}
+.standfirst p{font-family:var(--serif);font-size:clamp(17px,2.5vw,20px);line-height:1.9;color:var(--ink2);margin:0 0 20px}
+.standfirst .byline{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ink3);margin-bottom:8px}
+
+/* ---------- 栏目 ---------- */
+section.sec{padding:38px 0 0}
+.sechead{display:flex;align-items:baseline;gap:10px;padding-bottom:8px}
+.sechead .idx{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.1em}
+.sechead h2{font-family:var(--serif);font-size:clamp(21px,4vw,27px);margin:0;font-weight:600}
+.sechead .en{font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;color:var(--ink3);margin-left:auto}
+.blurb{font-size:12px;color:var(--ink3);margin:0 0 20px;border-bottom:1px solid var(--ink);padding-bottom:8px}
+
+/* ---------- 条目 ---------- */
+article.it{padding:0 0 26px;margin:0 0 26px;border-bottom:1px solid var(--rule)}
+article.it:last-child{border-bottom:none}
+.it .meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-family:var(--mono);font-size:10px;
+  letter-spacing:.08em;color:var(--ink3);margin-bottom:8px;text-transform:uppercase}
+.it .meta .hot{color:var(--accent)}
+.it h3{font-family:var(--serif);font-size:clamp(20px,4vw,25px);line-height:1.42;letter-spacing:-.01em;margin:0 0 10px;font-weight:600}
+.it.lead h3{font-size:clamp(24px,5vw,32px)}
+.it .sum{font-size:15.5px;line-height:1.92;margin:0 0 12px;color:var(--ink)}
+.it .why{font-size:13px;line-height:1.75;color:var(--ink2);border-left:2px solid var(--accent);padding-left:10px;margin:0 0 12px}
+.it .why b{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--accent);display:block;margin-bottom:2px}
+.kw{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
+.kw span{font-size:10.5px;color:var(--ink3);border:1px solid var(--rule);padding:1px 6px}
+
+/* 紧凑条目：左图右文 */
+.it.compact{display:grid;grid-template-columns:132px 1fr;gap:14px;align-items:start}
+.it.compact figure.fig{margin:0}
+.it.compact figure.fig img{max-height:96px}
+.it.compact figure.fig figcaption{display:none}
+.it.compact h3{font-size:17px;line-height:1.5;margin-bottom:6px}
+.it.compact .sum{font-size:13.5px;line-height:1.8;margin-bottom:8px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.it.compact .why{margin-bottom:8px}
+
+/* ---------- 观察者 ---------- */
+.obs{margin:4px 0 14px;border-top:1px solid var(--rule2);border-bottom:1px solid var(--rule2);background:var(--paper)}
+.obs-h{display:flex;align-items:center;gap:10px;padding:9px 0;font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.obs-h .sp{flex:1}
+.obs-h button{font-family:var(--sans);font-size:12px;letter-spacing:0;text-transform:none;color:var(--ink3)}
+.obs-h button:hover{color:var(--accent)}
+.obs-pre{padding:0 0 12px;font-size:13px;color:var(--ink3);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.obs-b{display:none;padding:0 0 14px;font-size:14.5px;line-height:1.9;color:var(--ink2)}
+.obs.open .obs-b{display:block}
+.obs.open .obs-pre{display:none}
+.obs-b .part{margin:0 0 14px}
+.obs-b .part:last-child{margin:0}
+.obs-b h4{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 4px}
+.obs-b p{margin:0}
+.obs-b ol{margin:0;padding-left:18px}
+.obs-b li{margin-bottom:4px}
+.askbox{display:none;padding:0 0 14px}
+.askbox.on{display:block}
+.askbox textarea{width:100%;min-height:60px;padding:9px 11px;border:1px solid var(--rule2);background:var(--bg);
+  color:var(--ink);font-family:inherit;font-size:13.5px;resize:vertical;outline:none;border-radius:0}
+.askbox .row{display:flex;justify-content:flex-end;margin-top:8px}
+.askbox .row button{padding:6px 16px;background:var(--ink);color:var(--bg);font-size:12.5px}
+.answer{margin-top:10px;font-size:13.5px;line-height:1.85;color:var(--ink2);white-space:pre-wrap}
+
+/* ---------- 操作 ---------- */
+.acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:11.5px;color:var(--ink3)}
+.act{display:inline-flex;align-items:center;gap:4px;color:var(--ink3);border-bottom:1px solid transparent;padding-bottom:1px}
+.act:hover{color:var(--accent);border-color:var(--accent)}
+.act.on{color:var(--accent);border-color:var(--accent)}
+.act.src{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em}
+
+/* ---------- 深度专题 ---------- */
+.deep{margin-top:46px;border-top:3px double var(--ink);padding-top:26px}
+.deep .kicker{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase}
+.deep h2{font-family:var(--serif);font-size:clamp(26px,5.5vw,36px);line-height:1.32;margin:10px 0 14px;font-weight:600;letter-spacing:-.01em}
+.deep .lead{font-family:var(--serif);font-size:17px;line-height:1.95;color:var(--ink2);margin:0 0 22px}
+.dblock{margin:0 0 24px}
+.dblock h4{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);
+  border-bottom:1px solid var(--rule);padding-bottom:6px;margin:0 0 10px}
+.dblock p{font-size:15px;line-height:1.95;color:var(--ink2);margin:0}
+.dblock p.drop::first-letter{font-family:var(--serif);font-size:3.1em;float:left;line-height:.9;padding:4px 8px 0 0;color:var(--ink)}
+.pull{margin:22px 0;padding:14px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+  font-family:var(--serif);font-size:20px;line-height:1.6;color:var(--ink)}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:84px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--rule)}
+.tl .w{font-family:var(--mono);font-size:10.5px;color:var(--accent);letter-spacing:.06em;padding-top:3px}
+.tl .t{font-size:14.5px;color:var(--ink2)}
+.tn{list-style:none;margin:0;padding:0}
+.tn li{padding:9px 0;border-bottom:1px solid var(--rule);font-size:14.5px;line-height:1.8;color:var(--ink2)}
+.tn li b{color:var(--ink);font-weight:600;margin-right:6px}
+.vw{display:grid;gap:0}
+.vw div{padding:11px 0;border-bottom:1px solid var(--rule);font-size:14px;line-height:1.85;color:var(--ink2)}
+.vw div b{color:var(--ink);display:block;font-size:12px;margin-bottom:2px;font-weight:600}
+.rd{list-style:none;margin:0;padding:0}
+.rd li{padding:7px 0;font-size:13.5px;color:var(--ink2);border-bottom:1px solid var(--rule)}
+.rd b{color:var(--ink);font-weight:600}
+
+/* ---------- 页脚 ---------- */
+footer{margin-top:52px;border-top:2px solid var(--ink);padding:22px 0 64px;font-size:11.5px;color:var(--ink3)}
+footer .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+footer h6{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;margin:0 0 8px;color:var(--ink3)}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{display:flex;justify-content:space-between;gap:8px;padding:1px 0}
+.ok{color:#2a7f62}.bad{color:#a33}
+.foot-btns{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap}
+.foot-btns a,.foot-btns button{font-size:11.5px;color:var(--ink2);border-bottom:1px solid var(--rule2)}
+.noresult{display:none;padding:30px 0;color:var(--ink3);font-size:14px}
+body.searching .noresult.show{display:block}
+body.fav-only .cover,body.fav-only .deep,body.fav-only .standfirst{display:none}
+body.fav-only .it:not(.fav){display:none}
+body.fav-only .sec{display:none}
+body.fav-only .sec.has-fav{display:block}
+
+@media (max-width:600px){
+  .masthead{padding:16px 0 8px}
+  .mast-right{font-size:9.5px}
+  .cover{padding:20px 0 0}
+  .it.compact{grid-template-columns:96px 1fr;gap:10px}
+  .it.compact .sum{-webkit-line-clamp:4}
+  footer .grid{grid-template-columns:1fr}
+  figure.fig img{max-height:300px}
+}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<div class="masthead"><div class="inner">
+  <div class="brand">WEEKLY BRIEF</div>
+  <div class="mast-right">2026-W47　11月16日 – 11月22日<br>第 47 期 · 每周五</div>
+</div></div><section class="cover"><div class="wrap">
+  <div class="kicker">世界与秩序 · 本期封面</div>
+  <h2><a href="#i-0b83538b126a">中美俄元首在深圳APEC期间首次举行三方会谈</a></h2>
+  <p class="dek">中国国家主席习近平、美国总统特朗普与俄罗斯总统普京在APEC深圳峰会期间举行首次三方会谈，议题聚焦乌克兰危机与核军控。特朗普称三国作为最大核武国家应探讨削减核武、降低核战风险；习近平强调必须竭力防止核战争；普京表示三方合作有助于维护全球安全稳定，并透露已与特朗普讨论乌克兰问题。习近平尚未公开谈及乌克…</p>
+  <figure class="fig wide"><img src="https://ichef.bbci.co.uk/news/1200/branded_zhongwen/7429/live/f1f7e890-e43d-11f1-99a1-253766e7ad8b.jpg" width="1024" height="576" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"><figcaption><span class="cap">报道配图</span><span class="cred">图片来源：BBC 中文</span></figcaption></figure>
+  <div class="theme">本期主题 · 本期主线是「规则与代价」：中美俄三方会晤与AI史上最大IPO同时改写地缘与资本秩序，而气候谈判、碳关税与PCB缺货则显示新规则正以成本形式落到具体产业身上。</div>
+  <ul class="coverlist"><li><a href="#i-d6011a418d2e"><span class="n">01</span><span class="t">联合国回应中美俄深圳会晤并讨论管制杀人机器人</span></a></li><li><a href="#i-2e2498ecf3f5"><span class="n">02</span><span class="t">美国对伊朗战事花费升至483亿美元</span></a></li><li><a href="#i-75ffb147cbf3"><span class="n">03</span><span class="t">Anthropic纳斯达克上市 融资813亿美元创纪录</span></a></li><li><a href="#i-bc7ca4a14572"><span class="n">04</span><span class="t">非洲谈判代表在Cop31最后一天称富国未履行承诺</span></a></li></ul>
+</div></section><div class="tocbar"><div class="inner">
+  <div class="toc"><a href="#world">01 世界与秩序</a><a href="#china">02 中国与社会</a><a href="#economy">03 经济与产业</a><a href="#tech">04 科技与未来</a><a href="#industry">05 工业与设计</a><a href="#thought">06 思想与文明</a><a href="#nature">07 自然与人类</a><a href="#deep">08 深度观察</a></div>
+  <button class="tool" id="sbtn" aria-label="搜索">⌕</button>
+  <button class="tool" id="favfilter" aria-label="只看收藏">☆</button>
+  <button class="tool" id="theme" aria-label="主题">☾</button>
+</div><div class="searchwrap" id="searchwrap">
+  <input id="search" class="search" type="search" placeholder="搜索标题、摘要、关键词…">
+</div></div><section class="standfirst"><div class="wrap">
+  <div class="byline">编者按</div><p>深圳APEC期间中美俄元首首次三方会谈，把世界秩序的重心摆上了桌面；同一周，全球电子协会的供应链警报让PCB概念股涨停，Anthropic以813亿美元融资登陆纳斯达克，华为云则把具身世界模型推到台前——大国协调与产业重组正在同一条时间线上互相加压。</p></div></section><main class="wrap"><section class="sec" id="world">
+  <div class="sechead"><span class="idx">01</span>
+    <h2>世界与秩序</h2><span class="en">WORLD</span></div>
+  <p class="blurb">国际政治、外交、地缘冲突与全球治理</p>
+  <article class="it lead" id="i-0b83538b126a" data-id="0b83538b126a" data-text="中美俄元首在深圳apec期间首次举行三方会谈 中国国家主席习近平、美国总统特朗普与俄罗斯总统普京在apec深圳峰会期间举行首次三方会谈，议题聚焦乌克兰危机与核军控。特朗普称三国作为最大核武国家应探讨削减核武、降低核战风险；习近平强调必须竭力防止核战争；普京表示三方合作有助于维护全球安全稳定，并透露已与特朗普讨论乌克兰问题。习近平尚未公开谈及乌克兰或伊朗问题。此前中美元首双边会晤触及台湾问题与能源安全。 三个核大国的领导人首次同席，直接关系全球战争与和平的走向。 apec深圳峰会 中美俄 核军控 乌克兰危机 三方会谈 bbc 中文 世界与秩序  这次三方会谈发生在apec峰会期间，是中美俄领导人首次同台。背景是乌克兰危机僵持、核军控体系松动（如《新削减战略武器条约》前途未卜），以及美国希望中国在核裁军和乌克兰问题上发挥更大作用。中国则借主场外交展示大国协调者形象，俄罗斯寻求打破西方孤立。三方各有算盘：特朗普想在大选前展示外交成绩，普京希望减轻制裁压力，习近平则强调稳定与防止核战争，但未在乌克兰问题上公开选边。"><div class="meta"><span class="hot">重点</span>
+    <span>BBC 中文</span><span>11/20</span>
+    </div>
+  <h3>中美俄元首在深圳APEC期间首次举行三方会谈</h3>
+  <p class="sum">中国国家主席习近平、美国总统特朗普与俄罗斯总统普京在APEC深圳峰会期间举行首次三方会谈，议题聚焦乌克兰危机与核军控。特朗普称三国作为最大核武国家应探讨削减核武、降低核战风险；习近平强调必须竭力防止核战争；普京表示三方合作有助于维护全球安全稳定，并透露已与特朗普讨论乌克兰问题。习近平尚未公开谈及乌克兰或伊朗问题。此前中美元首双边会晤触及台湾问题与能源安全。</p>
+  <p class="why"><b>为什么重要</b>三个核大国的领导人首次同席，直接关系全球战争与和平的走向。</p>
+  <div class="kw"><span>APEC深圳峰会</span><span>中美俄</span><span>核军控</span><span>乌克兰危机</span><span>三方会谈</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="0b83538b126a">追问</button>
+    <button data-act="obs" data-id="0b83538b126a">展开</button></div>
+  <div class="obs-pre">这次三方会谈发生在APEC峰会期间，是中美俄领导人首次同台。背景是乌克兰危机僵持、核军控体系松动（如《新削减战略武器条约》前途未卜），以及美国希望中国在核裁军和乌克兰问题上发挥更大…</div>
+  <div class="obs-b"><div class="part"><h4>事件背后</h4><p>这次三方会谈发生在APEC峰会期间，是中美俄领导人首次同台。背景是乌克兰危机僵持、核军控体系松动（如《新削减战略武器条约》前途未卜），以及美国希望中国在核裁军和乌克兰问题上发挥更大作用。中国则借主场外交展示大国协调者形象，俄罗斯寻求打破西方孤立。三方各有算盘：特朗普想在大选前展示外交成绩，普京希望减轻制裁压力，习近平则强调稳定与防止核战争，但未在乌克兰问题上公开选边。</p></div><div class="part"><h4>深层影响</h4><p>短期看，会谈可能推动核军控对话重启，但具体成果有限，更多是姿态。长期看，若三方形成某种协调机制，可能改变大国互动模式，但也可能弱化现有国际多边框架。对普通人的影响间接：核风险降低是公共品，但若大国共管成为常态，小国和中小国家的利益可能被边缘化。目前尚不确定三方是否会建立定期会晤机制，这是推测。</p></div><div class="part"><h4>不同视角</h4><p>支持者认为，大国直接对话有助于管控分歧，避免误判，尤其在核领域。批评者（如部分欧洲国家和乌克兰）担心，中美俄三方讨论乌克兰问题可能牺牲乌克兰利益，且中国未公开谴责俄罗斯，削弱了国际法立场。学界有观点认为，这反映全球权力向大国集中，但反例是，三国在具体议题上分歧依然深刻，共管缺乏制度基础。证据显示，会谈象征意义大于实质，但不宜低估其长期影响。</p></div><div class="part"><h4>值得思考</h4><ol><li>三方会谈是否会形成机制化的大国协调机制？如果是，对联合国等多边机构意味着什么？</li><li>中国在乌克兰问题上保持沉默，是策略性中立还是缺乏影响力？这如何影响其全球角色？</li></ol></div></div>
+  <div class="askbox" data-id="0b83538b126a" data-headline="中美俄元首在深圳APEC期间首次举行三方会谈" data-summary="中国国家主席习近平、美国总统特朗普与俄罗斯总统普京在APEC深圳峰会期间举行首次三方会谈，议题聚焦乌克兰危机与核军控。特朗普称三国作为最大核武国家应探讨削减核武、降低核战风险；习近平强调必须竭力防止核战争；普京表示三方合作有助于维护全球安全稳定，并透露已与特朗普讨论乌克兰问题。习近平尚未公开谈及乌克兰或伊朗问题。此前中美元首双边会晤触及台湾问题与能源安全。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="0b83538b126a">收藏</button>
+    <button class="act" data-act="like" data-id="0b83538b126a">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="0b83538b126a">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="APEC深圳峰会" data-id="0b83538b126a">加入观察</button>
+    <a class="act src" href="https://www.bbc.com/zhongwen/articles/ck9q84jgpxpjo/trad?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article><article class="it" id="i-d6011a418d2e" data-id="d6011a418d2e" data-text="联合国回应中美俄深圳会晤并讨论管制杀人机器人 联合国新闻《子午播报》11月20日节目列出三项内容：一是对中美俄深圳三方会晤作出回应；二是国际法院认定缅甸对罗兴亚人实施种族灭绝；三是「子午聚焦」讨论管制「杀人机器人」，即致命性自主武器系统的国际规则问题。节目未在摘要中给出回应的具体内容。 同一周内，大国峰会、种族灭绝裁决与自主武器规则同时进入联合国议程。 联合国 国际法院 罗兴亚人 致命性自主武器 种族灭绝 联合国新闻 世界与秩序  联合国子午播报列出三项议题：中美俄深圳会晤、国际法院认定缅甸对罗兴亚人种族灭绝、讨论管制“杀人机器人”（致命性自主武器系统）。背景是：大国会晤引发联合国对多边体系被削弱的担忧；国际法院裁决是国际法对缅甸军方的谴责，但执行困难；自主武器系统管制是新兴军控议题，联合国框架下讨论多年，进展缓慢。"><div class="meta"><span class="">关注</span>
+    <span>联合国新闻</span><span>11/20</span>
+    </div><figure class="fig"><img src="https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Graphics%20Library/15-07-2024_un_meridian.png/image770x420cropped.jpg" width="770" height="420" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"><figcaption><span class="cap">报道配图</span><span class="cred">图片来源：联合国新闻</span></figcaption></figure>
+  <h3>联合国回应中美俄深圳会晤并讨论管制杀人机器人</h3>
+  <p class="sum">联合国新闻《子午播报》11月20日节目列出三项内容：一是对中美俄深圳三方会晤作出回应；二是国际法院认定缅甸对罗兴亚人实施种族灭绝；三是「子午聚焦」讨论管制「杀人机器人」，即致命性自主武器系统的国际规则问题。节目未在摘要中给出回应的具体内容。</p>
+  <p class="why"><b>为什么重要</b>同一周内，大国峰会、种族灭绝裁决与自主武器规则同时进入联合国议程。</p>
+  <div class="kw"><span>联合国</span><span>国际法院</span><span>罗兴亚人</span><span>致命性自主武器</span><span>种族灭绝</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="d6011a418d2e">追问</button>
+    <button data-act="obs" data-id="d6011a418d2e">展开</button></div>
+  <div class="obs-pre">联合国子午播报列出三项议题：中美俄深圳会晤、国际法院认定缅甸对罗兴亚人种族灭绝、讨论管制“杀人机器人”（致命性自主武器系统）。背景是：大国会晤引发联合国对多边体系被削弱的担忧；国际…</div>
+  <div class="obs-b"><div class="part"><h4>事件背后</h4><p>联合国子午播报列出三项议题：中美俄深圳会晤、国际法院认定缅甸对罗兴亚人种族灭绝、讨论管制“杀人机器人”（致命性自主武器系统）。背景是：大国会晤引发联合国对多边体系被削弱的担忧；国际法院裁决是国际法对缅甸军方的谴责，但执行困难；自主武器系统管制是新兴军控议题，联合国框架下讨论多年，进展缓慢。</p></div><div class="part"><h4>深层影响</h4><p>短期：联合国可能对三方会晤表达关切，呼吁包容性多边主义；国际法院裁决增加对缅甸压力，但实际影响有限；自主武器讨论可能推动谈判授权。长期：若大国协调取代联合国，多边体系可能弱化；缅甸问题考验国际法效力；自主武器管制若失败，可能引发军备竞赛。对普通人：自主武器扩散可能改变战争形态，增加平民风险。目前尚不确定联合国回应的具体内容，这是推测。</p></div><div class="part"><h4>不同视角</h4><p>支持联合国者认为，多边机制是维护小国利益的最佳平台，大国会晤不应替代联合国。大国可能认为，直接对话更高效，联合国效率低下。国际法院裁决得到人权团体欢迎，但缅甸可能无视。自主武器管制：支持者主张预防性禁令，反对者（如部分军事大国）认为现有国际法足够。证据显示，联合国在自主武器讨论上分歧大，偏向支持管制一方，但反例是主要军事大国态度谨慎。</p></div><div class="part"><h4>值得思考</h4><ol><li>联合国如何应对大国协调机制对其权威的挑战？</li><li>国际法院的种族灭绝裁决对缅甸局势能产生多大实际影响？</li></ol></div></div>
+  <div class="askbox" data-id="d6011a418d2e" data-headline="联合国回应中美俄深圳会晤并讨论管制杀人机器人" data-summary="联合国新闻《子午播报》11月20日节目列出三项内容：一是对中美俄深圳三方会晤作出回应；二是国际法院认定缅甸对罗兴亚人实施种族灭绝；三是「子午聚焦」讨论管制「杀人机器人」，即致命性自主武器系统的国际规则问题。节目未在摘要中给出回应的具体内容。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="d6011a418d2e">收藏</button>
+    <button class="act" data-act="like" data-id="d6011a418d2e">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="d6011a418d2e">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="联合国" data-id="d6011a418d2e">加入观察</button>
+    <a class="act src" href="https://news.un.org/feed/view/zh/story/2026/11/1143232" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article><article class="it" id="i-2e2498ecf3f5" data-id="2e2498ecf3f5" data-text="美国对伊朗战事花费升至483亿美元 美国国防部预算官员米勒11月19日表示，截至11月13日，美国对伊朗战事花费估计升至483亿美元，含军事行动开支及装备弹药补充费用，较国会预算办公室公布的8月1日约380亿美元增加约103亿美元。该数字不含中东美军基地遭袭损失，五角大楼单独估算基地损失至少50亿美元，有官员称可能达150亿美元。特朗普称不会在新年前仓促决定对伊下一步行动。议员正敦促公开损失数据。 一场正在进行的战争如何花钱、由谁监督，是理解美国政治的入口。 伊朗战事 军费 五角大楼 国会监督 中期选举 中新网·国际 世界与秩序 483亿只是可核算部分，基地损失被单列且以「禁区」为由拒绝全面评估，战争成本的信息缺口本身就是国会争论的焦点。战费与中期选举结果挂钩，意味着明年的监督会更强硬。 "><div class="meta"><span class="">关注</span>
+    <span>中新网·国际</span><span>11/20</span>
+    </div>
+  <h3>美国对伊朗战事花费升至483亿美元</h3>
+  <p class="sum">美国国防部预算官员米勒11月19日表示，截至11月13日，美国对伊朗战事花费估计升至483亿美元，含军事行动开支及装备弹药补充费用，较国会预算办公室公布的8月1日约380亿美元增加约103亿美元。该数字不含中东美军基地遭袭损失，五角大楼单独估算基地损失至少50亿美元，有官员称可能达150亿美元。特朗普称不会在新年前仓促决定对伊下一步行动。议员正敦促公开损失数据。</p>
+  <p class="why"><b>为什么重要</b>一场正在进行的战争如何花钱、由谁监督，是理解美国政治的入口。</p>
+  <div class="kw"><span>伊朗战事</span><span>军费</span><span>五角大楼</span><span>国会监督</span><span>中期选举</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="2e2498ecf3f5">追问</button>
+    <button data-act="obs" data-id="2e2498ecf3f5">展开</button></div>
+  <div class="obs-pre">483亿只是可核算部分，基地损失被单列且以「禁区」为由拒绝全面评估，战争成本的信息缺口本身就是国会争论的焦点。战费与中期选举结果挂钩，意味着明年的监督会更强硬。…</div>
+  <div class="obs-b"><div class="part"><p>483亿只是可核算部分，基地损失被单列且以「禁区」为由拒绝全面评估，战争成本的信息缺口本身就是国会争论的焦点。战费与中期选举结果挂钩，意味着明年的监督会更强硬。</p></div></div>
+  <div class="askbox" data-id="2e2498ecf3f5" data-headline="美国对伊朗战事花费升至483亿美元" data-summary="美国国防部预算官员米勒11月19日表示，截至11月13日，美国对伊朗战事花费估计升至483亿美元，含军事行动开支及装备弹药补充费用，较国会预算办公室公布的8月1日约380亿美元增加约103亿美元。该数字不含中东美军基地遭袭损失，五角大楼单独估算基地损失至少50亿美元，有官员称可能达150亿美元。特朗普称不会在新年前仓促决定对伊下一步行动。议员正敦促公开损失数据。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="2e2498ecf3f5">收藏</button>
+    <button class="act" data-act="like" data-id="2e2498ecf3f5">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="2e2498ecf3f5">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="伊朗战事" data-id="2e2498ecf3f5">加入观察</button>
+    <a class="act src" href="https://www.chinanews.com.cn/gj/2026/11-20/10735436.shtml" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article>
+</section><section class="sec" id="china">
+  <div class="sechead"><span class="idx">02</span>
+    <h2>中国与社会</h2><span class="en">CHINA</span></div>
+  <p class="blurb">公共政策、社会结构、人口与民生</p>
+  <article class="it lead" id="i-3e800baaad13" data-id="3e800baaad13" data-text="全球电子协会发供应链警报，多家pcb概念股涨停 11月20日，超声电子、澳弘电子、中京电子、光华科技、满坤科技等pcb概念股涨停。11月18日，全球电子协会发布全行业供应链警报，称pcb缺货正从局部环节蔓延至成品板交付，汽车、工业、医疗、国防、通信等领域客户面临更长交期和供货紧张。多家pcb上市公司回应称，下游需求整体景气，是否短缺取决于产品结构，与ai服务器相关的高端pcb需求仍较旺盛。 一条涨停行情背后是全球电子供应链的结构性紧张，值得看清需求分化的真实图景。 pcb 供应链警报 涨停 ai服务器 交期 界面新闻 中国与社会 缺货警报与股价涨停同步出现，但企业回应把关键落在产品结构上：紧张集中在高端板，而非全行业普涨。判断这轮景气能走多远，要看ai服务器订单能否消化扩产，而不是看涨停家数。 "><div class="meta"><span class="">关注</span>
+    <span>界面新闻</span><span>11/20</span>
+    </div>
+  <h3>全球电子协会发供应链警报，多家PCB概念股涨停</h3>
+  <p class="sum">11月20日，超声电子、澳弘电子、中京电子、光华科技、满坤科技等PCB概念股涨停。11月18日，全球电子协会发布全行业供应链警报，称PCB缺货正从局部环节蔓延至成品板交付，汽车、工业、医疗、国防、通信等领域客户面临更长交期和供货紧张。多家PCB上市公司回应称，下游需求整体景气，是否短缺取决于产品结构，与AI服务器相关的高端PCB需求仍较旺盛。</p>
+  <p class="why"><b>为什么重要</b>一条涨停行情背后是全球电子供应链的结构性紧张，值得看清需求分化的真实图景。</p>
+  <div class="kw"><span>PCB</span><span>供应链警报</span><span>涨停</span><span>AI服务器</span><span>交期</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="3e800baaad13">追问</button>
+    <button data-act="obs" data-id="3e800baaad13">展开</button></div>
+  <div class="obs-pre">缺货警报与股价涨停同步出现，但企业回应把关键落在产品结构上：紧张集中在高端板，而非全行业普涨。判断这轮景气能走多远，要看AI服务器订单能否消化扩产，而不是看涨停家数。…</div>
+  <div class="obs-b"><div class="part"><p>缺货警报与股价涨停同步出现，但企业回应把关键落在产品结构上：紧张集中在高端板，而非全行业普涨。判断这轮景气能走多远，要看AI服务器订单能否消化扩产，而不是看涨停家数。</p></div></div>
+  <div class="askbox" data-id="3e800baaad13" data-headline="全球电子协会发供应链警报，多家PCB概念股涨停" data-summary="11月20日，超声电子、澳弘电子、中京电子、光华科技、满坤科技等PCB概念股涨停。11月18日，全球电子协会发布全行业供应链警报，称PCB缺货正从局部环节蔓延至成品板交付，汽车、工业、医疗、国防、通信等领域客户面临更长交期和供货紧张。多家PCB上市公司回应称，下游需求整体景气，是否短缺取决于产品结构，与AI服务器相关的高端PCB需求仍较旺盛。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="3e800baaad13">收藏</button>
+    <button class="act" data-act="like" data-id="3e800baaad13">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="3e800baaad13">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="PCB" data-id="3e800baaad13">加入观察</button>
+    <a class="act src" href="https://www.jiemian.com/article/15356937.html" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article><article class="it" id="i-e47edf60d1ba" data-id="e47edf60d1ba" data-text="长征八号甲在海南发射卫星互联网低轨30组卫星 11月20日19时59分，我国在海南商业航天发射场使用长征八号甲运载火箭，将卫星互联网低轨30组卫星发射升空，卫星顺利进入预定轨道，发射任务取得圆满成功。 低轨卫星互联网是国家竞争的新基础设施，一次常规发射也是组网进度的一格。 长征八号甲 卫星互联网 低轨 海南商业航天发射场 界面新闻 中国与社会 这次发射的看点不在单次成功，而在“30组”这个批量编号：低轨星座靠规模组网才能提供服务，发射节奏本身就是能力。海南商业航天发射场的常态化使用，是降低发射成本的关键变量。 "><div class="meta"><span class="">关注</span>
+    <span>界面新闻</span><span>11/20</span>
+    </div>
+  <h3>长征八号甲在海南发射卫星互联网低轨30组卫星</h3>
+  <p class="sum">11月20日19时59分，我国在海南商业航天发射场使用长征八号甲运载火箭，将卫星互联网低轨30组卫星发射升空，卫星顺利进入预定轨道，发射任务取得圆满成功。</p>
+  <p class="why"><b>为什么重要</b>低轨卫星互联网是国家竞争的新基础设施，一次常规发射也是组网进度的一格。</p>
+  <div class="kw"><span>长征八号甲</span><span>卫星互联网</span><span>低轨</span><span>海南商业航天发射场</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="e47edf60d1ba">追问</button>
+    <button data-act="obs" data-id="e47edf60d1ba">展开</button></div>
+  <div class="obs-pre">这次发射的看点不在单次成功，而在“30组”这个批量编号：低轨星座靠规模组网才能提供服务，发射节奏本身就是能力。海南商业航天发射场的常态化使用，是降低发射成本的关键变量。…</div>
+  <div class="obs-b"><div class="part"><p>这次发射的看点不在单次成功，而在“30组”这个批量编号：低轨星座靠规模组网才能提供服务，发射节奏本身就是能力。海南商业航天发射场的常态化使用，是降低发射成本的关键变量。</p></div></div>
+  <div class="askbox" data-id="e47edf60d1ba" data-headline="长征八号甲在海南发射卫星互联网低轨30组卫星" data-summary="11月20日19时59分，我国在海南商业航天发射场使用长征八号甲运载火箭，将卫星互联网低轨30组卫星发射升空，卫星顺利进入预定轨道，发射任务取得圆满成功。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="e47edf60d1ba">收藏</button>
+    <button class="act" data-act="like" data-id="e47edf60d1ba">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="e47edf60d1ba">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="长征八号甲" data-id="e47edf60d1ba">加入观察</button>
+    <a class="act src" href="https://www.jiemian.com/article/15357054.html" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article><article class="it" id="i-84e25cb10dfe" data-id="84e25cb10dfe" data-text="文旅部公布第二批失信名单，15家旅行社被吊销许可证 11月20日，文化和旅游部公布2026年第二批旅游市场秩序集中整治严重失信主体典型名单，15家旅行社因强迫购物等侵害旅游者权益行为被吊销旅行社业务经营许可证。典型案例包括：贵州盛世优途将购物场所包装为“非遗博物馆”“酱油厂联谊”；桂林澜悦以“戏楼”“广场”名义掩盖购物点，擅自取消变更行程引发27人集体投诉；陕西国际旅行社以666元、500元低价招徕泰国游，言语威胁“让你回不了中国”强迫消费。西安文旅部门已没收其违法所得8558元，并对法定代表人限业三年。 低价团与强迫购物的链条如何运转，这份名单给出了可核查的样本。 旅行社 强迫购物 失信名单 低价团 吊销许可证 界面新闻 中国与社会 处罚的关键不在罚款数额，而在吊销许可证和法定代表人三年限业——把责任落到人，才动得了“换壳重开”的惯用做法。但低价团的经济基础仍在，整治能否持续取决于日常监管而非名单曝光。 "><div class="meta"><span class="">速览</span>
+    <span>界面新闻</span><span>11/20</span>
+    </div>
+  <h3>文旅部公布第二批失信名单，15家旅行社被吊销许可证</h3>
+  <p class="sum">11月20日，文化和旅游部公布2026年第二批旅游市场秩序集中整治严重失信主体典型名单，15家旅行社因强迫购物等侵害旅游者权益行为被吊销旅行社业务经营许可证。典型案例包括：贵州盛世优途将购物场所包装为“非遗博物馆”“酱油厂联谊”；桂林澜悦以“戏楼”“广场”名义掩盖购物点，擅自取消变更行程引发27人集体投诉；陕西国际旅行社以666元、500元低价招徕泰国游，言语威胁“让你回不了中国”强迫消费。西安文旅部门已没收其违法所得8558元，并对法定代表人限业三年。</p>
+  <p class="why"><b>为什么重要</b>低价团与强迫购物的链条如何运转，这份名单给出了可核查的样本。</p>
+  <div class="kw"><span>旅行社</span><span>强迫购物</span><span>失信名单</span><span>低价团</span><span>吊销许可证</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="84e25cb10dfe">追问</button>
+    <button data-act="obs" data-id="84e25cb10dfe">展开</button></div>
+  <div class="obs-pre">处罚的关键不在罚款数额，而在吊销许可证和法定代表人三年限业——把责任落到人，才动得了“换壳重开”的惯用做法。但低价团的经济基础仍在，整治能否持续取决于日常监管而非名单曝光。…</div>
+  <div class="obs-b"><div class="part"><p>处罚的关键不在罚款数额，而在吊销许可证和法定代表人三年限业——把责任落到人，才动得了“换壳重开”的惯用做法。但低价团的经济基础仍在，整治能否持续取决于日常监管而非名单曝光。</p></div></div>
+  <div class="askbox" data-id="84e25cb10dfe" data-headline="文旅部公布第二批失信名单，15家旅行社被吊销许可证" data-summary="11月20日，文化和旅游部公布2026年第二批旅游市场秩序集中整治严重失信主体典型名单，15家旅行社因强迫购物等侵害旅游者权益行为被吊销旅行社业务经营许可证。典型案例包括：贵州盛世优途将购物场所包装为“非遗博物馆”“酱油厂联谊”；桂林澜悦以“戏楼”“广场”名义掩盖购物点，擅自取消变更行程引发27人集体投诉；陕西国际旅行社以666元、500元低价招徕泰国游，言语威胁“让你回不了中国”强迫消费。西安文旅部门已没收其违法所得8558元，并对法定代表人限业三年。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="84e25cb10dfe">收藏</button>
+    <button class="act" data-act="like" data-id="84e25cb10dfe">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="84e25cb10dfe">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="旅行社" data-id="84e25cb10dfe">加入观察</button>
+    <a class="act src" href="https://www.jiemian.com/article/15357017.html" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article>
+</section><section class="sec" id="economy">
+  <div class="sechead"><span class="idx">03</span>
+    <h2>经济与产业</h2><span class="en">ECONOMY</span></div>
+  <p class="blurb">宏观、金融、产业链与企业竞争</p>
+  <article class="it lead" id="i-75ffb147cbf3" data-id="75ffb147cbf3" data-text="anthropic纳斯达克上市 融资813亿美元创纪录 美国人工智能公司anthropic于11月19日在纳斯达克上市，ipo融资总额超过813亿美元，创美股史上最大ipo融资规模纪录。发行价每股83美元，完全稀释市值约1.5万亿美元；开盘报111.50美元，市值一度达约2万亿美元，收盘报97.17美元，涨17.07%。股票认购需求接近发行量的七倍。公司2021年成立，主营“克劳德”系列模型，今年前三季度营收332.4亿美元，同比增长约12倍。上市当日纽约、旧金山等地有抗议活动，有国会议员呼吁加强ai监管。 全球最大ipo与ai热潮的定价时刻，理解当下科技资本周期的入口。 anthropic ipo 人工智能 纳斯达克 估值 中新网·国际 经济与产业  anthropic上市正值ai投资热潮，其营收增长迅猛（前三季度332.4亿美元，同比增长12倍），反映市场对生成式ai的商业前景极度乐观。ipo融资超813亿美元，创纪录，部分原因是低利率环境下资本追逐高增长科技股。公司主打“克劳德”模型，强调安全，但上市也引发对ai监管和伦理的担忧。"><div class="meta"><span class="hot">重点</span>
+    <span>中新网·国际</span><span>11/20</span>
+    </div>
+  <h3>Anthropic纳斯达克上市 融资813亿美元创纪录</h3>
+  <p class="sum">美国人工智能公司Anthropic于11月19日在纳斯达克上市，IPO融资总额超过813亿美元，创美股史上最大IPO融资规模纪录。发行价每股83美元，完全稀释市值约1.5万亿美元；开盘报111.50美元，市值一度达约2万亿美元，收盘报97.17美元，涨17.07%。股票认购需求接近发行量的七倍。公司2021年成立，主营“克劳德”系列模型，今年前三季度营收332.4亿美元，同比增长约12倍。上市当日纽约、旧金山等地有抗议活动，有国会议员呼吁加强AI监管。</p>
+  <p class="why"><b>为什么重要</b>全球最大IPO与AI热潮的定价时刻，理解当下科技资本周期的入口。</p>
+  <div class="kw"><span>Anthropic</span><span>IPO</span><span>人工智能</span><span>纳斯达克</span><span>估值</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="75ffb147cbf3">追问</button>
+    <button data-act="obs" data-id="75ffb147cbf3">展开</button></div>
+  <div class="obs-pre">Anthropic上市正值AI投资热潮，其营收增长迅猛（前三季度332.4亿美元，同比增长12倍），反映市场对生成式AI的商业前景极度乐观。IPO融资超813亿美元，创纪录，部分原…</div>
+  <div class="obs-b"><div class="part"><h4>事件背后</h4><p>Anthropic上市正值AI投资热潮，其营收增长迅猛（前三季度332.4亿美元，同比增长12倍），反映市场对生成式AI的商业前景极度乐观。IPO融资超813亿美元，创纪录，部分原因是低利率环境下资本追逐高增长科技股。公司主打“克劳德”模型，强调安全，但上市也引发对AI监管和伦理的担忧。</p></div><div class="part"><h4>深层影响</h4><p>短期：股价大涨，早期投资者获利，但首日开盘买入者可能面临波动风险。长期：巨额融资将加速AI研发和算力投资，可能加剧行业垄断，但也推动技术扩散。对普通人：AI产品可能更快普及，但就业冲击和隐私问题随之而来。监管压力上升，国会呼吁加强监管，可能影响行业格局。目前尚不确定AI泡沫是否存在，但高估值隐含高预期。</p></div><div class="part"><h4>不同视角</h4><p>支持者认为，Anthropic的成功证明AI商业模式的可行性，融资将推动创新和就业。反对者（如抗议者和部分议员）担心AI发展过快，带来安全风险和社会不平等。学界有观点认为，AI公司上市后需对股东负责，可能牺牲安全投入。证据显示，市场热情高涨，但监管和伦理争议未解，偏向支持者一方，但反例是抗议活动显示公众担忧。</p></div><div class="part"><h4>值得思考</h4><ol><li>AI公司上市后，如何平衡股东利益与AI安全责任？</li><li>巨额融资是否会加剧AI行业的赢家通吃，抑制竞争？</li></ol></div></div>
+  <div class="askbox" data-id="75ffb147cbf3" data-headline="Anthropic纳斯达克上市 融资813亿美元创纪录" data-summary="美国人工智能公司Anthropic于11月19日在纳斯达克上市，IPO融资总额超过813亿美元，创美股史上最大IPO融资规模纪录。发行价每股83美元，完全稀释市值约1.5万亿美元；开盘报111.50美元，市值一度达约2万亿美元，收盘报97.17美元，涨17.07%。股票认购需求接近发行量的七倍。公司2021年成立，主营“克劳德”系列模型，今年前三季度营收332.4亿美元，同比增长约12倍。上市当日纽约、旧金山等地有抗议活动，有国会议员呼吁加强AI监管。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="75ffb147cbf3">收藏</button>
+    <button class="act" data-act="like" data-id="75ffb147cbf3">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="75ffb147cbf3">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="Anthropic" data-id="75ffb147cbf3">加入观察</button>
+    <a class="act src" href="https://www.chinanews.com.cn/gj/2026/11-20/10734997.shtml" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article><article class="it" id="i-fd2811614640" data-id="fd2811614640" data-text="anthropic上市未止ai抛售 亚洲股市普跌 anthropic创纪录ipo未能阻止ai相关公司抛售，全球股市下挫。亚洲股市录得2020年以来最差单周表现：台湾加权指数跌6.7%，台积电跌约6%；日经指数跌5%；韩国kospi跌5.5%；软银在东京跌14.5%，为两年多来最差单日。欧洲stoxx 600早盘跌1.3%，迈向3月以来最差单周。此前一天华尔街主要指数均跌超2%。anthropic首日涨17%，但周五盘前一度跌10%，回落至83美元发行价附近。 同一事件在两篇报道中呈现相反信号，是观察市场情绪与叙事偏差的样本。 ai泡沫 台积电 软银 全球股市 抛售 the guardian 经济与产业 ipo首日大涨与次日全球芯片股大跌同时发生，说明市场对ai的分歧已从“是否值得投”转向“谁承担资本开支风险”。台积电、软银这类重资产押注方成为情绪出口，而非模型公司本身。 "><div class="meta"><span class="">关注</span>
+    <span>The Guardian</span><span>11/20</span>
+    </div><figure class="fig"><img src="https://i.guim.co.uk/img/media/5a0726c71af19332d1a3095553ff3acc6e341a62/1043_0_5270_4216/master/5270.jpg?width=1200&amp;height=630&amp;quality=85&amp;auto=format&amp;fit=crop&amp;precrop=40:21,offset-x50,offset-y0&amp;overlay-align=bottom%2Cleft&amp;overlay-width=100p&amp;overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&amp;enable=upscale&amp;s=840bb47424232ef8465116aa8eea49a5" width="1200" height="630" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"><figcaption><span class="cap">报道配图</span><span class="cred">图片来源：The Guardian</span></figcaption></figure>
+  <h3>Anthropic上市未止AI抛售 亚洲股市普跌</h3>
+  <p class="sum">Anthropic创纪录IPO未能阻止AI相关公司抛售，全球股市下挫。亚洲股市录得2020年以来最差单周表现：台湾加权指数跌6.7%，台积电跌约6%；日经指数跌5%；韩国Kospi跌5.5%；软银在东京跌14.5%，为两年多来最差单日。欧洲Stoxx 600早盘跌1.3%，迈向3月以来最差单周。此前一天华尔街主要指数均跌超2%。Anthropic首日涨17%，但周五盘前一度跌10%，回落至83美元发行价附近。</p>
+  <p class="why"><b>为什么重要</b>同一事件在两篇报道中呈现相反信号，是观察市场情绪与叙事偏差的样本。</p>
+  <div class="kw"><span>AI泡沫</span><span>台积电</span><span>软银</span><span>全球股市</span><span>抛售</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="fd2811614640">追问</button>
+    <button data-act="obs" data-id="fd2811614640">展开</button></div>
+  <div class="obs-pre">IPO首日大涨与次日全球芯片股大跌同时发生，说明市场对AI的分歧已从“是否值得投”转向“谁承担资本开支风险”。台积电、软银这类重资产押注方成为情绪出口，而非模型公司本身。…</div>
+  <div class="obs-b"><div class="part"><p>IPO首日大涨与次日全球芯片股大跌同时发生，说明市场对AI的分歧已从“是否值得投”转向“谁承担资本开支风险”。台积电、软银这类重资产押注方成为情绪出口，而非模型公司本身。</p></div></div>
+  <div class="askbox" data-id="fd2811614640" data-headline="Anthropic上市未止AI抛售 亚洲股市普跌" data-summary="Anthropic创纪录IPO未能阻止AI相关公司抛售，全球股市下挫。亚洲股市录得2020年以来最差单周表现：台湾加权指数跌6.7%，台积电跌约6%；日经指数跌5%；韩国Kospi跌5.5%；软银在东京跌14.5%，为两年多来最差单日。欧洲Stoxx 600早盘跌1.3%，迈向3月以来最差单周。此前一天华尔街主要指数均跌超2%。Anthropic首日涨17%，但周五盘前一度跌10%，回落至83美元发行价附近。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="fd2811614640">收藏</button>
+    <button class="act" data-act="like" data-id="fd2811614640">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="fd2811614640">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="AI泡沫" data-id="fd2811614640">加入观察</button>
+    <a class="act src" href="https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article><article class="it" id="i-712431a5a5c7" data-id="712431a5a5c7" data-text="前10月中国财政收入19.57万亿 同比增4.9% 财政部11月20日公布，1-10月全国一般公共预算收入19.57万亿元，同比增长4.9%；税收收入16.26万亿元，增长6%。分税种看，国内增值税增5.3%，进口环节增值税、消费税增13.2%，企业所得税增5.9%，个人所得税增22.9%（10月单月增89.6%，主要受加强离岸信托个税征管带动），证券交易印花税增54.1%。出口退税1.96万亿元，同比多退1442亿元。分区域看，东部、中部、西部、东北分别增长3%、1%、4.3%、2.4%。同期支出22.8 一份可读出税制征管变化与内需结构的财政账本，比gdp更具体。 财政收入 个人所得税 出口退税 财政部 税收 中新网·财经 经济与产业 个税单月增89.6%主要来自离岸信托征管，属于一次性征管红利而非收入增长，不宜外推。证券交易印花税增54.1%则直接对应市场成交活跃度，是观察资本市场景气的硬指标。 "><div class="meta"><span class="">关注</span>
+    <span>中新网·财经</span><span>11/20</span>
+    </div>
+  <h3>前10月中国财政收入19.57万亿 同比增4.9%</h3>
+  <p class="sum">财政部11月20日公布，1-10月全国一般公共预算收入19.57万亿元，同比增长4.9%；税收收入16.26万亿元，增长6%。分税种看，国内增值税增5.3%，进口环节增值税、消费税增13.2%，企业所得税增5.9%，个人所得税增22.9%（10月单月增89.6%，主要受加强离岸信托个税征管带动），证券交易印花税增54.1%。出口退税1.96万亿元，同比多退1442亿元。分区域看，东部、中部、西部、东北分别增长3%、1%、4.3%、2.4%。同期支出22.8</p>
+  <p class="why"><b>为什么重要</b>一份可读出税制征管变化与内需结构的财政账本，比GDP更具体。</p>
+  <div class="kw"><span>财政收入</span><span>个人所得税</span><span>出口退税</span><span>财政部</span><span>税收</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="712431a5a5c7">追问</button>
+    <button data-act="obs" data-id="712431a5a5c7">展开</button></div>
+  <div class="obs-pre">个税单月增89.6%主要来自离岸信托征管，属于一次性征管红利而非收入增长，不宜外推。证券交易印花税增54.1%则直接对应市场成交活跃度，是观察资本市场景气的硬指标。…</div>
+  <div class="obs-b"><div class="part"><p>个税单月增89.6%主要来自离岸信托征管，属于一次性征管红利而非收入增长，不宜外推。证券交易印花税增54.1%则直接对应市场成交活跃度，是观察资本市场景气的硬指标。</p></div></div>
+  <div class="askbox" data-id="712431a5a5c7" data-headline="前10月中国财政收入19.57万亿 同比增4.9%" data-summary="财政部11月20日公布，1-10月全国一般公共预算收入19.57万亿元，同比增长4.9%；税收收入16.26万亿元，增长6%。分税种看，国内增值税增5.3%，进口环节增值税、消费税增13.2%，企业所得税增5.9%，个人所得税增22.9%（10月单月增89.6%，主要受加强离岸信托个税征管带动），证券交易印花税增54.1%。出口退税1.96万亿元，同比多退1442亿元。分区域看，东部、中部、西部、东北分别增长3%、1%、4.3%、2.4%。同期支出22.8">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="712431a5a5c7">收藏</button>
+    <button class="act" data-act="like" data-id="712431a5a5c7">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="712431a5a5c7">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="财政收入" data-id="712431a5a5c7">加入观察</button>
+    <a class="act src" href="https://www.chinanews.com.cn/cj/2026/11-20/10735509.shtml" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article><article class="it" id="i-f60975a1c583" data-id="f60975a1c583" data-text="国际金价八日连跌破3600美元 金饰克价跌超600元 本周国际贵金属连续下跌，伦敦现货黄金在八个交易日内接连失守每盎司4000至3600美元五道整数关口，本周跌幅逼近9%，较年初历史高点回撤约36%。国内品牌金饰报价随之走低，部分品牌足金饰品跌破每克1100元；与年内高点相比，多家主流品牌每克下跌超过600元，跌幅超三成。上海多处商圈黄金门店开展促销，出现饰品消费热潮。分析人士称，中短期需关注美联储加息预期与美元走势，长期取决于美国实际利率、美元及全球央行购金进展。 金价回撤三成是少见的宏观信号，关联利率、美元与避险需求三条线。 黄金 金价 美联储 美元 金饰 界面新闻 经济与产业 金饰克价跌超600元的同时门店出现促销抢购，说明消费需求对价格高度敏感，与投资需求方向相反。判断金价后续，实际利率比金饰销量更有解释力。 "><div class="meta"><span class="">关注</span>
+    <span>界面新闻</span><span>11/20</span>
+    </div>
+  <h3>国际金价八日连跌破3600美元 金饰克价跌超600元</h3>
+  <p class="sum">本周国际贵金属连续下跌，伦敦现货黄金在八个交易日内接连失守每盎司4000至3600美元五道整数关口，本周跌幅逼近9%，较年初历史高点回撤约36%。国内品牌金饰报价随之走低，部分品牌足金饰品跌破每克1100元；与年内高点相比，多家主流品牌每克下跌超过600元，跌幅超三成。上海多处商圈黄金门店开展促销，出现饰品消费热潮。分析人士称，中短期需关注美联储加息预期与美元走势，长期取决于美国实际利率、美元及全球央行购金进展。</p>
+  <p class="why"><b>为什么重要</b>金价回撤三成是少见的宏观信号，关联利率、美元与避险需求三条线。</p>
+  <div class="kw"><span>黄金</span><span>金价</span><span>美联储</span><span>美元</span><span>金饰</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="f60975a1c583">追问</button>
+    <button data-act="obs" data-id="f60975a1c583">展开</button></div>
+  <div class="obs-pre">金饰克价跌超600元的同时门店出现促销抢购，说明消费需求对价格高度敏感，与投资需求方向相反。判断金价后续，实际利率比金饰销量更有解释力。…</div>
+  <div class="obs-b"><div class="part"><p>金饰克价跌超600元的同时门店出现促销抢购，说明消费需求对价格高度敏感，与投资需求方向相反。判断金价后续，实际利率比金饰销量更有解释力。</p></div></div>
+  <div class="askbox" data-id="f60975a1c583" data-headline="国际金价八日连跌破3600美元 金饰克价跌超600元" data-summary="本周国际贵金属连续下跌，伦敦现货黄金在八个交易日内接连失守每盎司4000至3600美元五道整数关口，本周跌幅逼近9%，较年初历史高点回撤约36%。国内品牌金饰报价随之走低，部分品牌足金饰品跌破每克1100元；与年内高点相比，多家主流品牌每克下跌超过600元，跌幅超三成。上海多处商圈黄金门店开展促销，出现饰品消费热潮。分析人士称，中短期需关注美联储加息预期与美元走势，长期取决于美国实际利率、美元及全球央行购金进展。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="f60975a1c583">收藏</button>
+    <button class="act" data-act="like" data-id="f60975a1c583">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="f60975a1c583">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="黄金" data-id="f60975a1c583">加入观察</button>
+    <a class="act src" href="https://www.jiemian.com/article/15357061.html" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article>
+</section><section class="sec" id="tech">
+  <div class="sechead"><span class="idx">04</span>
+    <h2>科技与未来</h2><span class="en">TECH</span></div>
+  <p class="blurb">AI、半导体、航天与前沿科学</p>
+  <article class="it lead" id="i-b268c324f6e6" data-id="b268c324f6e6" data-text="华为云发布昇腾原生具身世界模型cloudrobo-wm1.2 11月16日，华为云发布具身世界模型cloudrobo-wm1.2，该模型在昇腾算力上训练。在robotwin 2.0和libero-pro 2.0两项具身智能评测中，平均成功率分别为88.98%和81.73%，均列第一。第三方独立测试覆盖5种机器人本体、13项操作任务，平均成功率比第二名高23个百分点。华为云计划11月30日开放模型权重、推理代码和后训练代码，并从模型架构、训练框架、核心算子到推理部署围绕昇腾做软硬件协同优化。 国产算力能否支撑前沿ai训练，是理解中美技术竞争的关键切口。 华为云 昇腾 具身智能 世界模型 开源 量子位 科技与未来 这次发布的重点不在单项指标，而在于把预训练、强化学习到部署的整条链路都放在昇腾上跑通，并连后训练代码一起开放。若外部团队真能接自家数据调通，国产算力的竞争点就从芯片参数转向生态可用性。 "><div class="meta"><span class="">关注</span>
+    <span>量子位</span><span>11/20</span>
+    </div>
+  <h3>华为云发布昇腾原生具身世界模型CloudRobo-WM1.2</h3>
+  <p class="sum">11月16日，华为云发布具身世界模型CloudRobo-WM1.2，该模型在昇腾算力上训练。在RoboTwin 2.0和LIBERO-Pro 2.0两项具身智能评测中，平均成功率分别为88.98%和81.73%，均列第一。第三方独立测试覆盖5种机器人本体、13项操作任务，平均成功率比第二名高23个百分点。华为云计划11月30日开放模型权重、推理代码和后训练代码，并从模型架构、训练框架、核心算子到推理部署围绕昇腾做软硬件协同优化。</p>
+  <p class="why"><b>为什么重要</b>国产算力能否支撑前沿AI训练，是理解中美技术竞争的关键切口。</p>
+  <div class="kw"><span>华为云</span><span>昇腾</span><span>具身智能</span><span>世界模型</span><span>开源</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="b268c324f6e6">追问</button>
+    <button data-act="obs" data-id="b268c324f6e6">展开</button></div>
+  <div class="obs-pre">这次发布的重点不在单项指标，而在于把预训练、强化学习到部署的整条链路都放在昇腾上跑通，并连后训练代码一起开放。若外部团队真能接自家数据调通，国产算力的竞争点就从芯片参数转向生态可用性。…</div>
+  <div class="obs-b"><div class="part"><p>这次发布的重点不在单项指标，而在于把预训练、强化学习到部署的整条链路都放在昇腾上跑通，并连后训练代码一起开放。若外部团队真能接自家数据调通，国产算力的竞争点就从芯片参数转向生态可用性。</p></div></div>
+  <div class="askbox" data-id="b268c324f6e6" data-headline="华为云发布昇腾原生具身世界模型CloudRobo-WM1.2" data-summary="11月16日，华为云发布具身世界模型CloudRobo-WM1.2，该模型在昇腾算力上训练。在RoboTwin 2.0和LIBERO-Pro 2.0两项具身智能评测中，平均成功率分别为88.98%和81.73%，均列第一。第三方独立测试覆盖5种机器人本体、13项操作任务，平均成功率比第二名高23个百分点。华为云计划11月30日开放模型权重、推理代码和后训练代码，并从模型架构、训练框架、核心算子到推理部署围绕昇腾做软硬件协同优化。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="b268c324f6e6">收藏</button>
+    <button class="act" data-act="like" data-id="b268c324f6e6">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="b268c324f6e6">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="华为云" data-id="b268c324f6e6">加入观察</button>
+    <a class="act src" href="https://www.qbitai.com/2026/11/511610.html" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article><article class="it" id="i-200c26dcc801" data-id="200c26dcc801" data-text="澳洲团队将人体肝脏在体外存活七周 澳大利亚悉尼的研究团队称，已将一枚捐赠人体肝脏在体外生命支持系统中维持七周。该系统名为extended organ perfusion system，由自动泵和传感器组成，在约37°c常体温条件下向器官输送营养和血液并清除废物。研究由royal prince alfred hospital移植外科医生、悉尼大学教授carlo pulitano领导，细节尚未正式发表。此前体外维持内脏存活的纪录由瑞士团队保持，约两周。 器官体外存活时间大幅延长，直接关系到移植医学的供给瓶颈。 肝脏 器官灌注 移植医学 生物医学工程 mit tech review 科技与未来 七周的意义在于把器官从「必须尽快移植」的易腐资源，变成可观察、可干预、可等待匹配的对象。但成果尚未经过同行评议，且长期灌注对器官功能的影响仍需数据验证。 "><div class="meta"><span class="">关注</span>
+    <span>MIT Tech Review</span><span>11/19</span>
+    </div><figure class="fig"><img src="https://wp.technologyreview.com/wp-content/uploads/2026/11/EOPS-V1.1-.jpg?resize=1200,600" width="1200" height="600" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"><figcaption><span class="cap">报道配图</span><span class="cred">图片来源：MIT Tech Review</span></figcaption></figure>
+  <h3>澳洲团队将人体肝脏在体外存活七周</h3>
+  <p class="sum">澳大利亚悉尼的研究团队称，已将一枚捐赠人体肝脏在体外生命支持系统中维持七周。该系统名为Extended Organ Perfusion System，由自动泵和传感器组成，在约37°C常体温条件下向器官输送营养和血液并清除废物。研究由Royal Prince Alfred Hospital移植外科医生、悉尼大学教授Carlo Pulitano领导，细节尚未正式发表。此前体外维持内脏存活的纪录由瑞士团队保持，约两周。</p>
+  <p class="why"><b>为什么重要</b>器官体外存活时间大幅延长，直接关系到移植医学的供给瓶颈。</p>
+  <div class="kw"><span>肝脏</span><span>器官灌注</span><span>移植医学</span><span>生物医学工程</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="200c26dcc801">追问</button>
+    <button data-act="obs" data-id="200c26dcc801">展开</button></div>
+  <div class="obs-pre">七周的意义在于把器官从「必须尽快移植」的易腐资源，变成可观察、可干预、可等待匹配的对象。但成果尚未经过同行评议，且长期灌注对器官功能的影响仍需数据验证。…</div>
+  <div class="obs-b"><div class="part"><p>七周的意义在于把器官从「必须尽快移植」的易腐资源，变成可观察、可干预、可等待匹配的对象。但成果尚未经过同行评议，且长期灌注对器官功能的影响仍需数据验证。</p></div></div>
+  <div class="askbox" data-id="200c26dcc801" data-headline="澳洲团队将人体肝脏在体外存活七周" data-summary="澳大利亚悉尼的研究团队称，已将一枚捐赠人体肝脏在体外生命支持系统中维持七周。该系统名为Extended Organ Perfusion System，由自动泵和传感器组成，在约37°C常体温条件下向器官输送营养和血液并清除废物。研究由Royal Prince Alfred Hospital移植外科医生、悉尼大学教授Carlo Pulitano领导，细节尚未正式发表。此前体外维持内脏存活的纪录由瑞士团队保持，约两周。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="200c26dcc801">收藏</button>
+    <button class="act" data-act="like" data-id="200c26dcc801">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="200c26dcc801">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="肝脏" data-id="200c26dcc801">加入观察</button>
+    <a class="act src" href="https://www.technologyreview.com/2026/11/19/1148934/a-human-liver-has-been-kept-alive-outside-the-body-for-seven-weeks-setting-a-record/" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article><article class="it" id="i-6d39921c7e25" data-id="6d39921c7e25" data-text="深伪检测专家提出应默认视觉记录为假 ieee spectrum刊文，深伪检测研究者hany farid回顾今年3月一则伊朗通讯社发布的视频，画面显示疑似美国制tomahawk导弹击中学校，报道称造成175余人死亡，美方否认。farid称，过去三十年数字媒体取证领域普遍遵循「真实性推定」，即主张造假者承担举证责任；在生成式ai普及后，他主张转向「虚假性推定」，由内容创作者证明其素材为真。 当视频不再能自证真假，每个人判断信息的方式都要重新设计。 深度伪造 数字取证 生成式ai 举证责任 ieee spectrum 科技与未来 把举证责任从质疑者转移到创作者，本质是用制度成本对冲技术成本。这一转向的难点不在检测算法，而在于谁来认证、认证标准由谁制定，以及没有能力自证的普通人会被如何对待。 "><div class="meta"><span class="">关注</span>
+    <span>IEEE Spectrum</span><span>11/20</span>
+    </div><figure class="fig"><img src="https://spectrum.ieee.org/media-library/photo-collage-of-a-mans-face-featuring-glitched-distortions-and-abstract-shapes.jpg?id=68721975&amp;width=1200&amp;height=600&amp;coordinates=143%2C771%2C114%2C609" width="1200" height="600" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"><figcaption><span class="cap">报道配图</span><span class="cred">图片来源：IEEE Spectrum</span></figcaption></figure>
+  <h3>深伪检测专家提出应默认视觉记录为假</h3>
+  <p class="sum">IEEE Spectrum刊文，深伪检测研究者Hany Farid回顾今年3月一则伊朗通讯社发布的视频，画面显示疑似美国制Tomahawk导弹击中学校，报道称造成175余人死亡，美方否认。Farid称，过去三十年数字媒体取证领域普遍遵循「真实性推定」，即主张造假者承担举证责任；在生成式AI普及后，他主张转向「虚假性推定」，由内容创作者证明其素材为真。</p>
+  <p class="why"><b>为什么重要</b>当视频不再能自证真假，每个人判断信息的方式都要重新设计。</p>
+  <div class="kw"><span>深度伪造</span><span>数字取证</span><span>生成式AI</span><span>举证责任</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="6d39921c7e25">追问</button>
+    <button data-act="obs" data-id="6d39921c7e25">展开</button></div>
+  <div class="obs-pre">把举证责任从质疑者转移到创作者，本质是用制度成本对冲技术成本。这一转向的难点不在检测算法，而在于谁来认证、认证标准由谁制定，以及没有能力自证的普通人会被如何对待。…</div>
+  <div class="obs-b"><div class="part"><p>把举证责任从质疑者转移到创作者，本质是用制度成本对冲技术成本。这一转向的难点不在检测算法，而在于谁来认证、认证标准由谁制定，以及没有能力自证的普通人会被如何对待。</p></div></div>
+  <div class="askbox" data-id="6d39921c7e25" data-headline="深伪检测专家提出应默认视觉记录为假" data-summary="IEEE Spectrum刊文，深伪检测研究者Hany Farid回顾今年3月一则伊朗通讯社发布的视频，画面显示疑似美国制Tomahawk导弹击中学校，报道称造成175余人死亡，美方否认。Farid称，过去三十年数字媒体取证领域普遍遵循「真实性推定」，即主张造假者承担举证责任；在生成式AI普及后，他主张转向「虚假性推定」，由内容创作者证明其素材为真。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="6d39921c7e25">收藏</button>
+    <button class="act" data-act="like" data-id="6d39921c7e25">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="6d39921c7e25">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="深度伪造" data-id="6d39921c7e25">加入观察</button>
+    <a class="act src" href="https://spectrum.ieee.org/fighting-back-against-deep-fakes" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article>
+</section><section class="sec" id="industry">
+  <div class="sechead"><span class="idx">05</span>
+    <h2>工业与设计</h2><span class="en">INDUSTRY</span></div>
+  <p class="blurb">汽车、制造、工程与工业设计</p>
+  <article class="it lead" id="i-4f902c6a3a52" data-id="4f902c6a3a52" data-text="nhl推出240吨级电动矿卡，支持双枪mcs快充 中国重型设备制造商内蒙古北方重型汽车股份有限公司（nhl）发布全电动刚性矿用卡车nte240e，载重240吨，最高配电池容量4100 kwh（4.1 mwh），并采用全球首个双枪mcs充电方案，电量从20%充至90%可在不到一小时内完成。nhl成立于1988年，此前主要生产包括大型柴电混合动力矿卡在内的刚性矿用卡车。 电动化正从乘用车扩展到矿山巨兽，电池与充电功率的工程极限在这里最直观。 电动矿卡 nte240e mcs快充 动力电池 nhl electrek 工业与设计 真正的看点不是4.1 mwh电池本身，而是双枪mcs把补能时间压进换班间隙，让超大吨位矿卡的电动化在运营节奏上成立。矿卡电动化的瓶颈正从续航转向充电功率与作业调度的匹配。 "><div class="meta"><span class="">速览</span>
+    <span>Electrek</span><span>11/20</span>
+    </div>
+  <h3>NHL推出240吨级电动矿卡，支持双枪MCS快充</h3>
+  <p class="sum">中国重型设备制造商内蒙古北方重型汽车股份有限公司（NHL）发布全电动刚性矿用卡车NTE240E，载重240吨，最高配电池容量4100 kWh（4.1 MWh），并采用全球首个双枪MCS充电方案，电量从20%充至90%可在不到一小时内完成。NHL成立于1988年，此前主要生产包括大型柴电混合动力矿卡在内的刚性矿用卡车。</p>
+  <p class="why"><b>为什么重要</b>电动化正从乘用车扩展到矿山巨兽，电池与充电功率的工程极限在这里最直观。</p>
+  <div class="kw"><span>电动矿卡</span><span>NTE240E</span><span>MCS快充</span><span>动力电池</span><span>NHL</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="4f902c6a3a52">追问</button>
+    <button data-act="obs" data-id="4f902c6a3a52">展开</button></div>
+  <div class="obs-pre">真正的看点不是4.1 MWh电池本身，而是双枪MCS把补能时间压进换班间隙，让超大吨位矿卡的电动化在运营节奏上成立。矿卡电动化的瓶颈正从续航转向充电功率与作业调度的匹配。…</div>
+  <div class="obs-b"><div class="part"><p>真正的看点不是4.1 MWh电池本身，而是双枪MCS把补能时间压进换班间隙，让超大吨位矿卡的电动化在运营节奏上成立。矿卡电动化的瓶颈正从续航转向充电功率与作业调度的匹配。</p></div></div>
+  <div class="askbox" data-id="4f902c6a3a52" data-headline="NHL推出240吨级电动矿卡，支持双枪MCS快充" data-summary="中国重型设备制造商内蒙古北方重型汽车股份有限公司（NHL）发布全电动刚性矿用卡车NTE240E，载重240吨，最高配电池容量4100 kWh（4.1 MWh），并采用全球首个双枪MCS充电方案，电量从20%充至90%可在不到一小时内完成。NHL成立于1988年，此前主要生产包括大型柴电混合动力矿卡在内的刚性矿用卡车。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="4f902c6a3a52">收藏</button>
+    <button class="act" data-act="like" data-id="4f902c6a3a52">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="4f902c6a3a52">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="电动矿卡" data-id="4f902c6a3a52">加入观察</button>
+    <a class="act src" href="https://electrek.co/2026/11/20/double-guns-ultra-class-haul-truck-packs-dual-gun-mcs-charging-4-mwh-battery/" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article>
+</section><section class="sec" id="thought">
+  <div class="sechead"><span class="idx">06</span>
+    <h2>思想与文明</h2><span class="en">THOUGHT</span></div>
+  <p class="blurb">哲学、历史、文化与观念之争</p>
+  <article class="it lead" id="i-37914cab35e0" data-id="37914cab35e0" data-text="吕森《新历史知识理论》中译本在山西大学首发 11月19日，约恩·吕森《新历史知识理论》中译本新书发布暨座谈会在山西大学举行，由山西大学历史文化学院与商务印书馆联合主办。吕森是德国史学理论家，该书为其职业生涯晚期对自身思想的综合之作。译者范丁梁、审校者尉佩云分别介绍翻译历程与理论内涵。来自中国社会科学院大学、华东师范大学、四川大学、河南大学、东北师范大学等机构的学者，围绕历史知识的科学性与真理性、历史认识与叙事、史学方法及跨文化传播展开研讨，并涉及德罗伊森、科泽勒克等人的思想脉络。 一部德国史学理论集大成之作进入中文语境，可观察中国史学如何吸收西方理论资源。 约恩·吕森 新历史知识理论 史学理论 商务印书馆 山西大学 中新网·文化 思想与文明 吕森关心的核心问题是历史知识如何被生产、又凭什么自称有效，这与中文史学界近年讨论的“自主知识体系”构成对话而非简单引进。值得留意的是，此次会议由地方高校与出版社合办，理论译介的推动力量正从少数中心机构扩散。 "><div class="meta"><span class="">速览</span>
+    <span>中新网·文化</span><span>11/19</span>
+    </div>
+  <h3>吕森《新历史知识理论》中译本在山西大学首发</h3>
+  <p class="sum">11月19日，约恩·吕森《新历史知识理论》中译本新书发布暨座谈会在山西大学举行，由山西大学历史文化学院与商务印书馆联合主办。吕森是德国史学理论家，该书为其职业生涯晚期对自身思想的综合之作。译者范丁梁、审校者尉佩云分别介绍翻译历程与理论内涵。来自中国社会科学院大学、华东师范大学、四川大学、河南大学、东北师范大学等机构的学者，围绕历史知识的科学性与真理性、历史认识与叙事、史学方法及跨文化传播展开研讨，并涉及德罗伊森、科泽勒克等人的思想脉络。</p>
+  <p class="why"><b>为什么重要</b>一部德国史学理论集大成之作进入中文语境，可观察中国史学如何吸收西方理论资源。</p>
+  <div class="kw"><span>约恩·吕森</span><span>新历史知识理论</span><span>史学理论</span><span>商务印书馆</span><span>山西大学</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="37914cab35e0">追问</button>
+    <button data-act="obs" data-id="37914cab35e0">展开</button></div>
+  <div class="obs-pre">吕森关心的核心问题是历史知识如何被生产、又凭什么自称有效，这与中文史学界近年讨论的“自主知识体系”构成对话而非简单引进。值得留意的是，此次会议由地方高校与出版社合办，理论译介的推动力量正从少数中心机构…</div>
+  <div class="obs-b"><div class="part"><p>吕森关心的核心问题是历史知识如何被生产、又凭什么自称有效，这与中文史学界近年讨论的“自主知识体系”构成对话而非简单引进。值得留意的是，此次会议由地方高校与出版社合办，理论译介的推动力量正从少数中心机构扩散。</p></div></div>
+  <div class="askbox" data-id="37914cab35e0" data-headline="吕森《新历史知识理论》中译本在山西大学首发" data-summary="11月19日，约恩·吕森《新历史知识理论》中译本新书发布暨座谈会在山西大学举行，由山西大学历史文化学院与商务印书馆联合主办。吕森是德国史学理论家，该书为其职业生涯晚期对自身思想的综合之作。译者范丁梁、审校者尉佩云分别介绍翻译历程与理论内涵。来自中国社会科学院大学、华东师范大学、四川大学、河南大学、东北师范大学等机构的学者，围绕历史知识的科学性与真理性、历史认识与叙事、史学方法及跨文化传播展开研讨，并涉及德罗伊森、科泽勒克等人的思想脉络。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="37914cab35e0">收藏</button>
+    <button class="act" data-act="like" data-id="37914cab35e0">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="37914cab35e0">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="约恩·吕森" data-id="37914cab35e0">加入观察</button>
+    <a class="act src" href="https://www.chinanews.com.cn/cul/2026/11-19/10734906.shtml" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article>
+</section><section class="sec" id="nature">
+  <div class="sechead"><span class="idx">07</span>
+    <h2>自然与人类</h2><span class="en">NATURE</span></div>
+  <p class="blurb">气候、生态、医学与重大文化事件</p>
+  <article class="it lead" id="i-bc7ca4a14572" data-id="bc7ca4a14572" data-text="非洲谈判代表在cop31最后一天称富国未履行承诺 11月21日，在土耳其安塔利亚举行的cop31气候谈判最后一个正式日，非洲谈判者集团主席zanetor agyeman-rawlings在记者会上表示，发达国家未兑现巴黎协定下的承诺，正在损害联合国气候谈判进程的信任与公信力。她说非洲不是来乞求援助，而是要求发达国家履行已作出的承诺。此前公民社会团体指出，欧盟在气候资金、公正转型和适应议题上牵头阻碍进展，相关草案文本尚未以非洲民众可理解的形式出现。 气候谈判的最后一天，资金分歧如何决定全球减排承诺能否落地。 cop31 非洲谈判者集团 气候资金 巴黎协定 欧盟 the guardian·环境 自然与人类  cop31在土耳其安塔利亚举行，最后一天非洲谈判者集团发声，指责发达国家未兑现巴黎协定下的资金承诺（如每年1000亿美元气候资金）。背景是气候谈判长期僵局：发达国家资金不到位，发展中国家承受气候灾害却缺乏支持。非洲国家尤其脆弱，但谈判中常被边缘化。公民社会团体指出欧盟在资金和适应议题上阻碍进展。"><div class="meta"><span class="hot">重点</span>
+    <span>The Guardian·环境</span><span>11/20</span>
+    </div><figure class="fig wide"><img src="https://i.guim.co.uk/img/media/014e8e90cb60127dc1056169cec2565890ae8e84/309_0_3092_2473/master/3092.jpg?width=1200&amp;height=630&amp;quality=85&amp;auto=format&amp;fit=crop&amp;precrop=40:21,offset-x50,offset-y0&amp;overlay-align=bottom%2Cleft&amp;overlay-width=100p&amp;overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&amp;enable=upscale&amp;s=68e9496359d8a6f7d91292ba92aab497" width="1200" height="630" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"><figcaption><span class="cap">报道配图</span><span class="cred">图片来源：The Guardian·环境</span></figcaption></figure>
+  <h3>非洲谈判代表在Cop31最后一天称富国未履行承诺</h3>
+  <p class="sum">11月21日，在土耳其安塔利亚举行的Cop31气候谈判最后一个正式日，非洲谈判者集团主席Zanetor Agyeman-Rawlings在记者会上表示，发达国家未兑现巴黎协定下的承诺，正在损害联合国气候谈判进程的信任与公信力。她说非洲不是来乞求援助，而是要求发达国家履行已作出的承诺。此前公民社会团体指出，欧盟在气候资金、公正转型和适应议题上牵头阻碍进展，相关草案文本尚未以非洲民众可理解的形式出现。</p>
+  <p class="why"><b>为什么重要</b>气候谈判的最后一天，资金分歧如何决定全球减排承诺能否落地。</p>
+  <div class="kw"><span>Cop31</span><span>非洲谈判者集团</span><span>气候资金</span><span>巴黎协定</span><span>欧盟</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="bc7ca4a14572">追问</button>
+    <button data-act="obs" data-id="bc7ca4a14572">展开</button></div>
+  <div class="obs-pre">Cop31在土耳其安塔利亚举行，最后一天非洲谈判者集团发声，指责发达国家未兑现巴黎协定下的资金承诺（如每年1000亿美元气候资金）。背景是气候谈判长期僵局：发达国家资金不到位，发展…</div>
+  <div class="obs-b"><div class="part"><h4>事件背后</h4><p>Cop31在土耳其安塔利亚举行，最后一天非洲谈判者集团发声，指责发达国家未兑现巴黎协定下的资金承诺（如每年1000亿美元气候资金）。背景是气候谈判长期僵局：发达国家资金不到位，发展中国家承受气候灾害却缺乏支持。非洲国家尤其脆弱，但谈判中常被边缘化。公民社会团体指出欧盟在资金和适应议题上阻碍进展。</p></div><div class="part"><h4>深层影响</h4><p>短期：非洲国家的强硬表态可能推动最后文本纳入更强资金承诺，但谈判进展缓慢。长期：若信任持续流失，发展中国家可能转向其他合作机制，削弱联合国气候进程。对普通人：气候资金不到位意味着适应项目（如抗旱、防洪）延迟，直接影响脆弱社区。目前尚不确定最终文本内容，但非洲的诉求可能部分被采纳。</p></div><div class="part"><h4>不同视角</h4><p>非洲国家立场合理：发达国家历史排放多，有义务提供资金，且承诺未兑现损害信任。发达国家（如欧盟）可能辩称经济压力大，资金需用于国内转型，且要求受援国提高治理透明度。学界有观点认为，气候谈判需改革资金机制，但证据显示发达国家履约记录不佳，偏向非洲一方。反例是部分发达国家已增加资金，但总量仍不足。</p></div><div class="part"><h4>值得思考</h4><ol><li>发达国家未兑现气候资金承诺的根本原因是什么？如何建立更可信的履约机制？</li><li>非洲国家在气候谈判中的边缘化如何影响全球气候治理的合法性？</li></ol></div></div>
+  <div class="askbox" data-id="bc7ca4a14572" data-headline="非洲谈判代表在Cop31最后一天称富国未履行承诺" data-summary="11月21日，在土耳其安塔利亚举行的Cop31气候谈判最后一个正式日，非洲谈判者集团主席Zanetor Agyeman-Rawlings在记者会上表示，发达国家未兑现巴黎协定下的承诺，正在损害联合国气候谈判进程的信任与公信力。她说非洲不是来乞求援助，而是要求发达国家履行已作出的承诺。此前公民社会团体指出，欧盟在气候资金、公正转型和适应议题上牵头阻碍进展，相关草案文本尚未以非洲民众可理解的形式出现。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="bc7ca4a14572">收藏</button>
+    <button class="act" data-act="like" data-id="bc7ca4a14572">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="bc7ca4a14572">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="Cop31" data-id="bc7ca4a14572">加入观察</button>
+    <a class="act src" href="https://www.theguardian.com/world/live/2026/nov/20/cop31-climate-crisis-talks-turkey-latest-news-updates" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article><article class="it" id="i-41ddc4bfb4e6" data-id="41ddc4bfb4e6" data-text="霍尔木兹海峡战事致油轮泄漏污染海湾生态 《卫报》通过分析数十张卫星图像并采访环境专家，评估美以与伊朗战事对海湾造成的环境破坏。霍尔木兹海峡是全球最繁忙的石油航运通道之一，被导弹或水雷击中的油轮正向海中泄漏石油，形成从太空可见的大面积油膜，污染海岸线并威胁海洋生态系统。由于海上封锁，许多受污染区域无法进入，实地记录破坏程度几乎不可能。 战争的环境代价往往不在战报里，而在卫星图像和海岸线上。 霍尔木兹海峡 油轮泄漏 海湾生态 卫星图像 海上封锁 the guardian·环境 自然与人类 这里的机制是战争破坏与信息封锁叠加：污染在发生，但取证渠道被同一场冲突切断。卫星遥感因此成为少数可用的证据来源，也说明环境损害追责高度依赖可获取的观测数据。 "><div class="meta"><span class="">关注</span>
+    <span>The Guardian·环境</span><span>11/20</span>
+    </div><figure class="fig"><img src="https://i.guim.co.uk/img/media/81858b5185d8ec0e2ff40f48104308d71b535c20/247_0_1350_1080/master/1350.jpg?width=1200&amp;height=630&amp;quality=85&amp;auto=format&amp;fit=crop&amp;precrop=40:21,offset-x50,offset-y0&amp;overlay-align=bottom%2Cleft&amp;overlay-width=100p&amp;overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&amp;enable=upscale&amp;s=8b3acd7ecefb30ecf6def9abe438ab06" width="1200" height="630" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"><figcaption><span class="cap">报道配图</span><span class="cred">图片来源：The Guardian·环境</span></figcaption></figure>
+  <h3>霍尔木兹海峡战事致油轮泄漏污染海湾生态</h3>
+  <p class="sum">《卫报》通过分析数十张卫星图像并采访环境专家，评估美以与伊朗战事对海湾造成的环境破坏。霍尔木兹海峡是全球最繁忙的石油航运通道之一，被导弹或水雷击中的油轮正向海中泄漏石油，形成从太空可见的大面积油膜，污染海岸线并威胁海洋生态系统。由于海上封锁，许多受污染区域无法进入，实地记录破坏程度几乎不可能。</p>
+  <p class="why"><b>为什么重要</b>战争的环境代价往往不在战报里，而在卫星图像和海岸线上。</p>
+  <div class="kw"><span>霍尔木兹海峡</span><span>油轮泄漏</span><span>海湾生态</span><span>卫星图像</span><span>海上封锁</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="41ddc4bfb4e6">追问</button>
+    <button data-act="obs" data-id="41ddc4bfb4e6">展开</button></div>
+  <div class="obs-pre">这里的机制是战争破坏与信息封锁叠加：污染在发生，但取证渠道被同一场冲突切断。卫星遥感因此成为少数可用的证据来源，也说明环境损害追责高度依赖可获取的观测数据。…</div>
+  <div class="obs-b"><div class="part"><p>这里的机制是战争破坏与信息封锁叠加：污染在发生，但取证渠道被同一场冲突切断。卫星遥感因此成为少数可用的证据来源，也说明环境损害追责高度依赖可获取的观测数据。</p></div></div>
+  <div class="askbox" data-id="41ddc4bfb4e6" data-headline="霍尔木兹海峡战事致油轮泄漏污染海湾生态" data-summary="《卫报》通过分析数十张卫星图像并采访环境专家，评估美以与伊朗战事对海湾造成的环境破坏。霍尔木兹海峡是全球最繁忙的石油航运通道之一，被导弹或水雷击中的油轮正向海中泄漏石油，形成从太空可见的大面积油膜，污染海岸线并威胁海洋生态系统。由于海上封锁，许多受污染区域无法进入，实地记录破坏程度几乎不可能。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="41ddc4bfb4e6">收藏</button>
+    <button class="act" data-act="like" data-id="41ddc4bfb4e6">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="41ddc4bfb4e6">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="霍尔木兹海峡" data-id="41ddc4bfb4e6">加入观察</button>
+    <a class="act src" href="https://www.theguardian.com/world/video/2026/nov/20/how-the-war-in-iran-turned-the-gulf-into-a-climate-catastrophe-video-explainer" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article><article class="it" id="i-32576bfb2a69" data-id="32576bfb2a69" data-text="上海发布绿色金融通知，仓储企业加紧整理碳台账 11月17日，国家金融监督管理总局上海监管局与人民银行上海市分行联合发布通知，鼓励保险机构开拓碳汇价格保险、碳排放权交易保险等碳保险产品。此前，因欧盟碳边境调节机制即将进入收费阶段，上海一家大宗商品仓储企业已启动出口货物碳数据摸底，并于2026年二季度系统整理碳台账，登记有色金属品类的生产端碳足迹、仓储能耗及运输环节排放。该企业正咨询碳关税相关保险，但尚未投保。上海市国资委表示，相关工作分层推进，尚未开展全市统一专项试点。 碳关税正把气候政策变成供应链上的具体单据和保险产品。 碳关税 碳台账 绿色金融 碳保险 上海 经济观察网 自然与人类 碳边境调节机制的实际作用点不在海关，而在仓储和物流环节的数据衔接：一段资料断裂就可能转化为下游进口方的额外成本。企业购买保险对冲的不是数据真伪，而是供应链信息断链的风险。 "><div class="meta"><span class="">关注</span>
+    <span>经济观察网</span><span>11/20</span>
+    </div>
+  <h3>上海发布绿色金融通知，仓储企业加紧整理碳台账</h3>
+  <p class="sum">11月17日，国家金融监督管理总局上海监管局与人民银行上海市分行联合发布通知，鼓励保险机构开拓碳汇价格保险、碳排放权交易保险等碳保险产品。此前，因欧盟碳边境调节机制即将进入收费阶段，上海一家大宗商品仓储企业已启动出口货物碳数据摸底，并于2026年二季度系统整理碳台账，登记有色金属品类的生产端碳足迹、仓储能耗及运输环节排放。该企业正咨询碳关税相关保险，但尚未投保。上海市国资委表示，相关工作分层推进，尚未开展全市统一专项试点。</p>
+  <p class="why"><b>为什么重要</b>碳关税正把气候政策变成供应链上的具体单据和保险产品。</p>
+  <div class="kw"><span>碳关税</span><span>碳台账</span><span>绿色金融</span><span>碳保险</span><span>上海</span></div><div class="obs">
+  <div class="obs-h"><span>观察者视角</span><span class="sp"></span>
+    <button data-act="ask" data-id="32576bfb2a69">追问</button>
+    <button data-act="obs" data-id="32576bfb2a69">展开</button></div>
+  <div class="obs-pre">碳边境调节机制的实际作用点不在海关，而在仓储和物流环节的数据衔接：一段资料断裂就可能转化为下游进口方的额外成本。企业购买保险对冲的不是数据真伪，而是供应链信息断链的风险。…</div>
+  <div class="obs-b"><div class="part"><p>碳边境调节机制的实际作用点不在海关，而在仓储和物流环节的数据衔接：一段资料断裂就可能转化为下游进口方的额外成本。企业购买保险对冲的不是数据真伪，而是供应链信息断链的风险。</p></div></div>
+  <div class="askbox" data-id="32576bfb2a69" data-headline="上海发布绿色金融通知，仓储企业加紧整理碳台账" data-summary="11月17日，国家金融监督管理总局上海监管局与人民银行上海市分行联合发布通知，鼓励保险机构开拓碳汇价格保险、碳排放权交易保险等碳保险产品。此前，因欧盟碳边境调节机制即将进入收费阶段，上海一家大宗商品仓储企业已启动出口货物碳数据摸底，并于2026年二季度系统整理碳台账，登记有色金属品类的生产端碳足迹、仓储能耗及运输环节排放。该企业正咨询碳关税相关保险，但尚未投保。上海市国资委表示，相关工作分层推进，尚未开展全市统一专项试点。">
+    <form class="askform"><textarea placeholder="就这条新闻继续追问：这个判断有哪些反例？"></textarea>
+    <div class="row"><button type="submit">提问</button></div></form>
+    <div class="answer"></div></div>
+</div><div class="acts">
+    <button class="act" data-act="fav" data-id="32576bfb2a69">收藏</button>
+    <button class="act" data-act="like" data-id="32576bfb2a69">感兴趣</button>
+    <button class="act" data-act="dislike" data-id="32576bfb2a69">不感兴趣</button>
+    <button class="act" data-act="watch" data-topic="碳关税" data-id="32576bfb2a69">加入观察</button>
+    <a class="act src" href="http://www.eeo.com.cn/2026/1120/1098575.shtml" target="_blank" rel="noopener">原文 ↗</a>
+  </div></article>
+</section><section class="deep" id="deep">
+  <div class="kicker">08 · 本周深度观察</div>
+  <h2>AI 资本盛宴为何成了股市的抛售信号？</h2>
+  <p class="lead">Anthropic 以 813 亿美元创纪录 IPO 登陆纳斯达克，却未能阻止全球 AI 概念股抛售，亚洲股市录得 2020 年以来最差单周表现。这看似矛盾的现象提示我们：市场对 AI 的定价逻辑可能正在从「增长叙事」转向「盈利验证」。理解这一转折，对判断技术泡沫与产业周期至关重要。</p>
+  
+  <div class="dblock"><h4>背景脉络</h4><p class="drop">Anthropic 是开发 Claude 系列大语言模型的人工智能公司，其 IPO 融资额刷新美股历史纪录，反映一级市场对 AI 基础模型的狂热。然而，上市首日即遇冷，台积电、日经指数等 AI 供应链相关资产同步下挫。这背后是市场对 AI 商业化进度的重新评估：大模型训练成本高企，但收入增长尚未匹配估值。同时，全球电子协会发布 PCB 供应链警报，显示 AI 硬件需求可能短期过热。投资者开始区分「AI 基础设施」与「AI 应用盈利」，资本从概念股向有实际现金流的公司转移。这一轮抛售并非否定 AI 长期价值，而是对估值泡沫的修正，标志着 AI 投资进入去伪存真阶段。</p></div><div class="dblock"><h4>时间线</h4><ul class="tl"><li><span class="w">2022 年 11 月</span><span class="t">OpenAI 发布 ChatGPT，引爆生成式 AI 投资热潮</span></li><li><span class="w">2023 年</span><span class="t">英伟达等 AI 芯片股暴涨，带动纳斯达克反弹</span></li><li><span class="w">2024 年</span><span class="t">AI 初创公司融资额创纪录，估值飙升</span></li><li><span class="w">2025 年 11 月 19 日</span><span class="t">Anthropic 纳斯达克上市，融资 813 亿美元创纪录</span></li><li><span class="w">2025 年 11 月 20 日</span><span class="t">亚洲股市普跌，台积电跌约 6%，日经指数下挫</span></li><li><span class="w">2025 年 11 月 21 日</span><span class="t">全球电子协会发布 PCB 供应链警报，概念股涨停后分化</span></li></ul></div><div class="dblock"><h4>核心矛盾</h4><ul class="tn"><li>{&#x27;who&#x27;: &#x27;一级市场投资者 vs 二级市场投资者&#x27;, &#x27;what&#x27;: &#x27;前者追捧 AI 独角兽高估值，后者要求盈利验证，导致 IPO 后抛售&#x27;}</li><li>{&#x27;who&#x27;: &#x27;AI 芯片供应商 vs AI 应用开发商&#x27;, &#x27;what&#x27;: &#x27;硬件成本高企挤压应用层利润，利益分配不均&#x27;}</li><li>{&#x27;who&#x27;: &#x27;短期交易者 vs 长期产业资本&#x27;, &#x27;what&#x27;: &#x27;前者利用波动套利，后者布局十年技术周期，策略分化&#x27;}</li><li>{&#x27;who&#x27;: &#x27;监管机构 vs AI 巨头&#x27;, &#x27;what&#x27;: &#x27;反垄断与数据安全审查趋严，增加合规成本与不确定性&#x27;}</li></ul></div><div class="dblock"><h4>不同立场</h4><div class="vw"><div><b>泡沫破裂论</b>AI 估值已脱离基本面，Anthropic 上市即巅峰，抛售是泡沫破裂的开始，类似 2000 年互联网泡沫。</div><div><b>健康修正论</b>抛售是市场对过度乐观的纠正，资本将流向有真实营收的 AI 公司，促进行业优胜劣汰。</div><div><b>长期乐观论</b>AI 仍处于早期阶段，短期波动不改变生产力革命趋势，回调是买入机会。</div><div><b>监管风险论</b>各国对 AI 的监管收紧将抑制创新速度，增加合规成本，削弱短期盈利前景。</div></div></div><div class="dblock"><h4>延伸阅读</h4><ul class="rd"><li><b>《非理性繁荣》</b>　罗伯特·席勒——理解市场泡沫的心理与制度根源，对照 AI 热潮。</li><li><b>《创新者的窘境》</b>　克莱顿·克里斯坦森——分析技术变革中企业成败，适用于 AI 产业竞争。</li><li><b>《金融时报》关于 Anthropic IPO 的报道</b>　金融时报——获取 IPO 细节与市场即时反应的一手信息。</li></ul><p style="margin-top:6px;font-size:11px;color:var(--ink3)">书目由模型推荐，请自行核实。</p></div>
+</section><div class="noresult" id="noresult">没有匹配的新闻，换个关键词。</div></main><footer><div class="wrap"><div class="grid">
+  <div><h6>数据来源 · 35/36</h6><ul><li><span>中新网·教育</span><span class="ok">✓</span></li><li><span>中新网·社会</span><span class="ok">✓</span></li><li><span>人民网·时政</span><span class="ok">✓</span></li><li><span>人民网·社会</span><span class="ok">✓</span></li><li><span>界面新闻</span><span class="ok">✓</span></li><li><span>FT 中文网</span><span class="ok">✓</span></li><li><span>中新网·财经</span><span class="ok">✓</span></li><li><span>人民网·财经</span><span class="ok">✓</span></li><li><span>界面新闻</span><span class="ok">✓</span></li><li><span>经济观察网</span><span class="ok">✓</span></li><li><span>Dezeen</span><span class="ok">✓</span></li><li><span>Electrek</span><span class="ok">✓</span></li><li><span>F1</span><span class="ok">✓</span></li><li><span>Motor1</span><span class="ok">✓</span></li><li><span>The Drive</span><span class="ok">✓</span></li><li><span>中新网·滚动</span><span class="ok">✓</span></li></ul></div>
+  <div><h6>本期</h6><ul>
+    <li><span>生成</span><span>11月20日 22:28</span></li>
+    <li><span>条目</span><span>18 条 / 7 张图</span></li>
+    <li><span>处理</span><span>668 篇</span></li>
+    <li><span>模型</span><span>31k tokens</span></li>
+  </ul>
+  <h6 style="margin-top:14px">更多</h6>
+  <div class="foot-btns"><a href="../archive.html">往期</a><a href="../thinking.html">思想档案</a>
+  <button id="export">导出阅读数据</button></div></div>
+</div></div></footer>
+<script>window.WB_ISSUE="2026-W47";</script>
+<script>
+(function(){
+  var root=document.documentElement;
+  root.dataset.theme = localStorage.getItem('wb-theme') ||
+    (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+  var $=function(s,c){return (c||document).querySelector(s)};
+  var $$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
+
+  var tb=$('#theme');
+  function paint(){ if(tb) tb.textContent = root.dataset.theme==='dark'?'☀':'☾'; }
+  if(tb) tb.addEventListener('click',function(){
+    var n=root.dataset.theme==='dark'?'light':'dark';
+    root.dataset.theme=n; localStorage.setItem('wb-theme',n); paint();
+  });
+  paint();
+
+  var prog=$('#prog');
+  function onScroll(){ var h=document.documentElement;
+    if(prog) prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'; }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  var links=$$('.toc a'), secs=links.map(function(a){return $(a.getAttribute('href'))});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){
+      var i=secs.indexOf(e.target); links.forEach(function(l,j){l.classList.toggle('on',j===i)}); }}); },
+      {rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(s){ if(s) io.observe(s); });
+  }
+
+  function load(k,d){ try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d} }
+  var favs=load('wb-favs',{}), fb=load('wb-feedback',{}), watch=load('wb-watch',[]);
+  function syncFav(){
+    $$('.it').forEach(function(el){ el.classList.toggle('fav', !!favs[el.dataset.id]); });
+    $$('[data-act="fav"]').forEach(function(b){ b.classList.toggle('on', !!favs[b.dataset.id]); });
+    $$('.sec').forEach(function(s){ s.classList.toggle('has-fav', $$('.it.fav',s).length>0); });
+  }
+  function syncFb(){
+    $$('[data-act="like"],[data-act="dislike"]').forEach(function(b){
+      b.classList.toggle('on', fb[b.dataset.id]===b.dataset.act); });
+  }
+
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('[data-act]'); if(!b) return;
+    var id=b.dataset.id, act=b.dataset.act;
+    if(act==='fav'){ favs[id]=!favs[id]; localStorage.setItem('wb-favs',JSON.stringify(favs)); syncFav(); }
+    if(act==='like'||act==='dislike'){ fb[id]=fb[id]===act?null:act;
+      localStorage.setItem('wb-feedback',JSON.stringify(fb)); syncFb(); }
+    if(act==='watch'){ var t=b.dataset.topic||'';
+      if(t && watch.indexOf(t)<0){ watch.push(t); localStorage.setItem('wb-watch',JSON.stringify(watch));
+        b.classList.add('on'); b.textContent='已加入观察'; } }
+    if(act==='obs'){ var box=b.closest('.obs'); box.classList.toggle('open');
+      b.textContent=box.classList.contains('open')?'收起':'展开'; }
+    if(act==='ask'){ var ab=b.closest('.obs').querySelector('.askbox'); ab.classList.toggle('on');
+      var ta=ab.querySelector('textarea'); if(ta) ta.focus(); }
+  });
+
+  var fbBtn=$('#favfilter');
+  if(fbBtn) fbBtn.addEventListener('click',function(){
+    document.body.classList.toggle('fav-only');
+    fbBtn.classList.toggle('act', document.body.classList.contains('fav-only'));
+  });
+
+  var sBtn=$('#sbtn'), sWrap=$('#searchwrap'), sInput=$('#search');
+  function clearSearch(){ document.body.classList.remove('searching');
+    $$('.it').forEach(function(el){el.classList.remove('none')});
+    $$('section.sec').forEach(function(s){s.classList.remove('none')}); if(sInput) sInput.value=''; }
+  function runSearch(){
+    var q=(sInput.value||'').trim().toLowerCase();
+    if(!q){ clearSearch(); return; }
+    document.body.classList.add('searching'); var any=false;
+    $$('.it').forEach(function(el){ var hit=(el.dataset.text||'').indexOf(q)>=0;
+      el.classList.toggle('none',!hit); if(hit) any=true; });
+    $$('section.sec').forEach(function(s){ s.classList.toggle('none', $$('.it:not(.none)',s).length===0); });
+    var nr=$('#noresult'); if(nr) nr.classList.toggle('show',!any);
+  }
+  if(sBtn) sBtn.addEventListener('click',function(){ sWrap.classList.toggle('on');
+    if(sWrap.classList.contains('on')) sInput.focus(); else clearSearch(); });
+  if(sInput) sInput.addEventListener('input',runSearch);
+
+  document.addEventListener('submit',function(e){
+    if(!e.target.matches('.askform')) return;
+    e.preventDefault();
+    var form=e.target, box=form.closest('.askbox'), out=box.querySelector('.answer');
+    var q=form.querySelector('textarea').value.trim(); if(!q) return;
+    out.textContent='思考中…';
+    fetch('/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({issue:window.WB_ISSUE||'', id:box.dataset.id,
+        headline:box.dataset.headline, summary:box.dataset.summary, question:q})})
+      .then(function(r){return r.json()})
+      .then(function(d){ out.textContent=d.answer||d.error||'没有返回内容'; })
+      .catch(function(){ out.textContent='追问需要本地服务：python3 serve.py 后访问 127.0.0.1:8000'; });
+  });
+
+  var exp=$('#export');
+  if(exp) exp.addEventListener('click',function(){
+    var data={favorites:Object.keys(favs).filter(function(k){return favs[k]}), feedback:fb,
+      watch:watch, exported_at:new Date().toISOString()};
+    var blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+    var a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+    a.download='wb-profile.json'; a.click();
+  });
+  syncFav(); syncFb();
+})();
+</script>
+</body>
+</html>

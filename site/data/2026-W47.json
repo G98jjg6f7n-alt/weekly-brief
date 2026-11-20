@@ -1,0 +1,1001 @@
+{
+ "edition": 2,
+ "week": "2026-W47",
+ "range": "11月16日 – 11月22日",
+ "generated_at": "2026-11-20T22:28+08:00",
+ "generated_date": "11月20日",
+ "opening": "深圳APEC期间中美俄元首首次三方会谈，把世界秩序的重心摆上了桌面；同一周，全球电子协会的供应链警报让PCB概念股涨停，Anthropic以813亿美元融资登陆纳斯达克，华为云则把具身世界模型推到台前——大国协调与产业重组正在同一条时间线上互相加压。",
+ "note": "本期主线是「规则与代价」：中美俄三方会晤与AI史上最大IPO同时改写地缘与资本秩序，而气候谈判、碳关税与PCB缺货则显示新规则正以成本形式落到具体产业身上。",
+ "mode": "llm",
+ "top_ids": [
+  "0b83538b126a",
+  "75ffb147cbf3",
+  "bc7ca4a14572",
+  "d6011a418d2e",
+  "2e2498ecf3f5"
+ ],
+ "sections": [
+  {
+   "key": "world",
+   "idx": "01",
+   "name": "世界与秩序",
+   "en": "WORLD",
+   "blurb": "国际政治、外交、地缘冲突与全球治理",
+   "accent": "#3d5a80",
+   "items": [
+    {
+     "id": "0b83538b126a",
+     "section": "world",
+     "importance": 3,
+     "headline": "中美俄元首在深圳APEC期间首次举行三方会谈",
+     "summary": "中国国家主席习近平、美国总统特朗普与俄罗斯总统普京在APEC深圳峰会期间举行首次三方会谈，议题聚焦乌克兰危机与核军控。特朗普称三国作为最大核武国家应探讨削减核武、降低核战风险；习近平强调必须竭力防止核战争；普京表示三方合作有助于维护全球安全稳定，并透露已与特朗普讨论乌克兰问题。习近平尚未公开谈及乌克兰或伊朗问题。此前中美元首双边会晤触及台湾问题与能源安全。",
+     "why": "三个核大国的领导人首次同席，直接关系全球战争与和平的走向。",
+     "keywords": [
+      "APEC深圳峰会",
+      "中美俄",
+      "核军控",
+      "乌克兰危机",
+      "三方会谈"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "full",
+      "background": "这次三方会谈发生在APEC峰会期间，是中美俄领导人首次同台。背景是乌克兰危机僵持、核军控体系松动（如《新削减战略武器条约》前途未卜），以及美国希望中国在核裁军和乌克兰问题上发挥更大作用。中国则借主场外交展示大国协调者形象，俄罗斯寻求打破西方孤立。三方各有算盘：特朗普想在大选前展示外交成绩，普京希望减轻制裁压力，习近平则强调稳定与防止核战争，但未在乌克兰问题上公开选边。",
+      "impact": "短期看，会谈可能推动核军控对话重启，但具体成果有限，更多是姿态。长期看，若三方形成某种协调机制，可能改变大国互动模式，但也可能弱化现有国际多边框架。对普通人的影响间接：核风险降低是公共品，但若大国共管成为常态，小国和中小国家的利益可能被边缘化。目前尚不确定三方是否会建立定期会晤机制，这是推测。",
+      "perspectives": "支持者认为，大国直接对话有助于管控分歧，避免误判，尤其在核领域。批评者（如部分欧洲国家和乌克兰）担心，中美俄三方讨论乌克兰问题可能牺牲乌克兰利益，且中国未公开谴责俄罗斯，削弱了国际法立场。学界有观点认为，这反映全球权力向大国集中，但反例是，三国在具体议题上分歧依然深刻，共管缺乏制度基础。证据显示，会谈象征意义大于实质，但不宜低估其长期影响。",
+      "questions": [
+       "三方会谈是否会形成机制化的大国协调机制？如果是，对联合国等多边机构意味着什么？",
+       "中国在乌克兰问题上保持沉默，是策略性中立还是缺乏影响力？这如何影响其全球角色？"
+      ]
+     },
+     "url": "https://www.bbc.com/zhongwen/articles/ck9q84jgpxpjo/trad?at_medium=RSS&at_campaign=rss",
+     "source": "BBC 中文",
+     "sources_all": [
+      "BBC 中文"
+     ],
+     "date_pub": "11/20",
+     "lang": "zh",
+     "image": {
+      "url": "https://ichef.bbci.co.uk/news/1200/branded_zhongwen/7429/live/f1f7e890-e43d-11f1-99a1-253766e7ad8b.jpg",
+      "w": 1024,
+      "h": 576,
+      "alt": "",
+      "credit": "图片来源：BBC 中文"
+     }
+    },
+    {
+     "id": "d6011a418d2e",
+     "section": "world",
+     "importance": 2,
+     "headline": "联合国回应中美俄深圳会晤并讨论管制杀人机器人",
+     "summary": "联合国新闻《子午播报》11月20日节目列出三项内容：一是对中美俄深圳三方会晤作出回应；二是国际法院认定缅甸对罗兴亚人实施种族灭绝；三是「子午聚焦」讨论管制「杀人机器人」，即致命性自主武器系统的国际规则问题。节目未在摘要中给出回应的具体内容。",
+     "why": "同一周内，大国峰会、种族灭绝裁决与自主武器规则同时进入联合国议程。",
+     "keywords": [
+      "联合国",
+      "国际法院",
+      "罗兴亚人",
+      "致命性自主武器",
+      "种族灭绝"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "full",
+      "background": "联合国子午播报列出三项议题：中美俄深圳会晤、国际法院认定缅甸对罗兴亚人种族灭绝、讨论管制“杀人机器人”（致命性自主武器系统）。背景是：大国会晤引发联合国对多边体系被削弱的担忧；国际法院裁决是国际法对缅甸军方的谴责，但执行困难；自主武器系统管制是新兴军控议题，联合国框架下讨论多年，进展缓慢。",
+      "impact": "短期：联合国可能对三方会晤表达关切，呼吁包容性多边主义；国际法院裁决增加对缅甸压力，但实际影响有限；自主武器讨论可能推动谈判授权。长期：若大国协调取代联合国，多边体系可能弱化；缅甸问题考验国际法效力；自主武器管制若失败，可能引发军备竞赛。对普通人：自主武器扩散可能改变战争形态，增加平民风险。目前尚不确定联合国回应的具体内容，这是推测。",
+      "perspectives": "支持联合国者认为，多边机制是维护小国利益的最佳平台，大国会晤不应替代联合国。大国可能认为，直接对话更高效，联合国效率低下。国际法院裁决得到人权团体欢迎，但缅甸可能无视。自主武器管制：支持者主张预防性禁令，反对者（如部分军事大国）认为现有国际法足够。证据显示，联合国在自主武器讨论上分歧大，偏向支持管制一方，但反例是主要军事大国态度谨慎。",
+      "questions": [
+       "联合国如何应对大国协调机制对其权威的挑战？",
+       "国际法院的种族灭绝裁决对缅甸局势能产生多大实际影响？"
+      ]
+     },
+     "url": "https://news.un.org/feed/view/zh/story/2026/11/1143232",
+     "source": "联合国新闻",
+     "sources_all": [
+      "联合国新闻"
+     ],
+     "date_pub": "11/20",
+     "lang": "zh",
+     "image": {
+      "url": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Graphics%20Library/15-07-2024_un_meridian.png/image770x420cropped.jpg",
+      "w": 770,
+      "h": 420,
+      "alt": "",
+      "credit": "图片来源：联合国新闻"
+     }
+    },
+    {
+     "id": "2e2498ecf3f5",
+     "section": "world",
+     "importance": 2,
+     "headline": "美国对伊朗战事花费升至483亿美元",
+     "summary": "美国国防部预算官员米勒11月19日表示，截至11月13日，美国对伊朗战事花费估计升至483亿美元，含军事行动开支及装备弹药补充费用，较国会预算办公室公布的8月1日约380亿美元增加约103亿美元。该数字不含中东美军基地遭袭损失，五角大楼单独估算基地损失至少50亿美元，有官员称可能达150亿美元。特朗普称不会在新年前仓促决定对伊下一步行动。议员正敦促公开损失数据。",
+     "why": "一场正在进行的战争如何花钱、由谁监督，是理解美国政治的入口。",
+     "keywords": [
+      "伊朗战事",
+      "军费",
+      "五角大楼",
+      "国会监督",
+      "中期选举"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "short",
+      "text": "483亿只是可核算部分，基地损失被单列且以「禁区」为由拒绝全面评估，战争成本的信息缺口本身就是国会争论的焦点。战费与中期选举结果挂钩，意味着明年的监督会更强硬。"
+     },
+     "url": "https://www.chinanews.com.cn/gj/2026/11-20/10735436.shtml",
+     "source": "中新网·国际",
+     "sources_all": [
+      "中新网·国际"
+     ],
+     "date_pub": "11/20",
+     "lang": "zh"
+    }
+   ]
+  },
+  {
+   "key": "china",
+   "idx": "02",
+   "name": "中国与社会",
+   "en": "CHINA",
+   "blurb": "公共政策、社会结构、人口与民生",
+   "accent": "#9c6644",
+   "items": [
+    {
+     "id": "3e800baaad13",
+     "section": "china",
+     "importance": 2,
+     "headline": "全球电子协会发供应链警报，多家PCB概念股涨停",
+     "summary": "11月20日，超声电子、澳弘电子、中京电子、光华科技、满坤科技等PCB概念股涨停。11月18日，全球电子协会发布全行业供应链警报，称PCB缺货正从局部环节蔓延至成品板交付，汽车、工业、医疗、国防、通信等领域客户面临更长交期和供货紧张。多家PCB上市公司回应称，下游需求整体景气，是否短缺取决于产品结构，与AI服务器相关的高端PCB需求仍较旺盛。",
+     "why": "一条涨停行情背后是全球电子供应链的结构性紧张，值得看清需求分化的真实图景。",
+     "keywords": [
+      "PCB",
+      "供应链警报",
+      "涨停",
+      "AI服务器",
+      "交期"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "short",
+      "text": "缺货警报与股价涨停同步出现，但企业回应把关键落在产品结构上：紧张集中在高端板，而非全行业普涨。判断这轮景气能走多远，要看AI服务器订单能否消化扩产，而不是看涨停家数。"
+     },
+     "url": "https://www.jiemian.com/article/15356937.html",
+     "source": "界面新闻",
+     "sources_all": [
+      "界面新闻"
+     ],
+     "date_pub": "11/20",
+     "lang": "zh"
+    },
+    {
+     "id": "e47edf60d1ba",
+     "section": "china",
+     "importance": 2,
+     "headline": "长征八号甲在海南发射卫星互联网低轨30组卫星",
+     "summary": "11月20日19时59分，我国在海南商业航天发射场使用长征八号甲运载火箭，将卫星互联网低轨30组卫星发射升空，卫星顺利进入预定轨道，发射任务取得圆满成功。",
+     "why": "低轨卫星互联网是国家竞争的新基础设施，一次常规发射也是组网进度的一格。",
+     "keywords": [
+      "长征八号甲",
+      "卫星互联网",
+      "低轨",
+      "海南商业航天发射场"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "short",
+      "text": "这次发射的看点不在单次成功，而在“30组”这个批量编号：低轨星座靠规模组网才能提供服务，发射节奏本身就是能力。海南商业航天发射场的常态化使用，是降低发射成本的关键变量。"
+     },
+     "url": "https://www.jiemian.com/article/15357054.html",
+     "source": "界面新闻",
+     "sources_all": [
+      "界面新闻"
+     ],
+     "date_pub": "11/20",
+     "lang": "zh"
+    },
+    {
+     "id": "84e25cb10dfe",
+     "section": "china",
+     "importance": 1,
+     "headline": "文旅部公布第二批失信名单，15家旅行社被吊销许可证",
+     "summary": "11月20日，文化和旅游部公布2026年第二批旅游市场秩序集中整治严重失信主体典型名单，15家旅行社因强迫购物等侵害旅游者权益行为被吊销旅行社业务经营许可证。典型案例包括：贵州盛世优途将购物场所包装为“非遗博物馆”“酱油厂联谊”；桂林澜悦以“戏楼”“广场”名义掩盖购物点，擅自取消变更行程引发27人集体投诉；陕西国际旅行社以666元、500元低价招徕泰国游，言语威胁“让你回不了中国”强迫消费。西安文旅部门已没收其违法所得8558元，并对法定代表人限业三年。",
+     "why": "低价团与强迫购物的链条如何运转，这份名单给出了可核查的样本。",
+     "keywords": [
+      "旅行社",
+      "强迫购物",
+      "失信名单",
+      "低价团",
+      "吊销许可证"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "short",
+      "text": "处罚的关键不在罚款数额，而在吊销许可证和法定代表人三年限业——把责任落到人，才动得了“换壳重开”的惯用做法。但低价团的经济基础仍在，整治能否持续取决于日常监管而非名单曝光。"
+     },
+     "url": "https://www.jiemian.com/article/15357017.html",
+     "source": "界面新闻",
+     "sources_all": [
+      "界面新闻"
+     ],
+     "date_pub": "11/20",
+     "lang": "zh"
+    }
+   ]
+  },
+  {
+   "key": "economy",
+   "idx": "03",
+   "name": "经济与产业",
+   "en": "ECONOMY",
+   "blurb": "宏观、金融、产业链与企业竞争",
+   "accent": "#2a9d8f",
+   "items": [
+    {
+     "id": "75ffb147cbf3",
+     "section": "economy",
+     "importance": 3,
+     "headline": "Anthropic纳斯达克上市 融资813亿美元创纪录",
+     "summary": "美国人工智能公司Anthropic于11月19日在纳斯达克上市，IPO融资总额超过813亿美元，创美股史上最大IPO融资规模纪录。发行价每股83美元，完全稀释市值约1.5万亿美元；开盘报111.50美元，市值一度达约2万亿美元，收盘报97.17美元，涨17.07%。股票认购需求接近发行量的七倍。公司2021年成立，主营“克劳德”系列模型，今年前三季度营收332.4亿美元，同比增长约12倍。上市当日纽约、旧金山等地有抗议活动，有国会议员呼吁加强AI监管。",
+     "why": "全球最大IPO与AI热潮的定价时刻，理解当下科技资本周期的入口。",
+     "keywords": [
+      "Anthropic",
+      "IPO",
+      "人工智能",
+      "纳斯达克",
+      "估值"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "full",
+      "background": "Anthropic上市正值AI投资热潮，其营收增长迅猛（前三季度332.4亿美元，同比增长12倍），反映市场对生成式AI的商业前景极度乐观。IPO融资超813亿美元，创纪录，部分原因是低利率环境下资本追逐高增长科技股。公司主打“克劳德”模型，强调安全，但上市也引发对AI监管和伦理的担忧。",
+      "impact": "短期：股价大涨，早期投资者获利，但首日开盘买入者可能面临波动风险。长期：巨额融资将加速AI研发和算力投资，可能加剧行业垄断，但也推动技术扩散。对普通人：AI产品可能更快普及，但就业冲击和隐私问题随之而来。监管压力上升，国会呼吁加强监管，可能影响行业格局。目前尚不确定AI泡沫是否存在，但高估值隐含高预期。",
+      "perspectives": "支持者认为，Anthropic的成功证明AI商业模式的可行性，融资将推动创新和就业。反对者（如抗议者和部分议员）担心AI发展过快，带来安全风险和社会不平等。学界有观点认为，AI公司上市后需对股东负责，可能牺牲安全投入。证据显示，市场热情高涨，但监管和伦理争议未解，偏向支持者一方，但反例是抗议活动显示公众担忧。",
+      "questions": [
+       "AI公司上市后，如何平衡股东利益与AI安全责任？",
+       "巨额融资是否会加剧AI行业的赢家通吃，抑制竞争？"
+      ]
+     },
+     "url": "https://www.chinanews.com.cn/gj/2026/11-20/10734997.shtml",
+     "source": "中新网·国际",
+     "sources_all": [
+      "中新网·国际"
+     ],
+     "date_pub": "11/20",
+     "lang": "zh"
+    },
+    {
+     "id": "fd2811614640",
+     "section": "economy",
+     "importance": 2,
+     "headline": "Anthropic上市未止AI抛售 亚洲股市普跌",
+     "summary": "Anthropic创纪录IPO未能阻止AI相关公司抛售，全球股市下挫。亚洲股市录得2020年以来最差单周表现：台湾加权指数跌6.7%，台积电跌约6%；日经指数跌5%；韩国Kospi跌5.5%；软银在东京跌14.5%，为两年多来最差单日。欧洲Stoxx 600早盘跌1.3%，迈向3月以来最差单周。此前一天华尔街主要指数均跌超2%。Anthropic首日涨17%，但周五盘前一度跌10%，回落至83美元发行价附近。",
+     "why": "同一事件在两篇报道中呈现相反信号，是观察市场情绪与叙事偏差的样本。",
+     "keywords": [
+      "AI泡沫",
+      "台积电",
+      "软银",
+      "全球股市",
+      "抛售"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "short",
+      "text": "IPO首日大涨与次日全球芯片股大跌同时发生，说明市场对AI的分歧已从“是否值得投”转向“谁承担资本开支风险”。台积电、软银这类重资产押注方成为情绪出口，而非模型公司本身。"
+     },
+     "url": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
+     "source": "The Guardian",
+     "sources_all": [
+      "The Guardian"
+     ],
+     "date_pub": "11/20",
+     "lang": "en",
+     "image": {
+      "url": "https://i.guim.co.uk/img/media/5a0726c71af19332d1a3095553ff3acc6e341a62/1043_0_5270_4216/master/5270.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=840bb47424232ef8465116aa8eea49a5",
+      "w": 1200,
+      "h": 630,
+      "alt": "",
+      "credit": "图片来源：The Guardian"
+     }
+    },
+    {
+     "id": "712431a5a5c7",
+     "section": "economy",
+     "importance": 2,
+     "headline": "前10月中国财政收入19.57万亿 同比增4.9%",
+     "summary": "财政部11月20日公布，1-10月全国一般公共预算收入19.57万亿元，同比增长4.9%；税收收入16.26万亿元，增长6%。分税种看，国内增值税增5.3%，进口环节增值税、消费税增13.2%，企业所得税增5.9%，个人所得税增22.9%（10月单月增89.6%，主要受加强离岸信托个税征管带动），证券交易印花税增54.1%。出口退税1.96万亿元，同比多退1442亿元。分区域看，东部、中部、西部、东北分别增长3%、1%、4.3%、2.4%。同期支出22.8",
+     "why": "一份可读出税制征管变化与内需结构的财政账本，比GDP更具体。",
+     "keywords": [
+      "财政收入",
+      "个人所得税",
+      "出口退税",
+      "财政部",
+      "税收"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "short",
+      "text": "个税单月增89.6%主要来自离岸信托征管，属于一次性征管红利而非收入增长，不宜外推。证券交易印花税增54.1%则直接对应市场成交活跃度，是观察资本市场景气的硬指标。"
+     },
+     "url": "https://www.chinanews.com.cn/cj/2026/11-20/10735509.shtml",
+     "source": "中新网·财经",
+     "sources_all": [
+      "中新网·财经"
+     ],
+     "date_pub": "11/20",
+     "lang": "zh"
+    },
+    {
+     "id": "f60975a1c583",
+     "section": "economy",
+     "importance": 2,
+     "headline": "国际金价八日连跌破3600美元 金饰克价跌超600元",
+     "summary": "本周国际贵金属连续下跌，伦敦现货黄金在八个交易日内接连失守每盎司4000至3600美元五道整数关口，本周跌幅逼近9%，较年初历史高点回撤约36%。国内品牌金饰报价随之走低，部分品牌足金饰品跌破每克1100元；与年内高点相比，多家主流品牌每克下跌超过600元，跌幅超三成。上海多处商圈黄金门店开展促销，出现饰品消费热潮。分析人士称，中短期需关注美联储加息预期与美元走势，长期取决于美国实际利率、美元及全球央行购金进展。",
+     "why": "金价回撤三成是少见的宏观信号，关联利率、美元与避险需求三条线。",
+     "keywords": [
+      "黄金",
+      "金价",
+      "美联储",
+      "美元",
+      "金饰"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "short",
+      "text": "金饰克价跌超600元的同时门店出现促销抢购，说明消费需求对价格高度敏感，与投资需求方向相反。判断金价后续，实际利率比金饰销量更有解释力。"
+     },
+     "url": "https://www.jiemian.com/article/15357061.html",
+     "source": "界面新闻",
+     "sources_all": [
+      "界面新闻"
+     ],
+     "date_pub": "11/20",
+     "lang": "zh"
+    }
+   ]
+  },
+  {
+   "key": "tech",
+   "idx": "04",
+   "name": "科技与未来",
+   "en": "TECH",
+   "blurb": "AI、半导体、航天与前沿科学",
+   "accent": "#5f0f40",
+   "items": [
+    {
+     "id": "b268c324f6e6",
+     "section": "tech",
+     "importance": 2,
+     "headline": "华为云发布昇腾原生具身世界模型CloudRobo-WM1.2",
+     "summary": "11月16日，华为云发布具身世界模型CloudRobo-WM1.2，该模型在昇腾算力上训练。在RoboTwin 2.0和LIBERO-Pro 2.0两项具身智能评测中，平均成功率分别为88.98%和81.73%，均列第一。第三方独立测试覆盖5种机器人本体、13项操作任务，平均成功率比第二名高23个百分点。华为云计划11月30日开放模型权重、推理代码和后训练代码，并从模型架构、训练框架、核心算子到推理部署围绕昇腾做软硬件协同优化。",
+     "why": "国产算力能否支撑前沿AI训练，是理解中美技术竞争的关键切口。",
+     "keywords": [
+      "华为云",
+      "昇腾",
+      "具身智能",
+      "世界模型",
+      "开源"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "short",
+      "text": "这次发布的重点不在单项指标，而在于把预训练、强化学习到部署的整条链路都放在昇腾上跑通，并连后训练代码一起开放。若外部团队真能接自家数据调通，国产算力的竞争点就从芯片参数转向生态可用性。"
+     },
+     "url": "https://www.qbitai.com/2026/11/511610.html",
+     "source": "量子位",
+     "sources_all": [
+      "量子位"
+     ],
+     "date_pub": "11/20",
+     "lang": "zh"
+    },
+    {
+     "id": "200c26dcc801",
+     "section": "tech",
+     "importance": 2,
+     "headline": "澳洲团队将人体肝脏在体外存活七周",
+     "summary": "澳大利亚悉尼的研究团队称，已将一枚捐赠人体肝脏在体外生命支持系统中维持七周。该系统名为Extended Organ Perfusion System，由自动泵和传感器组成，在约37°C常体温条件下向器官输送营养和血液并清除废物。研究由Royal Prince Alfred Hospital移植外科医生、悉尼大学教授Carlo Pulitano领导，细节尚未正式发表。此前体外维持内脏存活的纪录由瑞士团队保持，约两周。",
+     "why": "器官体外存活时间大幅延长，直接关系到移植医学的供给瓶颈。",
+     "keywords": [
+      "肝脏",
+      "器官灌注",
+      "移植医学",
+      "生物医学工程"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "short",
+      "text": "七周的意义在于把器官从「必须尽快移植」的易腐资源，变成可观察、可干预、可等待匹配的对象。但成果尚未经过同行评议，且长期灌注对器官功能的影响仍需数据验证。"
+     },
+     "url": "https://www.technologyreview.com/2026/11/19/1148934/a-human-liver-has-been-kept-alive-outside-the-body-for-seven-weeks-setting-a-record/",
+     "source": "MIT Tech Review",
+     "sources_all": [
+      "MIT Tech Review"
+     ],
+     "date_pub": "11/19",
+     "lang": "en",
+     "image": {
+      "url": "https://wp.technologyreview.com/wp-content/uploads/2026/11/EOPS-V1.1-.jpg?resize=1200,600",
+      "w": 1200,
+      "h": 600,
+      "alt": "",
+      "credit": "图片来源：MIT Tech Review"
+     }
+    },
+    {
+     "id": "6d39921c7e25",
+     "section": "tech",
+     "importance": 2,
+     "headline": "深伪检测专家提出应默认视觉记录为假",
+     "summary": "IEEE Spectrum刊文，深伪检测研究者Hany Farid回顾今年3月一则伊朗通讯社发布的视频，画面显示疑似美国制Tomahawk导弹击中学校，报道称造成175余人死亡，美方否认。Farid称，过去三十年数字媒体取证领域普遍遵循「真实性推定」，即主张造假者承担举证责任；在生成式AI普及后，他主张转向「虚假性推定」，由内容创作者证明其素材为真。",
+     "why": "当视频不再能自证真假，每个人判断信息的方式都要重新设计。",
+     "keywords": [
+      "深度伪造",
+      "数字取证",
+      "生成式AI",
+      "举证责任"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "short",
+      "text": "把举证责任从质疑者转移到创作者，本质是用制度成本对冲技术成本。这一转向的难点不在检测算法，而在于谁来认证、认证标准由谁制定，以及没有能力自证的普通人会被如何对待。"
+     },
+     "url": "https://spectrum.ieee.org/fighting-back-against-deep-fakes",
+     "source": "IEEE Spectrum",
+     "sources_all": [
+      "IEEE Spectrum"
+     ],
+     "date_pub": "11/20",
+     "lang": "en",
+     "image": {
+      "url": "https://spectrum.ieee.org/media-library/photo-collage-of-a-mans-face-featuring-glitched-distortions-and-abstract-shapes.jpg?id=68721975&width=1200&height=600&coordinates=143%2C771%2C114%2C609",
+      "w": 1200,
+      "h": 600,
+      "alt": "",
+      "credit": "图片来源：IEEE Spectrum"
+     }
+    }
+   ]
+  },
+  {
+   "key": "industry",
+   "idx": "05",
+   "name": "工业与设计",
+   "en": "INDUSTRY",
+   "blurb": "汽车、制造、工程与工业设计",
+   "accent": "#bc6c25",
+   "items": [
+    {
+     "id": "4f902c6a3a52",
+     "section": "industry",
+     "importance": 1,
+     "headline": "NHL推出240吨级电动矿卡，支持双枪MCS快充",
+     "summary": "中国重型设备制造商内蒙古北方重型汽车股份有限公司（NHL）发布全电动刚性矿用卡车NTE240E，载重240吨，最高配电池容量4100 kWh（4.1 MWh），并采用全球首个双枪MCS充电方案，电量从20%充至90%可在不到一小时内完成。NHL成立于1988年，此前主要生产包括大型柴电混合动力矿卡在内的刚性矿用卡车。",
+     "why": "电动化正从乘用车扩展到矿山巨兽，电池与充电功率的工程极限在这里最直观。",
+     "keywords": [
+      "电动矿卡",
+      "NTE240E",
+      "MCS快充",
+      "动力电池",
+      "NHL"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "short",
+      "text": "真正的看点不是4.1 MWh电池本身，而是双枪MCS把补能时间压进换班间隙，让超大吨位矿卡的电动化在运营节奏上成立。矿卡电动化的瓶颈正从续航转向充电功率与作业调度的匹配。"
+     },
+     "url": "https://electrek.co/2026/11/20/double-guns-ultra-class-haul-truck-packs-dual-gun-mcs-charging-4-mwh-battery/",
+     "source": "Electrek",
+     "sources_all": [
+      "Electrek"
+     ],
+     "date_pub": "11/20",
+     "lang": "en"
+    }
+   ]
+  },
+  {
+   "key": "thought",
+   "idx": "06",
+   "name": "思想与文明",
+   "en": "THOUGHT",
+   "blurb": "哲学、历史、文化与观念之争",
+   "accent": "#4a4e69",
+   "items": [
+    {
+     "id": "37914cab35e0",
+     "section": "thought",
+     "importance": 1,
+     "headline": "吕森《新历史知识理论》中译本在山西大学首发",
+     "summary": "11月19日，约恩·吕森《新历史知识理论》中译本新书发布暨座谈会在山西大学举行，由山西大学历史文化学院与商务印书馆联合主办。吕森是德国史学理论家，该书为其职业生涯晚期对自身思想的综合之作。译者范丁梁、审校者尉佩云分别介绍翻译历程与理论内涵。来自中国社会科学院大学、华东师范大学、四川大学、河南大学、东北师范大学等机构的学者，围绕历史知识的科学性与真理性、历史认识与叙事、史学方法及跨文化传播展开研讨，并涉及德罗伊森、科泽勒克等人的思想脉络。",
+     "why": "一部德国史学理论集大成之作进入中文语境，可观察中国史学如何吸收西方理论资源。",
+     "keywords": [
+      "约恩·吕森",
+      "新历史知识理论",
+      "史学理论",
+      "商务印书馆",
+      "山西大学"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "short",
+      "text": "吕森关心的核心问题是历史知识如何被生产、又凭什么自称有效，这与中文史学界近年讨论的“自主知识体系”构成对话而非简单引进。值得留意的是，此次会议由地方高校与出版社合办，理论译介的推动力量正从少数中心机构扩散。"
+     },
+     "url": "https://www.chinanews.com.cn/cul/2026/11-19/10734906.shtml",
+     "source": "中新网·文化",
+     "sources_all": [
+      "中新网·文化"
+     ],
+     "date_pub": "11/19",
+     "lang": "zh"
+    }
+   ]
+  },
+  {
+   "key": "nature",
+   "idx": "07",
+   "name": "自然与人类",
+   "en": "NATURE",
+   "blurb": "气候、生态、医学与重大文化事件",
+   "accent": "#386641",
+   "items": [
+    {
+     "id": "bc7ca4a14572",
+     "section": "nature",
+     "importance": 3,
+     "headline": "非洲谈判代表在Cop31最后一天称富国未履行承诺",
+     "summary": "11月21日，在土耳其安塔利亚举行的Cop31气候谈判最后一个正式日，非洲谈判者集团主席Zanetor Agyeman-Rawlings在记者会上表示，发达国家未兑现巴黎协定下的承诺，正在损害联合国气候谈判进程的信任与公信力。她说非洲不是来乞求援助，而是要求发达国家履行已作出的承诺。此前公民社会团体指出，欧盟在气候资金、公正转型和适应议题上牵头阻碍进展，相关草案文本尚未以非洲民众可理解的形式出现。",
+     "why": "气候谈判的最后一天，资金分歧如何决定全球减排承诺能否落地。",
+     "keywords": [
+      "Cop31",
+      "非洲谈判者集团",
+      "气候资金",
+      "巴黎协定",
+      "欧盟"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "full",
+      "background": "Cop31在土耳其安塔利亚举行，最后一天非洲谈判者集团发声，指责发达国家未兑现巴黎协定下的资金承诺（如每年1000亿美元气候资金）。背景是气候谈判长期僵局：发达国家资金不到位，发展中国家承受气候灾害却缺乏支持。非洲国家尤其脆弱，但谈判中常被边缘化。公民社会团体指出欧盟在资金和适应议题上阻碍进展。",
+      "impact": "短期：非洲国家的强硬表态可能推动最后文本纳入更强资金承诺，但谈判进展缓慢。长期：若信任持续流失，发展中国家可能转向其他合作机制，削弱联合国气候进程。对普通人：气候资金不到位意味着适应项目（如抗旱、防洪）延迟，直接影响脆弱社区。目前尚不确定最终文本内容，但非洲的诉求可能部分被采纳。",
+      "perspectives": "非洲国家立场合理：发达国家历史排放多，有义务提供资金，且承诺未兑现损害信任。发达国家（如欧盟）可能辩称经济压力大，资金需用于国内转型，且要求受援国提高治理透明度。学界有观点认为，气候谈判需改革资金机制，但证据显示发达国家履约记录不佳，偏向非洲一方。反例是部分发达国家已增加资金，但总量仍不足。",
+      "questions": [
+       "发达国家未兑现气候资金承诺的根本原因是什么？如何建立更可信的履约机制？",
+       "非洲国家在气候谈判中的边缘化如何影响全球气候治理的合法性？"
+      ]
+     },
+     "url": "https://www.theguardian.com/world/live/2026/nov/20/cop31-climate-crisis-talks-turkey-latest-news-updates",
+     "source": "The Guardian·环境",
+     "sources_all": [
+      "The Guardian·环境"
+     ],
+     "date_pub": "11/20",
+     "lang": "en",
+     "image": {
+      "url": "https://i.guim.co.uk/img/media/014e8e90cb60127dc1056169cec2565890ae8e84/309_0_3092_2473/master/3092.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=68e9496359d8a6f7d91292ba92aab497",
+      "w": 1200,
+      "h": 630,
+      "alt": "",
+      "credit": "图片来源：The Guardian·环境"
+     }
+    },
+    {
+     "id": "41ddc4bfb4e6",
+     "section": "nature",
+     "importance": 2,
+     "headline": "霍尔木兹海峡战事致油轮泄漏污染海湾生态",
+     "summary": "《卫报》通过分析数十张卫星图像并采访环境专家，评估美以与伊朗战事对海湾造成的环境破坏。霍尔木兹海峡是全球最繁忙的石油航运通道之一，被导弹或水雷击中的油轮正向海中泄漏石油，形成从太空可见的大面积油膜，污染海岸线并威胁海洋生态系统。由于海上封锁，许多受污染区域无法进入，实地记录破坏程度几乎不可能。",
+     "why": "战争的环境代价往往不在战报里，而在卫星图像和海岸线上。",
+     "keywords": [
+      "霍尔木兹海峡",
+      "油轮泄漏",
+      "海湾生态",
+      "卫星图像",
+      "海上封锁"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "short",
+      "text": "这里的机制是战争破坏与信息封锁叠加：污染在发生，但取证渠道被同一场冲突切断。卫星遥感因此成为少数可用的证据来源，也说明环境损害追责高度依赖可获取的观测数据。"
+     },
+     "url": "https://www.theguardian.com/world/video/2026/nov/20/how-the-war-in-iran-turned-the-gulf-into-a-climate-catastrophe-video-explainer",
+     "source": "The Guardian·环境",
+     "sources_all": [
+      "The Guardian·环境"
+     ],
+     "date_pub": "11/20",
+     "lang": "en",
+     "image": {
+      "url": "https://i.guim.co.uk/img/media/81858b5185d8ec0e2ff40f48104308d71b535c20/247_0_1350_1080/master/1350.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=8b3acd7ecefb30ecf6def9abe438ab06",
+      "w": 1200,
+      "h": 630,
+      "alt": "",
+      "credit": "图片来源：The Guardian·环境"
+     }
+    },
+    {
+     "id": "32576bfb2a69",
+     "section": "nature",
+     "importance": 2,
+     "headline": "上海发布绿色金融通知，仓储企业加紧整理碳台账",
+     "summary": "11月17日，国家金融监督管理总局上海监管局与人民银行上海市分行联合发布通知，鼓励保险机构开拓碳汇价格保险、碳排放权交易保险等碳保险产品。此前，因欧盟碳边境调节机制即将进入收费阶段，上海一家大宗商品仓储企业已启动出口货物碳数据摸底，并于2026年二季度系统整理碳台账，登记有色金属品类的生产端碳足迹、仓储能耗及运输环节排放。该企业正咨询碳关税相关保险，但尚未投保。上海市国资委表示，相关工作分层推进，尚未开展全市统一专项试点。",
+     "why": "碳关税正把气候政策变成供应链上的具体单据和保险产品。",
+     "keywords": [
+      "碳关税",
+      "碳台账",
+      "绿色金融",
+      "碳保险",
+      "上海"
+     ],
+     "event_date": "",
+     "take": {
+      "mode": "short",
+      "text": "碳边境调节机制的实际作用点不在海关，而在仓储和物流环节的数据衔接：一段资料断裂就可能转化为下游进口方的额外成本。企业购买保险对冲的不是数据真伪，而是供应链信息断链的风险。"
+     },
+     "url": "http://www.eeo.com.cn/2026/1120/1098575.shtml",
+     "source": "经济观察网",
+     "sources_all": [
+      "经济观察网"
+     ],
+     "date_pub": "11/20",
+     "lang": "zh"
+    }
+   ]
+  }
+ ],
+ "deep_dive": {
+  "question": "AI 资本盛宴为何成了股市的抛售信号？",
+  "lead": "Anthropic 以 813 亿美元创纪录 IPO 登陆纳斯达克，却未能阻止全球 AI 概念股抛售，亚洲股市录得 2020 年以来最差单周表现。这看似矛盾的现象提示我们：市场对 AI 的定价逻辑可能正在从「增长叙事」转向「盈利验证」。理解这一转折，对判断技术泡沫与产业周期至关重要。",
+  "background": "Anthropic 是开发 Claude 系列大语言模型的人工智能公司，其 IPO 融资额刷新美股历史纪录，反映一级市场对 AI 基础模型的狂热。然而，上市首日即遇冷，台积电、日经指数等 AI 供应链相关资产同步下挫。这背后是市场对 AI 商业化进度的重新评估：大模型训练成本高企，但收入增长尚未匹配估值。同时，全球电子协会发布 PCB 供应链警报，显示 AI 硬件需求可能短期过热。投资者开始区分「AI 基础设施」与「AI 应用盈利」，资本从概念股向有实际现金流的公司转移。这一轮抛售并非否定 AI 长期价值，而是对估值泡沫的修正，标志着 AI 投资进入去伪存真阶段。",
+  "timeline": [
+   {
+    "when": "2022 年 11 月",
+    "what": "OpenAI 发布 ChatGPT，引爆生成式 AI 投资热潮"
+   },
+   {
+    "when": "2023 年",
+    "what": "英伟达等 AI 芯片股暴涨，带动纳斯达克反弹"
+   },
+   {
+    "when": "2024 年",
+    "what": "AI 初创公司融资额创纪录，估值飙升"
+   },
+   {
+    "when": "2025 年 11 月 19 日",
+    "what": "Anthropic 纳斯达克上市，融资 813 亿美元创纪录"
+   },
+   {
+    "when": "2025 年 11 月 20 日",
+    "what": "亚洲股市普跌，台积电跌约 6%，日经指数下挫"
+   },
+   {
+    "when": "2025 年 11 月 21 日",
+    "what": "全球电子协会发布 PCB 供应链警报，概念股涨停后分化"
+   }
+  ],
+  "tensions": [
+   {
+    "who": "一级市场投资者 vs 二级市场投资者",
+    "what": "前者追捧 AI 独角兽高估值，后者要求盈利验证，导致 IPO 后抛售"
+   },
+   {
+    "who": "AI 芯片供应商 vs AI 应用开发商",
+    "what": "硬件成本高企挤压应用层利润，利益分配不均"
+   },
+   {
+    "who": "短期交易者 vs 长期产业资本",
+    "what": "前者利用波动套利，后者布局十年技术周期，策略分化"
+   },
+   {
+    "who": "监管机构 vs AI 巨头",
+    "what": "反垄断与数据安全审查趋严，增加合规成本与不确定性"
+   }
+  ],
+  "views": [
+   {
+    "stance": "泡沫破裂论",
+    "claim": "AI 估值已脱离基本面，Anthropic 上市即巅峰，抛售是泡沫破裂的开始，类似 2000 年互联网泡沫。"
+   },
+   {
+    "stance": "健康修正论",
+    "claim": "抛售是市场对过度乐观的纠正，资本将流向有真实营收的 AI 公司，促进行业优胜劣汰。"
+   },
+   {
+    "stance": "长期乐观论",
+    "claim": "AI 仍处于早期阶段，短期波动不改变生产力革命趋势，回调是买入机会。"
+   },
+   {
+    "stance": "监管风险论",
+    "claim": "各国对 AI 的监管收紧将抑制创新速度，增加合规成本，削弱短期盈利前景。"
+   }
+  ],
+  "reading": [
+   {
+    "title": "《非理性繁荣》",
+    "author": "罗伯特·席勒",
+    "why": "理解市场泡沫的心理与制度根源，对照 AI 热潮。"
+   },
+   {
+    "title": "《创新者的窘境》",
+    "author": "克莱顿·克里斯坦森",
+    "why": "分析技术变革中企业成败，适用于 AI 产业竞争。"
+   },
+   {
+    "title": "《金融时报》关于 Anthropic IPO 的报道",
+    "author": "金融时报",
+    "why": "获取 IPO 细节与市场即时反应的一手信息。"
+   }
+  ]
+ },
+ "questions3": [
+  "中美俄核军控谈判能否重启？",
+  "气候赔偿基金何时能兑现？",
+  "PCB 缺货会否拖累 AI 硬件普及？"
+ ],
+ "sources": [
+  {
+   "name": "中新网·教育",
+   "section": "china",
+   "ok": true,
+   "count": 28,
+   "error": ""
+  },
+  {
+   "name": "中新网·社会",
+   "section": "china",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "人民网·时政",
+   "section": "china",
+   "ok": true,
+   "count": 100,
+   "error": ""
+  },
+  {
+   "name": "人民网·社会",
+   "section": "china",
+   "ok": true,
+   "count": 100,
+   "error": ""
+  },
+  {
+   "name": "界面新闻",
+   "section": "china",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "FT 中文网",
+   "section": "economy",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "中新网·财经",
+   "section": "economy",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "人民网·财经",
+   "section": "economy",
+   "ok": true,
+   "count": 100,
+   "error": ""
+  },
+  {
+   "name": "界面新闻",
+   "section": "economy",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "经济观察网",
+   "section": "economy",
+   "ok": true,
+   "count": 3,
+   "error": ""
+  },
+  {
+   "name": "Dezeen",
+   "section": "industry",
+   "ok": true,
+   "count": 50,
+   "error": ""
+  },
+  {
+   "name": "Electrek",
+   "section": "industry",
+   "ok": true,
+   "count": 150,
+   "error": ""
+  },
+  {
+   "name": "F1",
+   "section": "industry",
+   "ok": true,
+   "count": 10,
+   "error": ""
+  },
+  {
+   "name": "Motor1",
+   "section": "industry",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "The Drive",
+   "section": "industry",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "中新网·滚动",
+   "section": "industry",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "NASA",
+   "section": "nature",
+   "ok": false,
+   "count": 0,
+   "error": "HTTPError: HTTP Error 429: Too Many Requests"
+  },
+  {
+   "name": "The Guardian·环境",
+   "section": "nature",
+   "ok": true,
+   "count": 34,
+   "error": ""
+  },
+  {
+   "name": "中新网·体育",
+   "section": "nature",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "中新网·健康",
+   "section": "nature",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "Ars Technica",
+   "section": "tech",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "IEEE Spectrum",
+   "section": "tech",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "InfoQ",
+   "section": "tech",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "MIT Tech Review",
+   "section": "tech",
+   "ok": true,
+   "count": 10,
+   "error": ""
+  },
+  {
+   "name": "人民网·科技",
+   "section": "tech",
+   "ok": true,
+   "count": 100,
+   "error": ""
+  },
+  {
+   "name": "量子位",
+   "section": "tech",
+   "ok": true,
+   "count": 10,
+   "error": ""
+  },
+  {
+   "name": "Aeon",
+   "section": "thought",
+   "ok": true,
+   "count": 20,
+   "error": ""
+  },
+  {
+   "name": "中新网·文化",
+   "section": "thought",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "人民网·理论",
+   "section": "thought",
+   "ok": true,
+   "count": 100,
+   "error": ""
+  },
+  {
+   "name": "人民网·观点",
+   "section": "thought",
+   "ok": true,
+   "count": 100,
+   "error": ""
+  },
+  {
+   "name": "Al Jazeera",
+   "section": "world",
+   "ok": true,
+   "count": 25,
+   "error": ""
+  },
+  {
+   "name": "BBC 中文",
+   "section": "world",
+   "ok": true,
+   "count": 42,
+   "error": ""
+  },
+  {
+   "name": "The Guardian",
+   "section": "world",
+   "ok": true,
+   "count": 45,
+   "error": ""
+  },
+  {
+   "name": "中新网·国际",
+   "section": "world",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  },
+  {
+   "name": "人民网·国际",
+   "section": "world",
+   "ok": true,
+   "count": 100,
+   "error": ""
+  },
+  {
+   "name": "联合国新闻",
+   "section": "world",
+   "ok": true,
+   "count": 30,
+   "error": ""
+  }
+ ],
+ "stats": {
+  "articles": 668,
+  "sources_total": 36,
+  "sources_ok": 35,
+  "items": 18,
+  "elapsed": 78.9,
+  "usage": {
+   "prompt_tokens": 24170,
+   "completion_tokens": 6950,
+   "calls": 11
+  },
+  "intl": true
+ }
+}
