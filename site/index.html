@@ -6,139 +6,190 @@
 <title>WEEKLY BRIEF · 2026-W47</title>
 <meta name="description" content="深圳会晤的和平宣言与纳指5.28%的暴跌同周出现，说明秩序预期和资产定价正在脱钩。华为昇腾开源、比亚迪设计败诉，则提示技术突围与规则摩擦会长期并行。">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#fcfbf8">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2314171b'/><text x='50' y='70' font-size='54' text-anchor='middle' fill='%23fff' font-family='serif'>W</text></svg>">
+<meta name="theme-color" content="#efe7d5">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2317120c'/><text x='50' y='70' font-size='54' text-anchor='middle' fill='%23fff' font-family='serif'>W</text></svg>">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{
-  --bg:#fcfbf8; --ink:#14171b; --ink2:#3d434b; --ink3:#8d9199;
-  --rule:#e4e0d6; --accent:#8c2f1f;
+  --paper:#efe7d5; --paper2:#e7dcc4; --ink:#17120c; --ink2:#463c31; --ink3:#8b7f6d;
+  --rule:rgba(23,18,12,.16); --rule2:rgba(23,18,12,.52); --accent:#a63325;
   --serif:"Songti SC","Noto Serif SC",ui-serif,Georgia,"Times New Roman",serif;
   --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Segoe UI",Roboto,sans-serif;
+  --disp:"HelveticaNeue-CondensedBold","Helvetica Neue Condensed Bold","Arial Narrow","PingFang SC",Impact,sans-serif;
   --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
-  --w:660px;
+  --w:680px;
 }
 html[data-theme="dark"]{
-  --bg:#101214; --ink:#f0efe9; --ink2:#b9bdc4; --ink3:#767b83;
-  --rule:#25282d; --accent:#d99a86;
+  --paper:#141110; --paper2:#1d1916; --ink:#efe6d3; --ink2:#bdb2a0; --ink3:#7f7567;
+  --rule:rgba(239,230,211,.17); --rule2:rgba(239,230,211,.46); --accent:#dc6d56;
 }
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
-  font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
+  font-size:16.5px;line-height:1.95;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(rgba(23,18,12,.05) .6px,transparent .7px);
+  background-size:4px 4px}
+html[data-theme="dark"] body{background-image:radial-gradient(rgba(255,255,255,.035) .6px,transparent .7px)}
+body::after{content:"";position:fixed;inset:11px;border:1px solid var(--rule);pointer-events:none;z-index:80}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;font-size:inherit;cursor:pointer;background:none;border:none;color:inherit}
+::selection{background:var(--accent);color:var(--paper)}
 .wrap{max-width:var(--w);margin:0 auto;padding:0 22px}
 
 /* 刊头 */
-header.top{padding:26px 0 14px}
-.toprow{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.brand{font-family:var(--serif);font-size:25px;font-weight:600;letter-spacing:.01em;line-height:1}
-.topmeta{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--ink3);text-align:right;line-height:1.8}
-.tools{display:flex;gap:14px;margin-top:12px;font-size:12px;color:var(--ink3)}
-.tools button,.tools a{padding:2px 0;border-bottom:1px solid transparent}
-.tools button:hover,.tools a:hover{color:var(--ink);border-bottom-color:var(--rule)}
+header.mast{padding-top:20px}
+.mast-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  padding-bottom:9px;border-bottom:1px solid var(--rule2)}
+.brand{font-family:var(--disp);font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+.brand:before{content:"";display:inline-block;width:7px;height:7px;background:var(--accent);margin-right:9px;vertical-align:1px}
+.issue{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;color:var(--ink3);text-transform:uppercase}
+.title-block{text-align:center;padding:24px 0 6px}
+h1.mast-title{font-family:var(--disp);font-weight:700;margin:0;line-height:.88;
+  font-size:clamp(38px,12.5vw,62px);letter-spacing:-.015em;text-transform:uppercase}
+.mast-sub{font-family:var(--mono);font-size:9.5px;letter-spacing:.34em;color:var(--ink3);
+  text-transform:uppercase;margin-top:14px}
+.dateline{display:flex;align-items:center;gap:12px;margin-top:14px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--ink2)}
+.dateline:before,.dateline:after{content:"";flex:1;height:1px;background:var(--rule2)}
+
+/* 索引条 */
+nav.ticker{display:flex;overflow-x:auto;margin-top:18px;border-top:1px solid var(--rule2);
+  -webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);mask-image:linear-gradient(90deg,#000 86%,transparent);
+  border-bottom:1px solid var(--rule2);background:var(--paper2);
+  scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav.ticker::-webkit-scrollbar{display:none}
+nav.ticker a{flex:0 0 auto;font-family:var(--sans);font-size:11.5px;letter-spacing:.1em;
+  padding:10px 15px;color:var(--ink2);border-right:1px solid var(--rule);white-space:nowrap}
+nav.ticker a:first-child{padding-left:0;margin-left:22px;border-right:none}
+nav.ticker a:first-child:before{content:"—";margin-right:10px;color:var(--accent)}
+nav.ticker a:hover{background:var(--ink);color:var(--paper)}
+
+/* 按钮 */
+.btn{display:inline-block;font-family:var(--sans);font-size:11px;letter-spacing:.1em;
+  border:1px solid var(--rule2);padding:6px 12px;line-height:1.3;color:var(--ink);
+  background:transparent;white-space:nowrap}
+.btn:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.tools{display:flex;flex-wrap:wrap;gap:7px;justify-content:flex-end;margin-top:13px}
+input.search{width:100%;font-family:var(--mono);font-size:13px;letter-spacing:.05em;
+  padding:10px 12px;border:1px solid var(--rule2);background:transparent;color:var(--ink);
+  outline:none;margin-top:12px}
+input.search:focus{border-color:var(--accent)}
 
 /* 导语 */
-.note{font-family:var(--serif);font-size:17.5px;line-height:1.75;color:var(--ink);
-  margin:16px 0 0;padding-left:14px;border-left:2px solid var(--accent)}
-.opening{font-size:15.5px;line-height:1.9;color:var(--ink2);margin:14px 0 0}
-.count{font-family:var(--mono);font-size:10.5px;color:var(--ink3);letter-spacing:.1em;margin-top:12px}
-
-/* 目录 */
-nav.chips{display:flex;gap:8px;overflow-x:auto;margin:18px 0 0;padding-bottom:4px;
-  scrollbar-width:none;-webkit-overflow-scrolling:touch}
-nav.chips::-webkit-scrollbar{display:none}
-nav.chips a{flex:0 0 auto;font-size:13px;color:var(--ink2);border:1px solid var(--rule);
-  border-radius:999px;padding:4px 12px;line-height:1.5}
-nav.chips a:hover{border-color:var(--ink3);color:var(--ink)}
+.standfirst{margin:30px 0 0;padding:18px 0 20px;border-top:2px solid var(--ink);border-bottom:1px solid var(--rule2)}
+.lab{font-family:var(--sans);font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent)}
+.standfirst p{font-family:var(--serif);font-size:18.5px;line-height:1.85;margin:10px 0 0}
+.count{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--ink3);
+  text-transform:uppercase;margin-top:14px}
 
 /* 栏目 */
-section.sec{margin-top:46px;border-top:1px solid var(--rule);padding-top:18px}
-section.sec h2{font-family:var(--serif);font-size:22px;font-weight:600;margin:0;line-height:1.3}
-section.sec h2 .idx{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.1em;margin-right:8px;vertical-align:2px}
-section.sec h2 .en{font-family:var(--mono);font-size:9.5px;color:var(--ink3);letter-spacing:.18em;margin-left:10px;vertical-align:2px}
-section.sec .blurb{font-size:13px;color:var(--ink3);margin:6px 0 0}
+section.sec{margin-top:44px}
+.sec-head{display:flex;align-items:flex-end;gap:13px;border-top:3px double var(--rule2);padding-top:15px}
+.sec-idx{font-family:var(--disp);font-size:36px;line-height:.78;color:var(--accent);letter-spacing:-.02em}
+.sec-name{font-family:var(--serif);font-size:25px;font-weight:700;line-height:1.12;letter-spacing:-.01em}
+.sec-en{font-family:var(--mono);font-size:9px;letter-spacing:.26em;color:var(--ink3);
+  margin-left:auto;padding-bottom:5px}
+.sec-blurb{font-family:var(--sans);font-size:12px;color:var(--ink3);margin:7px 0 0;letter-spacing:.02em}
 
 /* 单条报道 */
-article.it{margin:30px 0 0}
-article.it h3{font-family:var(--serif);font-size:19.5px;font-weight:600;line-height:1.45;margin:0;letter-spacing:.01em}
+article.it{margin:0;padding:26px 0 30px;border-bottom:1px solid var(--rule)}
+section.sec article.it:first-of-type{padding-top:22px}
+article.it h3{font-family:var(--serif);font-size:21px;font-weight:700;line-height:1.42;
+  margin:0;letter-spacing:-.012em}
+article.it.major h3{font-size:26px;line-height:1.34}
 article.it h3 a:hover{color:var(--accent)}
-article.it .meta{font-family:var(--mono);font-size:10px;letter-spacing:.09em;color:var(--ink3);margin:7px 0 0}
-article.it .lede{font-size:16.5px;line-height:1.8;color:var(--ink);margin:12px 0 0}
-article.it .body p{font-size:16px;line-height:1.9;color:var(--ink2);margin:12px 0 0}
-article.it .body p::selection,article.it .lede::selection{background:#f3d9b8}
-article.it .body h4{font-family:var(--sans);font-size:11px;letter-spacing:.14em;color:var(--ink3);
-  font-weight:400;margin:20px 0 2px}
-article.it.major{margin-top:38px;padding-top:2px}
-article.it.major h3{font-size:21px}
-article.it.major .body h4{color:var(--accent)}
-.tags{font-size:11.5px;color:var(--ink3);margin-top:14px;line-height:1.9}
-.tags span{margin-right:10px}
-.ops{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;font-size:12px;color:var(--ink3)}
-.ops button,.ops a{padding:2px 0;border-bottom:1px solid transparent}
-.ops button:hover,.ops a:hover{color:var(--ink)}
-.ops button.on{color:var(--accent);border-bottom-color:var(--accent)}
+article.it .meta{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--ink3);
+  margin-top:10px;text-transform:uppercase}
+article.it .lede{font-family:var(--serif);font-size:17.5px;line-height:1.85;margin:15px 0 0}
+article.it .body p{font-size:16.5px;line-height:2.02;color:var(--ink2);margin:14px 0 0}
+article.it .body h4{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.26em;
+  color:var(--accent);margin:26px 0 3px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+article.it .body h4:before{content:"";width:6px;height:6px;background:var(--accent);flex:0 0 auto}
+article.it.major .body p{color:var(--ink)}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:18px}
+.tags span{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;border:1px solid var(--rule);
+  padding:2px 7px;color:var(--ink3)}
+.ops{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.ops button,.ops a{font-family:var(--sans);font-size:10.5px;letter-spacing:.1em;border:1px solid var(--rule);
+  padding:5px 11px;color:var(--ink3);line-height:1.45}
+.ops button:hover,.ops a:hover{border-color:var(--ink);color:var(--ink)}
+.ops button.on{border-color:var(--accent);color:var(--accent)}
 .hidden{display:none!important}
 
 /* 深度观察 */
-section.deep{margin-top:56px;border-top:2px solid var(--ink);padding-top:18px}
-section.deep .kicker{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase}
-section.deep h2{font-family:var(--serif);font-size:24px;line-height:1.4;margin:12px 0 0;font-weight:600}
-section.deep .lead{font-family:var(--serif);font-size:17px;line-height:1.8;color:var(--ink2);margin:12px 0 0}
-section.deep h4{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--ink3);
-  text-transform:uppercase;margin:28px 0 8px;font-weight:400}
-section.deep p{font-size:16px;line-height:1.9;color:var(--ink2);margin:0}
+section.deep{margin-top:64px;border-top:3px double var(--rule2);padding-top:20px}
+section.deep .kicker{font-family:var(--sans);font-size:9.5px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase}
+section.deep h2{font-family:var(--serif);font-size:28px;line-height:1.38;margin:12px 0 0;font-weight:700;letter-spacing:-.015em}
+section.deep .lead{font-family:var(--serif);font-size:18px;line-height:1.85;color:var(--ink2);margin:14px 0 0}
+section.deep h4{font-family:var(--sans);font-size:9.5px;letter-spacing:.26em;color:var(--accent);
+  text-transform:uppercase;margin:30px 0 6px;font-weight:600;display:flex;align-items:center;gap:8px}
+section.deep h4:before{content:"";width:6px;height:6px;background:var(--accent)}
+section.deep p{font-size:16.5px;line-height:2;color:var(--ink2);margin:0}
 section.deep ul{list-style:none;padding:0;margin:0}
-section.deep li{font-size:15px;line-height:1.8;color:var(--ink2);padding:6px 0;border-bottom:1px solid var(--rule)}
+section.deep li{font-size:15.5px;line-height:1.85;color:var(--ink2);padding:9px 0;border-bottom:1px solid var(--rule)}
 section.deep li:last-child{border-bottom:none}
-section.deep li .w{font-family:var(--mono);font-size:10.5px;color:var(--ink3);display:block}
-section.deep .vw{padding:10px 0;border-bottom:1px solid var(--rule)}
+section.deep li .w{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--ink3);display:block;margin-bottom:1px}
+section.deep .vw{padding:11px 0;border-bottom:1px solid var(--rule)}
 section.deep .vw:last-child{border-bottom:none}
-section.deep .vw b{display:block;font-size:13px;color:var(--ink);margin-bottom:2px}
+section.deep .vw b{display:block;font-family:var(--sans);font-size:12.5px;color:var(--ink);margin-bottom:3px;letter-spacing:.02em}
 
 /* 页脚 */
-footer{margin-top:56px;border-top:1px solid var(--rule);padding:18px 0 60px;
-  font-size:12px;color:var(--ink3);line-height:1.9}
-footer a{border-bottom:1px solid var(--rule);margin-right:16px}
+footer{margin-top:60px;border-top:3px double var(--rule2);padding:16px 0 70px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink3);line-height:2.1}
+footer a{border-bottom:1px solid var(--rule);margin-right:18px}
+footer a:hover{color:var(--ink)}
 
 /* 归档 / 思想档案 */
-main.page{padding-top:10px}
-h1.title{font-family:var(--serif);font-size:28px;font-weight:600;margin:0 0 6px}
-p.sub{font-size:13px;color:var(--ink3);margin:0 0 20px}
-input.search{width:100%;font-family:var(--sans);font-size:15px;padding:10px 12px;border-radius:8px;
-  border:1px solid var(--rule);background:transparent;color:var(--ink);outline:none;margin:6px 0 0}
-input.search:focus{border-color:var(--ink3)}
-ul.archlist{list-style:none;padding:0;margin:22px 0 0}
+main.page{padding-top:14px}
+h1.title{font-family:var(--serif);font-size:clamp(34px,10vw,52px);font-weight:700;margin:26px 0 6px;
+  line-height:1;letter-spacing:.02em}
+p.sub{font-family:var(--sans);font-size:12.5px;color:var(--ink3);margin:0 0 18px}
+ul.archlist{list-style:none;padding:0;margin:24px 0 0;border-top:1px solid var(--rule2)}
 ul.archlist li{border-bottom:1px solid var(--rule)}
-ul.archlist a{display:flex;justify-content:space-between;gap:12px;padding:13px 0;font-size:14px;line-height:1.6}
-ul.archlist .w{font-family:var(--mono);font-size:11px;color:var(--accent);flex:0 0 auto}
+ul.archlist a{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:14px 0;font-size:15px;line-height:1.7}
+ul.archlist a:hover .t{color:var(--accent)}
+ul.archlist .w{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--accent);flex:0 0 auto}
 ul.archlist .t{flex:1;color:var(--ink2)}
-.hit{padding:12px 0;border-bottom:1px solid var(--rule)}
-.hit b{font-size:14.5px;font-weight:600}
-.hit span{display:block;font-size:11px;color:var(--ink3);margin-top:3px;font-family:var(--mono)}
+.hit{padding:13px 0;border-bottom:1px solid var(--rule)}
+.hit b{font-size:15.5px;font-weight:700}
+.hit span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--ink3);margin-top:4px}
 
-@media (max-width:420px){
+@media (max-width:520px){
+  body::after{inset:7px}
   .wrap{padding:0 18px}
-  article.it h3{font-size:18.5px}
-  .note{font-size:16.5px}
+  nav.ticker a:first-child{margin-left:18px}
+  article.it h3{font-size:19.5px}
+  article.it.major h3{font-size:23px}
+  section.deep h2{font-size:24px}
+  .standfirst p{font-size:17px}
+  h1.mast-title{font-size:clamp(34px,11.4vw,52px)}
 }
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap">
-  <div class="toprow">
-    <div class="brand"><a href="index.html">WEEKLY BRIEF</a></div>
-    <div class="topmeta">2026-W47　第 47 期<br>11月16日 – 11月22日</div>
+<header class="mast"><div class="wrap">
+  <div class="mast-top">
+    <span class="brand"><a href="index.html">第 47 期</a></span>
+    <span class="issue">2026-W47</span>
   </div>
+  <div class="title-block">
+    <h1 class="mast-title">Weekly Brief</h1>
+    <div class="mast-sub">每周五 · 12 篇 · 约 19 分钟</div>
+  </div>
+  <div class="dateline"><span>11月16日 – 11月22日</span></div>
   <div class="tools">
-    <button id="sbtn">搜索</button>
-    <button id="favfilter">只看收藏</button>
-    <button id="theme">明暗</button>
+    <button id="sbtn" class="btn">搜索</button>
+    <button id="favfilter" class="btn">收藏</button>
+    <button id="theme" class="btn">夜间</button>
   </div>
   <div id="searchwrap" class="hidden"><input id="search" class="search" type="search" placeholder="搜索标题、正文、关键词"></div>
-</div></header><nav class="chips"><div class="wrap" style="display:flex;gap:8px"><a href="#world">世界与秩序</a><a href="#china">中国与社会</a><a href="#economy">经济与产业</a><a href="#tech">科技与未来</a><a href="#industry">工业与设计</a><a href="#deep">深度观察</a></div></nav><div class="wrap"><p class="note">本周三条线索交汇：中美俄三方会晤显示大国协调机制重组，纳指暴跌与金价新低暴露AI估值与利率预期的脆弱，而国产算力与具身模型则说明技术竞争正从芯片转向系统效率。</p><div class="count">本期 12 篇 · 约 19 分钟</div></div><main class="wrap"><section class="sec" id="world">
-  <h2><span class="idx">01</span>世界与秩序<span class="en">WORLD</span></h2>
-  <p class="blurb">国际政治、外交、地缘冲突与全球治理</p>
+</div></header><nav class="ticker"><div class="wrap" style="display:flex"><a href="#world">世界与秩序</a><a href="#china">中国与社会</a><a href="#economy">经济与产业</a><a href="#tech">科技与未来</a><a href="#industry">工业与设计</a><a href="#deep">深度观察</a></div></nav><div class="wrap"><div class="standfirst"><span class="lab">本期主线 / In this issue</span><p>本周三条线索交汇：中美俄三方会晤显示大国协调机制重组，纳指暴跌与金价新低暴露AI估值与利率预期的脆弱，而国产算力与具身模型则说明技术竞争正从芯片转向系统效率。</p></div><div class="count">12 stories · 19 min</div></div><main class="wrap"><section class="sec" id="world">
+  <div class="sec-head">
+    <span class="sec-idx">01</span>
+    <h2 class="sec-name">世界与秩序</h2>
+    <span class="sec-en">WORLD</span>
+  </div>
+  <p class="sec-blurb">国际政治、外交、地缘冲突与全球治理</p>
   <article class="it major" id="i-e6b46c553874" data-k="中美俄领导人深圳会晤 发表和平宣言 美国总统特朗普称，中美俄三国领导人首次三方会晤在深圳举行，达成史无前例的和平宣言。 11月19日，中美俄三国元首在深圳会晤，围绕维护世界和平、促进大国关系战略稳定进行讨论，会后发表《中美俄元首和平宣言》。特朗普20日在白宫新闻发布会上称，会晤“规模很大，意义重大，气氛也非常好”，三人关系“非常融洽”。他表示，宣言核心是三国共识：绝不能让核冲突发生。特朗普在副总统万斯和国务卿鲁比奥陪同下出席发布会。 这是中美俄三国领导人首次举行三方会晤。此前，三国在军控、地区安全等问题上存在分歧，核战争风险近年因大国竞争加剧而受到关注。特朗普政府上台后，寻求与中俄直接沟通。此次会晤在深圳举行，具体细节未公开。 会晤及宣言可能降低核冲突风险，为大国关系设立新沟通框架。对全球安全治理、军控体系有潜在影响，尤其涉及核武器国家间的危机管理。周边国家及国际组织将关注宣言后续落实。 此次会晤反映大国竞争背景下，核风险管控成为共同利益点。三国通过元首直接对话建立顶层共识，但宣言缺乏具体机制，实际约束力待观察。这揭示国际安全治理从多边条约向大国协调倾斜的趋势。 关注三国是否设立后续工作组或热线机制，以及宣言文本是否公开具体条款。">
   <h3>中美俄领导人深圳会晤 发表和平宣言</h3>
   <div class="meta">中新网·国际 · 11/21</div>
@@ -165,8 +216,12 @@ ul.archlist .t{flex:1;color:var(--ink2)}
   </div>
 </article>
 </section><section class="sec" id="china">
-  <h2><span class="idx">02</span>中国与社会<span class="en">CHINA</span></h2>
-  <p class="blurb">公共政策、社会结构、人口与民生</p>
+  <div class="sec-head">
+    <span class="sec-idx">02</span>
+    <h2 class="sec-name">中国与社会</h2>
+    <span class="sec-en">CHINA</span>
+  </div>
+  <p class="sec-blurb">公共政策、社会结构、人口与民生</p>
   <article class="it" id="i-bfafe8772748" data-k="给成长多一种可能 浙江综合高中改革试点“三校”观察 中新网杭州11月21日电(林波 曹丹 孙琳茹)在杭州市美术高级中学的画室里，高一学生徐进正对着石膏像起稿。 在浙江，中考的分岔路口正在慢慢拓宽。 作为综合高中改革试点，一批学校在普高序列招生、落实普高学籍，同时打通职业体验、技能学习与多元升学通道。 杭州市美术高级中学、衢州江山市综合高级中学、温州艺文综合高级中学，走出了三种不同底色的融通育人路径。 杭州市美术高级中学的前身，是1979年就开办职业高中班的杭州市美术职业学校，2026年增名“杭州市美术高级中学”，成为浙江首批、杭州首个综合高中试点校。 该校党委书记俞松涛把办学模式概括为“一校双轨、职普并行、双向融通、特色赋能”。">
   <h3>给成长多一种可能 浙江综合高中改革试点“三校”观察</h3>
   <div class="meta">中新网·滚动 等 2 家 · 11/21</div>
@@ -181,8 +236,12 @@ ul.archlist .t{flex:1;color:var(--ink2)}
   </div>
 </article>
 </section><section class="sec" id="economy">
-  <h2><span class="idx">03</span>经济与产业<span class="en">ECONOMY</span></h2>
-  <p class="blurb">宏观、金融、产业链与企业竞争</p>
+  <div class="sec-head">
+    <span class="sec-idx">03</span>
+    <h2 class="sec-name">经济与产业</h2>
+    <span class="sec-en">ECONOMY</span>
+  </div>
+  <p class="sec-blurb">宏观、金融、产业链与企业竞争</p>
   <article class="it major" id="i-bd75a19a6a0b" data-k="纳指单日跌5.28% 年内涨幅全部回吐 美国股市三大指数20日大幅下跌，纳斯达克综合指数跌5.28%，年内涨幅悉数回吐。 截至收盘，纳指下跌1261.47点，收于22617.73点；道琼斯工业平均指数下跌949.73点，收于48147.33点，跌幅1.93%；标准普尔500指数下跌265.44点，收于6910.39点，跌幅3.70%。本周纳指成分股市值蒸发逾4万亿美元。道指和标普500指数较历史收盘高点均下跌超过10%，进入技术性回调区间。英伟达、超威半导体、闪迪等个股跌幅均超过10%，日前上市的Anthropic股价下跌超过8%。芝加哥期权交易所波动率指数（VIX）升至2025年4月以来最高水平。 美股此前经历了一轮由人工智能投资热潮推动的上涨，纳指年内涨幅一度可观。但近期投资者对人工智能投资前景及相关交易模式可持续性的担忧加剧，引发抛售。美联储年内最后一次货币政策例会临近，利率前景成为市场关注焦点。美联储理事沃勒本周再次表示，应考虑在12月加息50个基点；理事库克20日对通胀风险表达谨慎态度，强调如果现在不采取行动，未来可能不得不采取更大力度的政策措施。 此次下跌直接影响全球投资者资产组合，尤其是重仓科技股的基金和散户。人工智能相关企业估值面临重新定价，可能影响后续融资和投资节奏。市场波动加剧可能传导至其他资产类别，并影响消费者信心。美联储政策走向将决定市场能否企稳，进而影响全球资本流动和汇率。 这次抛售揭示了市场对人工智能技术商业化速度和盈利能力的质疑。此前资本大量涌入人工智能领域，推高相关股票估值，但投资者开始重新评估其可持续性。同时，美联储加息预期升温，提高了折现率，对高成长科技股形成压力。这反映了技术扩散过程中，资本市场从狂热到理性的周期调整，也暴露了货币政策与资产价格之间的紧张关系。 关注美联储12月货币政策例会决定，以及英伟达等人工智能龙头股后续财报和股价走势。市场将检验抛售是否过度，或是否引发更广泛的经济衰退担忧。">
   <h3>纳指单日跌5.28% 年内涨幅全部回吐</h3>
   <div class="meta">中新网·财经 · 11/21</div>
@@ -233,8 +292,12 @@ ul.archlist .t{flex:1;color:var(--ink2)}
   </div>
 </article>
 </section><section class="sec" id="tech">
-  <h2><span class="idx">04</span>科技与未来<span class="en">TECH</span></h2>
-  <p class="blurb">AI、半导体、航天与前沿科学</p>
+  <div class="sec-head">
+    <span class="sec-idx">04</span>
+    <h2 class="sec-name">科技与未来</h2>
+    <span class="sec-en">TECH</span>
+  </div>
+  <p class="sec-blurb">AI、半导体、航天与前沿科学</p>
   <article class="it major" id="i-b268c324f6e6" data-k="华为云发布昇腾原生具身世界模型，双榜登顶并开源代码 11月16日，华为云发布昇腾原生具身世界模型CloudRobo-WM1.2，在两项评测中平均成功率均列第一。 在RoboTwin 2.0和LIBERO-Pro 2.0评测中，该模型分别取得88.98%和81.73%的成功率，均排名第一。华为云计划于11月30日开放模型权重、推理代码和后训练代码。在第三方独立测试中，5种机器人本体完成13项操作任务，平均成功率比第二名高出23个百分点。模型训练数据已扩至2.75万小时，接入20个数据源、33种本体。 具身智能竞争正从单一芯片性能转向训练效率、数据规模、部署成本和场景落地速度的多维比拼。华为云此次没有停留在将模型迁移到昇腾芯片上运行，而是从模型架构、训练框架到核心算子、推理部署，围绕具身模型特点进行软硬件协同优化，打通了从世界模型预训练、强化学习到机器人执行任务的整条链路。 对机器人行业而言，开源后训练代码意味着其他团队无需从零搭建训练链路，用自家数据即可调试新任务，有望降低具身智能研发门槛。对华为云来说，这是昇腾算力生态向具身智能领域延伸的关键一步，可能影响未来机器人公司对训练底座的选择。目前尚不确定该模型在真实场景中的长期稳定性。 这反映了具身智能竞争正从硬件参数转向软硬协同的体系化较量。华为云围绕昇腾芯片做全栈优化，并开源关键代码，实质是试图构建以自身算力为核心的开发者生态。若形成规模，可能改变机器人公司选择训练平台的逻辑——从“哪家芯片强”转向“哪家生态全”。 11月30日开源后，社区能否快速基于后训练代码产出新任务案例；第三方测试中23个百分点的优势在更多本体和任务上是否可复现。">
   <h3>华为云发布昇腾原生具身世界模型，双榜登顶并开源代码</h3>
   <div class="meta">量子位 · 11/20</div>
@@ -285,8 +348,12 @@ ul.archlist .t{flex:1;color:var(--ink2)}
   </div>
 </article>
 </section><section class="sec" id="industry">
-  <h2><span class="idx">05</span>工业与设计<span class="en">INDUSTRY</span></h2>
-  <p class="blurb">汽车、制造、工程与工业设计</p>
+  <div class="sec-head">
+    <span class="sec-idx">05</span>
+    <h2 class="sec-name">工业与设计</h2>
+    <span class="sec-en">INDUSTRY</span>
+  </div>
+  <p class="sec-blurb">汽车、制造、工程与工业设计</p>
   <article class="it" id="i-64e51abf8eaf" data-k="海牙法院裁定比亚迪Ti7侵犯路虎设计 荷兰海牙地区法院裁定比亚迪Ti7侵犯捷豹路虎欧盟注册设计，禁止其在欧盟全境销售。 法院认定，Ti7的方正车身、直立车窗、平直车顶与后挂备胎，整体轮廓与现代卫士高度接近；比亚迪律师以头灯、格栅、保险杠、引擎盖、车窗和轮拱的差异抗辩，未被采纳。判决依据的是捷豹路虎2018年注册的欧盟外观设计，早于现款卫士2019年亮相，因此原告无需论证比亚迪抄袭量产车。 Ti7是比亚迪去年在中国推出的五座或七座插电混动SUV，尚未在欧盟开售，比亚迪表示将上诉。此案意味着中国车企进入欧洲市场时，外观设计注册可能成为比关税更直接的准入障碍。">
   <h3>海牙法院裁定比亚迪Ti7侵犯路虎设计</h3>
   <div class="meta">Motor1 · 11/21</div>
@@ -304,7 +371,7 @@ ul.archlist .t{flex:1;color:var(--ink2)}
   <div class="kicker">本周深度观察</div>
   <h2>AI 能力每四个月翻倍，人类判断力为何反成瓶颈？</h2>
   <p class="lead">METR 本周更新的图表显示，前沿 AI 可完成的任务时长仍以每四个月翻倍的速度增长，但报告同时指出模型在需要判断力的任务上表现不佳。当 AI 能独立完成越来越长的工作流，人类的角色从执行者转向审核者，而审核恰恰依赖判断力——一种难以量化和加速的能力。这个错位正在重塑劳动分工，也解释了为什么 AI 能力飙升的同时，企业落地仍困难重重。</p>
-  <h4>背景</h4><p>METR（Model Evaluation &amp; Threat Research）是一家非营利机构，专注于评估前沿 AI 模型的能力与风险。其“任务时长图”用人类完成同一任务所需的时间来标定 AI 的能力边界：让模型尝试大量人类也完成过的任务，按人类耗时定难度，再观察模型能成功完成多长的任务。本周更新显示，这个时长仍以每四个月翻倍的速度增长，意味着 AI 能独立承担的工作链条越来越长。但 METR 同时指出，模型在需要“判断力”的任务上表现滞后——判断力指在信息不完整、目标模糊或存在冲突时做出合理决策的能力，它依赖常识、情境理解和价值权衡，难以通过扩大数据或算力直接获得。这一短板在真实工作场景中尤为关键：当 AI 完成大部分执行环节，人类剩下的工作恰恰是判断和审核，而审核者需要比执行者更强的判断力，否则无法发现错误。这形成了一个悖论：AI 越能干，对人类判断力的要求越高，而判断力恰恰是当前 AI 最不擅长的。</p><h4>时间线</h4><ul><li><span class="w">2023 年</span>METR 开始发布 AI 任务时长评估图，追踪模型能力边界</li><li><span class="w">2024 年</span>前沿模型可完成任务时长翻倍周期缩短至约四个月</li><li><span class="w">2025 年 11 月</span>METR 更新图表，指出判断力短板制约实际部署</li><li><span class="w">2025 年</span>企业加速 AI 落地，审核与监督岗位需求上升</li></ul><h4>核心矛盾</h4><ul><li>{&#x27;who&#x27;: &#x27;AI 开发者 vs. 企业用户&#x27;, &#x27;what&#x27;: &#x27;开发者追求能力指标，用户需要可靠判断，目标错位&#x27;}</li><li>{&#x27;who&#x27;: &#x27;效率逻辑 vs. 安全逻辑&#x27;, &#x27;what&#x27;: &#x27;AI 加速执行，但审核依赖人类判断，拖慢整体流程&#x27;}</li><li>{&#x27;who&#x27;: &#x27;人类审核者 vs. AI 系统&#x27;, &#x27;what&#x27;: &#x27;审核者需理解 AI 决策，但 AI 黑箱使判断更难&#x27;}</li><li>{&#x27;who&#x27;: &#x27;短期产出 vs. 长期能力&#x27;, &#x27;what&#x27;: &#x27;企业为提速部署 AI，却削弱自身判断力培养&#x27;}</li></ul><h4>不同立场</h4><div><div class="vw"><b>加速派</b>判断力短板只是暂时问题，随着模型规模扩大和推理能力提升，AI 终将习得判断力，人类应全力加速部署以获取竞争优势。</div><div class="vw"><b>审慎派</b>判断力依赖人类经验和价值权衡，无法被数据拟合，AI 越强越需要人类把关，应放慢部署节奏，优先建立审核能力。</div><div class="vw"><b>重构派</b>问题不在 AI 或人类单方面，而在于工作流程设计：应重新分配任务，让 AI 处理可验证的执行，人类专注模糊决策，并投资判断力培训。</div></div><h4>延伸阅读</h4><ul><li><b>《思考，快与慢》</b>　丹尼尔·卡尼曼　理解人类判断力的机制与局限，是讨论 AI 判断力的基础。</li><li><b>《人类兼容》</b>　斯图尔特·罗素　探讨 AI 系统如何与人类价值对齐，涉及判断力与监督。</li><li><b>METR 任务时长图报告</b>　METR　一手数据来源，理解 AI 能力评估的方法与发现。</li></ul>
+  <h4>背景</h4><p>METR（Model Evaluation &amp; Threat Research）是一家非营利机构，专注于评估前沿 AI 模型的能力与风险。其“任务时长图”用人类完成同一任务所需的时间来标定 AI 的能力边界：让模型尝试大量人类也完成过的任务，按人类耗时定难度，再观察模型能成功完成多长的任务。本周更新显示，这个时长仍以每四个月翻倍的速度增长，意味着 AI 能独立承担的工作链条越来越长。但 METR 同时指出，模型在需要“判断力”的任务上表现滞后——判断力指在信息不完整、目标模糊或存在冲突时做出合理决策的能力，它依赖常识、情境理解和价值权衡，难以通过扩大数据或算力直接获得。这一短板在真实工作场景中尤为关键：当 AI 完成大部分执行环节，人类剩下的工作恰恰是判断和审核，而审核者需要比执行者更强的判断力，否则无法发现错误。这形成了一个悖论：AI 越能干，对人类判断力的要求越高，而判断力恰恰是当前 AI 最不擅长的。</p><h4>时间线</h4><ul><li><span class="w">2023 年</span>METR 开始发布 AI 任务时长评估图，追踪模型能力边界</li><li><span class="w">2024 年</span>前沿模型可完成任务时长翻倍周期缩短至约四个月</li><li><span class="w">2025 年 11 月</span>METR 更新图表，指出判断力短板制约实际部署</li><li><span class="w">2025 年</span>企业加速 AI 落地，审核与监督岗位需求上升</li></ul><h4>核心矛盾</h4><ul><li><span class="w">AI 开发者 vs. 企业用户</span>开发者追求能力指标，用户需要可靠判断，目标错位</li><li><span class="w">效率逻辑 vs. 安全逻辑</span>AI 加速执行，但审核依赖人类判断，拖慢整体流程</li><li><span class="w">人类审核者 vs. AI 系统</span>审核者需理解 AI 决策，但 AI 黑箱使判断更难</li><li><span class="w">短期产出 vs. 长期能力</span>企业为提速部署 AI，却削弱自身判断力培养</li></ul><h4>不同立场</h4><div><div class="vw"><b>加速派</b>判断力短板只是暂时问题，随着模型规模扩大和推理能力提升，AI 终将习得判断力，人类应全力加速部署以获取竞争优势。</div><div class="vw"><b>审慎派</b>判断力依赖人类经验和价值权衡，无法被数据拟合，AI 越强越需要人类把关，应放慢部署节奏，优先建立审核能力。</div><div class="vw"><b>重构派</b>问题不在 AI 或人类单方面，而在于工作流程设计：应重新分配任务，让 AI 处理可验证的执行，人类专注模糊决策，并投资判断力培训。</div></div><h4>延伸阅读</h4><ul><li><b>《思考，快与慢》</b>　丹尼尔·卡尼曼　理解人类判断力的机制与局限，是讨论 AI 判断力的基础。</li><li><b>《人类兼容》</b>　斯图尔特·罗素　探讨 AI 系统如何与人类价值对齐，涉及判断力与监督。</li><li><b>METR 任务时长图报告</b>　METR　一手数据来源，理解 AI 能力评估的方法与发现。</li></ul>
 </section><div id="noresult" class="hidden" style="margin:40px 0;color:var(--ink3);font-size:14px">没有匹配的内容。</div></main><footer><div class="wrap">
   12 篇，全部由 AI 依据本周公开报道撰写；数字与事实以其链接的原文为准。<br>
   11月21日 生成 · 处理 666 篇报道 · 34k tokens<br>
