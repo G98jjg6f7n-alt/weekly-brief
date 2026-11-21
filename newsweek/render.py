@@ -206,6 +206,11 @@ JS = r"""
 """
 
 
+def _short(text: str, n: int) -> str:
+    text = (text or "").strip()
+    return text if len(text) <= n else text[:n] + "…"
+
+
 def esc(s) -> str:
     return ht.escape(str(s or ""), quote=True)
 
@@ -365,7 +370,7 @@ def render_issue(issue: dict, cfg: dict) -> str:
 def render_archive(index: dict) -> str:
     rows = "".join(
         f'<li><a href="issues/{esc(i["week"])}.html"><span class="w">{esc(i["week"])}</span>'
-        f'<span class="t">{esc(i.get("range",""))}　{esc(i.get("note",""))}</span></a></li>'
+        f'<span class="t">{esc(i.get("range",""))}　{esc(_short(i.get("note",""),34))}</span></a></li>'
         for i in index.get("issues", [])
     )
     head = f"""<header class="top"><div class="wrap">
