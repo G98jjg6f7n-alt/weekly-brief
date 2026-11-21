@@ -110,43 +110,64 @@ def curate(sections: list[dict], pool: dict[str, list[Article]], cfg: dict) -> t
 # ---------------------------------------------------------------- 单条写作
 
 
-WRITE_RULES = """为下列每条新闻写中文卡片，事实与判断必须分开：
-- headline：不超过 24 字，具体（主体 + 动作 + 关键信息），不要标题党，不要用问号；
-- summary：100-180 字，只陈述事实——发生了什么、关键数字、必要背景。
-  不要写「这意味着」「反映出」这类评论，评论放到 why 和 take 里；
-- why：一句话，不超过 40 字，说清「为什么值得一个高中生花时间看」；
-- keywords：3-5 个中文关键词，用于检索；
-- take：2 句话的短评，指出这件事的关键机制或最值得注意的一点（不要复述摘要）。
-如果原文是英文，headline/summary 仍然用中文；专有名词保留英文原词。
-输出 JSON：{"items":[{"id":编号,"headline":"","summary":"","why":"","keywords":[],"take":""}]}"""
+WRITE_RULES = """为下列每条新闻写一篇由你撰写的报道——不是摘要，也不是评论。
+
+- headline：不超过 22 字，具体（主体 + 动作 + 关键信息），不用问句和夸张词；
+- lede：1 句话、30-50 字，把最重要的事实一次说清（谁、做了什么、关键数字）；
+- paras：3 段，每段 80-140 字：
+  1) 发生了什么：事实、数字、时间地点，可用原文里的直接引语；
+     （注意：第一段不要重复 lede 已经说过的信息，直接进入细节）
+  2) 为什么会这样：背景、机制、各方动机；
+  3) 这意味着什么：影响与不确定性，短长期分开讲；
+- keywords：3-4 个中文关键词，用于检索。
+
+写作纪律：
+- 只能使用材料里出现的事实和数字，不得编造；材料没说的，写「目前尚不确定」；
+- 事实是骨架，判断要有依据；不要写成社论，也不要复述通稿；
+- 如果材料来自不同立场的媒体，指出报道口径的差异；
+- 语言清楚，高中生能读懂；专业概念第一次出现用一句话解释。
+输出 JSON：{"items":[{"id":编号,"headline":"","lede":"","paras":["","",""],"keywords":[]}]}"""
 
 
-def write_items(section: dict, arts: list[Article], cfg: dict) -> dict[str, dict]:
-    """一个栏目一次调用。返回 {url: content}。"""
-    blocks = []
-    for i, art in enumerate(arts, 1):
-        body = _clip(art.text or art.excerpt, 1400)
-        blocks.append(
-            f"[{i}] 标题：{art.title}\n来源：{art.source}｜语言：{'中文' if art.lang == 'zh' else '英文'}\n正文：{body}\n"
-        )
-    user = (
-        f"栏目：{section['name']}（{section['blurb']}）\n\n"
-        + "\n".join(blocks)
-        + "\n"
-        + WRITE_RULES
-    )
-    try:
-        data = parse_json_loose(call_llm(cfg, system_prompt(cfg), user, max_tokens=4000))
-    except Exception:  # noqa: BLE001
-        return {}
+def write_items(sec: dict, arts: list[Article], cfg: dict, chunk: int = 3) -> dict[str, dict]:
+    """让模型为每条新闻写一篇报道；分块调用以免单次输出过长。"""
     out: dict[str, dict] = {}
-    for entry in data.get("items", []):
+    for i in range(0, len(arts), chunk):
+        part = arts[i:i + chunk]
+        blocks = []
+        for j, art in enumerate(part, 1):
+            others = [d for d in (art.duplicates or []) if d and d != art.source]
+            extra = f"（同一事件另有报道：{'、'.join(others[:3])}）" if others else ""
+            blocks.append(
+                f"[{j}] 栏目：{sec['name']}\n标题：{art.title}\n来源：{art.source}{extra}\n"
+                f"材料：{_clip(art.text or art.excerpt, 1600)}"
+            )
+        user = "\n\n".join(blocks) + "\n\n" + WRITE_RULES
         try:
-            idx = int(entry.get("id")) - 1
-        except (TypeError, ValueError):
-            continue
-        if 0 <= idx < len(arts):
-            out[arts[idx].url] = entry
+            data = parse_json_loose(call_llm(cfg, system_prompt(cfg), user, max_tokens=4200))
+        except Exception:  # noqa: BLE001
+            data = {}
+        by_idx: dict[int, dict] = {}
+        for entry in data.get("items", []):
+            try:
+                k = int(entry.get("id")) - 1
+            except (TypeError, ValueError):
+                continue
+            if 0 <= k < len(part):
+                by_idx[k] = entry
+        for k, art in enumerate(part):
+            e = by_idx.get(k) or {}
+            paras = [str(x).strip() for x in (e.get("paras") or []) if str(x).strip()]
+            lede = str(e.get("lede") or "").strip()
+            if not paras:
+                rc = rule_content(art)
+                paras, lede = rc["paras"], rc.get("lede", "")
+            out[art.url] = {
+                "headline": str(e.get("headline") or art.title)[:40],
+                "lede": lede[:140],
+                "paras": [p[:400] for p in paras[:4]],
+                "keywords": [str(x)[:12] for x in (e.get("keywords") or [])][:4],
+            }
     return out
 
 
@@ -195,7 +216,7 @@ def write_commentaries(arts: list[Article], summaries: dict[str, str], cfg: dict
 # ---------------------------------------------------------------- 整体
 
 
-OPENING_RULES = """根据下面各栏目的标题，写 2 句话作为整期周报的开场白。
+OPENING_RULES = """根据下面各栏目的标题，写 2 句话（合计不超过 80 字）作为整期周报的开场白。
 要求：指出本周最值得注意的一条主线，并把不同栏目的事件联系起来；
 像懂行的朋友在跟你说话，不要罗列栏目，不要用「本周」「综上所述」开头。
 输出 JSON：{"opening":"...","note":"不超过 12 字的主题词"}"""
@@ -242,13 +263,21 @@ def write_deep_dive(items: list[dict], cfg: dict) -> dict:
 
 
 def rule_content(art: Article) -> dict:
-    """没有模型时的兜底：标题 + 摘录，明确标注未润色。"""
+    """没有模型时的兜底：切句成段，明确不是 AI 撰写的报道。"""
     sentences = split_sentences(art.text or art.excerpt)
-    summary = " ".join(sentences[:4])[:220] if sentences else (art.excerpt or art.title)[:220]
+    body = [s.strip() for s in sentences if s.strip()]
+    paras, buf = [], ""
+    for s in body:
+        buf = (buf + " " + s).strip()
+        if len(buf) >= 110:
+            paras.append(buf)
+            buf = ""
+    if buf:
+        paras.append(buf)
+    paras = paras[:3] or [(art.excerpt or art.title)[:200]]
     return {
-        "headline": art.title[:28],
-        "summary": summary,
-        "why": "",
+        "headline": art.title[:40],
+        "lede": body[0][:120] if body else "",
+        "paras": paras,
         "keywords": [],
-        "take": "",
     }

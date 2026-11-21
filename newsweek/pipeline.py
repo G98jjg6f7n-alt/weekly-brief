@@ -9,7 +9,6 @@ import time
 from datetime import datetime
 
 from . import cluster, rank, summarize
-from . import media
 from .extract import fetch_article
 from .fetch import Article, detect_proxy, fetch_all, set_proxy
 from .llm import usage_summary
@@ -134,44 +133,6 @@ def fetch_bodies(arts: list[Article], quiet: bool = False) -> None:
     log(f"正文成功 {ok}/{len(arts)}", quiet)
 
 
-def attach_images(items: list[dict], art_map: dict, cfg: dict, quiet: bool = False) -> None:
-    """为重要条目配一张报道方原图；找不到就不配，绝不用占位图。"""
-    conf = cfg.get("images") or {}
-    if not conf.get("enabled", True):
-        return
-    limit = int(conf.get("max_items", 14))
-    todo = [it for it in items[:limit] if it.get("url") in art_map and art_map[it["url"]].html]
-    log(f"配图 {len(todo)} 条…", quiet)
-
-    def work(it: dict):
-        art = art_map[it["url"]]
-        try:
-            pics = media.pick(art.html, art.url, limit=1)
-        except Exception:  # noqa: BLE001
-            return it, None
-        return it, (pics[0] if pics else None)
-
-    results = []
-    with cf.ThreadPoolExecutor(max_workers=6) as pool:
-        results = list(pool.map(work, todo))
-
-    # 串行分配并去重：并发里判断 used 会漏掉同一张图
-    used: set[str] = set()
-    for it, pic in results:
-        if not pic or pic.url in used:
-            continue
-        used.add(pic.url)
-        it["image"] = {
-            "url": pic.url,
-            "w": pic.width,
-            "h": pic.height,
-            "alt": pic.alt,
-            "credit": f"图片来源：{art_map[it['url']].source}",
-        }
-    with_img = sum(1 for it in items if it.get("image"))
-    log(f"  成功配图 {with_img} 条", quiet)
-
-
 def build_issue(cfg: dict, *, no_llm: bool = False, quiet: bool = False) -> dict:
     started = time.time()
     now = datetime.now(TZ)
@@ -205,7 +166,7 @@ def build_issue(cfg: dict, *, no_llm: bool = False, quiet: bool = False) -> dict
 
     contents: dict[str, dict] = {}
     if use_llm:
-        log("写摘要…", quiet)
+        log("撰写报道…", quiet)
         for sec in cfg["sections"]:
             group = by_sec.get(sec["key"]) or []
             if not group:
@@ -222,19 +183,23 @@ def build_issue(cfg: dict, *, no_llm: bool = False, quiet: bool = False) -> dict
     for p in picks:
         art: Article = p["article"]
         content = contents.get(art.url) or (summarize.rule_content(art) if not use_llm else summarize.rule_content(art))
+        paras = [str(x) for x in (content.get("paras") or []) if str(x).strip()]
+        if not paras:
+            paras = [str(content.get("summary") or art.excerpt or "")]
+        lede0 = str(content.get("lede") or "")
+        if lede0 and paras:
+            ov = len(set(lede0) & set(paras[0])) / max(1, len(set(lede0)))
+            if ov > 0.72:
+                paras = paras[1:] or paras
         item = {
             "id": art.id,
             "section": p["section"],
             "importance": int(p["importance"]),
             "headline": str(content.get("headline") or art.title)[:40],
-            "summary": (
-                ("（英文原文，未翻译）" if art.lang == "en" and not use_llm else "")
-                + str(content.get("summary") or "")
-            )[:230],
-            "why": str(content.get("why") or "")[:80],
-            "keywords": [str(k)[:12] for k in (content.get("keywords") or [])][:5],
-            "event_date": str(content.get("event_date") or "")[:12],
-            "take": {"mode": "short", "text": str(content.get("take") or "")[:200]},
+            "lede": str(content.get("lede") or ""),
+            "paras": paras[:4],
+            "summary": str(content.get("lede") or "") + " " + " ".join(paras),
+            "keywords": [str(k)[:12] for k in (content.get("keywords") or [])][:4],
             "url": art.url,
             "source": art.source,
             "sources_all": sorted({art.source, *art.duplicates}),
@@ -242,28 +207,6 @@ def build_issue(cfg: dict, *, no_llm: bool = False, quiet: bool = False) -> dict
             "lang": art.lang,
         }
         items.append(item)
-
-    # 深度评论：前 4 条重要新闻
-    if use_llm and items:
-        top = [it for it in items if it["importance"] >= 2][:4]
-        if top:
-            art_map = {a.url: a for a in arts}
-            log(f"写深度评论 {len(top)} 条…", quiet)
-            deep = summarize.write_commentaries(
-                [art_map[it["url"]] for it in top if it["url"] in art_map],
-                {it["url"]: it["summary"] for it in top},
-                llm_cfg,
-            )
-            for it in top:
-                d = deep.get(it["url"])
-                if d and d.get("background"):
-                    it["take"] = {
-                        "mode": "full",
-                        "background": str(d.get("background", "")),
-                        "impact": str(d.get("impact", "")),
-                        "perspectives": str(d.get("perspectives", "")),
-                        "questions": [str(q) for q in (d.get("questions") or [])][:2],
-                    }
 
     sections_out = []
     for sec in cfg["sections"]:
@@ -281,8 +224,6 @@ def build_issue(cfg: dict, *, no_llm: bool = False, quiet: bool = False) -> dict
                 "items": group,
             }
         )
-
-    attach_images(items, {a.url: a for a in arts}, cfg, quiet)
 
     if use_llm:
         log("写开场白与深度观察…", quiet)
