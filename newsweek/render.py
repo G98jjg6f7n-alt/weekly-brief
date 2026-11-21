@@ -66,6 +66,11 @@ article.it .meta{font-family:var(--mono);font-size:10px;letter-spacing:.09em;col
 article.it .lede{font-size:16.5px;line-height:1.8;color:var(--ink);margin:12px 0 0}
 article.it .body p{font-size:16px;line-height:1.9;color:var(--ink2);margin:12px 0 0}
 article.it .body p::selection,article.it .lede::selection{background:#f3d9b8}
+article.it .body h4{font-family:var(--sans);font-size:11px;letter-spacing:.14em;color:var(--ink3);
+  font-weight:400;margin:20px 0 2px}
+article.it.major{margin-top:38px;padding-top:2px}
+article.it.major h3{font-size:21px}
+article.it.major .body h4{color:var(--accent)}
 .tags{font-size:11.5px;color:var(--ink3);margin-top:14px;line-height:1.9}
 .tags span{margin-right:10px}
 .ops{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;font-size:12px;color:var(--ink3)}
@@ -225,16 +230,24 @@ def _sources(item: dict) -> str:
 
 
 def _item_html(item: dict) -> str:
-    paras = [p for p in (item.get("paras") or []) if p]
-    if not paras and item.get("summary"):
-        paras = [item["summary"]]
-    body = "".join(f"<p>{esc(p)}</p>" for p in paras)
+    blocks = [b for b in (item.get("blocks") or []) if b.get("p")]
+    if not blocks:
+        blocks = [{"h": "", "p": item.get("summary", "")}]
+    parts = []
+    for b in blocks:
+        head = (b.get("h") or "").strip()
+        if head:
+            parts.append(f'<h4>{esc(head)}</h4><p>{esc(b["p"])}</p>')
+        else:
+            parts.append(f'<p>{esc(b["p"])}</p>')
+    body = "".join(parts)
     lede = (item.get("lede") or "").strip()
     tags = "".join(f"<span>{esc(k)}</span>" for k in (item.get("keywords") or [])[:4])
     iid = esc(item.get("id", ""))
     meta = " · ".join(x for x in [_sources(item), item.get("date_pub", "")] if x)
-    search = " ".join([item.get("headline", ""), lede] + paras + list(item.get("keywords") or []))
-    return f"""<article class="it" id="i-{iid}" data-k="{esc(search)}">
+    major = item.get("tier") == "major"
+    search = " ".join([item.get("headline", ""), lede] + [b["p"] for b in blocks] + list(item.get("keywords") or []))
+    return f"""<article class="it{' major' if major else ''}" id="i-{iid}" data-k="{esc(search)}">
   <h3>{esc(item.get('headline',''))}</h3>
   <div class="meta">{esc(meta)}</div>
   {f'<p class="lede">{esc(lede)}</p>' if lede else ''}

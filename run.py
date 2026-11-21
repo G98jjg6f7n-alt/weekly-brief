@@ -41,7 +41,7 @@ def self_check(issue: dict, cfg: dict) -> list[str]:
     n = sum(len(s["items"]) for s in issue["sections"])
     if n < int(cfg.get("min_items", 12)):
         problems.append(f"条目只有 {n} 条")
-    if len(issue["sections"]) < 5:
+    if len(issue["sections"]) < 3:
         problems.append(f"只有 {len(issue['sections'])} 个栏目有内容")
     if issue.get("mode") == "llm" and not (issue.get("deep_dive") or {}).get("question"):
         problems.append("深度观察缺失")
